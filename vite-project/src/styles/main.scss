@@ -51,9 +51,6 @@ icon {
   .navbar-headings {
     display: flex;
     align-items: center;
-    @media (max-width: 768px) {
-      display: none;
-    }
   }
 
   .hamburger-menu {
@@ -66,9 +63,6 @@ icon {
 
     &:hover {
       color: #0067cb;
-    }
-    @media (max-width: 768px) {
-      display: block;
     }
   }
 
@@ -116,6 +110,7 @@ icon {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
+    z-index: -1;
     h2 {
       padding: 10px;
       text-align: center;
@@ -161,10 +156,18 @@ icon {
         }
       }
     }
+  }
+}
 
-    @media (max-width: 768px) {
-      width: 100%;
-      margin: 0 0 0 0;
-    }
+@media (max-width: 768px) {
+  .navbar .navbar-headings {
+    display: none;
+  }
+  .navbar .hamburger-menu {
+    display: block;
+  }
+  .home-page .quote-form-container {
+    width: 100%;
+    margin: 0 0 0 0;
   }
 }
