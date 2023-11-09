@@ -96,3 +96,75 @@ icon {
     }
   }
 }
+
+//home
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+
+  .quote-form-container {
+    position: fixed;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    margin: 0 20px;
+    top: 80px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    h2 {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .quote-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .form-group {
+        margin: 5px;
+
+        label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+        }
+
+        textarea {
+          height: 75px;
+        }
+      }
+
+      .submit-button {
+        background-color: #0074d9;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056a0;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 0 0 0 0;
+    }
+  }
+}
