@@ -93,19 +93,35 @@ icon {
 
 //home
 .home-page {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin: 0;
+
+  .left-half-home,
+  .right-half-home {
+    flex: 1;
+  }
+
+  .left-half-home {
+    margin-left: 20px;
+  }
+
+  .home-images {
+    position: fixed;
+    width: calc(50% - 30px);
+    height: 50%;
+    top: 80px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    z-index: -1;
+  }
 
   .quote-form-container {
     position: fixed;
-    width: 50%;
+    width: calc(50% - 30px);
     height: auto;
-    padding: 20px;
-    margin: 0 20px;
+    padding: 10px;
     top: 80px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -165,9 +181,5 @@ icon {
   }
   .navbar .hamburger-menu {
     display: block;
-  }
-  .home-page .quote-form-container {
-    width: 100%;
-    margin: 0 0 0 0;
   }
 }
