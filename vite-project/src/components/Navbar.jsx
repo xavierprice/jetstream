@@ -27,6 +27,12 @@ const Navbar = () => {
         {<img className="header-logo" src={Logo} alt="Jetstream Initials" />}
       </div>
       {/* menu */}
+
+      <ul className="navbar-contact">
+        <li className="contact-bubble">0491 016 876</li>
+        <li className="contact-bubble">jetstreampressurewashingau@gmail.com</li>
+      </ul>
+
       <ul className="navbar-headings">
         <li>Home</li>
         <li>Services</li>
