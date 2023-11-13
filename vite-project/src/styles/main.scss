@@ -109,7 +109,7 @@ icon {
   .home-images {
     position: fixed;
     width: calc(50% - 30px);
-    height: 50%;
+    height: 50vh;
     top: 80px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -181,5 +181,24 @@ icon {
   }
   .navbar .hamburger-menu {
     display: block;
+  }
+
+  .home-page {
+    flex-direction: column;
+  }
+
+  .home-page .left-half-home {
+    margin: 80px 20px 20px;
+  }
+
+  .home-page .right-half-home {
+    margin: 0 20px 20px;
+  }
+
+  .home-page .left-half-home .home-images,
+  .home-page,
+  .right-half-home .quote-form-container {
+    position: static;
+    width: 100%;
   }
 }
