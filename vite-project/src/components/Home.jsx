@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { FaHouseUser } from "react-icons/fa";
+import {
+  FaHouseUser,
+  FaCopyright,
+  FaInstagram,
+  FaFacebookSquare,
+} from "react-icons/fa";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -105,6 +110,16 @@ const Home = () => {
           <h3>Walkways</h3>
         </div>
       </div>
+      <footer>
+        <div className="footer-copyright">
+          <FaCopyright />
+          2023 JETSTREAM PRESSURE WASHING
+        </div>
+        <div className="footer-socials">
+          <FaInstagram className="fa-icon" />
+          <FaFacebookSquare className="fa-icon" />
+        </div>
+      </footer>
     </div>
   );
 };
