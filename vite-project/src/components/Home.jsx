@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaHouseUser } from "react-icons/fa";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -91,9 +92,18 @@ const Home = () => {
         </section>
       </div>
       <div className="service-grid-container">
-        <div className="service-grid-card">Service 1</div>
-        <div className="service-grid-card">Service 2</div>
-        <div className="service-grid-card">Service 3</div>
+        <div className="service-grid-card">
+          <FaHouseUser style={{ fontSize: "50px" }} />
+          <h3>Driveways</h3>
+        </div>
+        <div className="service-grid-card">
+          <FaHouseUser style={{ fontSize: "50px" }} />
+          <h3>Brick structures</h3>
+        </div>
+        <div className="service-grid-card">
+          <FaHouseUser style={{ fontSize: "50px" }} />
+          <h3>Walkways</h3>
+        </div>
       </div>
     </div>
   );

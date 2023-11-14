@@ -130,14 +130,6 @@ icon {
     margin-top: 80px;
   }
 
-  .service-grid-container {
-    height: 80px;
-    width: 100%;
-    margin-top: 30px;
-    border: 2px solid black;
-    background-color: #0056a0;
-  }
-
   .left-half-home,
   .right-half-home {
     flex: 1;
@@ -210,6 +202,35 @@ icon {
       }
     }
   }
+
+  .service-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    height: 200px;
+    width: calc(100% - 40px);
+    margin: 20px 0 0 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    .service-grid-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      background-color: #0074d9;
+      color: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 20px;
+      &:hover {
+        background-color: #c83e4d;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -237,5 +258,19 @@ icon {
   .right-half-home .quote-form-container {
     position: static;
     width: 100%;
+  }
+
+  .home-page .service-grid-container {
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+  }
+}
+
+@media (max-width: 492px) {
+  .home-page .service-grid-container {
+    height: auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
   }
 }
