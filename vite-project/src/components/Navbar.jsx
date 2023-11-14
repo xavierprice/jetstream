@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../assets/JPW.png";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaPhoneAlt } from "react-icons/fa";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -29,8 +29,10 @@ const Navbar = () => {
       {/* menu */}
 
       <ul className="navbar-contact">
-        <li className="contact-bubble">0491 016 876</li>
-        <li className="contact-bubble">jetstreampressurewashingau@gmail.com</li>
+        <li className="contact-bubble">
+          <FaPhoneAlt />
+          0491 016 876
+        </li>
       </ul>
 
       <ul className="navbar-headings">

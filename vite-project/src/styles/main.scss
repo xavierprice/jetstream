@@ -63,10 +63,13 @@ icon {
     justify-content: center;
     margin: 0 20px;
     .contact-bubble {
-      width: auto;
+      width: 145px;
       height: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin: 2px;
-      padding: 5px;
+      padding: 5px 10px;
       border: 1px solid black;
       border-radius: 10px;
       background-color: #0074d9;
