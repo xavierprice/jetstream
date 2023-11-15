@@ -2,7 +2,9 @@ import React from "react";
 import "./styles/app.scss";
 import Navbar from "./components/Navbar.jsx";
 import Home from "./components/Home.jsx";
+import Footer from "./components/Footer";
 import Services from "./components/Services";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -13,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/services" element={<Services />}></Route>
       </Routes>
+      <Footer />
     </Router>
   );
 };
