@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../assets/JPW.png";
 import { FaBars, FaTimes, FaPhoneAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -24,7 +25,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div>
-        {<img className="header-logo" src={Logo} alt="Jetstream Initials" />}
+        <Link to="/">
+          {<img className="header-logo" src={Logo} alt="Jetstream Initials" />}
+        </Link>
       </div>
       {/* menu */}
 
@@ -36,10 +39,18 @@ const Navbar = () => {
       </ul>
 
       <ul className="navbar-headings">
-        <li>Home</li>
-        <li>Services</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/services">Services</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
       </ul>
 
       {/* hamburger menu */}
@@ -49,10 +60,18 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <ul className={!nav ? "hidden" : "mobile-menu"}>
-        <li>Home</li>
-        <li>Services</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/services">Services</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
       </ul>
     </div>
   );
