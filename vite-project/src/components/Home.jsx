@@ -16,6 +16,13 @@ const Home = () => {
           new.
         </p>
       </section>
+      <div className="our-mission-home">
+        <h3>Our mission:</h3>
+        <p>
+          Transforming properties and lives by restoring brilliance, one
+          pristine surface at a time.
+        </p>
+      </div>
       <section className="home-services">
         <h2>
           Services we offer <FaArrowDown style={{ marginLeft: "10px" }} />
