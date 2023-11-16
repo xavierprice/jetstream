@@ -268,24 +268,6 @@ footer {
     display: block;
   }
 
-  .content-form {
-    flex-direction: column;
-  }
-
-  .home-page .left-half-home {
-    margin: 0 20px 20px;
-  }
-
-  .home-page .right-half-home {
-    margin: 0 20px 20px;
-  }
-
-  .home-page .left-half-home .home-images,
-  .home-page,
-  .right-half-home .quote-form-container {
-    position: static;
-    width: 100%;
-  }
 
   .home-page .home-services .service-grid-container {
     height: auto;
