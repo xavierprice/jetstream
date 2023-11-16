@@ -177,12 +177,14 @@ icon {
 .contact-main {
   width: 100%;
   height: 100%;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   .quote-form-container {
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     height: auto;
     padding: 10px;
+    margin-left: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
