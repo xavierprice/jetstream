@@ -15,7 +15,9 @@
 
 //default styling
 body {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: white;
 }
 
@@ -241,6 +243,13 @@ icon {
       }
     }
   }
+}
+
+.services-main {
+  height: 100%;
+  width: 100%;
+  border: solid 2px black;
+  margin-top: 80px;
 }
 
 footer {
