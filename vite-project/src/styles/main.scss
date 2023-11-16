@@ -131,16 +131,41 @@ icon {
 .home-page {
   width: 100%;
   height: 100%;
+
   display: flex;
   flex-direction: column;
+  margin-top: 5rem;
+  padding-left: 1.3rem;
+
+  .main-heading {
+    height: 15rem;
+    width: calc(100% - 1.3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h2 {
+      padding-bottom: 1.3rem;
+      min-width: 200px; /* Set your desired min-width */
+      max-width: 500px; /* Set your desired max-width */
+      margin: 0 auto; /* Center horizontally */
+    }
+
+    p {
+      min-width: 250px; /* Set your desired min-width */
+      max-width: 800px; /* Set your desired max-width */
+      margin: 0 auto; /* Center horizontally */
+    }
+  }
 
   .home-services {
-    width: calc(100% - 40px);
-    padding: 20px;
+    width: calc(100% - 1.3rem);
+    padding: 1.3rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 0.3rem;
     background-color: #f9f9f9;
-    margin: 20px 0 0 20px;
+    margin-top: 1.3rem;
     h2 {
       display: flex;
       align-items: center;
@@ -159,9 +184,9 @@ icon {
         background-color: #0074d9;
         color: white;
         border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 20px;
+        border-radius: 0.3rem;
+        margin: 0.625rem;
+        padding: 1.3rem;
         &:hover {
           background-color: #c83e4d;
         }
@@ -270,7 +295,6 @@ footer {
   .navbar .hamburger-menu {
     display: block;
   }
-
 
   .home-page .home-services .service-grid-container {
     height: auto;
