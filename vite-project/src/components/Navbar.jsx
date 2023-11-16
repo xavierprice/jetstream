@@ -32,9 +32,13 @@ const Navbar = () => {
       {/* menu */}
 
       <ul className="navbar-contact">
-        <li className="contact-bubble">
+        <li className="contact-bubble phone-bubble">
           <FaPhoneAlt />
           0491 016 876
+        </li>
+        <li className="contact-bubble quote-bubble">
+          <FaPhoneAlt />
+          Get a free quote!
         </li>
       </ul>
 
