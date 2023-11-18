@@ -31,17 +31,6 @@ const Navbar = () => {
       </div>
       {/* menu */}
 
-      <ul className="navbar-contact">
-        <li className="contact-bubble phone-bubble">
-          <FaPhoneAlt />
-          0491 016 876
-        </li>
-        <li className="contact-bubble quote-bubble">
-          <FaPhoneAlt />
-          Get a free quote!
-        </li>
-      </ul>
-
       <ul className="navbar-headings">
         <li>
           <Link to="/">Home</Link>
@@ -54,6 +43,14 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+
+      <ul className="navbar-contact">
+        <li className="contact-bubble quote-bubble">Get a free quote!</li>
+        <li className="contact-bubble phone-bubble">
+          <FaPhoneAlt style={{ fontSize: "20px", paddingRight: "0.4rem" }} />
+          0491 016 876
         </li>
       </ul>
 
