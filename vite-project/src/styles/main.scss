@@ -188,6 +188,7 @@ icon {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 1rem;
     }
     .service-grid-container {
       display: grid;
@@ -198,6 +199,7 @@ icon {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
         cursor: pointer;
         background-color: #0074d9;
         color: white;
@@ -205,6 +207,24 @@ icon {
         border-radius: 0.3rem;
         margin: 0.625rem;
         padding: 1.3rem;
+        transition: background-color 0.3s ease;
+        .service-icon {
+          font-size: 4rem;
+          margin-bottom: 0.5rem;
+        }
+        .service-details {
+          h3 {
+            margin: 0; 
+            padding-bottom: 0.75rem;
+            font-size: 1.2rem; 
+            font-weight: bold; 
+          }
+          p {
+            margin: 0; 
+            font-size: 1rem; 
+            opacity: 0.9; 
+          }
+        }
         &:hover {
           background-color: #c83e4d;
         }

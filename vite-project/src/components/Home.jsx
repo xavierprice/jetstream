@@ -1,7 +1,28 @@
 import React, { useState } from "react";
-import { FaHouseUser, FaArrowDown } from "react-icons/fa";
+import { FaHome, FaTree, FaRoad, FaArrowDown } from "react-icons/fa";
 
 const Home = () => {
+  const services = [
+    {
+      title: "Driveway Cleaning",
+      description:
+        "Restore the look of your driveway with our high-pressure cleaning services.",
+      icon: <FaRoad />,
+    },
+    {
+      title: "House Washing",
+      description:
+        "Give your home a fresh appearance by removing dirt and grime from its exterior.",
+      icon: <FaHome />,
+    },
+    {
+      title: "Deck and Patio Cleaning",
+      description:
+        "Renew the appearance of your deck or patio, preparing them for outdoor gatherings.",
+      icon: <FaTree />,
+    },
+  ];
+
   return (
     <div className="home-page">
       <section className="main-heading">
@@ -28,18 +49,17 @@ const Home = () => {
           Services we offer <FaArrowDown style={{ marginLeft: "10px" }} />
         </h2>
         <div className="service-grid-container">
-          <div className="service-grid-card">
-            <FaHouseUser style={{ fontSize: "50px" }} />
-            <h3>Driveways</h3>
-          </div>
-          <div className="service-grid-card">
-            <FaHouseUser style={{ fontSize: "50px" }} />
-            <h3>Brick structures</h3>
-          </div>
-          <div className="service-grid-card">
-            <FaHouseUser style={{ fontSize: "50px" }} />
-            <h3>Walkways</h3>
-          </div>
+          {services.map((service, index) => (
+            <div className="service-grid-card" key={index}>
+              <div className="service-icon">
+                <div className="service-icon">{service.icon}</div>
+              </div>
+              <div className="service-details">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
