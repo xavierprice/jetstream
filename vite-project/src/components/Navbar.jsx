@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div>
+      <div className="navbar-left">
         <Link to="/">
           {<img className="header-logo" src={Logo} alt="Jetstream Initials" />}
         </Link>
@@ -44,10 +44,12 @@ const Navbar = () => {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        <li>
+          <Link to="/quote">Quote</Link>
+        </li>
       </ul>
 
       <ul className="navbar-contact">
-        <li className="contact-bubble quote-bubble">Get a free quote!</li>
         <li className="contact-bubble phone-bubble">
           <FaPhoneAlt style={{ fontSize: "20px", paddingRight: "0.4rem" }} />
           0491 016 876

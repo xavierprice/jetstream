@@ -49,6 +49,13 @@ icon {
     }
   }
 
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+  }
+
   .header-logo {
     height: 75px;
     margin-top: 2px;
@@ -59,28 +66,25 @@ icon {
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .navbar-contact {
+    flex: 1;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 20px;
     .contact-bubble {
       height: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 2px;
       padding: 5px 10px;
       border-radius: 10px;
       background-color: #0074d9;
       color: white;
       &.phone-bubble {
-        width: auto;
-      }
-      &.quote-bubble {
         width: auto;
       }
       &:hover {
@@ -90,12 +94,15 @@ icon {
   }
 
   .hamburger-menu {
+    height: 75px;
+    width: 10%;
     display: none;
     cursor: pointer;
     padding-top: 1.7rem;
     padding-right: 1.5rem;
     font-size: 1.5rem;
     z-index: 1000;
+    border: 2px solid black;
 
     &:hover {
       color: #0067cb;
@@ -334,5 +341,11 @@ footer {
     height: auto;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(auto-fit, 1fr);
+  }
+
+  .navbar .navbar-contact {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
