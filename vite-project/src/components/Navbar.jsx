@@ -54,12 +54,12 @@ const Navbar = () => {
           <FaPhoneAlt style={{ fontSize: "20px", paddingRight: "0.4rem" }} />
           0491 016 876
         </li>
-      </ul>
 
-      {/* hamburger menu */}
-      <div onClick={handleClick} className="hamburger-menu">
-        {!nav ? <FaBars /> : <FaTimes />}
-      </div>
+        {/* hamburger menu */}
+        <li onClick={handleClick} className="hamburger-menu">
+          {!nav ? <FaBars /> : <FaTimes />}
+        </li>
+      </ul>
 
       {/* Mobile menu */}
       <ul className={!nav ? "hidden" : "mobile-menu"}>
