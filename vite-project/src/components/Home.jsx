@@ -62,6 +62,28 @@ const Home = () => {
           ))}
         </div>
       </section>
+      <section className="who-we-are">
+        <div className="content">
+          <div className="text">
+            <h2>Who We Are</h2>
+            <p>
+              We are a dedicated team committed to providing top-quality
+              pressure washing services. From revitalizing driveways to
+              refreshing home exteriors, we take pride in bringing back the
+              shine to your spaces. Our goal is simple: to exceed your
+              expectations and leave a lasting impression with our quality
+              workmanship and personalized service.
+            </p>
+            <button className="learn-more-btn">Learn More</button>
+          </div>
+          <div className="video">
+            <video controls>
+              <source src="path_to_your_video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
