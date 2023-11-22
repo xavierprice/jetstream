@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { FaHome, FaTree, FaRoad, FaArrowDown } from "react-icons/fa";
+import workImage1 from "../assets/work-image1.jpg";
+import workImage2 from "../assets/work-image2.jpg";
+import workImage3 from "../assets/workImage3.jpeg";
+import workImage5 from "../assets/workImage5.jpeg";
+
 
 const Home = () => {
   const services = [
@@ -22,6 +27,8 @@ const Home = () => {
       icon: <FaTree />,
     },
   ];
+
+  const workPreviews = [workImage1, workImage2, workImage3, workImage5];
 
   return (
     <div className="home-page">
@@ -82,6 +89,14 @@ const Home = () => {
               Your browser does not support the video tag.
             </video>
           </div>
+        </div>
+      </section>
+      <section className="work-preview-section">
+        <h2>Our Work</h2>
+        <div className="work-preview-container">
+          {workPreviews.map((image, index) => (
+            <img key={index} src={image} alt={`Image ${index + 1}`} />
+          ))}
         </div>
       </section>
     </div>

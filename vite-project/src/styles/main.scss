@@ -275,7 +275,43 @@ icon {
       }
     }
   }
-}
+  .work-preview-section {
+    width: calc(100% - 1.3rem);
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    border: 1px solid #ddd;
+    border-radius: 0.3rem;
+    padding: 1.3rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .work-preview-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
+      gap: 20px;
+      justify-content: space-around;
+
+        img {
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+          margin-top: 10px;
+          font-size: 1rem;
+          color: #555;
+        }
+      }
+    }
+  }
+
 
 .services-main {
   height: 100%;
