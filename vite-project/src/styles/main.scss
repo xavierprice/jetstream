@@ -295,23 +295,30 @@ icon {
       gap: 20px;
       justify-content: space-around;
 
-        img {
-          width: 100%;
-          max-width: 100%;
-          height: auto;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
-        p {
-          margin-top: 10px;
-          font-size: 1rem;
-          color: #555;
-        }
+      video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #555;
       }
     }
   }
-
+}
 
 .services-main {
   height: 100%;

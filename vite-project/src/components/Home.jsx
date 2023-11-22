@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaHome, FaTree, FaRoad, FaArrowDown } from "react-icons/fa";
 import workImage1 from "../assets/work-image1.jpg";
 import workImage2 from "../assets/work-image2.jpg";
 import workImage3 from "../assets/workImage3.jpeg";
 import workImage5 from "../assets/workImage5.jpeg";
 
+import workVideo1 from "../assets/workVideo1.mp4";
+import workVideo2 from "../assets/workVideo2.mp4";
+import workVideo4 from "../assets/workVideo4.mp4";
+import workVideo5 from "../assets/workVideo5.mp4";
 
 const Home = () => {
   const services = [
@@ -27,8 +31,27 @@ const Home = () => {
       icon: <FaTree />,
     },
   ];
+  const workPreviews = [workVideo1, workVideo5, workVideo2, workVideo4];
 
-  const workPreviews = [workImage1, workImage2, workImage3, workImage5];
+  const [videoTimes, setVideoTimes] = useState({});
+
+  const videoRefs = workPreviews.map(() => useRef(null));
+
+  const handleMouseEnter = (index) => {
+    videoRefs[index].current.play();
+    if (videoTimes[index] !== undefined) {
+      video.currentTime = videoTimes[index];
+    }
+  };
+
+  const handleMouseLeave = (index) => {
+    const video = videoRefs[index].current;
+    setVideoTimes((prevTimes) => ({
+      ...prevTimes,
+      [index]: video.currentTime,
+    }));
+    video.pause();
+  };
 
   return (
     <div className="home-page">
@@ -94,9 +117,33 @@ const Home = () => {
       <section className="work-preview-section">
         <h2>Our Work</h2>
         <div className="work-preview-container">
-          {workPreviews.map((image, index) => (
-            <img key={index} src={image} alt={`Image ${index + 1}`} />
-          ))}
+          {workPreviews.map((preview, index) => {
+            if (typeof preview === "string" && preview.endsWith(".mp4")) {
+              return (
+                <div
+                  key={index}
+                  className="video-wrapper"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
+                >
+                  <video
+                    ref={videoRefs[index]}
+                    controls
+                    muted
+                    loop
+                    preload="metadata"
+                  >
+                    <source src={preview} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              );
+            } else {
+              return (
+                <img key={index} src={preview} alt={`Image ${index + 1}`} />
+              );
+            }
+          })}
         </div>
       </section>
     </div>
