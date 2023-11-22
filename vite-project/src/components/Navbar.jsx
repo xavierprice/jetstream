@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../assets/JPW.png";
 import { FaBars, FaTimes, FaPhoneAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
@@ -32,19 +34,19 @@ const Navbar = () => {
       {/* menu */}
 
       <ul className="navbar-headings">
-        <li>
+        <li className={location.pathname === "/" ? "active" : ""}>
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li className={location.pathname === "/services" ? "active" : ""}>
           <Link to="/services">Services</Link>
         </li>
-        <li>
+        <li className={location.pathname === "/about" ? "active" : ""}>
           <Link to="/about">About</Link>
         </li>
-        <li>
+        <li className={location.pathname === "/contact" ? "active" : ""}>
           <Link to="/contact">Contact</Link>
         </li>
-        <li>
+        <li className={location.pathname === "/quote" ? "active" : ""}>
           <Link to="/quote">Quote</Link>
         </li>
       </ul>
