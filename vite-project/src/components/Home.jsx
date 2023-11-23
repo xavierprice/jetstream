@@ -11,6 +11,8 @@ import workVideo3 from "../assets/workVideo3.mp4";
 import workVideo4 from "../assets/workVideo4.mp4";
 import workVideo5 from "../assets/workVideo5.mp4";
 
+import Contact from "./Contact";
+
 const Home = () => {
   const services = [
     {
@@ -173,6 +175,16 @@ const Home = () => {
               );
             }
           })}
+        </div>
+      </section>
+      <section className="cta-home">
+        <div className="content">
+          <div className="text">
+            <h2>The exterior of your home needs to be looked after too!</h2>
+          </div>
+          <div className="cta-form">
+            <Contact />
+          </div>
         </div>
       </section>
     </div>
