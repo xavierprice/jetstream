@@ -258,16 +258,18 @@ icon {
       }
     }
   }
+
   .who-we-are {
+    width: 100%;
     padding: 40px 20px;
     .content {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       .text {
         width: 50%;
-        padding-right: 20px;
+        padding-left: 20px;
         h2 {
           font-size: 2em;
           margin-bottom: 15px;
@@ -292,16 +294,25 @@ icon {
           }
         }
       }
-      .video {
+      .who-we-are-images {
         width: 50%;
-        video {
-          width: 100%;
-          height: auto;
-          border-radius: 5px;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(50px, 250px));
+        gap: 20px;
+
+        .grid-item {
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
         }
       }
     }
   }
+
   .work-preview-section {
     width: calc(100% - 1.3rem);
     background-color: #f9f9f9;
@@ -466,6 +477,29 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+  }
+
+  .home-page .who-we-are .content {
+    flex-direction: column-reverse;
+    .text {
+      text-align: center;
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 20px;
+      .learn-more-btn {
+        margin-bottom: 20px;
+      }
+    }
+
+    .who-we-are-images {
+      width: 100%;
+      grid-template-columns: repeat(2, minmax(50px, 300px));
+      .grid-item {
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 
   footer {

@@ -7,6 +7,7 @@ import workImage5 from "../assets/workImage5.jpeg";
 
 import workVideo1 from "../assets/workVideo1.mp4";
 import workVideo2 from "../assets/workVideo2.mp4";
+import workVideo3 from "../assets/workVideo3.mp4";
 import workVideo4 from "../assets/workVideo4.mp4";
 import workVideo5 from "../assets/workVideo5.mp4";
 
@@ -32,9 +33,35 @@ const Home = () => {
     },
   ];
   const workPreviews = [workVideo1, workVideo5, workVideo2, workVideo4];
+  const workImages = [workImage5, workImage2, workImage3, workImage1];
 
   const [videoTimes, setVideoTimes] = useState({});
 
+  //single video handling
+  const singleVideoRef = useRef(null);
+
+  const handleMouseEnterSingle = () => {
+    const video = singleVideoRef.current;
+    if (video) {
+      const currentTime = videoTimes[video.src] || 0;
+      video.currentTime = currentTime;
+      video.play();
+    }
+  };
+
+  const handleMouseLeaveSingle = () => {
+    const video = singleVideoRef.current;
+    if (video) {
+      const currentTime = video.currentTime;
+      setVideoTimes((prevTimes) => ({
+        ...prevTimes,
+        [video.src]: currentTime,
+      }));
+      video.pause();
+    }
+  };
+
+  //map video handling
   const videoRefs = workPreviews.map(() => useRef(null));
 
   const handleMouseEnter = (index) => {
@@ -67,13 +94,13 @@ const Home = () => {
           new.
         </p>
       </section>
-      <div className="our-mission-home">
+      <section className="our-mission-home">
         <h3>Our mission:</h3>
         <p>
           Transforming properties and lives by restoring brilliance, one
           pristine surface at a time.
         </p>
-      </div>
+      </section>
       <section className="home-services">
         <h2>
           Services we offer <FaArrowDown style={{ marginLeft: "10px" }} />
@@ -94,6 +121,20 @@ const Home = () => {
       </section>
       <section className="who-we-are">
         <div className="content">
+          <div className="who-we-are-images">
+            {workImages.map((image, index) => (
+              <div className="grid-item" key={index}>
+                <img src={image} alt={`Work Image ${index + 1}`} />
+              </div>
+            ))}
+            {/* onMouseEnter={handleMouseEnterSingle}
+            onMouseLeave={handleMouseLeaveSingle}
+          >
+            <video ref={singleVideoRef} muted loop preload="metadata">
+              <source src={workVideo3} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video> */}
+          </div>
           <div className="text">
             <h2>Who We Are</h2>
             <p>
@@ -105,12 +146,6 @@ const Home = () => {
               workmanship and personalized service.
             </p>
             <button className="learn-more-btn">Learn More</button>
-          </div>
-          <div className="video">
-            <video controls>
-              <source src="path_to_your_video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
           </div>
         </div>
       </section>
@@ -126,13 +161,7 @@ const Home = () => {
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={() => handleMouseLeave(index)}
                 >
-                  <video
-                    ref={videoRefs[index]}
-                    controls
-                    muted
-                    loop
-                    preload="metadata"
-                  >
+                  <video ref={videoRefs[index]} muted loop preload="metadata">
                     <source src={preview} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
