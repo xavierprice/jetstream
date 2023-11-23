@@ -231,6 +231,7 @@ icon {
       }
     }
   }
+
   .who-we-are {
     width: 100%;
     padding: 40px 20px;
@@ -238,7 +239,7 @@ icon {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       .text {
         width: 50%;
         padding-right: 20px;
@@ -266,16 +267,29 @@ icon {
           }
         }
       }
-      .who-we-are-video {
+      .who-we-are-images {
         width: 50%;
-        video {
-          min-width: 50%; /* Define your minimum width */
-          max-height: 500px; /* Define your maximum height */
-          border-radius: 8px;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(
+          2,
+          minmax(50px, 250px)
+        ); /* Adjust the minimum width as needed */
+        gap: 20px; /* Adjust the gap between grid items */
+
+        .grid-item {
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Add border radius if desired */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+            /* Any other image-specific styles */
+          }
         }
       }
     }
   }
+
   .work-preview-section {
     width: calc(100% - 1.3rem);
     background-color: #f9f9f9;

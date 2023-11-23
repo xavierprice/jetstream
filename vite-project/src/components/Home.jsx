@@ -33,6 +33,7 @@ const Home = () => {
     },
   ];
   const workPreviews = [workVideo1, workVideo5, workVideo2, workVideo4];
+  const workImages = [workImage5, workImage2, workImage3, workImage1];
 
   const [videoTimes, setVideoTimes] = useState({});
 
@@ -132,15 +133,19 @@ const Home = () => {
             </p>
             <button className="learn-more-btn">Learn More</button>
           </div>
-          <div
-            className="who-we-are-video"
-            onMouseEnter={handleMouseEnterSingle}
+          <div className="who-we-are-images">
+            {workImages.map((image, index) => (
+              <div className="grid-item" key={index}>
+                <img src={image} alt={`Work Image ${index + 1}`} />
+              </div>
+            ))}
+            {/* onMouseEnter={handleMouseEnterSingle}
             onMouseLeave={handleMouseLeaveSingle}
           >
             <video ref={singleVideoRef} muted loop preload="metadata">
               <source src={workVideo3} type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
           </div>
         </div>
       </section>
