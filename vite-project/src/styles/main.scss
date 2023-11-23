@@ -232,6 +232,7 @@ icon {
     }
   }
   .who-we-are {
+    width: 100%;
     padding: 40px 20px;
     .content {
       display: flex;
@@ -265,12 +266,12 @@ icon {
           }
         }
       }
-      .video {
+      .who-we-are-video {
         width: 50%;
         video {
-          width: 100%;
-          height: auto;
-          border-radius: 5px;
+          min-width: 50%; /* Define your minimum width */
+          max-height: 500px; /* Define your maximum height */
+          border-radius: 8px;
         }
       }
     }

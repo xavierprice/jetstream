@@ -7,6 +7,7 @@ import workImage5 from "../assets/workImage5.jpeg";
 
 import workVideo1 from "../assets/workVideo1.mp4";
 import workVideo2 from "../assets/workVideo2.mp4";
+import workVideo3 from "../assets/workVideo3.mp4";
 import workVideo4 from "../assets/workVideo4.mp4";
 import workVideo5 from "../assets/workVideo5.mp4";
 
@@ -35,6 +36,31 @@ const Home = () => {
 
   const [videoTimes, setVideoTimes] = useState({});
 
+  //single video handling
+  const singleVideoRef = useRef(null);
+
+  const handleMouseEnterSingle = () => {
+    const video = singleVideoRef.current;
+    if (video) {
+      const currentTime = videoTimes[video.src] || 0;
+      video.currentTime = currentTime;
+      video.play();
+    }
+  };
+
+  const handleMouseLeaveSingle = () => {
+    const video = singleVideoRef.current;
+    if (video) {
+      const currentTime = video.currentTime;
+      setVideoTimes((prevTimes) => ({
+        ...prevTimes,
+        [video.src]: currentTime,
+      }));
+      video.pause();
+    }
+  };
+
+  //map video handling
   const videoRefs = workPreviews.map(() => useRef(null));
 
   const handleMouseEnter = (index) => {
@@ -106,9 +132,13 @@ const Home = () => {
             </p>
             <button className="learn-more-btn">Learn More</button>
           </div>
-          <div className="video">
-            <video controls>
-              <source src="path_to_your_video.mp4" type="video/mp4" />
+          <div
+            className="who-we-are-video"
+            onMouseEnter={handleMouseEnterSingle}
+            onMouseLeave={handleMouseLeaveSingle}
+          >
+            <video ref={singleVideoRef} muted loop preload="metadata">
+              <source src={workVideo3} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -126,13 +156,7 @@ const Home = () => {
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={() => handleMouseLeave(index)}
                 >
-                  <video
-                    ref={videoRefs[index]}
-                    controls
-                    muted
-                    loop
-                    preload="metadata"
-                  >
+                  <video ref={videoRefs[index]} muted loop preload="metadata">
                     <source src={preview} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
