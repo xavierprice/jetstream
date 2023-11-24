@@ -33,9 +33,9 @@ icon {
   position: fixed;
   width: 100%;
   height: 80px;
+  padding: 1.5rem;
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
-  margin-left: 3px;
   z-index: 100;
 
   display: flex;
@@ -46,13 +46,19 @@ icon {
     a {
       list-style: none;
       cursor: pointer;
-      margin: 20px;
+      margin: 10px;
+      color: white;
+      transition: background-color 0.3s ease, width 0.3s ease;
       &:hover {
         color: #0067cb;
       }
 
       &:visited {
         color: white;
+        transition: background-color 0.3s ease, width 0.3s ease;
+        &:hover {
+          color: #0067cb;
+        }
       }
     }
   }
@@ -62,11 +68,8 @@ icon {
     align-items: center;
     justify-content: flex-start;
     flex: 1;
-
-    .header-logo {
-      height: 75px;
-      margin-top: 2px;
-      margin-left: 20px;
+    a {
+      margin: 0;
     }
   }
 
@@ -74,32 +77,37 @@ icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1rem;
 
     li {
-      margin: 0 5px;
+      padding: 0 5px;
       list-style-type: none;
       position: relative;
 
       a {
         text-decoration: none;
+        position: relative;
 
         &::after {
           content: "";
           position: absolute;
-          bottom: -2px;
+          bottom: -5px;
           left: 0;
-          width: 100%;
+          width: 0;
           height: 2px;
           background-color: transparent;
-          transition: background-color 0.3s ease;
+          transition: width 0.5s ease;
         }
 
-        &:hover::after {
+        &:hover::after,
+        &.active::after {
+          width: 100%;
           background-color: #0074d9;
         }
       }
 
-      &.active::after {
+      &.active a::after {
+        width: 100%;
         background-color: #0074d9;
       }
     }
@@ -113,6 +121,7 @@ icon {
     justify-content: flex-end;
 
     .contact-bubble {
+      cursor: pointer;
       height: auto;
       display: flex;
       justify-content: space-between;
@@ -134,14 +143,11 @@ icon {
   }
 
   .hamburger-menu {
-    height: 75px;
-    width: 10%;
     display: none;
     cursor: pointer;
-    padding-top: 1.7rem;
-    padding-right: 1.5rem;
     font-size: 1.5rem;
     z-index: 1000;
+    color: white;
 
     &:hover {
       color: #0067cb;
@@ -162,13 +168,30 @@ icon {
       left: 0;
       width: 100%;
       height: 100vh;
-      background-color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       font-size: xx-large;
+      list-style: none;
       z-index: 999;
+
+      background-image: url("/src/assets/clean-house.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: -1; 
+      }
     }
   }
 
@@ -176,16 +199,21 @@ icon {
     .navbar-headings {
       display: none;
     }
-    .hamburger-menu {
-      display: block;
-    }
 
     .navbar-left {
-      flex: initial;
+      justify-content: flex-start;
     }
 
-    .navbar-contact .phone-bubble {
-      margin: 0 auto;
+    .navbar-contact {
+      flex: initial;
+      justify-content: center;
+      padding-right: 1.5rem;
+    }
+
+    .hamburger-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
   }
 }
