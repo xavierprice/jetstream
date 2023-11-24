@@ -168,37 +168,42 @@ icon {
 
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
-  padding-left: 1.3rem;
 
   .main-heading {
-    height: 15rem;
-    width: calc(100% - 1.3rem);
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 40px 20px;
+    border-radius: 0.3rem;
+
+    p {
+      min-width: 250px;
+      max-width: 800px;
+      margin: 0;
+    }
+
     h2 {
       padding-bottom: 1.3rem;
       min-width: 200px;
       max-width: 500px;
       margin: 0 auto;
     }
-    p {
-      min-width: 250px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
   }
 
   .our-mission-home {
-    height: 5rem;
-    width: calc(100% - 1.3rem);
+    width: 100%;
     display: flex;
     align-items: baseline;
     justify-content: center;
     text-align: center;
+    padding: 40px 0;
+
     h3 {
       padding-right: 0.5rem;
     }

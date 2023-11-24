@@ -95,13 +95,13 @@ const Home = () => {
           we restore the shine to your surfaces, making your property look brand
           new.
         </p>
-      </section>
-      <section className="our-mission-home">
-        <h3>Our mission:</h3>
-        <p>
-          Transforming properties and lives by restoring brilliance, one
-          pristine surface at a time.
-        </p>
+        <section className="our-mission-home">
+          <h3>Our mission:</h3>
+          <p>
+            Transforming properties and lives by restoring brilliance, one
+            pristine surface at a time.
+          </p>
+        </section>
       </section>
       <section className="home-services">
         <h2>
