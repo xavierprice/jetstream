@@ -26,11 +26,11 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div className="navbar-left">
+      <li className="navbar-left">
         <Link to="/">
-          {<img className="header-logo" src={Logo} alt="Jetstream Initials" />}
+          <h1>JPW</h1>
         </Link>
-      </div>
+      </li>
       {/* menu */}
 
       <ul className="navbar-headings">

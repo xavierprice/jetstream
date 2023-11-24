@@ -33,8 +33,8 @@ icon {
   position: fixed;
   width: 100%;
   height: 80px;
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
   margin-left: 3px;
   z-index: 100;
 
@@ -43,11 +43,17 @@ icon {
   align-items: center;
 
   li {
-    list-style: none;
-    cursor: pointer;
-    margin: 20px;
-    &:hover {
-      color: #0067cb;
+    a {
+      list-style: none;
+      cursor: pointer;
+      margin: 20px;
+      &:hover {
+        color: #0067cb;
+      }
+
+      &:visited {
+        color: white;
+      }
     }
   }
 
@@ -56,44 +62,47 @@ icon {
     align-items: center;
     justify-content: flex-start;
     flex: 1;
-  }
 
-  .header-logo {
-    height: 75px;
-    margin-top: 2px;
-    margin-left: 20px;
+    .header-logo {
+      height: 75px;
+      margin-top: 2px;
+      margin-left: 20px;
+    }
   }
 
   .navbar-headings {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
 
-  .navbar-headings li {
-    margin: 0 10px;
-    list-style-type: none;
-    position: relative;
-  }
+    li {
+      margin: 0 5px;
+      list-style-type: none;
+      position: relative;
 
-  .navbar-headings li a {
-    text-decoration: none;
-  }
+      a {
+        text-decoration: none;
 
-  .navbar-headings li::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-  }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: transparent;
+          transition: background-color 0.3s ease;
+        }
 
-  .navbar-headings li.active::after {
-    background-color: #0074d9;
+        &:hover::after {
+          background-color: #0074d9;
+        }
+      }
+
+      &.active::after {
+        background-color: #0074d9;
+      }
+    }
   }
 
   .navbar-contact {
@@ -102,6 +111,7 @@ icon {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
     .contact-bubble {
       height: auto;
       display: flex;
@@ -112,9 +122,11 @@ icon {
       background-color: #0074d9;
       color: white;
       transition: background-color 0.3s ease, width 0.3s ease;
+
       &.phone-bubble {
         width: 8.6rem;
       }
+
       &:hover {
         background-color: #0056a0;
       }
@@ -157,6 +169,23 @@ icon {
       align-items: center;
       font-size: xx-large;
       z-index: 999;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar-headings {
+      display: none;
+    }
+    .hamburger-menu {
+      display: block;
+    }
+
+    .navbar-left {
+      flex: initial;
+    }
+
+    .navbar-contact .phone-bubble {
+      margin: 0 auto;
     }
   }
 }
@@ -512,21 +541,6 @@ icon {
 }
 
 @media (max-width: 768px) {
-  .navbar .navbar-headings {
-    display: none;
-  }
-  .navbar .hamburger-menu {
-    display: block;
-  }
-
-  .navbar .navbar-left {
-    flex: initial;
-  }
-
-  .navbar .navbar-contact .phone-bubble {
-    margin: 0 auto;
-  }
-
   .home-page .home-services .service-grid-container {
     height: auto;
     grid-template-columns: repeat(2, 1fr);
