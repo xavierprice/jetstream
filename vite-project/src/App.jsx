@@ -8,16 +8,27 @@ import Contact from "./components/Contact";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+const background = {
+  backgroundImage: `url(/src/assets/clean-house.jpg`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundAttachment: "fixed",
+  height: "100%",
+  backgroundPosition: "center",
+};
+
 const App = () => {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/services" element={<Services />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-      </Routes>
-      <Footer />
+      <div style={background}>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/services" element={<Services />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 };
