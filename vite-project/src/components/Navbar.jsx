@@ -27,7 +27,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar">
+    <div className="navbar-component">
       <li className="navbar-left">
         <Link to="/">
           <h1>JPW</h1>

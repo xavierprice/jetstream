@@ -24,7 +24,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-main">
+    <div className="contact-component">
       <div className="quote-form-container">
         <h2>Request a Free Quote!</h2>
         <form onSubmit={handleSubmit} className="quote-form">

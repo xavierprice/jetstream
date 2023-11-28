@@ -84,7 +84,7 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <section className="main-heading">
+      <section className="heading-section">
         <h2>
           Revitalize Your Property's Sparkle with Professional Pressure Washing
           Services!
@@ -103,7 +103,7 @@ const Home = () => {
           </p>
         </section>
       </section>
-      <section className="home-services">
+      <section className="services-section">
         <h2>
           Services we offer <FaArrowDown style={{ marginLeft: "10px" }} />
         </h2>
@@ -121,8 +121,8 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <section className="who-we-are">
-        <div className="content">
+      <section className="introduction-section">
+        <div className="content-block">
           <div className="who-we-are-images">
             {workImages.map((image, index) => (
               <div className="grid-item" key={index}>
@@ -147,7 +147,7 @@ const Home = () => {
               expectations and leave a lasting impression with our quality
               workmanship and personalized service.
             </p>
-            <button className="learn-more-btn">Learn More</button>
+            <button className="button-block">Learn More</button>
           </div>
         </div>
       </section>
@@ -177,8 +177,8 @@ const Home = () => {
           })}
         </div>
       </section>
-      <section className="cta-home">
-        <div className="content">
+      <section className="cta-section">
+        <div className="content-block">
           <div className="text">
             <h2>The exterior of your home needs to be looked after too!</h2>
           </div>
