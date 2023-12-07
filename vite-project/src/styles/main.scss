@@ -10,7 +10,16 @@
 }
 
 :root {
-  --HeadingColor: rgb(41, 76, 255);
+  --HeadingColour: #0074d9;
+  --SmallPadding: 1.5rem;
+  --MediumPadding: 3rem;
+  --DarkTransparentBackground: rgba(0, 0, 0, 0.1);
+  --LightTransparentBackground: rgba(0, 0, 0, 0.3);
+  --HoverBlue: #0067cb;
+  --SmoothTransition: background-color 0.3s ease, width 0.3s ease;
+  --RoundBorder: 0.3rem;
+  --HeaderSize: 2rem;
+  --ParagraphFontSize: 1em;
 }
 
 body {
@@ -34,8 +43,8 @@ icon {
   position: fixed;
   width: 100%;
   height: 80px;
-  padding: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  padding: var(--SmallPadding);
+  background-color: var(--DarkTransparentBackground);
   backdrop-filter: blur(20px);
   z-index: 100;
 
@@ -49,16 +58,16 @@ icon {
       cursor: pointer;
       margin: 10px;
       color: white;
-      transition: background-color 0.3s ease, width 0.3s ease;
+      transition: var(--SmoothTransition);
       &:hover {
-        color: #0067cb;
+        color: var(--HoverBlue);
       }
 
       &:visited {
         color: white;
-        transition: background-color 0.3s ease, width 0.3s ease;
+        transition: var(--SmoothTransition);
         &:hover {
-          color: #0067cb;
+          color: var(--HoverBlue);
         }
       }
     }
@@ -103,13 +112,13 @@ icon {
         &:hover::after,
         &.active::after {
           width: 100%;
-          background-color: #0074d9;
+          background-color: var(--HeadingColour);
         }
       }
 
       &.active a::after {
         width: 100%;
-        background-color: #0074d9;
+        background-color: var(--HeadingColour);
       }
     }
   }
@@ -129,16 +138,16 @@ icon {
       align-items: center;
       padding: 5px 10px;
       border-radius: 10px;
-      background-color: #0074d9;
+      background-color: var(--HeadingColour);
       color: white;
-      transition: background-color 0.3s ease, width 0.3s ease;
+      transition: var(--SmoothTransition);
 
       &.phone-bubble {
         width: 8.6rem;
       }
 
       &:hover {
-        background-color: #0056a0;
+        background-color: var(--HoverBlue);
       }
     }
   }
@@ -146,12 +155,12 @@ icon {
   .hamburger-menu {
     display: none;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: var(--SmallPadding);
     z-index: 1000;
     color: white;
 
     &:hover {
-      color: #0067cb;
+      color: var(--HoverBlue);
     }
   }
 
@@ -190,7 +199,7 @@ icon {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: var(--LightTransparentBackground);
         z-index: -1;
       }
     }
@@ -208,7 +217,7 @@ icon {
     .navbar-contact {
       flex: initial;
       justify-content: center;
-      padding-right: 1.5rem;
+      padding-right: var(--SmallPadding);
     }
 
     .hamburger-menu {
@@ -227,12 +236,13 @@ icon {
   .quote-form-container {
     width: 100%;
     height: auto;
-    padding: 10px;
+    padding: var(--SmallPadding);
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
 
     h2 {
+      font-size: var(--HeaderSize);
       padding: 10px;
       text-align: center;
     }
@@ -265,16 +275,16 @@ icon {
       }
 
       .submit-button {
-        background-color: #0074d9;
+        background-color: var(--HeadingColour);
         color: white;
         border: none;
         border-radius: 3px;
         padding: 10px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: var(--SmoothTransition);
 
         &:hover {
-          background-color: #0056a0;
+          background-color: var(--HoverBlue);
         }
       }
     }
@@ -283,12 +293,12 @@ icon {
 
 .footer-component {
   background-color: #f7f7f7;
-  padding: 30px 0;
+  padding: var(--MediumPadding) 0;
 
   .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: var(--SmallPadding);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -296,8 +306,8 @@ icon {
     .footer-info {
       flex: 1;
       h3 {
-        margin-bottom: 15px;
-        font-size: 18px;
+        margin-bottom: var(--SmallPadding);
+        font-size: 1.2rem;
       }
       .contact-list {
         list-style: none;
@@ -317,7 +327,7 @@ icon {
       flex: 1;
       h3 {
         margin-bottom: 15px;
-        font-size: 18px;
+        font-size: 1.2rem;
       }
       .social-icons {
         display: flex;
@@ -369,18 +379,18 @@ icon {
     flex-direction: row;
     align-items: center;
 
-    gap: 1.5rem;
+    gap: var(--SmallPadding);
     .text {
       flex: 1;
-      padding: 1.5rem;
-      background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 0.3rem;
+      padding: var(--SmallPadding);
+      background-color: var(--LightTransparentBackground);
+      border-radius: var(--RoundBorder);
       h2 {
-        font-size: 2em;
-        margin-bottom: 15px;
+        font-size: var(--HeaderSize);
         color: white;
       }
       p {
+        margin-top: var(--SmallPadding);
         font-size: 1.1em;
         line-height: 1.6;
         color: white;
@@ -393,7 +403,7 @@ icon {
     padding: 10px 20px;
     font-size: 1em;
     border: none;
-    background-color: #0074d9;
+    background-color: var(--HeadingColour);
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -412,9 +422,9 @@ icon {
     justify-content: center;
     text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--LightTransparentBackground);
     padding: 40px 20px;
-    border-radius: 0.3rem;
+    border-radius: var(--RoundBorder);
 
     p {
       min-width: 250px;
@@ -423,6 +433,7 @@ icon {
     }
 
     h2 {
+      font-size: var(--HeaderSize);
       padding-bottom: 1.3rem;
       min-width: 200px;
       max-width: 500px;
@@ -448,17 +459,19 @@ icon {
 
   .services-section {
     width: calc(100% - 3rem);
-    padding: 1.3rem;
-    border-radius: 0.3rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    margin-top: 1.3rem;
+    padding: var(--SmallPadding);
+    margin-top: var(--SmallPadding);
+    border-radius: var(--RoundBorder);
+    background-color: var(--LightTransparentBackground);
+
     margin-left: auto;
     margin-right: auto;
     h2 {
+      font-size: var(--HeaderSize);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
+      padding: var(--SmallPadding);
       color: white;
     }
     .service-grid-container {
@@ -472,13 +485,13 @@ icon {
         align-items: center;
         text-align: center;
         cursor: pointer;
-        background-color: #0074d9;
+        background-color: var(--HeadingColour);
         color: white;
 
-        border-radius: 0.3rem;
+        border-radius: var(--RoundBorder);
         margin: 0.625rem;
         padding: 1.3rem;
-        transition: background-color 0.3s ease;
+        transition: var(--SmoothTransition);
         .service-icon {
           font-size: 4rem;
           margin-bottom: 0.5rem;
@@ -505,22 +518,22 @@ icon {
 
   .introduction-section {
     width: 100%;
-    padding: 1.5rem;
+    padding: var(--SmallPadding);
     .who-we-are-images {
       width: 50%;
       justify-content: center;
       display: grid;
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 1.5rem;
-      border-radius: 0.3rem;
+      background-color: var(--LightTransparentBackground);
+      padding: var(--SmallPadding);
+      border-radius: var(--RoundBorder);
       grid-template-columns: repeat(2, minmax(50px, 250px));
-      gap: 20px;
+      gap: var(--SmallPadding);
       .grid-item {
         img {
           width: 100%;
           height: auto;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          border-radius: var(--RoundBorder);
+          box-shadow: 0 0 10px var(--DarkTransparentBackground);
         }
       }
     }
@@ -528,13 +541,12 @@ icon {
 
   .work-preview-section {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 40px 0;
-    padding: 1.5rem;
+    background-color: var(--LightTransparentBackground);
+    padding: var(--SmallPadding);
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: var(--HeaderSize);
+      margin-bottom: var(--SmallPadding);
       text-align: center;
       color: white;
     }
@@ -542,29 +554,23 @@ icon {
     .work-preview-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
-      gap: 1.5rem;
+      gap: var(--SmallPadding);
       justify-content: space-around;
 
       img {
         width: 100%;
         max-width: 100%;
         height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: var(--RoundBorder);
+        box-shadow: 0 0 10px var(--DarkTransparentBackground);
       }
 
       video {
         width: 100%;
         max-width: 100%;
         height: auto;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      p {
-        margin-top: 10px;
-        font-size: 1rem;
-        color: #555;
+        border-radius: var(--RoundBorder);
+        box-shadow: 0 0 10px var(--DarkTransparentBackground);
       }
     }
   }
@@ -572,7 +578,7 @@ icon {
   .cta-section {
     width: 100%;
     height: auto;
-    padding: 1.5rem;
+    padding: var(--SmallPadding);
     .cta-form {
       width: 50%;
     }
@@ -593,12 +599,12 @@ icon {
 
     .content-block {
       flex-direction: column-reverse;
-      gap: 1.5rem;
+      gap: var(--SmallPadding);
       .text {
         text-align: center;
         width: 100%;
         .learn-more-btn {
-          margin-bottom: 20px;
+          margin-bottom: var(--SmallPadding);
         }
       }
 
