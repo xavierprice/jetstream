@@ -17,6 +17,7 @@
   --LightTransparentBackground: rgba(0, 0, 0, 0.3);
   --HoverBlue: #0067cb;
   --SmoothTransition: background-color 0.3s ease, width 0.3s ease;
+  --SmoothTextTransition: color 0.3s ease, width 0.3s ease;
   --RoundBorder: 0.3rem;
   --HeaderSize: 2rem;
   --ParagraphFontSize: 1em;
@@ -97,6 +98,7 @@ icon {
       a {
         text-decoration: none;
         position: relative;
+        color: white;
 
         &::after {
           content: "";
@@ -105,8 +107,7 @@ icon {
           left: 0;
           width: 0;
           height: 2px;
-          background-color: transparent;
-          transition: width 0.5s ease;
+          transition: width 0.5s ease, background-color 0.5s ease;
         }
 
         &:hover::after,
@@ -147,7 +148,7 @@ icon {
       }
 
       &:hover {
-        background-color: var(--HoverBlue);
+        background: var(--HoverBlue);
       }
     }
   }
@@ -158,6 +159,7 @@ icon {
     font-size: var(--SmallPadding);
     z-index: 1000;
     color: white;
+    transition: color 0.9 ease;
 
     &:hover {
       color: var(--HoverBlue);
