@@ -95,7 +95,7 @@ const Home = () => {
           we restore the shine to your surfaces, making your property look brand
           new.
         </p>
-        <section className="our-mission-home">
+        <section className="mission-section">
           <h3>Our mission:</h3>
           <p>
             Transforming properties and lives by restoring brilliance, one
@@ -178,13 +178,11 @@ const Home = () => {
         </div>
       </section>
       <section className="cta-section">
-        <div className="content-block">
-          <div className="text">
-            <h2>The exterior of your home needs to be looked after too!</h2>
-          </div>
-          <div className="cta-form">
-            <Contact />
-          </div>
+        <div className="cta-text">
+          <h2>The exterior of your home needs to be looked after too!</h2>
+        </div>
+        <div className="cta-form">
+          <Contact />
         </div>
       </section>
     </div>
