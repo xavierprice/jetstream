@@ -38,6 +38,30 @@ icon {
   cursor: pointer;
 }
 
+.content-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: var(--SmallPadding);
+  .text {
+    flex: 1;
+    padding: var(--SmallPadding);
+    background-color: var(--LightTransparentBackground);
+    border-radius: var(--RoundBorder);
+    h2 {
+      font-size: var(--HeaderSize);
+      color: white;
+    }
+    p {
+      margin-top: var(--SmallPadding);
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: white;
+    }
+  }
+}
+
 //components
 
 .navbar-component {
@@ -347,6 +371,8 @@ icon {
     }
   }
 
+  //Residental || Commercial || Roof and Gutter
+
   .footer-copyright {
     text-align: center;
     margin-top: 20px;
@@ -375,30 +401,6 @@ icon {
 
   display: flex;
   flex-direction: column;
-
-  .content-block {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    gap: var(--SmallPadding);
-    .text {
-      flex: 1;
-      padding: var(--SmallPadding);
-      background-color: var(--LightTransparentBackground);
-      border-radius: var(--RoundBorder);
-      h2 {
-        font-size: var(--HeaderSize);
-        color: white;
-      }
-      p {
-        margin-top: var(--SmallPadding);
-        font-size: 1.1em;
-        line-height: 1.6;
-        color: white;
-      }
-    }
-  }
 
   .button-block {
     margin-top: 20px;
@@ -644,6 +646,64 @@ icon {
 .services-page {
   height: 100%;
   width: 100%;
-  border: solid 2px black;
-  margin-top: 80px;
+  padding: var(--SmallPadding);
+  .services-main {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      width: 100%;
+      font-size: var(--HeaderSize);
+      text-align: center;
+      color: var(--HeadingColour);
+      background-color: white;
+      padding: var(--SmallPadding);
+    }
+
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .service-item {
+        background: white;
+        border: 1px solid #ddd;
+        margin: 10px 0;
+        padding: var(--SmallPadding);
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+
+        .service-item-images {
+          width: 100%;
+          height: 100%;
+          flex: 1;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          .service-image {
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        .text {
+          flex: 1;
+          padding: 0 20px;
+          background-color: white;
+          h2 {
+            color: #007bff;
+          }
+          p {
+            color: #666;
+          }
+        }
+      }
+    }
+  }
 }
