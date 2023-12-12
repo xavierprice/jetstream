@@ -2,6 +2,7 @@ import React from "react";
 import workImage2 from "../assets/work-image2.jpg";
 import workImage3 from "../assets/workImage3.jpeg";
 import workImage5 from "../assets/workImage6.jpeg";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Services = () => {
   const workImages = [workImage2, workImage2, workImage2, workImage2];
@@ -24,6 +25,18 @@ const Services = () => {
     },
   ];
 
+  const scrollLeft = (index) => {
+    const container = document.querySelectorAll(".service-item-images")[index];
+    const itemWidth = container.querySelector("img").clientWidth; // Get the width of an image
+    container.scrollBy({ left: -itemWidth, behavior: "smooth" }); // Scroll by one image width
+  };
+
+  const scrollRight = (index) => {
+    const container = document.querySelectorAll(".service-item-images")[index];
+    const itemWidth = container.querySelector("img").clientWidth; // Get the width of an image
+    container.scrollBy({ left: itemWidth, behavior: "smooth" }); // Scroll by one image width
+  };
+
   return (
     <div className="services-page">
       <section className="services-main">
@@ -34,14 +47,21 @@ const Services = () => {
               <div className="content-block">
                 <div className="service-item-images">
                   {workImages.map((image, imgIndex) => (
-                    <div className="service-image" key={imgIndex}>
-                      <img
-                        src={image}
-                        alt={`Work Image ${index + 1}-${imgIndex + 1}`}
-                      />
-                    </div>
+                    <img
+                      src={image}
+                      alt={`Work Image ${index + 1}-${imgIndex + 1}`}
+                    />
                   ))}
+                  <FaArrowLeft
+                    className="arrow-icon left"
+                    onClick={() => scrollLeft(index)}
+                  />
+                  <FaArrowRight
+                    className="arrow-icon right"
+                    onClick={() => scrollRight(index)}
+                  />
                 </div>
+
                 <div className="text">
                   <h2>{service.title}</h2>
                   <p>{service.description}</p>
