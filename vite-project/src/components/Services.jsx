@@ -45,6 +45,7 @@ const Services = () => {
                 <div className="text">
                   <h2>{service.title}</h2>
                   <p>{service.description}</p>
+                  <button className="button-block">Request a quote</button>
                 </div>
               </div>
             </li>

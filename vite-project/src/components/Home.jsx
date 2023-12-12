@@ -116,6 +116,10 @@ const Home = () => {
               <div className="service-details">
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+                <div className="service-buttons">
+                  <button className="button-block">Learn more</button>
+                  <button className="button-block">Request a quote</button>
+                </div>
               </div>
             </div>
           ))}
