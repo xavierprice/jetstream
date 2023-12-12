@@ -610,7 +610,7 @@ icon {
   }
 
   @media (max-width: 768px) {
-    .service-grid-container {
+    .services-section .service-grid-container {
       height: auto;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(auto-fit, 1fr);
@@ -648,7 +648,7 @@ icon {
     }
   }
   @media (max-width: 492px) {
-    .service-grid-container {
+    .services-section .service-grid-container {
       height: auto;
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(auto-fit, 1fr);
@@ -678,7 +678,6 @@ icon {
       padding-bottom: 0;
       border-radius: var(--RoundBorder);
     }
-
     .brief-overview {
       width: 100%;
       display: flex;
@@ -783,25 +782,36 @@ icon {
       }
       .service-images {
         display: grid;
-        grid-template-columns: repeat(
-          auto-fit,
-          minmax(100px, 1fr)
-        ); // Creates a responsive image grid
-        gap: 10px; // Space between images
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
 
         .service-image {
           width: 100%;
           height: auto;
-          object-fit: cover; // Ensure the images cover the grid area
-          border-radius: 5px; // Optional: rounded corners for images
+          object-fit: cover;
+          border-radius: 5px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
           &:hover {
-            transform: scale(1.05); // Optional: Scale images on hover
+            transform: scale(1.05);
             transition: transform 0.3s ease;
           }
         }
       }
+    }
+  }
+  @media (max-width: 768px) {
+    .services-main .service-grid-container {
+      height: auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(auto-fit, 1fr);
+    }
+  }
+  @media (max-width: 492px) {
+    .services-main .service-grid-container {
+      height: auto;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(auto-fit, 1fr);
     }
   }
 }
