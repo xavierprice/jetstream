@@ -21,6 +21,7 @@
   --RoundBorder: 0.3rem;
   --HeaderSize: 2rem;
   --ParagraphFontSize: 1em;
+  --PrimaryPink: #c83e4d;
 }
 
 body {
@@ -525,7 +526,7 @@ icon {
           }
         }
         &:hover {
-          background-color: #c83e4d;
+          background-color: var(--PrimaryPink);
         }
       }
     }
@@ -669,24 +670,48 @@ icon {
     h1 {
       width: 100%;
       font-size: var(--HeaderSize);
-      border-radius: va;
+      border-radius: var(--RoundBorder);
       text-align: center;
-      color: white;
-      background-color: var(--LightTransparentBackground);
+      color: var(--HeadingColour);
+      background-color: white;
       padding: var(--SmallPadding);
-      margin-bottom: var(--SmallPadding);
+      padding-bottom: 0;
+      border-radius: var(--RoundBorder);
     }
+
+    .brief-overview {
+      width: 100%;
+      display: flex;
+      padding: var(--SmallPadding);
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        background-color: var(--LightTransparentBackground);
+        flex: 1;
+
+        color: white;
+      }
+    }
+
     .service-grid-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(1, 1fr);
       gap: 1.5rem;
+      background-color: white;
+      padding: var(--SmallPadding);
+      border-radius: var(--RoundBorder);
+
       .service-grid-card {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
         cursor: pointer;
         margin-bottom: var(--SmallPadding);
         background-color: var(--HeadingColour);
@@ -699,10 +724,14 @@ icon {
           margin-bottom: 0.5rem;
         }
         .service-details {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
           h3 {
             margin: 0;
             padding-bottom: 0.75rem;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
           }
           p {
@@ -722,9 +751,34 @@ icon {
               }
             }
           }
+
+          .benefits-divider {
+            width: 80%;
+            border-bottom: 1px solid white;
+            margin-top: var(--SmallPadding);
+          }
+
+          .service-benefits {
+            display: flex;
+            flex-direction: column;
+            text-align: start;
+            margin-top: var(--SmallPadding);
+            gap: var(--SmallPadding);
+            .arrow-icon {
+              font-size: 100px;
+            }
+            .benefit {
+              display: flex;
+              strong {
+                color: white;
+                margin-bottom: 0.25rem;
+                display: block;
+              }
+            }
+          }
         }
         &:hover {
-          background-color: #c83e4d;
+          background-color: var(--PrimaryPink);
         }
       }
       .service-images {
