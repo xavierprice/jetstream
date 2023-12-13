@@ -428,9 +428,10 @@ icon {
     text-align: center;
     color: white;
     background-color: var(--LightTransparentBackground);
-    padding: 40px 20px;
-    border-radius: var(--RoundBorder);
+    padding: var(--SmallPadding);
+  }
 
+  .heading-introduction {
     p {
       min-width: 250px;
       max-width: 800px;
@@ -459,6 +460,25 @@ icon {
     }
     p {
       max-width: 80%;
+    }
+  }
+
+  .brief-overview {
+    width: 100%;
+    display: flex;
+    padding: var(--SmallPadding);
+    align-items: center;
+    height: 20%;
+    gap: var(--SmallPadding);
+
+    h2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--LightTransparentBackground);
+      height: 100%;
+      flex: 1;
+      color: white;
     }
   }
 
@@ -677,24 +697,6 @@ icon {
       padding: var(--SmallPadding);
       padding-bottom: 0;
       border-radius: var(--RoundBorder);
-    }
-    .brief-overview {
-      width: 100%;
-      display: flex;
-      padding: var(--SmallPadding);
-      justify-content: space-between;
-      align-items: center;
-
-      h2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50vh;
-        background-color: var(--LightTransparentBackground);
-        flex: 1;
-
-        color: white;
-      }
     }
 
     .service-grid-container {

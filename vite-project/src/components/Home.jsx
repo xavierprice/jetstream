@@ -85,22 +85,29 @@ const Home = () => {
   return (
     <div className="home-page">
       <section className="heading-section">
-        <h2>
-          Revitalize Your Property's Sparkle with Professional Pressure Washing
-          Services!
-        </h2>
-        <p>
-          Enhance your property's curb appeal and cleanliness effortlessly with
-          our top-tier pressure washing services. From driveways to exteriors,
-          we restore the shine to your surfaces, making your property look brand
-          new.
-        </p>
+        <section className="heading-introduction">
+          <h2>
+            Revitalize Your Property's Sparkle with Professional Pressure
+            Washing Services!
+          </h2>
+          <p>
+            Enhance your property's curb appeal and cleanliness effortlessly
+            with our top-tier pressure washing services. From driveways to
+            exteriors, we restore the shine to your surfaces, making your
+            property look brand new.
+          </p>
+        </section>
         <section className="mission-section">
           <h3>Our mission:</h3>
           <p>
             Transforming properties and lives by restoring brilliance, one
             pristine surface at a time.
           </p>
+        </section>
+        <section className="brief-overview">
+          <h2>50+ Clients</h2>
+          <h2>50+ Properties restored</h2>
+          <h2>100% Client satisfaction</h2>
         </section>
       </section>
       <section className="services-section">
