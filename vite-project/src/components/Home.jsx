@@ -86,10 +86,10 @@ const Home = () => {
     <div className="home-page">
       <section className="heading-section">
         <section className="heading-introduction">
-          <h2>
+          <h1>
             Revitalize Your Property's Sparkle with Professional Pressure
             Washing Services!
-          </h2>
+          </h1>
           <p>
             Enhance your property's curb appeal and cleanliness effortlessly
             with our top-tier pressure washing services. From driveways to
@@ -98,22 +98,22 @@ const Home = () => {
           </p>
         </section>
         <section className="mission-section">
-          <h3>Our mission:</h3>
+          <h1>Our mission:</h1>
           <p>
             Transforming properties and lives by restoring brilliance, one
             pristine surface at a time.
           </p>
         </section>
         <section className="brief-overview">
-          <h2>50+ Clients</h2>
-          <h2>50+ Properties restored</h2>
-          <h2>100% Client satisfaction</h2>
+          <h1>50+ Clients</h1>
+          <h1>50+ Properties restored</h1>
+          <h1>100% Client satisfaction</h1>
         </section>
       </section>
       <section className="services-section">
-        <h2>
+        <h1>
           Services we offer <FaArrowDown style={{ marginLeft: "10px" }} />
-        </h2>
+        </h1>
         <div className="service-grid-container">
           {services.map((service, index) => (
             <div className="service-grid-card" key={index}>
@@ -121,7 +121,7 @@ const Home = () => {
                 <div className="service-icon">{service.icon}</div>
               </div>
               <div className="service-details">
-                <h3>{service.title}</h3>
+                <h1>{service.title}</h1>
                 <p>{service.description}</p>
                 <div className="service-buttons">
                   <button className="button-block">Learn more</button>
@@ -149,7 +149,7 @@ const Home = () => {
             </video> */}
           </div>
           <div className="text">
-            <h2>Who We Are</h2>
+            <h1>Who We Are</h1>
             <p>
               We are a dedicated team committed to providing top-quality
               pressure washing services. From revitalizing driveways to
@@ -163,7 +163,7 @@ const Home = () => {
         </div>
       </section>
       <section className="work-preview-section">
-        <h2>Our Work</h2>
+        <h1>Our Work</h1>
         <div className="work-preview-container">
           {workPreviews.map((preview, index) => {
             if (typeof preview === "string" && preview.endsWith(".mp4")) {
@@ -190,7 +190,7 @@ const Home = () => {
       </section>
       <section className="cta-section">
         <div className="cta-text">
-          <h2>The exterior of your home needs to be looked after too!</h2>
+          <h1>The exterior of your home needs to be looked after too!</h1>
         </div>
         <div className="cta-form">
           <Contact />

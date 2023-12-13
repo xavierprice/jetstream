@@ -10,25 +10,39 @@
 }
 
 :root {
-  --HeadingColour: #0074d9;
+  --headingColor: #f2f2f2;
+  --backgroundColor: #333333;
+  --hoverColor: #6699cc;
+  --white: white;
+
+  --cardColor: #003366;
+  --buttonColor: #003366;
+  --secondaryColor: #008080;
+
   --SmallPadding: 1.5rem;
   --MediumPadding: 3rem;
+
+  --smallFontSize: 1rem;
+  --mediumFontSize: 1.5rem;
+  --largeFontSize: 1.7rem;
+  --iconFontSize: 4rem;
+
+  --navbarMargin: 80px;
+
   --DarkTransparentBackground: rgba(0, 0, 0, 0.1);
   --LightTransparentBackground: rgba(0, 0, 0, 0.3);
-  --HoverBlue: #0067cb;
   --SmoothTransition: background-color 0.3s ease, width 0.3s ease;
   --SmoothTextTransition: color 0.3s ease, width 0.3s ease;
   --RoundBorder: 0.3rem;
   --HeaderSize: 2rem;
   --ParagraphFontSize: 1em;
-  --PrimaryPink: #c83e4d;
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: white;
+  background-color: var(--backgroundColor);
 }
 
 a {
@@ -50,13 +64,13 @@ icon {
     padding: var(--SmallPadding);
     background-color: var(--LightTransparentBackground);
     border-radius: var(--RoundBorder);
-    h2 {
+    h1 {
       font-size: var(--HeaderSize);
-      color: white;
+      color: var(--headingColor);
     }
     p {
       margin-top: var(--SmallPadding);
-      font-size: 1.1em;
+      font-size: var(--smallFontSize);
       line-height: 1.6;
       color: white;
     }
@@ -66,15 +80,15 @@ icon {
 .button-block {
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: var(--smallFontSize);
   border: none;
-  background-color: var(--HeadingColour);
+  background-color: var(--buttonColor);
   color: white;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: #0056b3;
+    background-color: var(--hoverColor);
   }
 }
 
@@ -98,17 +112,16 @@ icon {
       list-style: none;
       cursor: pointer;
       margin: 10px;
-      color: white;
       transition: var(--SmoothTransition);
       &:hover {
-        color: var(--HoverBlue);
+        color: var(--hoverColor);
       }
 
       &:visited {
         color: white;
         transition: var(--SmoothTransition);
         &:hover {
-          color: var(--HoverBlue);
+          color: var(--hoverColor);
         }
       }
     }
@@ -128,7 +141,7 @@ icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: var(--smallFontSize);
 
     li {
       padding: 0 5px;
@@ -153,13 +166,13 @@ icon {
         &:hover::after,
         &.active::after {
           width: 100%;
-          background-color: var(--HeadingColour);
+          background-color: var(--headingColor);
         }
       }
 
       &.active a::after {
         width: 100%;
-        background-color: var(--HeadingColour);
+        background-color: var(--headingColor);
       }
     }
   }
@@ -179,7 +192,7 @@ icon {
       align-items: center;
       padding: 5px 10px;
       border-radius: 10px;
-      background-color: var(--HeadingColour);
+      background-color: var(--buttonColor);
       color: white;
       transition: var(--SmoothTransition);
 
@@ -188,7 +201,7 @@ icon {
       }
 
       &:hover {
-        background: var(--HoverBlue);
+        background: var(--hoverColor);
       }
     }
   }
@@ -196,13 +209,13 @@ icon {
   .hamburger-menu {
     display: none;
     cursor: pointer;
-    font-size: var(--SmallPadding);
+    font-size: var(--mediumFontSize);
     z-index: 1000;
     color: white;
     transition: color 0.9 ease;
 
     &:hover {
-      color: var(--HoverBlue);
+      color: var(--hoverColor);
     }
   }
 
@@ -279,12 +292,12 @@ icon {
     width: 100%;
     height: auto;
     padding: var(--SmallPadding);
-    background-color: #f9f9f9;
+    background-color: var(--headingColor);
     border: 1px solid #ddd;
     border-radius: 5px;
 
-    h2 {
-      font-size: var(--HeaderSize);
+    h1 {
+      font-size: var(--mediumFontSize);
       padding: 10px;
       text-align: center;
     }
@@ -317,7 +330,7 @@ icon {
       }
 
       .submit-button {
-        background-color: var(--HeadingColour);
+        background-color: var(--buttonColor);
         color: white;
         border: none;
         border-radius: 3px;
@@ -326,7 +339,7 @@ icon {
         transition: var(--SmoothTransition);
 
         &:hover {
-          background-color: var(--HoverBlue);
+          background-color: var(--hoverColor);
         }
       }
     }
@@ -347,9 +360,9 @@ icon {
 
     .footer-info {
       flex: 1;
-      h3 {
+      h1 {
         margin-bottom: var(--SmallPadding);
-        font-size: 1.2rem;
+        font-size: var(--smallFontSize);
       }
       .contact-list {
         list-style: none;
@@ -367,20 +380,20 @@ icon {
 
     .footer-socials {
       flex: 1;
-      h3 {
+      h1 {
         margin-bottom: 15px;
-        font-size: 1.2rem;
+        font-size: var(--smallFontSize);
       }
       .social-icons {
         display: flex;
         align-items: center;
         .fa-icon {
-          font-size: 24px;
+          font-size: var(--mediumFontSize);
           margin-right: 20px;
           color: #333;
           transition: color 0.3s ease;
           &:hover {
-            color: #007bff;
+            color: var(--hoverColor);
           }
         }
       }
@@ -392,7 +405,7 @@ icon {
   .footer-copyright {
     text-align: center;
     margin-top: 20px;
-    font-size: 14px;
+    font-size: var(--smallFontSize);
     color: #888;
     svg {
       margin-right: 5px;
@@ -426,7 +439,7 @@ icon {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: var(--white);
     background-color: var(--LightTransparentBackground);
     padding: var(--SmallPadding);
   }
@@ -438,11 +451,12 @@ icon {
       margin: 0;
     }
 
-    h2 {
-      font-size: var(--HeaderSize);
-      padding-bottom: 1.3rem;
+    h1 {
+      font-size: var(--largeFontSize);
+      color: var(--headingColor);
+      padding-bottom: var(--SmallPadding);
       min-width: 200px;
-      max-width: 500px;
+      max-width: 550px;
       margin: 0 auto;
     }
   }
@@ -453,9 +467,10 @@ icon {
     align-items: baseline;
     justify-content: center;
     text-align: center;
-    padding: 40px 0;
+    padding: var(--MediumPadding);
 
-    h3 {
+    h1 {
+      color: var(--headingColor);
       padding-right: 0.5rem;
     }
     p {
@@ -471,7 +486,7 @@ icon {
     height: 20%;
     gap: var(--SmallPadding);
 
-    h2 {
+    h1 {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -479,6 +494,7 @@ icon {
       height: 100%;
       flex: 1;
       color: white;
+      font-size: var(--mediumFontSize);
     }
   }
 
@@ -489,21 +505,22 @@ icon {
 
     margin-left: auto;
     margin-right: auto;
-    h2 {
-      font-size: var(--HeaderSize);
+    h1 {
+      font-size: var(--largeFontSize);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: var(--SmallPadding);
-      color: white;
-      background-color: var(--LightTransparentBackground);
+      color: var(--headingColor);
       margin-bottom: var(--SmallPadding);
     }
+
     .service-grid-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(1, 1fr);
-      gap: 1.5rem;
+      gap: var(--SmallPadding);
+
       .service-grid-card {
         display: flex;
         flex-direction: column;
@@ -511,42 +528,39 @@ icon {
         align-items: center;
         text-align: center;
         cursor: pointer;
-        background-color: var(--HeadingColour);
-        color: white;
+        background-color: var(--cardColor);
+        color: var(--white);
         border-radius: var(--RoundBorder);
         padding: var(--SmallPadding);
         transition: var(--SmoothTransition);
         .service-icon {
-          font-size: 4rem;
+          font-size: var(--iconFontSize);
           margin-bottom: 0.5rem;
         }
         .service-details {
-          h3 {
-            margin: 0;
-            padding-bottom: 0.75rem;
-            font-size: 1.2rem;
-            font-weight: bold;
+          h1 {
+            color: var(--white);
+            font-size: var(--mediumFontSize);
           }
           p {
             margin: 0;
-            font-size: 1rem;
-            opacity: 0.9;
+            font-size: var(--smallFontSize);
           }
           .service-buttons {
             display: flex;
             flex-direction: column;
             button {
               border: solid 1px white;
-              background-color: var(--HoverBlue);
+              background-color: var(--buttonColor);
               &:hover:first-child,
               &:hover:last-child {
-                background-color: var(--HeadingColour);
+                background-color: var(--hoverColor);
               }
             }
           }
         }
         &:hover {
-          background-color: var(--PrimaryPink);
+          background-color: var(--hoverColor);
         }
       }
     }
@@ -579,8 +593,8 @@ icon {
     width: 100%;
     padding: var(--SmallPadding);
 
-    h2 {
-      font-size: var(--HeaderSize);
+    h1 {
+      font-size: var(--largeFontSize);
       margin-bottom: var(--SmallPadding);
       background-color: var(--LightTransparentBackground);
       padding: var(--SmallPadding);
@@ -620,8 +634,8 @@ icon {
       text-align: center;
       padding: var(--SmallPadding);
       background-color: var(--LightTransparentBackground);
-      color: white;
-      font-size: 1.5rem;
+      color: var(--white);
+      font-size: var(--largeFontSize);
       margin-bottom: var(--SmallPadding);
     }
     .cta-form {
@@ -682,18 +696,18 @@ icon {
   padding: var(--SmallPadding);
   .services-main {
     width: 100%;
-    margin-top: 80px;
+    margin-top: var(--navbarMargin);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     h1 {
       width: 100%;
-      font-size: var(--HeaderSize);
+      font-size: var(--largeFontSize);
       border-radius: var(--RoundBorder);
       text-align: center;
-      color: var(--HeadingColour);
-      background-color: white;
+      color: var(--headingColor);
+      background-color: var(--backgroundColor);
       padding: var(--SmallPadding);
       padding-bottom: 0;
       border-radius: var(--RoundBorder);
@@ -703,8 +717,8 @@ icon {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(1, 1fr);
-      gap: 1.5rem;
-      background-color: white;
+      gap: var(--SmallPadding);
+      background-color: var(--backgroundColor);
       padding: var(--SmallPadding);
       border-radius: var(--RoundBorder);
 
@@ -715,13 +729,13 @@ icon {
         align-items: center;
         cursor: pointer;
         margin-bottom: var(--SmallPadding);
-        background-color: var(--HeadingColour);
-        color: white;
+        background-color: var(--cardColor);
+        color: var(--white);
         border-radius: var(--RoundBorder);
         padding: var(--SmallPadding);
         transition: var(--SmoothTransition);
         .service-icon {
-          font-size: 4rem;
+          font-size: var(--iconFontSize);
           margin-bottom: 0.5rem;
         }
         .service-details {
@@ -729,15 +743,16 @@ icon {
           flex-direction: column;
           align-items: center;
           text-align: center;
-          h3 {
+          h1 {
+            color: var(--headingColor);
             margin: 0;
             padding-bottom: 0.75rem;
-            font-size: 1.5rem;
+            font-size: var(--mediumFontSize);
             font-weight: bold;
           }
           p {
             margin: 0;
-            font-size: 1rem;
+            font-size: var(--smallFontSize);
             opacity: 0.9;
           }
           .service-buttons {
@@ -745,17 +760,16 @@ icon {
             flex-direction: column;
             button {
               border: solid 1px white;
-              background-color: var(--HoverBlue);
-              &:hover:first-child,
-              &:hover:last-child {
-                background-color: var(--HeadingColour);
+              background-color: var(--buttonColor);
+              &:hover {
+                background-color: var(--hoverColor);
               }
             }
           }
 
           .benefits-divider {
             width: 80%;
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid var(--hoverColor);
             margin-top: var(--SmallPadding);
           }
 
@@ -765,9 +779,6 @@ icon {
             text-align: start;
             margin-top: var(--SmallPadding);
             gap: var(--SmallPadding);
-            .arrow-icon {
-              font-size: 100px;
-            }
             .benefit {
               display: flex;
               strong {
@@ -779,7 +790,7 @@ icon {
           }
         }
         &:hover {
-          background-color: var(--PrimaryPink);
+          background-color: var(--hoverColor);
         }
       }
       .service-images {
@@ -822,12 +833,13 @@ icon {
   width: 100%;
   height: 100%;
   padding: var(--SmallPadding);
+  background-color: var(--backgroundColor);
   .about-main {
     width: 100%;
-    margin-top: 80px;
+    margin-top: var(--navbarMargin);
     display: flex;
     flex-direction: column;
-    color: white;
+    color: var(--white);
     justify-content: center;
 
     .hero {
@@ -842,12 +854,9 @@ icon {
 
     section {
       padding: var(--SmallPadding);
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--hoverColor);
       h1 {
-        margin-bottom: 15px;
-      }
-      h2 {
-        margin-bottom: 10px;
+        margin-bottom: var(--SmallPadding);
       }
     }
 

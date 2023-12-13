@@ -16,24 +16,24 @@ const About = () => {
           <p>Providing top-notch pressure washing since 2023.</p>
         </section>
         <section className="our-story">
-          <h2>Our Story</h2>
+          <h1>Our Story</h1>
           <p>
             Learn how we started and grew to become leaders in pressure washing.
           </p>
         </section>
         <section className="our-mission">
-          <h2>Our Mission</h2>
+          <h1>Our Mission</h1>
           <p>
             Committed to delivering the best cleaning solutions with
             professionalism and attention to detail.
           </p>
         </section>
         <section className="team">
-          <h2>Meet Our Team</h2>
+          <h1>Meet Our Team</h1>
           <div className="team-members"></div>
         </section>
         <section className="contact">
-          <h2>Contact Us</h2>
+          <h1>Contact Us</h1>
           <p>Have questions? Reach out to us anytime.</p>
         </section>
       </div>
