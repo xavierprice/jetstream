@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { FaHome, FaTree, FaRoad, FaArrowDown } from "react-icons/fa";
 import workImage1 from "../assets/work-image1.jpg";
 import workImage2 from "../assets/work-image2.jpg";
@@ -35,13 +35,49 @@ const Home = () => {
     },
   ];
   const workPreviews = [workVideo1, workVideo5, workVideo2, workVideo4];
-  const workImages = [workImage5, workImage2, workImage3, workImage1];
+  const workImages = [
+    workImage5,
+    workImage2,
+    workImage3,
+    workImage1,
+    workImage3,
+    workImage1,
+  ];
+  const faqItems = [
+    {
+      question: "1. What is pressure washing?",
+      answer:
+        "Pressure washing, also known as power washing, is a cleaning method that uses a high-pressure stream of water to remove dirt, grime, mold, mildew, and other contaminants from surfaces such as driveways, sidewalks, decks, and siding. It is an effective way to restore the appearance of various outdoor surfaces.",
+    },
+    {
+      question: "2. Why should I hire a professional pressure washing service?",
+      answer:
+        "Hiring a professional pressure washing service ensures that the job is done safely and effectively. Professionals have the right equipment and expertise to clean surfaces without causing damage. DIY pressure washing can lead to accidents and surface damage if not done correctly.",
+    },
+    {
+      question: "3. What surfaces can be pressure washed?",
+      answer:
+        "Pressure washing is suitable for a wide range of surfaces, including concrete, brick, wood, vinyl siding, stucco, and more. It can be used to clean driveways, sidewalks, decks, fences, and the exterior of buildings.",
+    },
+    {
+      question: "4. Is pressure washing environmentally friendly?",
+      answer:
+        "Pressure washing is an eco-friendly cleaning method when done responsibly. Professionals use biodegradable detergents and take precautions to prevent water runoff into storm drains. It helps remove contaminants and pollutants from surfaces, improving the overall environment.",
+    },
+    {
+      question:
+        "5. How often should I schedule pressure washing for my home or business?",
+      answer:
+        "The frequency of pressure washing depends on factors such as the climate, location, and the type of surfaces you want to clean. Generally, it's a good idea to schedule pressure washing annually to prevent the buildup of dirt and grime. However, high-traffic areas may require more frequent cleaning.",
+    },
+  ];
 
   const [videoTimes, setVideoTimes] = useState({});
+  const [hasWrapped, setHasWrapped] = useState(false);
+  const [showAnswers, setShowAnswers] = useState({});
 
   //single video handling
   const singleVideoRef = useRef(null);
-
   const handleMouseEnterSingle = () => {
     const video = singleVideoRef.current;
     if (video) {
@@ -50,7 +86,6 @@ const Home = () => {
       video.play();
     }
   };
-
   const handleMouseLeaveSingle = () => {
     const video = singleVideoRef.current;
     if (video) {
@@ -65,14 +100,12 @@ const Home = () => {
 
   //map video handling
   const videoRefs = workPreviews.map(() => useRef(null));
-
   const handleMouseEnter = (index) => {
     videoRefs[index].current.play();
     if (videoTimes[index] !== undefined) {
       video.currentTime = videoTimes[index];
     }
   };
-
   const handleMouseLeave = (index) => {
     const video = videoRefs[index].current;
     setVideoTimes((prevTimes) => ({
@@ -80,6 +113,47 @@ const Home = () => {
       [index]: video.currentTime,
     }));
     video.pause();
+  };
+
+  //add wrapped class
+  useEffect(() => {
+    const handleResize = () => {
+      const contentBlock = document.querySelector(
+        ".introduction-section .content-block"
+      );
+
+      if (contentBlock) {
+        const contentBlockWidth = contentBlock.clientWidth;
+        const contentBlockHeight = contentBlock.clientHeight;
+
+        const minHeightThreshold = 600;
+        const minWidthThreshold = 1024;
+
+        if (
+          contentBlockHeight > minHeightThreshold &&
+          contentBlockWidth < minWidthThreshold
+        ) {
+          setHasWrapped(true);
+        } else {
+          setHasWrapped(false);
+        }
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  //toggle faq answers
+  const toggleAnswer = (index) => {
+    setShowAnswers((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
   };
 
   return (
@@ -111,90 +185,128 @@ const Home = () => {
         </section>
       </section>
       <section className="services-section">
-        <h1>
-          Services we offer <FaArrowDown style={{ marginLeft: "10px" }} />
-        </h1>
-        <div className="service-grid-container">
-          {services.map((service, index) => (
-            <div className="service-grid-card" key={index}>
-              <div className="service-icon">
-                <div className="service-icon">{service.icon}</div>
-              </div>
-              <div className="service-details">
-                <h1>{service.title}</h1>
-                <p>{service.description}</p>
-                <div className="service-buttons">
-                  <button className="button-block">Learn more</button>
-                  <button className="button-block">Request a quote</button>
+        <div className="service-container">
+          <h1>
+            Services we offer <FaArrowDown style={{ marginLeft: "10px" }} />
+          </h1>
+          <div className="service-grid-container">
+            {services.map((service, index) => (
+              <div className="service-grid-card" key={index}>
+                <div className="service-icon">
+                  <div className="service-icon">{service.icon}</div>
+                </div>
+                <div className="service-details">
+                  <h1>{service.title}</h1>
+                  <p>{service.description}</p>
+                  <div className="service-buttons">
+                    <button className="button-block">Learn more</button>
+                    <button className="button-block">Request a quote</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
       <section className="introduction-section">
-        <div className="content-block">
-          <div className="who-we-are-images">
-            {workImages.map((image, index) => (
-              <div className="grid-item" key={index}>
-                <img src={image} alt={`Work Image ${index + 1}`} />
+        <div className="content-container">
+          <div className="content-block">
+            <div className={`who-we-are-images ${hasWrapped ? "wrapped" : ""}`}>
+              {workImages.map((image, index) => (
+                <div className="grid-item" key={index}>
+                  <img src={image} alt={`Work Image ${index + 1}`} />
+                </div>
+              ))}
+            </div>
+            <div className={`text ${hasWrapped ? "wrapped-text" : ""}`}>
+              <div className="introduction">
+                <h1>Who We Are</h1>
+                <p>
+                  We are a dedicated team committed to providing top-quality
+                  pressure washing services. From revitalizing driveways to
+                  refreshing home exteriors, we take pride in bringing back the
+                  shine to your spaces. Our goal is simple: to exceed your
+                  expectations and leave a lasting impression with our quality
+                  workmanship and personalized service.
+                </p>
               </div>
-            ))}
-            {/* onMouseEnter={handleMouseEnterSingle}
-            onMouseLeave={handleMouseLeaveSingle}
-          >
-            <video ref={singleVideoRef} muted loop preload="metadata">
-              <source src={workVideo3} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video> */}
-          </div>
-          <div className="text">
-            <h1>Who We Are</h1>
-            <p>
-              We are a dedicated team committed to providing top-quality
-              pressure washing services. From revitalizing driveways to
-              refreshing home exteriors, we take pride in bringing back the
-              shine to your spaces. Our goal is simple: to exceed your
-              expectations and leave a lasting impression with our quality
-              workmanship and personalized service.
-            </p>
-            <button className="button-block">Learn More</button>
+              <div className="highlights">
+                <h1>Why Choose Us?</h1>
+                <ul>
+                  <li>
+                    Experienced professionals with over 10 years in the
+                    industry.
+                  </li>
+                  <li>
+                    Environmentally friendly cleaning solutions for a greener
+                    tomorrow.
+                  </li>
+                  <li>100% customer satisfaction guaranteed.</li>
+                </ul>
+                <button className="button-block">Learn More</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <section className="work-preview-section">
-        <h1>Our Work</h1>
-        <div className="work-preview-container">
-          {workPreviews.map((preview, index) => {
-            if (typeof preview === "string" && preview.endsWith(".mp4")) {
-              return (
-                <div
-                  key={index}
-                  className="video-wrapper"
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={() => handleMouseLeave(index)}
-                >
-                  <video ref={videoRefs[index]} muted loop preload="metadata">
-                    <source src={preview} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              );
-            } else {
-              return (
-                <img key={index} src={preview} alt={`Image ${index + 1}`} />
-              );
-            }
-          })}
+        <div className="main-container">
+          <h1>Our Work</h1>
+          <div className="work-preview-container">
+            {workPreviews.map((preview, index) => {
+              if (typeof preview === "string" && preview.endsWith(".mp4")) {
+                return (
+                  <div
+                    key={index}
+                    className="video-wrapper"
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={() => handleMouseLeave(index)}
+                  >
+                    <video ref={videoRefs[index]} muted loop preload="metadata">
+                      <source src={preview} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                );
+              } else {
+                return (
+                  <img key={index} src={preview} alt={`Image ${index + 1}`} />
+                );
+              }
+            })}
+          </div>
         </div>
       </section>
       <section className="cta-section">
         <div className="cta-text">
-          <h1>The exterior of your home needs to be looked after too!</h1>
+          <h1>Restore the Beauty of Your Home's Exterior!</h1>
         </div>
-        <div className="cta-form">
-          <Contact />
-        </div>
+
+        <section className="cta-content">
+          <div className="cta-media">
+            <img src={workImage3} alt="JPW team" />
+          </div>
+          <div className="cta-form">
+            <Contact />
+          </div>
+        </section>
+        <section className="faq-section">
+          <div className="faq-header">
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div className="faq-list">
+            {faqItems.map((item, index) => (
+              <div
+                className="faq-item"
+                key={index}
+                onClick={() => toggleAnswer(index)}
+              >
+                <h3>{item.question}</h3>
+                {showAnswers[index] && <p>{item.answer}</p>}
+              </div>
+            ))}
+          </div>
+        </section>
       </section>
     </div>
   );
