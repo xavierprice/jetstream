@@ -74,7 +74,7 @@ const Home = () => {
 
   const [videoTimes, setVideoTimes] = useState({});
   const [hasWrapped, setHasWrapped] = useState(false);
-  const [showAnswers, setShowAnswers] = useState({});
+
 
   //single video handling
   const singleVideoRef = useRef(null);
@@ -147,14 +147,6 @@ const Home = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  //toggle faq answers
-  const toggleAnswer = (index) => {
-    setShowAnswers((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
 
   return (
     <div className="home-page">
@@ -277,34 +269,21 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="cta-section">
-        <div className="cta-text">
+
+      <section className="last-impressions">
+        <div className="li-text">
           <h1>Restore the Beauty of Your Home's Exterior!</h1>
         </div>
 
+        <div className="li-images">
+          <img src={workImage3} alt="JPW team" />
+        </div>
+      </section>
+
+      <section className="cta-section">
         <section className="cta-content">
-          <div className="cta-media">
-            <img src={workImage3} alt="JPW team" />
-          </div>
           <div className="cta-form">
             <Contact />
-          </div>
-        </section>
-        <section className="faq-section">
-          <div className="faq-header">
-            <h2>Frequently Asked Questions</h2>
-          </div>
-          <div className="faq-list">
-            {faqItems.map((item, index) => (
-              <div
-                className="faq-item"
-                key={index}
-                onClick={() => toggleAnswer(index)}
-              >
-                <h3>{item.question}</h3>
-                {showAnswers[index] && <p>{item.answer}</p>}
-              </div>
-            ))}
           </div>
         </section>
       </section>

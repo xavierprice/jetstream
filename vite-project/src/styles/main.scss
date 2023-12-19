@@ -313,6 +313,7 @@ icon {
   display: flex;
   flex-direction: column;
   .quote-form-container {
+    flex: 1;
     width: 100%;
     height: auto;
     padding: var(--SmallPadding);
@@ -321,8 +322,8 @@ icon {
     border-radius: 5px;
 
     h1 {
-      font-size: var(--mediumFontSize);
-      padding: 10px;
+      @include main-header-styling;
+      color: var(--backgroundColor);
       text-align: center;
     }
 
@@ -332,7 +333,7 @@ icon {
       flex-direction: column;
 
       .form-group {
-        margin: 5px;
+        margin: 0.75rem;
 
         label {
           display: block;
@@ -688,74 +689,99 @@ icon {
     }
   }
 
-  .cta-section {
+  .last-impressions {
     height: 100vh;
-    width: 100%;
-    height: auto;
-    padding: var(--SmallPadding);
-    @include flexCenter;
-    flex-direction: column;
-    .cta-text h1 {
+    .li-text h1 {
       @include main-header-styling;
       text-align: center;
       margin-bottom: var(--SmallPadding);
     }
 
-    .cta-content {
+    .li-images img {
+      @include flexCenter;
+      max-width: 500px;
+      min-height: 500px;
       width: 100%;
+      height: auto;
+    }
+  }
+
+  .cta-section {
+    height: 100vh;
+    width: 100%;
+    height: auto;
+    padding: var(--SmallPadding);
+
+    .cta-content {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
       gap: var(--SmallPadding);
-      flex-wrap: wrap-reverse;
-      .cta-media img {
+
+      .faq-section {
+        background-color: var(--headingColor);
+        padding: var(--SmallPadding);
         flex: 1;
-        max-width: 500px;
-        min-height: 500px;
-        width: 100%;
-        height: auto;
+        height: 100%;
+        border-radius: var(--RoundBorder);
+
+        .faq-header {
+          text-align: center;
+        }
+
+        .faq-header h1 {
+          @include main-header-styling;
+          color: var(--backgroundColor);
+        }
+
+        .faq-list {
+          display: flex;
+          flex-direction: column;
+          gap: var(--SmallPadding);
+
+          .faq-item {
+            padding: 1rem;
+            border-bottom: 1px solid black;
+            cursor: pointer;
+
+            &:last-child {
+              border-bottom: none; 
+            }
+
+            h1 {
+              font-size: 1.3rem;
+            }
+
+            p {
+              font-size: 16px;
+              color: #555;
+            }
+
+            .faq-question {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+
+            .faq-icon {
+              font-size: 50px;
+              color: #555;
+              cursor: pointer;
+              transition: transform 0.5s ease;
+
+              &.plus {
+                transform: rotate(0deg);
+              }
+              &.minus {
+                transform: rotate(360deg);
+              }
+            }
+          }
+        }
       }
+
       .cta-form {
         flex: 1;
         min-width: 500px;
       }
-    }
-  }
-
-  .faq-section {
-    background-color: var(--backgroundColor);
-    padding: var(--SmallPadding);
-
-    .faq-header {
-      text-align: center;
-    }
-    .faq-header h2 {
-      @include main-header-styling;
-    }
-
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--SmallPadding);
-    }
-
-    .faq-list .faq-item {
-      padding: var(--SmallPadding);
-      background-color: var(--white);
-      border: 1px solid black;
-      border-radius: 5px;
-    }
-
-    .faq-list .faq-item h3 {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .faq-list .faq-item p {
-      font-size: 16px;
-      color: #555;
     }
   }
 
