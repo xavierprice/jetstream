@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import { FaHome, FaTree, FaRoad, FaArrowDown } from "react-icons/fa";
 import workImage1 from "../assets/work-image1.jpg";
 import workImage2 from "../assets/work-image2.jpg";
-import workImage3 from "../assets/workImage3.jpeg";
 import workImage5 from "../assets/workImage5.jpeg";
 
 import workVideo1 from "../assets/workVideo1.mp4";
@@ -12,8 +11,10 @@ import workVideo4 from "../assets/workVideo4.mp4";
 import workVideo5 from "../assets/workVideo5.mp4";
 
 import Contact from "./Contact";
+import BackToTop from "./BackToTop";
 
 const Home = () => {
+  //obj arrays
   const services = [
     {
       title: "Driveway Cleaning",
@@ -38,44 +39,19 @@ const Home = () => {
   const workImages = [
     workImage5,
     workImage2,
-    workImage3,
+    workImage5,
     workImage1,
-    workImage3,
+    workImage5,
     workImage1,
   ];
-  const faqItems = [
-    {
-      question: "1. What is pressure washing?",
-      answer:
-        "Pressure washing, also known as power washing, is a cleaning method that uses a high-pressure stream of water to remove dirt, grime, mold, mildew, and other contaminants from surfaces such as driveways, sidewalks, decks, and siding. It is an effective way to restore the appearance of various outdoor surfaces.",
-    },
-    {
-      question: "2. Why should I hire a professional pressure washing service?",
-      answer:
-        "Hiring a professional pressure washing service ensures that the job is done safely and effectively. Professionals have the right equipment and expertise to clean surfaces without causing damage. DIY pressure washing can lead to accidents and surface damage if not done correctly.",
-    },
-    {
-      question: "3. What surfaces can be pressure washed?",
-      answer:
-        "Pressure washing is suitable for a wide range of surfaces, including concrete, brick, wood, vinyl siding, stucco, and more. It can be used to clean driveways, sidewalks, decks, fences, and the exterior of buildings.",
-    },
-    {
-      question: "4. Is pressure washing environmentally friendly?",
-      answer:
-        "Pressure washing is an eco-friendly cleaning method when done responsibly. Professionals use biodegradable detergents and take precautions to prevent water runoff into storm drains. It helps remove contaminants and pollutants from surfaces, improving the overall environment.",
-    },
-    {
-      question:
-        "5. How often should I schedule pressure washing for my home or business?",
-      answer:
-        "The frequency of pressure washing depends on factors such as the climate, location, and the type of surfaces you want to clean. Generally, it's a good idea to schedule pressure washing annually to prevent the buildup of dirt and grime. However, high-traffic areas may require more frequent cleaning.",
-    },
-  ];
+  const ctaImages = [workImage5, workImage2, workImage1];
 
+  //states
   const [videoTimes, setVideoTimes] = useState({});
-  const [hasWrapped, setHasWrapped] = useState(false);
+  const [hasWrappedCBlock, setHasWrappedCBlock] = useState(false);
+  const [hasWrappedCta, setHasWrappedCta] = useState(false);
 
-
+  //  video handling
   //single video handling
   const singleVideoRef = useRef(null);
   const handleMouseEnterSingle = () => {
@@ -97,7 +73,6 @@ const Home = () => {
       video.pause();
     }
   };
-
   //map video handling
   const videoRefs = workPreviews.map(() => useRef(null));
   const handleMouseEnter = (index) => {
@@ -115,27 +90,41 @@ const Home = () => {
     video.pause();
   };
 
+  //  handling functions
   //add wrapped class
   useEffect(() => {
     const handleResize = () => {
       const contentBlock = document.querySelector(
         ".introduction-section .content-block"
       );
+      const ctaContent = document.querySelector(".cta-section .cta-content");
 
-      if (contentBlock) {
+      if (contentBlock || ctaContent) {
         const contentBlockWidth = contentBlock.clientWidth;
         const contentBlockHeight = contentBlock.clientHeight;
 
-        const minHeightThreshold = 600;
-        const minWidthThreshold = 1024;
+        const ctaContentWidth = ctaContent.clientWidth;
+        const ctaContentHeight = ctaContent.clientHeight;
+
+        const minHeightThresholdCBlock = 600;
+        const minWidthThresholdCBlock = 1024;
+
+        const minHeightThresholdCta = 600;
+        const minWidthThresholdCta = 1150;
 
         if (
-          contentBlockHeight > minHeightThreshold &&
-          contentBlockWidth < minWidthThreshold
+          contentBlockHeight > minHeightThresholdCBlock &&
+          contentBlockWidth < minWidthThresholdCBlock
         ) {
-          setHasWrapped(true);
+          setHasWrappedCBlock(true);
+        } else if (
+          ctaContentHeight > minHeightThresholdCta &&
+          ctaContentWidth < minWidthThresholdCta
+        ) {
+          setHasWrappedCta(true);
         } else {
-          setHasWrapped(false);
+          setHasWrappedCBlock(false);
+          setHasWrappedCta(false);
         }
       }
     };
@@ -203,14 +192,18 @@ const Home = () => {
       <section className="introduction-section">
         <div className="content-container">
           <div className="content-block">
-            <div className={`who-we-are-images ${hasWrapped ? "wrapped" : ""}`}>
+            <div
+              className={`who-we-are-images ${
+                hasWrappedCBlock ? "wrapped" : ""
+              }`}
+            >
               {workImages.map((image, index) => (
                 <div className="grid-item" key={index}>
                   <img src={image} alt={`Work Image ${index + 1}`} />
                 </div>
               ))}
             </div>
-            <div className={`text ${hasWrapped ? "wrapped-text" : ""}`}>
+            <div className={`text ${hasWrappedCBlock ? "wrapped-text" : ""}`}>
               <div className="introduction">
                 <h1>Who We Are</h1>
                 <p>
@@ -269,24 +262,20 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <section className="last-impressions">
-        <div className="li-text">
-          <h1>Restore the Beauty of Your Home's Exterior!</h1>
-        </div>
-
-        <div className="li-images">
-          <img src={workImage3} alt="JPW team" />
-        </div>
-      </section>
-
       <section className="cta-section">
+        <h1>Restore the Beauty of Your Home's Exterior!</h1>
         <section className="cta-content">
+          <div className={`cta-images ${hasWrappedCta ? "wrapped" : ""}`}>
+            {ctaImages.map((image, index) => (
+              <img key={index} src={image} alt={`Image ${index}`} />
+            ))}
+          </div>
           <div className="cta-form">
             <Contact />
           </div>
         </section>
       </section>
+      <BackToTop />
     </div>
   );
 };
