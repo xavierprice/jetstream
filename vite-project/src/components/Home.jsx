@@ -110,20 +110,23 @@ const Home = () => {
         const minWidthThresholdCBlock = 1024;
 
         const minHeightThresholdCta = 600;
-        const minWidthThresholdCta = 1150;
+        const minWidthThresholdCta = 1400;
 
         if (
           contentBlockHeight > minHeightThresholdCBlock &&
           contentBlockWidth < minWidthThresholdCBlock
         ) {
           setHasWrappedCBlock(true);
-        } else if (
+        } else {
+          setHasWrappedCBlock(false);
+        }
+
+        if (
           ctaContentHeight > minHeightThresholdCta &&
           ctaContentWidth < minWidthThresholdCta
         ) {
           setHasWrappedCta(true);
         } else {
-          setHasWrappedCBlock(false);
           setHasWrappedCta(false);
         }
       }

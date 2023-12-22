@@ -889,7 +889,6 @@ icon {
 
         .text {
           justify-content: center;
-          min-width: 250px;
 
           width: 100%;
           .learn-more-btn {
@@ -913,6 +912,22 @@ icon {
     .work-preview-section .main-container .work-preview-container {
       grid-template-columns: repeat(2, minmax(50px, 150px));
     }
+
+    .cta-section {
+      .cta-content .cta-images {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        grid-template-rows: auto 500px;
+
+        img {
+          height: auto;
+        }
+        img:nth-child(3) {
+          height: 100%;
+          grid-row: span 1;
+          grid-column: span 2;
+        }
+      }
+    }
   }
   @media (max-width: 492px) {
     .services-section .service-container .service-grid-container {
@@ -921,7 +936,19 @@ icon {
     }
 
     .introduction-section .content-block .who-we-are-images {
-      grid-template-columns: repeat(1, minmax(50px, 250px));
+      grid-template-columns: repeat(1, minmax(50px, 200px));
+    }
+
+    .cta-section {
+      .cta-content .cta-images {
+        grid-template-rows: repeat(3, minmax(200px, 1fr));
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+
+        img:nth-child(3) {
+          grid-column: auto;
+          grid-row: auto;
+        }
+      }
     }
   }
 }
