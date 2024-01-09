@@ -22,6 +22,7 @@ const App = () => {
   return (
     <Router>
       <Navbar />
+      <div style={background}>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/services" element={<Services />}></Route>
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
         <Footer />
+      </div>
     </Router>
   );
 };

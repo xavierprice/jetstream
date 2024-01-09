@@ -106,7 +106,7 @@ const Home = () => {
         const ctaContentWidth = ctaContent.clientWidth;
         const ctaContentHeight = ctaContent.clientHeight;
 
-        const minHeightThresholdCBlock = 600;
+        const minHeightThresholdCBlock = 700;
         const minWidthThresholdCBlock = 1024;
 
         const minHeightThresholdCta = 600;
