@@ -58,13 +58,6 @@
   padding: var(--SmallPadding);
 }
 
-@mixin p-styling-dark {
-  font-size: var(--smallFontSize);
-  color: var(--textColorDark);
-  line-height: 1.6;
-  padding: var(--SmallPadding);
-}
-
 @mixin sub-header-styling {
   font-size: var(--mediumFontSize);
   color: var(--headingColorLight);
@@ -538,8 +531,7 @@ icon {
 
 .home-page {
   width: 100%;
-  height: 100%;
-
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -558,10 +550,13 @@ icon {
       min-width: 250px;
       max-width: 800px;
       @include p-styling;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
 
     .heading-introduction h1 {
       @include main-header-styling;
+      color: white;
       min-width: 200px;
       max-width: 600px;
       margin: 0 auto;
@@ -591,6 +586,7 @@ icon {
     .brief-overview h1 {
       @include flexCenter;
       @include sub-header-styling;
+      color: white;
       background-color: var(--LightTransparentBackground);
       height: 100%;
       flex: 1;
@@ -598,7 +594,8 @@ icon {
   }
 
   .services-section {
-    height: 100vh;
+    height: 100%;
+    padding: var(--SmallPadding);
     background-color: var(--backgroundColor);
     @include flexCenter;
     flex-direction: column;
@@ -608,11 +605,11 @@ icon {
     h1 {
       @include flexCenter;
       @include main-header-styling;
+      padding-top: 0;
     }
 
     .service-container {
       height: 100%;
-      width: calc(100% - 3rem);
 
       @include flexCenter;
       flex-direction: column;
@@ -665,7 +662,7 @@ icon {
   }
 
   .introduction-section {
-    height: 100vh;
+    height: 100%;
     padding: var(--SmallPadding);
     width: 100%;
     display: flex;
@@ -689,7 +686,8 @@ icon {
           @include main-header-styling;
         }
         p {
-          @include p-styling-dark;
+          @include p-styling;
+          color: black;
         }
         button {
           align-self: center;
@@ -701,7 +699,8 @@ icon {
         @include sub-header-styling;
       }
       .highlights ul {
-        @include p-styling-dark();
+        @include p-styling;
+        color: black;
       }
 
       .who-we-are-images {
@@ -741,7 +740,7 @@ icon {
   }
 
   .work-preview-section {
-    height: 100vh;
+    height: 100%;
     background-color: var(--backgroundColor);
     padding: var(--SmallPadding);
     display: flex;
@@ -781,7 +780,7 @@ icon {
   }
 
   .cta-section {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: var(--backgroundColor);
     height: auto;
