@@ -13,7 +13,6 @@ const Contact = () => {
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Phone:", phone);
-    console.log("Address:", address);
     console.log("Message:", message);
 
     setName("");
@@ -26,13 +25,14 @@ const Contact = () => {
   return (
     <div className="contact-component">
       <div className="quote-form-container">
-        <h1>Request a Free Quote!</h1>
+        <h1>Claim your free estimate!</h1>
         <form onSubmit={handleSubmit} className="quote-form">
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
               type="text"
               id="name"
+              placeholder="John Smith"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -43,6 +43,7 @@ const Contact = () => {
             <input
               type="email"
               id="email"
+              placeholder="johnsmith@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -53,18 +54,9 @@ const Contact = () => {
             <input
               type="tel"
               id="phone"
+              placeholder="0411 222 333"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="address">Street Address</label>
-            <input
-              type="text"
-              id="address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
               required
             />
           </div>
@@ -73,6 +65,7 @@ const Contact = () => {
             <textarea
               id="message"
               value={message}
+              placeholder="Message..."
               onChange={(e) => setMessage(e.target.value)}
               rows="4"
               required

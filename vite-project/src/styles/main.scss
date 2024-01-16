@@ -13,7 +13,7 @@
   --backgroundColor: white;
 
   //text colors
-  --headingColorLight: #1f8fff;
+  --headingColorLight: #178bf6;
   --textColorLight: white;
   --textColorDark: black;
 
@@ -35,7 +35,7 @@
 
   --navbarMargin: 80px;
 
-  --DarkTransparentBackground: rgba(0, 0, 0, 0.1);
+  --DarkTransparentBackground: rgba(0, 0, 0, 0.2);
   --LightTransparentBackground: rgba(0, 0, 0, 0.3);
 
   --SmoothTransition: background-color 0.3s ease, width 0.3s ease;
@@ -304,14 +304,13 @@ icon {
     flex: 1;
     width: 100%;
     height: auto;
-    padding: var(--SmallPadding);
-    background-color: var(--LightTransparentBackground);
-    border: 1px solid #ddd;
+    padding: var(--MediumPadding);
+    background: linear-gradient(125deg, rgba(31, 143, 255, 1), rgb(0, 85, 104));
     border-radius: 5px;
 
     h1 {
-      @include main-header-styling;
       color: var(--backgroundColor);
+      font-size: 2rem;
       text-align: center;
     }
 
@@ -335,21 +334,29 @@ icon {
           padding: 0.5rem;
           border: 1px solid #ccc;
           border-radius: 3px;
+          height: 3rem;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+          font-size: 1rem;
         }
 
         textarea {
-          height: 5rem;
+          height: 8rem;
         }
       }
 
       .submit-button {
+        width: 100%;
         background-color: var(--buttonColor);
         color: white;
         border: none;
         border-radius: 3px;
-        padding: 10px;
+        padding: 20px;
         cursor: pointer;
         transition: var(--SmoothTransition);
+        font-size: 1rem;
 
         &:hover {
           background-color: var(--hoverColor);
@@ -539,27 +546,43 @@ icon {
   .heading-section {
     height: 100vh;
     width: 100%;
-    @include flexCenter;
-    flex-direction: column;
-    text-align: center;
+    @include flexCenter();
     color: var(--textColorLight);
-    background-color: var(--LightTransparentBackground);
-    padding: var(--SmallPadding);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(0, 0, 0, 0.1)
+    );
+    padding: 4.5rem;
+
+    .heading-section-left {
+      padding-top: 4rem;
+      width: 50%;
+    }
+
+    .heading-section-right {
+      padding-top: 4rem;
+      width: 50%;
+    }
 
     .heading-introduction p {
       min-width: 250px;
       max-width: 800px;
       @include p-styling;
+      color: black;
       font-size: 1.2rem;
       font-weight: bold;
     }
 
     .heading-introduction h1 {
       @include main-header-styling;
-      color: white;
-      min-width: 200px;
-      max-width: 600px;
+      color: black;
+      font-size: 2.75rem;
       margin: 0 auto;
+    }
+
+    .highlight {
+      color: var(--headingColorLight);
     }
 
     .mission-section {
@@ -571,7 +594,12 @@ icon {
     }
 
     .mission-section h1 {
+      color: black;
       padding-right: 0.5rem;
+    }
+
+    .mission-section p {
+      color: black;
     }
 
     .brief-overview {
