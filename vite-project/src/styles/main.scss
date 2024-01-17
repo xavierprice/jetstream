@@ -95,13 +95,15 @@ icon {
   padding: 10px 20px;
   font-size: var(--smallFontSize);
   border: none;
-  background-color: var(--buttonColor);
-  color: white;
+  background-color: white;
+  color: var(--headingColorLight);
+  border: 3px solid var(--headingColorLight);
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: var(--SmoothTransition);
   &:hover {
     background-color: var(--hoverColor);
+    color: white;
   }
 }
 
@@ -647,6 +649,7 @@ icon {
       max-width: 1000px;
       @include p-styling;
       padding: var(--MediumPadding);
+      padding-bottom: var(--LargePadding);
     }
 
     .service-grid-container {
@@ -665,6 +668,7 @@ icon {
       border-radius: var(--RoundBorder);
       padding: var(--SmallPadding);
       transition: var(--SmoothTransition);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .service-grid-container .service-grid-card .service-icon {
       font-size: var(--iconFontSize);
@@ -703,79 +707,73 @@ icon {
 
   .introduction-section {
     height: 100%;
-    padding: var(--SmallPadding);
+    padding: var(--LargePadding);
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: var(--backgroundColor);
-
+    background-color: white;
     .content-block {
       height: auto;
       display: flex;
       gap: var(--SmallPadding);
       flex-wrap: wrap-reverse;
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        min-width: 500px;
-        padding: var(--SmallPadding);
-        border-radius: var(--RoundBorder);
-        h1 {
-          @include main-header-styling;
-        }
-        p {
-          @include p-styling;
-          color: black;
-        }
-        button {
-          align-self: center;
-          margin: var(--SmallPadding);
-        }
-      }
-
-      .highlights h1 {
-        @include sub-header-styling;
-      }
-      .highlights ul {
-        @include p-styling;
-        color: black;
-      }
-
-      .who-we-are-images {
-        height: auto;
-        flex: 1;
-        justify-content: space-around;
-        display: grid;
-        min-width: 500px;
-        border-radius: var(--RoundBorder);
-        grid-template-columns: repeat(3, minmax(100px, 250px));
-        gap: var(--SmallPadding);
-        .grid-item img {
-          width: 100%;
-          height: 100%;
-          border-radius: var(--RoundBorder);
-          box-shadow: 0 0 10px var(--DarkTransparentBackground);
-        }
-      }
-
-      .wrapped {
-        width: 100%;
-        grid-template-columns: repeat(6, minmax(100px, 250px));
-      }
-
-      .wrapped-text {
-        flex-direction: row;
-        .introduction {
-          flex: 1;
-        }
-        .highlights {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-        }
-      }
+    }
+    .content-block .text {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 500px;
+      padding: var(--SmallPadding);
+      border-radius: var(--RoundBorder);
+    }
+    .content-block .text h2 {
+      @include sub-header-styling;
+      color: var(--headingColorLight);
+    }
+    .content-block .text p {
+      @include p-styling;
+    }
+    .content-block .text button {
+      align-self: center;
+      margin: var(--SmallPadding);
+    }
+    .content-block .highlights h1 {
+      @include sub-header-styling;
+    }
+    .content-block .highlights ul {
+      @include p-styling;
+      color: black;
+    }
+    .content-block .who-we-are-images {
+      height: auto;
+      flex: 1;
+      justify-content: space-around;
+      display: grid;
+      min-width: 500px;
+      border-radius: var(--RoundBorder);
+      grid-template-columns: repeat(3, minmax(100px, 250px));
+      gap: var(--SmallPadding);
+    }
+    .content-block .who-we-are-images .grid-item img {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--RoundBorder);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .content-block .wrapped {
+      width: 100%;
+      grid-template-columns: repeat(6, minmax(100px, 250px));
+    }
+    .content-block .wrapped-text {
+      flex-direction: row;
+    }
+    .content-block .wrapped-text .introduction {
+      flex: 1;
+    }
+    .content-block .wrapped-text .highlights {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
   }
 

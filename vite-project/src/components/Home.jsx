@@ -221,7 +221,7 @@ const Home = () => {
             </div>
             <div className={`text ${hasWrappedCBlock ? "wrapped-text" : ""}`}>
               <div className="introduction">
-                <h1>Who We Are</h1>
+                <h2>Who We Are</h2>
                 <p>
                   We are a dedicated team committed to providing top-quality
                   pressure washing services. From revitalizing driveways to
@@ -232,7 +232,7 @@ const Home = () => {
                 </p>
               </div>
               <div className="highlights">
-                <h1>Why Choose Us?</h1>
+                <h2>Why Choose Us?</h2>
                 <ul>
                   <li>
                     Experienced professionals with over 10 years in the
