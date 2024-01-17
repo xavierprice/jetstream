@@ -10,7 +10,7 @@
 }
 
 :root {
-  --backgroundColor: white;
+  --backgroundColor: #f4f4f4;
 
   //text colors
   --headingColorLight: #178bf6;
@@ -18,7 +18,7 @@
   --textColorDark: black;
 
   //card/block colors
-  --hoverColor: #6699cc;
+  --hoverColor: #178bf6;
   --cardColor: #003366;
   --buttonColor: #003366;
   --secondaryColor: #008080;
@@ -26,12 +26,13 @@
   //padding
   --SmallPadding: 1.5rem;
   --MediumPadding: 3rem;
+  --LargePadding: 4.5rem;
 
   //font sizes
-  --smallFontSize: 1rem;
-  --mediumFontSize: 1.5rem;
-  --largeFontSize: 1.7rem;
-  --iconFontSize: 4rem;
+  --smallFontSize: 1.1rem;
+  --mediumFontSize: 1.8rem;
+  --largeFontSize: 2.5rem;
+  --iconFontSize: 10rem;
 
   --navbarMargin: 80px;
 
@@ -53,20 +54,17 @@
 
 @mixin p-styling {
   font-size: var(--smallFontSize);
-  color: var(--textColorLight);
   line-height: 1.6;
   padding: var(--SmallPadding);
 }
 
 @mixin sub-header-styling {
   font-size: var(--mediumFontSize);
-  color: var(--headingColorLight);
   padding: var(--SmallPadding);
 }
 
 @mixin main-header-styling {
   font-size: var(--largeFontSize);
-  color: var(--headingColorLight);
   padding: var(--SmallPadding);
 }
 
@@ -349,9 +347,9 @@ icon {
 
       .submit-button {
         width: 100%;
-        background-color: var(--buttonColor);
-        color: white;
-        border: none;
+        background-color: white;
+        color: var(--headingColorLight);
+        border: 3px solid var(--headingColorLight);
         border-radius: 3px;
         padding: 20px;
         cursor: pointer;
@@ -360,6 +358,7 @@ icon {
 
         &:hover {
           background-color: var(--hoverColor);
+          color: white;
         }
       }
     }
@@ -541,7 +540,6 @@ icon {
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 
   .heading-section {
     height: 100vh;
@@ -553,7 +551,7 @@ icon {
       rgba(255, 255, 255, 1),
       rgba(0, 0, 0, 0.1)
     );
-    padding: 4.5rem;
+    padding: var(--LargePadding);
 
     .heading-section-left {
       padding-top: 4rem;
@@ -623,68 +621,82 @@ icon {
 
   .services-section {
     height: 100%;
-    padding: var(--SmallPadding);
+    padding: var(--LargePadding);
     background-color: var(--backgroundColor);
     @include flexCenter;
+    padding-top: 0;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
 
-    h1 {
-      @include flexCenter;
-      @include main-header-styling;
-      padding-top: 0;
-    }
-
     .service-container {
       height: 100%;
-
       @include flexCenter;
       flex-direction: column;
+    }
 
-      .service-grid-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(1, 1fr);
-        gap: var(--SmallPadding);
+    .service-container h1 {
+      @include flexCenter;
+      @include main-header-styling;
+      padding: var(--LargePadding);
+      padding-bottom: 0;
+      color: var(--headingColorLight);
+    }
 
-        .service-grid-card {
-          @include flexCenter;
-          flex-direction: column;
-          text-align: center;
-          cursor: pointer;
-          background-color: var(--cardColor);
-          color: white;
-          border-radius: var(--RoundBorder);
-          padding: var(--SmallPadding);
-          transition: var(--SmoothTransition);
-          .service-icon {
-            font-size: var(--iconFontSize);
-            margin-bottom: 0.5rem;
-          }
-          .service-details h1 {
-            @include sub-header-styling;
-            color: white;
-          }
-          .service-details p {
-            @include p-styling;
-          }
-          .service-buttons {
-            display: flex;
-            flex-direction: column;
-          }
-          .service-buttons button {
-            border: solid 1px white;
-            background-color: var(--buttonColor);
-            &:hover:first-child,
-            &:hover:last-child {
-              background-color: var(--hoverColor);
-            }
-          }
-          &:hover {
-            background-color: var(--hoverColor);
-          }
-        }
+    .service-container p {
+      max-width: 1000px;
+      @include p-styling;
+      padding: var(--MediumPadding);
+    }
+
+    .service-grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      gap: var(--SmallPadding);
+    }
+
+    .service-grid-container .service-grid-card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      cursor: pointer;
+      background-color: white;
+      border-radius: var(--RoundBorder);
+      padding: var(--SmallPadding);
+      transition: var(--SmoothTransition);
+    }
+    .service-grid-container .service-grid-card .service-icon {
+      font-size: var(--iconFontSize);
+      color: var(--headingColorLight);
+    }
+    .service-grid-container .service-grid-card .service-details {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-grid-container .service-grid-card .service-details h2 {
+      font-size: var(--mediumFontSize);
+    }
+    .service-grid-container
+      .service-grid-card
+      .service-details
+      .service-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .service-grid-container .service-grid-card .service-buttons button {
+      font-size: 1.1rem;
+      font-weight: 500;
+      background-color: white;
+      color: var(--headingColorLight);
+      border: 2px solid var(--headingColorLight);
+      &:hover:first-child,
+      &:hover:last-child {
+        background-color: var(--hoverColor);
+        color: white;
       }
     }
   }
@@ -1052,22 +1064,6 @@ icon {
             width: 80%;
             border-bottom: 1px solid var(--hoverColor);
             margin-top: var(--SmallPadding);
-          }
-
-          .service-benefits {
-            display: flex;
-            flex-direction: column;
-            text-align: start;
-            margin-top: var(--SmallPadding);
-            gap: var(--SmallPadding);
-            .benefit {
-              display: flex;
-              strong {
-                color: white;
-                margin-bottom: 0.25rem;
-                display: block;
-              }
-            }
           }
         }
         &:hover {

@@ -31,7 +31,7 @@ const Home = () => {
     {
       title: "Deck and Patio Cleaning",
       description:
-        "Renew the appearance of your deck or patio, preparing them for outdoor gatherings.",
+        "Renew the appearance of your deck or patio, preparing them for the outdoors.",
       icon: <FaTree />,
     },
   ];
@@ -177,9 +177,13 @@ const Home = () => {
       </section>
       <section className="services-section">
         <div className="service-container">
-          <h1>
-            Services we offer <FaArrowDown style={{ marginLeft: "10px" }} />
-          </h1>
+          <h1>Services we offer</h1>
+          <p>
+            Revitalize your space with our top-notch pressure washing services,
+            specializing in removing stains and restoring the beauty of your
+            property. Elevate your curb appeal with Jetstream – your go-to for
+            professional pressure washing solutions!
+          </p>
           <div className="service-grid-container">
             {services.map((service, index) => (
               <div className="service-grid-card" key={index}>
@@ -187,8 +191,10 @@ const Home = () => {
                   <div className="service-icon">{service.icon}</div>
                 </div>
                 <div className="service-details">
-                  <h1>{service.title}</h1>
-                  <p>{service.description}</p>
+                  <div className="service-title-description">
+                    <h2>{service.title}</h2>
+                    <p>{service.description}</p>
+                  </div>
                   <div className="service-buttons">
                     <button className="button-block">Learn more</button>
                     <button className="button-block">Request a quote</button>
