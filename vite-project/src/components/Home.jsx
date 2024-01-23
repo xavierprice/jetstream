@@ -1,5 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
-import { FaHome, FaTree, FaRoad, FaArrowDown } from "react-icons/fa";
+import {
+  FaHome,
+  FaTree,
+  FaRoad,
+  FaClipboardList,
+  FaRegComments,
+  FaHouseUser,
+} from "react-icons/fa";
 import workImage1 from "../assets/work-image1.jpg";
 import workImage2 from "../assets/work-image2.jpg";
 import workImage5 from "../assets/workImage5.jpeg";
@@ -33,6 +40,28 @@ const Home = () => {
       description:
         "Renew the appearance of your deck or patio, preparing them for the outdoors.",
       icon: <FaTree />,
+    },
+  ];
+  const stepsData = [
+    {
+      title: "Free Consultation",
+      description:
+        "Contact us to get a free estimate for your pressure washing needs.",
+      icon: <FaRegComments />,
+      button: "Claim a free estimate",
+    },
+    {
+      title: "Pick a Date and Time",
+      description:
+        "After Speaking With One Of Our Experts We Will Arrange To Come Past At A Time Convenient For You.",
+      icon: <FaClipboardList />,
+      button: "Call us 0491 016 876",
+    },
+    {
+      title: "Enjoy Your New Home",
+      description: "Relax and enjoy your newly cleaned and revitalized home!",
+      icon: <FaHouseUser />,
+      button: "Contact us now!",
     },
   ];
   const workPreviews = [workVideo1, workVideo5, workVideo2, workVideo4];
@@ -252,7 +281,23 @@ const Home = () => {
       </section>
       <section className="work-preview-section">
         <div className="main-container">
-          <h1>Our Work</h1>
+          <h1>How we work</h1>
+          <p>
+            Take a look at how we run things here at Jetstream pressure washing.
+          </p>
+          <div className="steps-container">
+            {stepsData.map((step, index) => (
+              <div className="step" key={index}>
+                <div className="step-number">Step {index + 1}</div>
+                <icon>{step.icon}</icon>
+                <h2>{step.title}</h2>
+                <div className="step-spacer">
+                  <p>{step.description}</p>
+                  <button className="button-block">{step.button}</button>
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="work-preview-container">
             {workPreviews.map((preview, index) => {
               if (typeof preview === "string" && preview.endsWith(".mp4")) {
