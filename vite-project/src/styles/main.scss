@@ -370,7 +370,7 @@ icon {
 }
 
 .footer-component {
-  background-color: #f7f7f7;
+  background-color: white;
   padding: var(--MediumPadding) 0;
 
   .footer-content {
@@ -904,72 +904,86 @@ icon {
   }
 
   .cta-section {
-    height: 100%;
-    width: 100%;
-    background-color: var(--backgroundColor);
-    height: auto;
-    padding: var(--SmallPadding);
-
-    h1 {
-      @include main-header-styling;
-      text-align: center;
-      padding-bottom: var(--MediumPadding);
+    .main-container {
+      background-color: var(--backgroundColor);
+      padding: var(--LargePadding);
     }
 
-    .cta-content {
+    .main-container h1 {
+      @include main-header-styling;
+      text-align: center;
+      padding-bottom: 0;
+      color: var(--headingColorLight);
+    }
+
+    .main-container p {
+      @include p-styling;
+      text-align: center;
+      padding-bottom: var(--MediumPadding);
+      padding-top: var(--SmallPadding);
+    }
+
+    .main-container .cta-content {
       min-width: 100%;
       width: 100%;
       display: flex;
       gap: var(--SmallPadding);
+    }
+
+    .main-container .cta-content.wrapped {
       flex-wrap: wrap;
+    }
 
-      .cta-images {
-        flex: 1;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(200px, 1fr));
-        grid-template-rows: repeat(2, minmax(200px, 1fr));
-        gap: var(--SmallPadding);
+    .main-container .cta-content .cta-images {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+      grid-template-rows: repeat(2, minmax(200px, 1fr));
+      gap: var(--SmallPadding);
+    }
 
-        img {
-          @include flexCenter;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: var(--RoundBorder);
-        }
-        img:first-child {
-          grid-column: span 2;
-          grid-row: span 2;
-        }
-        img:nth-child(2) {
-          grid-column: 3;
-          grid-row: 1;
-        }
-        img:nth-child(3) {
-          grid-column: 3;
-          grid-row: 2;
-        }
-      }
+    .main-container .cta-content .cta-images img {
+      @include flexCenter;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--RoundBorder);
+    }
 
-      .wrapped {
-        grid-template-rows: repeat(1, minmax(200px, 1fr));
-        flex-wrap: wrap;
-        img:first-child,
-        img:nth-child(2),
-        img:nth-child(3) {
-          grid-column: auto;
-          grid-row: auto;
-        }
-      }
+    .main-container .cta-content .cta-images img:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .main-container .cta-content .cta-images img:nth-child(2) {
+      grid-column: 3;
+      grid-row: 1;
+    }
+    .main-container .cta-content .cta-images img:nth-child(3) {
+      grid-column: 3;
+      grid-row: 2;
+    }
 
-      .cta-form {
-        flex: 1;
-        min-width: 50%;
-        h1 {
-          color: var(--backgroundColor);
-          padding: 0.5rem;
-        }
-      }
+    .main-container .cta-content .cta-images.wrapped {
+      grid-template-rows: repeat(1, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+      flex-wrap: wrap;
+    }
+
+    .main-container .cta-content .cta-images.wrapped img:nth-child(1),
+    .main-container .cta-content .cta-images.wrapped img:nth-child(2),
+    .main-container .cta-content .cta-images.wrapped img:nth-child(3) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+
+    .main-container .cta-content .cta-form {
+      flex: 1;
+      min-width: 50%;
+    }
+
+    .cta-form h1 {
+      color: var(--backgroundColor);
+      padding: 0.5rem;
     }
   }
 

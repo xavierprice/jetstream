@@ -139,7 +139,7 @@ const Home = () => {
         const minWidthThresholdCBlock = 1024;
 
         const minHeightThresholdCta = 600;
-        const minWidthThresholdCta = 1400;
+        const minWidthThresholdCta = 1200;
 
         if (
           contentBlockHeight > minHeightThresholdCBlock &&
@@ -334,17 +334,23 @@ const Home = () => {
         </div>
       </section>
       <section className="cta-section">
-        <h1>Restore the Beauty of Your Home's Exterior!</h1>
-        <section className="cta-content">
-          <div className={`cta-images ${hasWrappedCta ? "wrapped" : ""}`}>
-            {ctaImages.map((image, index) => (
-              <img key={index} src={image} alt={`Image ${index}`} />
-            ))}
-          </div>
-          <div className="cta-form">
-            <Contact />
-          </div>
-        </section>
+        <div className="main-container">
+          <h1>Restore the Beauty of Your Home's Exterior!</h1>
+          <p>
+            Our services will have your neighbours wish they had us booked in
+            sooner!
+          </p>
+          <section className={`cta-content ${hasWrappedCta ? "wrapped" : ""}`}>
+            <div className={`cta-images ${hasWrappedCta ? "wrapped" : ""}`}>
+              {ctaImages.map((image, index) => (
+                <img key={index} src={image} alt={`Image ${index}`} />
+              ))}
+            </div>
+            <div className="cta-form">
+              <Contact />
+            </div>
+          </section>
+        </div>
       </section>
       <BackToTop />
     </div>
