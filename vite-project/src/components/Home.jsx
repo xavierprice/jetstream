@@ -171,37 +171,29 @@ const Home = () => {
 
   return (
     <div className="home-page">
+
+      
       <section className="heading-section">
-        <div className="heading-section-left">
-          <section className="heading-introduction">
-            <h1>
-              Revitalize Your Property's Sparkle with{" "}
-              <span className="highlight">
-                Jetstream's Pressure Washing Services!
-              </span>
-            </h1>
-            <p>
-              Enhance your property's curb appeal and cleanliness effortlessly
-              with our top-tier pressure washing services. From driveways to
-              exteriors, we restore the shine to your surfaces, making your
-              property look brand new.
-            </p>
-          </section>
-          {/* <section className="mission-section">
-            <h1>Our mission:</h1>
-            <p>
-              Transforming properties and lives by restoring brilliance, one
-              pristine surface at a time.
-            </p>
-          </section> */}
-          {/* <section className="brief-overview">
-            <h1>50+ Clients</h1>
-            <h1>50+ Properties restored</h1>
-            <h1>100% Client satisfaction</h1>
-          </section> */}
-        </div>
-        <div className="heading-section-right">
-          <Contact />
+        <div className="main-container">
+          <div className="heading-section-left">
+            <section className="heading-introduction">
+              <h1>
+                Revitalize Your Property's Sparkle with{" "}
+                <span className="highlight">
+                  Jetstream's Pressure Washing Services!
+                </span>
+              </h1>
+              <p>
+                Enhance your property's curb appeal and cleanliness effortlessly
+                with our top-tier pressure washing services. From driveways to
+                exteriors, we restore the shine to your surfaces, making your
+                property look brand new.
+              </p>
+            </section>
+          </div>
+          <div className="heading-section-right">
+            <Contact />
+          </div>
         </div>
       </section>
       <section className="services-section">

@@ -546,80 +546,49 @@ icon {
   flex-direction: column;
 
   .heading-section {
-    height: 100vh;
-    width: 100%;
-    @include flexCenter();
-    color: var(--textColorLight);
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1),
-      rgba(0, 0, 0, 0.1)
-    );
-    padding: var(--LargePadding);
+    .main-container {
+      height: 100%;
+      width: 100%;
+      @include flexCenter;
 
-    .heading-section-left {
-      padding-top: 4rem;
-      width: 50%;
+      flex-wrap: wrap;
+      color: var(--textColorLight);
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 10%,
+        rgba(0, 0, 0, 0.1)
+      );
+      padding: var(--LargePadding);
     }
 
-    .heading-section-right {
-      padding-top: 4rem;
-      width: 50%;
+    .main-container .heading-section-left {
+      padding-top: 3rem;
+      min-width: 500px;
+      flex: 1;
     }
 
-    .heading-introduction p {
-      min-width: 250px;
-      max-width: 800px;
+    .main-container .heading-section-right {
+      padding-top: 3rem;
+      min-width: 500px;
+      flex: 1;
+    }
+
+    .main-container .heading-section-left .heading-introduction p {
       @include p-styling;
       color: black;
       font-size: 1.2rem;
       font-weight: bold;
     }
 
-    .heading-introduction h1 {
+    .main-container .heading-section-left .heading-introduction h1 {
       @include main-header-styling;
       color: black;
       font-size: 2.75rem;
       margin: 0 auto;
     }
 
-    .highlight {
+    .main-container .heading-section-left .heading-introduction .highlight {
       color: var(--headingColorLight);
-    }
-
-    .mission-section {
-      width: 100%;
-      @include flexCenter;
-      align-items: baseline;
-      flex-wrap: wrap;
-      padding: var(--MediumPadding);
-    }
-
-    .mission-section h1 {
-      color: black;
-      padding-right: 0.5rem;
-    }
-
-    .mission-section p {
-      color: black;
-    }
-
-    .brief-overview {
-      width: 100%;
-      display: flex;
-      padding: var(--SmallPadding);
-      align-items: center;
-      height: 20%;
-      gap: var(--SmallPadding);
-    }
-
-    .brief-overview h1 {
-      @include flexCenter;
-      @include sub-header-styling;
-      color: white;
-      background-color: var(--LightTransparentBackground);
-      height: 100%;
-      flex: 1;
     }
   }
 
@@ -654,14 +623,16 @@ icon {
       padding-bottom: var(--MediumPadding);
     }
 
-    .service-grid-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(1, 1fr);
+    .service-container .service-grid-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
       gap: var(--SmallPadding);
     }
 
-    .service-grid-container .service-grid-card {
+    .service-container .service-grid-container .service-grid-card {
+      flex: 1;
       display: flex;
       flex-direction: column;
       text-align: center;
@@ -672,20 +643,31 @@ icon {
       transition: var(--SmoothTransition);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .service-grid-container .service-grid-card .service-icon {
+    .service-container
+      .service-grid-container
+      .service-grid-card
+      .service-icon {
       font-size: var(--iconFontSize);
       color: var(--headingColorLight);
     }
-    .service-grid-container .service-grid-card .service-details {
+    .service-container
+      .service-grid-container
+      .service-grid-card
+      .service-details {
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .service-grid-container .service-grid-card .service-details h2 {
+    .service-container
+      .service-grid-container
+      .service-grid-card
+      .service-details
+      h2 {
       font-size: var(--mediumFontSize);
     }
-    .service-grid-container
+    .service-container
+      .service-grid-container
       .service-grid-card
       .service-details
       .service-buttons {
@@ -801,6 +783,7 @@ icon {
       width: 100%;
       display: flex;
       justify-content: space-around;
+      flex-wrap: wrap;
       gap: var(--SmallPadding);
     }
 
@@ -886,18 +869,13 @@ icon {
     .main-container .work-preview-container {
       height: 100%;
       width: 100%;
-      display: flex;
-      align-items: center;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(50px, 250px));
+      @include flexCenter;
+      flex-wrap: wrap;
       gap: var(--SmallPadding);
-      justify-content: space-around;
     }
 
     .main-container .work-preview-container video {
-      width: 100%;
-      min-width: 100%;
-      height: auto;
+      height: 500px;
       border-radius: var(--RoundBorder);
       box-shadow: 0 0 10px var(--DarkTransparentBackground);
     }
@@ -1003,20 +981,6 @@ icon {
       }
     }
 
-    .services-section {
-      height: auto;
-
-      .service-container {
-        justify-content: center;
-        align-items: center;
-
-        .service-grid-container {
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: repeat(auto-fit, 1fr);
-        }
-      }
-    }
-
     .introduction-section {
       height: auto;
 
@@ -1044,10 +1008,6 @@ icon {
           width: 100%;
         }
       }
-    }
-
-    .steps-section .main-container .work-preview-container {
-      grid-template-columns: repeat(2, minmax(50px, 150px));
     }
 
     .cta-section {
