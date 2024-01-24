@@ -769,7 +769,7 @@ icon {
     }
   }
 
-  .work-preview-section {
+  .steps-section {
     height: 100%;
     background-color: var(--backgroundColor);
     padding: var(--LargePadding);
@@ -788,6 +788,7 @@ icon {
       @include p-styling;
       padding-top: 0;
       padding-bottom: var(--MediumPadding);
+      text-align: center;
     }
 
     .main-container {
@@ -800,7 +801,6 @@ icon {
       width: 100%;
       display: flex;
       justify-content: space-around;
-      padding: var(--SmallPadding);
       gap: var(--SmallPadding);
     }
 
@@ -858,6 +858,30 @@ icon {
       display: flex;
       justify-content: center;
     }
+  }
+
+  .work-preview-section {
+    .main-container {
+      background-color: white;
+      width: 100%;
+      padding: var(--LargePadding);
+    }
+
+    .main-container h1 {
+      @include main-header-styling;
+      padding: var(--LargePadding);
+      padding-top: 0;
+      padding-bottom: var(--SmallPadding);
+      text-align: center;
+      color: var(--headingColorLight);
+    }
+
+    .main-container p {
+      @include p-styling;
+      text-align: center;
+      padding: var(--MediumPadding);
+      padding-top: 0;
+    }
 
     .main-container .work-preview-container {
       height: 100%;
@@ -868,7 +892,6 @@ icon {
       grid-template-columns: repeat(4, minmax(50px, 250px));
       gap: var(--SmallPadding);
       justify-content: space-around;
-      padding: var(--SmallPadding);
     }
 
     .main-container .work-preview-container video {
@@ -1009,7 +1032,7 @@ icon {
       }
     }
 
-    .work-preview-section .main-container .work-preview-container {
+    .steps-section .main-container .work-preview-container {
       grid-template-columns: repeat(2, minmax(50px, 150px));
     }
 

@@ -279,7 +279,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="work-preview-section">
+      <section className="steps-section">
         <div className="main-container">
           <h1>How we work</h1>
           <p>
@@ -298,6 +298,16 @@ const Home = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="work-preview-section">
+        {" "}
+        <div className="main-container">
+          <h1>See Jetstream in action!</h1>
+          <p>
+            Hover over any one of the videos to see us restoring properties all
+            over Brisbane!
+          </p>
           <div className="work-preview-container">
             {workPreviews.map((preview, index) => {
               if (typeof preview === "string" && preview.endsWith(".mp4")) {
