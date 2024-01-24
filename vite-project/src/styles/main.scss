@@ -94,7 +94,7 @@ icon {
 }
 
 .button-block {
-  width: max-content;
+  width: 250px;
   padding: var(--halfSmallPadding);
   font-size: var(--smallFontSize);
   background-color: white;
@@ -322,7 +322,7 @@ icon {
       flex-direction: column;
 
       .form-group {
-        padding: 0.5rem;
+        padding: 0.5rem 0;
 
         label {
           display: block;
@@ -353,7 +353,7 @@ icon {
         width: 100%;
         background-color: white;
         color: var(--headingColorLight);
-        border: 3px solid var(--headingColorLight);
+        border: 3px;
         border-radius: 3px;
         padding: 20px;
         cursor: pointer;
@@ -651,7 +651,7 @@ icon {
       max-width: 1000px;
       @include p-styling;
       padding: var(--MediumPadding);
-      padding-bottom: var(--LargePadding);
+      padding-bottom: var(--MediumPadding);
     }
 
     .service-grid-container {
@@ -691,19 +691,9 @@ icon {
       .service-buttons {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-    }
-    .service-grid-container .service-grid-card .service-buttons button {
-      font-size: 1.1rem;
-      font-weight: 500;
-      background-color: white;
-      color: var(--headingColorLight);
-      border: 2px solid var(--headingColorLight);
-      &:hover:first-child,
-      &:hover:last-child {
-        background-color: var(--hoverColor);
-        color: white;
-      }
+      align-items: center;
+      padding-bottom: var(--SmallPadding);
+      gap: var(--SmallPadding);
     }
   }
 
