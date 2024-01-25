@@ -6,6 +6,9 @@ import {
   FaClipboardList,
   FaRegComments,
   FaHouseUser,
+  FaPhone,
+  FaEnvelope,
+  FaRegClock,
 } from "react-icons/fa";
 import workImage1 from "../assets/work-image1.jpg";
 import workImage2 from "../assets/work-image2.jpg";
@@ -132,8 +135,8 @@ const Home = () => {
         const contentBlockWidth = contentBlock.clientWidth;
         const contentBlockHeight = contentBlock.clientHeight;
 
-        const ctaContentWidth = ctaContent.clientWidth;
-        const ctaContentHeight = ctaContent.clientHeight;
+        // const ctaContentWidth = ctaContent.clientWidth;
+        // const ctaContentHeight = ctaContent.clientHeight;
 
         const minHeightThresholdCBlock = 700;
         const minWidthThresholdCBlock = 1024;
@@ -152,15 +155,15 @@ const Home = () => {
           setHasWrappedCBlock(false);
         }
 
-        if (
-          ctaContentHeight > minHeightThresholdCta &&
-          ctaContentWidth < minWidthThresholdCta &&
-          isWindowGreaterThan762px
-        ) {
-          setHasWrappedCta(true);
-        } else {
-          setHasWrappedCta(false);
-        }
+        // if (
+        //   ctaContentHeight > minHeightThresholdCta &&
+        //   ctaContentWidth < minWidthThresholdCta &&
+        //   isWindowGreaterThan762px
+        // ) {
+        //   setHasWrappedCta(true);
+        // } else {
+        //   setHasWrappedCta(false);
+        // }
       }
     };
 
@@ -328,21 +331,48 @@ const Home = () => {
       </section>
       <section className="cta-section">
         <div className="main-container">
-          <h1>Restore the Beauty of Your Home's Exterior!</h1>
-          <p>
-            Our services will have your neighbours wish they had us booked in
-            sooner!
-          </p>
-          <section className={`cta-content ${hasWrappedCta ? "wrapped" : ""}`}>
-            <div className={`cta-images ${hasWrappedCta ? "wrapped" : ""}`}>
+          <div className="cta-form">
+            <Contact className="contact-form"/>
+          </div>
+          <div className="cta-text">
+            <div className="cta-header">
+              <h1>Restore the Beauty of Your Home's Exterior!</h1>
+              <p>
+                Our services will have your neighbours wish they had us booked
+                in sooner!
+              </p>
+            </div>
+            <ul className="cta-contact">
+              <li>
+                <FaPhone className="fa-icon" />
+                <div className="cta-contact-text">
+                  <p>Call us</p>
+                  <h2>0491 016 876</h2>
+                </div>
+              </li>
+              <li>
+                <FaRegClock className="fa-icon" />
+                <div className="cta-contact-text">
+                  <p>Open hours</p>
+                  <h2>Monday - Sunday: 07:00 - 18:00</h2>
+                </div>
+              </li>
+              <li>
+                <FaEnvelope className="fa-icon" />
+                <div className="cta-contact-text">
+                  <p>Email us</p>
+                  <h2>jetstreampressurewashingau@gmail.com</h2>
+                </div>
+              </li>
+            </ul>
+          </div>
+          {/* <section className={`cta-content ${hasWrappedCta ? "wrapped" : ""}`}> */}
+          {/* <div className={`cta-images ${hasWrappedCta ? "wrapped" : ""}`}>
               {ctaImages.map((image, index) => (
                 <img key={index} src={image} alt={`Image ${index}`} />
               ))}
-            </div>
-            <div className="cta-form">
-              <Contact />
-            </div>
-          </section>
+            </div> */}
+          {/* </section> */}
         </div>
       </section>
       <BackToTop />
