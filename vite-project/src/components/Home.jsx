@@ -141,6 +141,8 @@ const Home = () => {
         const minHeightThresholdCta = 600;
         const minWidthThresholdCta = 1200;
 
+        const isWindowGreaterThan762px = window.innerWidth > 762;
+
         if (
           contentBlockHeight > minHeightThresholdCBlock &&
           contentBlockWidth < minWidthThresholdCBlock
@@ -152,7 +154,8 @@ const Home = () => {
 
         if (
           ctaContentHeight > minHeightThresholdCta &&
-          ctaContentWidth < minWidthThresholdCta
+          ctaContentWidth < minWidthThresholdCta &&
+          isWindowGreaterThan762px
         ) {
           setHasWrappedCta(true);
         } else {
@@ -171,8 +174,6 @@ const Home = () => {
 
   return (
     <div className="home-page">
-
-      
       <section className="heading-section">
         <div className="main-container">
           <div className="heading-section-left">

@@ -6,32 +6,32 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaCopyright,
-  FaTiktok
+  FaTiktok,
 } from "react-icons/fa";
+import logo from "../assets/jetstream-logo.png";
 
 const Footer = () => {
   return (
     <footer className="footer-component">
       <div className="footer-content">
-        <div className="footer-info">
-          <h3>Contact Information</h3>
-          <ul className="contact-list">
-            <li>
-              <FaMapMarkerAlt />
-              Brisbane, QLD, Australia
-            </li>
-            <li>
-              <FaPhone />
-              0491 016 876
-            </li>
-            <li>
-              <FaEnvelope />
-              jetstreampressurewashingau@gmail.com
-            </li>
-          </ul>
+        <div class="footer-logo">
+          <img src={logo} alt="Your Logo" />
+        </div>
+        <div className="contact-list">
+          <li>
+            <FaPhone className="fa-icon" />
+            0491 016 876
+          </li>
+          <li>
+            <FaEnvelope className="fa-icon" />
+            jetstreampressurewashingau@gmail.com
+          </li>
+          <li>
+            <FaMapMarkerAlt className="fa-icon" />
+            Brisbane, QLD, Australia
+          </li>
         </div>
         <div className="footer-socials">
-          <h3>Follow Us</h3>
           <div className="social-icons">
             <a href="#" target="" rel="">
               <FaFacebookSquare className="fa-icon" />
