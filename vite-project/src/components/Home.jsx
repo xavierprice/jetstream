@@ -275,6 +275,38 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="stats-section">
+        <div className="main-container">
+          <div className="stats-text">
+            <h1>Whether it's Commercial or Residential, We Handle it All.</h1>
+            <p>
+              Connect with our specialists today to secure your complimentary
+              fixed-price estimate. Book any of our services this January, and
+              enjoy a 15% discount.
+            </p>
+          </div>
+          <div className="stats-container">
+            <ul>
+              <li className="stats-card">
+                <h2>50+</h2>
+                <p>Happy customers</p>
+              </li>
+              <li className="stats-card">
+                <h2>500+</h2>
+                <p>Projects complete</p>
+              </li>
+              <li className="stats-card">
+                <h2>100%</h2>
+                <p>Satisfaction rate</p>
+              </li>
+              <li className="stats-card">
+                <h2>3+</h2>
+                <p>Years experience</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section className="steps-section">
         <div className="main-container">
           <h1>How we work</h1>
@@ -332,7 +364,7 @@ const Home = () => {
       <section className="cta-section">
         <div className="main-container">
           <div className="cta-form">
-            <Contact className="contact-form"/>
+            <Contact className="contact-form" />
           </div>
           <div className="cta-text">
             <div className="cta-header">
