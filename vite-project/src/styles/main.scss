@@ -618,10 +618,11 @@ icon {
     }
 
     .service-container p {
-      max-width: 1000px;
+      max-width: 1100px;
+      text-align: center;
       @include p-styling;
       padding: var(--MediumPadding);
-      padding-bottom: var(--MediumPadding);
+      padding-top: var(--halfSmallPadding);
     }
 
     .service-container .service-grid-container {
@@ -749,7 +750,7 @@ icon {
     }
   }
 
-    .stats-section {
+  .stats-section {
     .main-container {
       position: relative;
     }
@@ -767,28 +768,28 @@ icon {
     .main-container .stats-text h1 {
       @include main-header-styling;
       padding-bottom: 0;
-      width: 800px;
     }
 
     .main-container .stats-text p {
       @include p-styling;
-      width: 800px;
     }
 
-    .main-container .stats-container {
+    .main-container .stats-container div {
       width: 100%;
       height: 100px;
       display: flex;
       justify-content: center;
       background-color: var(--backgroundTransparentBlue);
+      position: relative;
     }
 
-    .main-container .stats-container ul {
+    .main-container .stats-container div ul {
       position: absolute;
       background-color: var(--backgroundColor);
       bottom: 0;
       height: 175px;
-      width: 1250px;
+      width: 90%;
+      max-width: 1250px;
       text-align: center;
       display: flex;
       align-items: center;
@@ -797,12 +798,20 @@ icon {
       border-radius: 0.3rem 0.3rem 0 0;
     }
 
-    .main-container .stats-container ul .stats-card h2 {
+    .main-container .stats-container div ul .stats-card {
+      flex: 1;
+      border-left: 2px dashed lightgray;
+      &:first-child {
+        border-left: none;
+      }
+    }
+
+    .main-container .stats-container div ul .stats-card h2 {
       font-size: var(--extraLargeFontSize);
       color: var(--headingColorLight);
     }
 
-    .main-container .stats-container ul .stats-card p {
+    .main-container .stats-container div ul .stats-card p {
       padding-top: var(--halfSmallPadding);
       font-weight: 700;
     }
@@ -942,6 +951,7 @@ icon {
     .main-container {
       width: 100%;
       display: flex;
+
       background-color: var(--backgroundTransparentBlue);
       padding: var(--LargePadding);
       gap: var(--SmallPadding);
@@ -953,9 +963,10 @@ icon {
       justify-content: center;
       justify-content: space-evenly;
       flex: 1;
+      min-width: 50%;
     }
 
-    .main-container .cta-text h1 {
+    .main-container .cta-text .cta-header h1 {
       @include main-header-styling;
       padding: 0;
       color: white;
@@ -965,13 +976,13 @@ icon {
       @include p-styling;
       color: white;
       padding: var(--halfSmallPadding) 0;
-      width: 500px;
     }
 
     .main-container .cta-text .cta-contact {
       display: flex;
       flex-direction: column;
       gap: var(--SmallPadding);
+      min-width: 50%;
     }
 
     .main-container .cta-text .cta-contact li {
@@ -980,6 +991,12 @@ icon {
       display: flex;
       align-items: center;
       gap: var(--SmallPadding);
+    }
+
+    .main-container .cta-text .cta-contact li h2.email-address {
+      max-width: 100%;
+      word-wrap: break-word;
+      word-break: break-all;
     }
 
     .main-container .cta-text .cta-contact .fa-icon {
@@ -1006,52 +1023,6 @@ icon {
           2px -2px 0 var(--headingColorLight);
       }
     }
-
-    // .main-container .cta-content {
-    //   min-width: 100%;
-    //   width: 100%;
-    //   display: flex;
-    //   gap: var(--SmallPadding);
-    // }
-    // .main-container .cta-content.wrapped {
-    //   flex-wrap: wrap;
-    // }
-    // .main-container .cta-content .cta-images {
-    //   flex: 1;
-    //   display: grid;
-    //   grid-template-columns: repeat(3, minmax(100px, 1fr));
-    //   grid-template-rows: repeat(2, minmax(200px, 1fr));
-    //   gap: var(--SmallPadding);
-    // }
-    // .main-container .cta-content .cta-images img {
-    //   @include flexCenter;
-    //   width: 100%;
-    //   height: 100%;
-    //   object-fit: cover;
-    //   border-radius: var(--RoundBorder);
-    // }
-    // .main-container .cta-content .cta-images img:nth-child(1) {
-    //   grid-column: span 2;
-    //   grid-row: span 2;
-    // }
-    // .main-container .cta-content .cta-images img:nth-child(2) {
-    //   grid-column: 3;
-    //   grid-row: 1;
-    // }
-    // .main-container .cta-content .cta-images img:nth-child(3) {
-    //   grid-column: 3;
-    //   grid-row: 2;
-    // }
-    // .main-container .cta-content .cta-images.wrapped {
-    //   grid-template-rows: repeat(1, minmax(200px, 1fr));
-    //   grid-template-columns: repeat(3, minmax(150px, 1fr));
-    // }
-    // .main-container .cta-content .cta-images.wrapped img:nth-child(1),
-    // .main-container .cta-content .cta-images.wrapped img:nth-child(2),
-    // .main-container .cta-content .cta-images.wrapped img:nth-child(3) {
-    //   grid-column: auto;
-    //   grid-row: auto;
-    // }
 
     .main-container .cta-form {
       flex: 1;
@@ -1102,21 +1073,48 @@ icon {
       grid-template-columns: repeat(auto-fit, minmax(50px, 250px));
     }
 
-    .cta-section .main-container .cta-content {
-      display: flex;
-      flex-direction: column;
+    .stats-section .main-container .stats-text {
+      height: auto;
+      padding: var(--MediumPadding);
+    }
+
+    .stats-section .main-container .stats-container {
+      @include flexCenter;
+      background-color: var(--backgroundTransparentBlue);
+      padding-bottom: var(--MediumPadding);
+    }
+
+    .stats-section .main-container .stats-container div {
+      position: initial;
+      height: auto;
+      width: 90%;
+      background-color: white;
+      border-radius: 0.3rem;
+      padding: var(--SmallPadding);
+    }
+
+    .stats-section .main-container .stats-container div ul {
+      width: auto;
       flex-wrap: wrap;
+      background-color: white;
+      height: auto;
+      position: initial;
+      justify-content: center;
+      align-items: center;
+      gap: var(--SmallPadding);
     }
 
-    .cta-section .main-container .cta-content .cta-images {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    .stats-section .main-container .stats-container div ul .stats-card {
+      border-left: none;
+      padding: var(--SmallPadding);
     }
 
-    .cta-section .main-container .cta-content .cta-images img:nth-child(1),
-    .cta-section .main-container .cta-content .cta-images img:nth-child(2),
-    .cta-section .main-container .cta-content .cta-images img:nth-child(3) {
-      grid-column: auto;
-      grid-row: auto;
+    .cta-section .main-container {
+      flex-direction: column-reverse;
+    }
+
+    .cta-section .main-container .cta-text {
+      gap: var(--SmallPadding);
     }
   }
 

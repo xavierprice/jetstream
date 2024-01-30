@@ -200,6 +200,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="google-reviews">
+        <GoogleReviews/>
+      </section>
       <section className="services-section">
         <div className="service-container">
           <h1>Services we offer</h1>
@@ -286,24 +289,26 @@ const Home = () => {
             </p>
           </div>
           <div className="stats-container">
-            <ul>
-              <li className="stats-card">
-                <h2>50+</h2>
-                <p>Happy customers</p>
-              </li>
-              <li className="stats-card">
-                <h2>500+</h2>
-                <p>Projects complete</p>
-              </li>
-              <li className="stats-card">
-                <h2>100%</h2>
-                <p>Satisfaction rate</p>
-              </li>
-              <li className="stats-card">
-                <h2>3+</h2>
-                <p>Years experience</p>
-              </li>
-            </ul>
+            <div>
+              <ul>
+                <li className="stats-card">
+                  <h2>50+</h2>
+                  <p>Happy customers</p>
+                </li>
+                <li className="stats-card">
+                  <h2>500+</h2>
+                  <p>Projects complete</p>
+                </li>
+                <li className="stats-card">
+                  <h2>100%</h2>
+                  <p>Satisfaction rate</p>
+                </li>
+                <li className="stats-card">
+                  <h2>3+</h2>
+                  <p>Years experience</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -393,7 +398,9 @@ const Home = () => {
                 <FaEnvelope className="fa-icon" />
                 <div className="cta-contact-text">
                   <p>Email us</p>
-                  <h2>jetstreampressurewashingau@gmail.com</h2>
+                  <h2 className="email-address">
+                    jetstreampressurewashingau@gmail.com
+                  </h2>
                 </div>
               </li>
             </ul>
