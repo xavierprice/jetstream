@@ -546,6 +546,11 @@ icon {
   display: flex;
   flex-direction: column;
 
+  .blank-banner {
+    height: 50px;
+    background-color: var(--backgroundTransparentBlue);
+  }
+
   .heading-section {
     .main-container {
       height: 100%;
@@ -879,7 +884,7 @@ icon {
       padding: 0.5rem 1.5rem;
     }
 
-    .main-container .steps-container .step icon {
+    .main-container .steps-container .step .icon {
       font-size: var(--smallerIconSize);
       padding: var(--SmallPadding);
       display: inline-block;

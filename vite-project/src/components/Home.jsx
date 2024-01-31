@@ -200,9 +200,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="google-reviews">
-        <GoogleReviews/>
-      </section>
+      <span className="blank-banner"></span>
       <section className="services-section">
         <div className="service-container">
           <h1>Services we offer</h1>
@@ -233,6 +231,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <span className="blank-banner"></span>
       <section className="introduction-section">
         <div className="content-container">
           <div className="content-block">
@@ -322,7 +321,7 @@ const Home = () => {
             {stepsData.map((step, index) => (
               <div className="step" key={index}>
                 <div className="step-number">Step {index + 1}</div>
-                <icon>{step.icon}</icon>
+                <span className="icon">{step.icon}</span>
                 <h2>{step.title}</h2>
                 <div className="step-spacer">
                   <p>{step.description}</p>
@@ -333,6 +332,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <span className="blank-banner"></span>
+
       <section className="work-preview-section">
         {" "}
         <div className="main-container">
