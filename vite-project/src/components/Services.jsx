@@ -84,10 +84,18 @@ const Services = () => {
 
   return (
     <main className="services-page">
-      <section className="services-main">
-        <h1>Professional Pressure Washing Services Tailored to You</h1>
-
-        <div className="service-grid-container">
+      <section className="heading-section">
+        <div className="main-container">
+          <h1>Professional Pressure Washing Services Tailored to You</h1>
+          <p>
+            Elevate Your Property's Appearance with Our Comprehensive Pressure
+            Washing Services. Discover the Difference in Cleanliness and
+            Brilliance!
+          </p>
+        </div>
+      </section>
+      <section className="service-grid-section">
+        <div className="main-container">
           {services.map((service, index) => (
             <div key={index}>
               <div className="service-grid-card">
