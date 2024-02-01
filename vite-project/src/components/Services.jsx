@@ -13,7 +13,7 @@ const Services = () => {
       description:
         "Restore the look of your driveway with our high-pressure cleaning services,",
       icon: <FaRoad />,
-      images: [workImage2, workImage1, workImage4],
+      images: [workImage2, workImage1, workImage4, workImage2, workImage1],
       benefits: [
         {
           title: "Removes Tough Stains",
@@ -37,7 +37,7 @@ const Services = () => {
       description:
         "Give your home a fresh appearance by removing dirt and grime from its exterior.",
       icon: <FaHome />,
-      images: [workImage2, workImage1, workImage4],
+      images: [workImage2, workImage1, workImage4, workImage2, workImage1],
       benefits: [
         {
           title: "Protects Exterior Paint",
@@ -61,7 +61,7 @@ const Services = () => {
       description:
         "Renew the appearance of your deck or patio, preparing them for outdoor gatherings.",
       icon: <FaTree />,
-      images: [workImage2, workImage1, workImage4],
+      images: [workImage2, workImage1, workImage4, workImage2, workImage1],
       benefits: [
         {
           title: "Restores Original Color",
@@ -94,40 +94,43 @@ const Services = () => {
           </p>
         </div>
       </section>
-      <section className="service-grid-section">
+      <section className="service-section">
         <div className="main-container">
           {services.map((service, index) => (
-            <div key={index}>
-              <div className="service-grid-card">
-                <div className="service-icon">{service.icon}</div>
-                <div className="service-details">
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                  <hr className="benefits-divider" />
-                  <div className="service-benefits">
-                    {service.benefits.map((benefit, bIndex) => (
-                      <div key={bIndex} className="benefit">
-                        <div className="benefit-text">
-                          <strong>{benefit.title}</strong>
-                          <p>{benefit.description}</p>
-                        </div>
-                      </div>
-                    ))}
+            <div key={index} className="service-container">
+              <div className="service-card">
+                <div className="service-card-header">
+                  <div className="service-icon">{service.icon}</div>
+                  <div className="header-text">
+                    <h1>{service.title}</h1>
+                    <p>{service.description}</p>
                   </div>
                   <div className="service-buttons">
                     <button className="button-block">Request a quote</button>
                   </div>
                 </div>
-              </div>
-              <div className="service-images">
-                {service.images.map((image, imgIndex) => (
-                  <img
-                    key={imgIndex}
-                    src={image}
-                    alt={`${service.title} ${imgIndex + 1}`}
-                    className="service-image"
-                  />
-                ))}
+
+                <hr className="benefits-divider" />
+                <div className="service-benefits">
+                  {service.benefits.map((benefit, bIndex) => (
+                    <div key={bIndex} className="benefit">
+                      <div className="benefit-text">
+                        <h2>{benefit.title}</h2>
+                        <p>{benefit.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="service-images">
+                  {service.images.map((image, imgIndex) => (
+                    <img
+                      key={imgIndex}
+                      src={image}
+                      alt={`${service.title} ${imgIndex + 1}`}
+                      className="service-image"
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           ))}

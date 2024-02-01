@@ -1153,84 +1153,77 @@ icon {
     background-color: var(--backgroundTransparentBlue);
     color: white;
     text-align: center;
-    .main-container h1 {
+  }
+  .main-container h1 {
+    @include main-header-styling;
+
+    padding-bottom: var(--halfSmallPadding);
+  }
+  .service-section {
+    background-color: white;
+    padding: var(--LargePadding);
+    border-radius: var(--RoundBorder);
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--SmallPadding);
+    }
+    .main-container .service-card {
+      background-color: var(--backgroundColor);
+      border-radius: var(--RoundBorder);
+      padding: var(--MediumPadding);
+      display: flex;
+      flex-direction: column;
+    }
+    .main-container .service-card .service-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .main-container .service-card .service-card-header .header-text {
+      align-self: center;
+    }
+    .main-container .service-card .service-icon {
+      font-size: var(--iconFontSize);
+      color: var(--headingColorLight);
+    }
+    .main-container .service-card h1 {
       @include main-header-styling;
-      @include flexCenter;
+      color: var(--headingColorLight);
+      padding: 0;
+    }
+    .main-container .service-card p {
+      @include p-styling;
+      padding: 0;
+    }
+    .main-container .service-card .service-benefits {
+      display: flex;
+      text-align: center;
+      padding: var(--SmallPadding) 0;
+      gap: var(--SmallPadding);
+    }
+    .main-container .service-card .service-benefits .benefit {
+      flex: 1;
+    }
+    .main-container .service-card .service-benefits .benefit h2 {
+      color: var(--headingColorLight);
       padding-bottom: var(--halfSmallPadding);
     }
-  }
-  .service-grid-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: var(--SmallPadding);
-    background-color: var(--backgroundColor);
-    padding: var(--SmallPadding);
-    border-radius: var(--RoundBorder);
-    .main-container .service-grid-card {
-      @include flexCenter;
-      flex-direction: column;
-      cursor: pointer;
-      margin-bottom: var(--SmallPadding);
-      background-color: var(--cardColor);
-      color: var(--textColorLight);
-      border-radius: var(--RoundBorder);
-      padding: var(--SmallPadding);
-      transition: var(--SmoothTransition);
-    }
-    .main-container .service-grid-card .service-icon {
-      font-size: var(--iconFontSize);
-      margin-bottom: 0.5rem;
-    }
-    .main-container .service-grid-card .service-details {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .main-container .service-grid-card .service-details h1 {
-      color: var(--headingColorLight);
-      font-size: var(--mediumFontSize);
-    }
-    .main-container .service-grid-card .service-details p {
-      margin: 0;
-      font-size: var(--smallFontSize);
-      opacity: 0.9;
-    }
-    .main-container .service-grid-card .service-details .service-buttons {
-      display: flex;
-      flex-direction: column;
-    }
-    .main-container
-      .service-grid-card
-      .service-details
-      .service-buttons
-      button {
-      border: solid 1px white;
-      background-color: var(--buttonColor);
-      &:hover {
-        background-color: var(--hoverColor);
-      }
-    }
 
-    .main-container .service-grid-card .service-details.benefits-divider {
-      width: 80%;
-      border-bottom: 1px solid var(--hoverColor);
-      margin-top: var(--SmallPadding);
-
-      &:hover {
-        background-color: var(--hoverColor);
-      }
-    }
-
-    .main-container .service-images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 10px;
-    }
-
-    .main-container .service-images .service-image {
+    .main-container .service-card .benefits-divider {
       width: 100%;
+      border-bottom: 1px solid white;
+      &:hover {
+        background-color: var(--hoverColor);
+      }
+    }
+    .main-container .service-images {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .main-container .service-images .service-image {
+      width: 200px;
       height: auto;
       object-fit: cover;
       border-radius: 5px;
@@ -1239,6 +1232,17 @@ icon {
       &:hover {
         transform: scale(1.05);
         transition: transform 0.3s ease;
+      }
+    }
+
+    .main-container .service-card .service-buttons {
+      @include flexCenter;
+      flex-direction: column-reverse;
+    }
+    .main-container .service-card .service-buttons button {
+      border: solid 3px var(--headingColorLight);
+      &:hover {
+        background-color: var(--headingColorLight);
       }
     }
   }
