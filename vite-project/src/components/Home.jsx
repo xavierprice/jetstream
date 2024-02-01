@@ -352,7 +352,13 @@ const Home = () => {
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={() => handleMouseLeave(index)}
                   >
-                    <video ref={videoRefs[index]} muted loop preload="metadata">
+                    <video
+                      ref={videoRefs[index]}
+                      muted
+                      loop
+                      preload="metadata"
+                      className="video"
+                    >
                       <source src={preview} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>

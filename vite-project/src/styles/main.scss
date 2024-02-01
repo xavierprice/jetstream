@@ -943,17 +943,24 @@ icon {
     }
 
     .main-container .work-preview-container {
-      height: 100%;
-      width: 100%;
-      @include flexCenter;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: var(--SmallPadding);
     }
 
-    .main-container .work-preview-container video {
-      height: 500px;
-      border-radius: var(--RoundBorder);
-      box-shadow: 0 0 10px var(--DarkTransparentBackground);
+    .main-container .work-preview-container .video-wrapper {
+      flex: 1;
+      min-width: 12.5rem;
+    }
+
+    .main-container .work-preview-container .video-wrapper .video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
   }
 
@@ -1345,9 +1352,6 @@ icon {
     .service-section {
       .main-container .service-container .service-card .header-main {
         flex-wrap: wrap;
-      }
-      .main-container .service-card-container .service-images .service-image {
-
       }
     }
   }
