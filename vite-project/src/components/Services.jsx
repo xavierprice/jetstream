@@ -101,16 +101,18 @@ const Services = () => {
       <section className="service-section">
         <div className="main-container">
           {services.map((service, index) => (
-            <div key={index} className="service-container">
+            <div key={index} className="service-card-container">
               <div className="service-card">
-                <div className="service-card-header">
+                <div className="header-main">
                   <div className="service-icon">{service.icon}</div>
-                  <div className="header-text">
-                    <h1>{service.title}</h1>
-                    <p>{service.description}</p>
-                  </div>
-                  <div className="service-buttons">
-                    <button className="button-block">Request a quote</button>
+                  <div className="text-and-button">
+                    <div className="header-text">
+                      <h1>{service.title}</h1>
+                      <p>{service.description}</p>
+                    </div>
+                    <div className="service-buttons">
+                      <button className="button-block">Request a quote</button>
+                    </div>
                   </div>
                 </div>
 

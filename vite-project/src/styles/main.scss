@@ -1192,62 +1192,100 @@ icon {
       flex-direction: column;
       gap: var(--LargePadding);
     }
-    .main-container .service-card {
+
+    .main-container .service-card-container .service-card {
       background-color: white;
       border-radius: var(--RoundBorder);
       padding: var(--MediumPadding);
       display: flex;
       flex-direction: column;
     }
-    .main-container .service-card .service-card-header {
+    .main-container .service-card-container .service-card .header-main {
+      @include flexCenter();
+      gap: var(--MediumPadding);
+      padding-bottom: var(--SmallPadding);
+      flex-wrap: wrap;
+    }
+    .main-container
+      .service-card-container
+      .service-card
+      .header-main
+      .text-and-button {
+      width: 100%;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      flex: 9;
     }
-    .main-container .service-card .service-card-header .header-text {
-      align-self: center;
+    .main-container
+      .service-card-container
+      .service-card
+      .header-main
+      .text-and-button
+      .header-text {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
     }
-    .main-container .service-card .service-icon {
+    .main-container .service-card-container .service-card .service-icon {
+      @include flexCenter();
       font-size: var(--iconFontSize);
       color: var(--headingColorLight);
+      flex: 1;
     }
-    .main-container .service-card h1 {
+    .main-container .service-card-container .service-card h1 {
       @include main-header-styling;
       color: var(--headingColorLight);
-      padding: 0;
+      padding: 0 0 var(--halfSmallPadding) 0;
     }
-    .main-container .service-card p {
+    .main-container .service-card-container .service-card p {
       @include p-styling;
       padding: 0;
     }
-    .main-container .service-card .service-benefits {
+    .main-container .service-card-container .service-card .service-benefits {
+      width: 100%;
       display: flex;
-      text-align: center;
+      flex-wrap: wrap;
       padding: var(--SmallPadding) 0;
       gap: var(--SmallPadding);
+      padding-bottom: var(--MediumPadding);
     }
-    .main-container .service-card .service-benefits .benefit {
+    .main-container
+      .service-card-container
+      .service-card
+      .service-benefits
+      .benefit {
       flex: 1;
+      min-width: 200px;
     }
-    .main-container .service-card .service-benefits .benefit h2 {
+    .main-container
+      .service-card-container
+      .service-card
+      .service-benefits
+      .benefit
+      h2 {
       color: var(--headingColorLight);
       padding-bottom: var(--halfSmallPadding);
     }
 
-    .main-container .service-card .benefits-divider {
+    .main-container .service-card-container .service-card .benefits-divider {
       width: 100%;
       border-bottom: 1px solid white;
       &:hover {
         background-color: var(--hoverColor);
       }
     }
-    .main-container .service-images {
+    .main-container .service-card-container .service-images {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
+      gap: var(--SmallPadding);
     }
-    .main-container .service-images .service-image {
-      width: 200px;
+    .main-container .service-card-container .service-images .service-image {
+      width: 12.5rem;
+      flex: 1;
       height: auto;
       object-fit: cover;
       border-radius: 5px;
@@ -1259,11 +1297,15 @@ icon {
       }
     }
 
-    .main-container .service-card .service-buttons {
-      @include flexCenter;
-      flex-direction: column-reverse;
+    .main-container .service-card-container .service-card .service-buttons {
+      padding-top: var(--halfSmallPadding);
+      display: flex;
     }
-    .main-container .service-card .service-buttons button {
+    .main-container
+      .service-card-container
+      .service-card
+      .service-buttons
+      button {
       border: solid 3px var(--headingColorLight);
       &:hover {
         background-color: var(--headingColorLight);
@@ -1299,6 +1341,18 @@ icon {
   //     font-size: 3rem;
   //   }
   // }
+  @media (max-width: 768px) {
+    .service-section {
+      .main-container .service-container .service-card .header-main {
+        flex-wrap: wrap;
+      }
+      .main-container .service-card-container .service-images .service-image {
+
+      }
+    }
+  }
+  @media (max-width: 492px) {
+  }
 }
 
 .about-page {
