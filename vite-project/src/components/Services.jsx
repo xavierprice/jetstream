@@ -4,6 +4,7 @@ import workImage1 from "../assets/work-Image1.jpg";
 import workImage4 from "../assets/workImage4.jpeg";
 import workImage5 from "../assets/workImage5.jpeg";
 import workImage6 from "../assets/workImage6.jpeg";
+import logo from "../assets/jetstream-logo.png";
 import { FaHome, FaTree, FaRoad, FaArrowRight } from "react-icons/fa";
 
 const Services = () => {
@@ -86,12 +87,15 @@ const Services = () => {
     <main className="services-page">
       <section className="heading-section">
         <div className="main-container">
-          <h1>Professional Pressure Washing Services Tailored to You</h1>
-          <p>
-            Elevate Your Property's Appearance with Our Comprehensive Pressure
-            Washing Services. Discover the Difference in Cleanliness and
-            Brilliance!
-          </p>
+          <div className="main-heading">
+            <img src={logo} alt="Jetstream Logo" />
+            <h1>Professional Pressure Washing Services Tailored to You</h1>
+            <p>
+              Elevate Your Property's Appearance with Our Comprehensive Pressure
+              Washing Services. Discover the Difference in Cleanliness and
+              Brilliance!
+            </p>
+          </div>
         </div>
       </section>
       <section className="service-section">
@@ -136,6 +140,25 @@ const Services = () => {
           ))}
         </div>
       </section>
+      {/* <section className="testimonial-section">
+        <div className="main-container">
+          <div className="sub-heading-wrapper">
+            <div className="sub-heading">
+              <h2>
+                Over time, driveways and house exteriors accumulate layers of
+                dirt, grime, and mold, diminishing their appearance and curb
+                appeal.
+              </h2>
+              <FaArrowRight className="arrow-right" />
+              <h2>
+                Our pressure washing service effectively restores surfaces,
+                eliminating unwanted buildup and revitalizing the appearance of
+                driveways and house exteriors.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section> */}
     </main>
   );
 };

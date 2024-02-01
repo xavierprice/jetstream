@@ -22,7 +22,17 @@
   --cardColor: #003366;
   --buttonColor: #003366;
   --secondaryColor: #008080;
-  --backgroundTransparentBlue: rgb(23, 139, 246, 0.6);
+  --backgroundTransparentBlue: rgb(23, 139, 246, 0.8);
+  --backgroundTransparentWhite: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(0, 0, 0, 0.1)
+  );
+  --backgroundTransparentWhiteAndBlue: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 10%,
+    rgb(23, 139, 246, 0.6)
+  );
 
   //padding
   --halfSmallPadding: 0.75rem;
@@ -556,14 +566,9 @@ icon {
       height: 100%;
       width: 100%;
       @include flexCenter;
-
       flex-wrap: wrap;
       color: var(--textColorLight);
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 1) 10%,
-        rgba(0, 0, 0, 0.1)
-      );
+      background: var(--backgroundTransparentWhite);
       padding: var(--LargePadding);
     }
 
@@ -1148,28 +1153,47 @@ icon {
   width: 100%;
   .heading-section {
     width: 100%;
-    height: 300px;
-    @include flexCenter;
-    background-color: var(--backgroundTransparentBlue);
+    flex-direction: column;
+    background: var(--backgroundTransparentBlue);
+    padding: 0 var(--LargePadding);
     color: white;
     text-align: center;
-  }
-  .main-container h1 {
-    @include main-header-styling;
-
-    padding-bottom: var(--halfSmallPadding);
+    .main-container {
+      @include flexCenter;
+      flex-direction: column;
+      gap: var(--MediumPadding);
+    }
+    .main-container .main-heading {
+      margin-top: var(--navbarMargin);
+    }
+    .main-container img {
+      height: 200px;
+      margin-top: var(--LargePadding);
+    }
+    .main-container h1 {
+      @include main-header-styling;
+      padding-bottom: var(--halfSmallPadding);
+    }
+    .main-container h2 {
+      @include sub-header-styling();
+      padding: 0;
+    }
+    .main-container p {
+      @include p-styling();
+      padding: 0;
+    }
   }
   .service-section {
-    background-color: white;
+    background-color: var(--backgroundTransparentBlue);
     padding: var(--LargePadding);
-    border-radius: var(--RoundBorder);
+
     .main-container {
       display: flex;
       flex-direction: column;
-      gap: var(--SmallPadding);
+      gap: var(--LargePadding);
     }
     .main-container .service-card {
-      background-color: var(--backgroundColor);
+      background-color: white;
       border-radius: var(--RoundBorder);
       padding: var(--MediumPadding);
       display: flex;
@@ -1246,6 +1270,35 @@ icon {
       }
     }
   }
+  // .testimonial-section {
+  //   width: 100%;
+  //   flex-direction: column;
+  //   background: var(--backgroundTransparentBlue);
+  //   padding: 0 var(--LargePadding) var(--LargePadding);
+  //   color: white;
+  //   text-align: center;
+  //   .main-container h2 {
+  //     @include sub-header-styling();
+  //     padding: 0;
+  //   }
+  //   .main-container .sub-heading-wrapper {
+  //     display: flex;
+  //     flex-direction: column;
+  //     gap: var(--SmallPadding);
+  //     padding-bottom: var(--SmallPadding);
+  //   }
+  //   .main-container .sub-heading {
+  //     @include flexCenter;
+  //     gap: var(--SmallPadding);
+  //     color: var(--backgroundColor);
+  //   }
+  //   .main-container .sub-heading h2 {
+  //     width: 50%;
+  //   }
+  //   .main-container .sub-heading .arrow-right {
+  //     font-size: 3rem;
+  //   }
+  // }
 }
 
 .about-page {
