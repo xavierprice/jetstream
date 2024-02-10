@@ -1,42 +1,81 @@
 import React from "react";
-import aboutImage from "../assets/work-image1.jpg";
+import workImage2 from "../assets/work-image2.jpg";
+import workImage1 from "../assets/work-Image1.jpg";
+import workImage1Cropped from "../assets/work-Image1-heightCropped.png";
+import workImage4 from "../assets/workImage4.jpeg";
 
 const About = () => {
-  const backgroundImageStyle = {
-    backgroundImage: `url(${aboutImage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  };
+  const workImages = [workImage1, workImage2, workImage2, workImage1Cropped];
 
   return (
     <main className="about-page">
-      <div className="about-main">
-        <section className="hero">
-          <h1>About Our Pressure Washing Services</h1>
-          <p>Providing top-notch pressure washing since 2023.</p>
-        </section>
-        <section className="our-story">
-          <h1>Our Story</h1>
+      <section className="header-section">
+        <div className="main-container">
+          <h1>About Us</h1>
           <p>
-            Learn how we started and grew to become leaders in pressure washing.
+            Welcome to Jetstream Pressure Washing, where we specialize in
+            restoring the beauty of your property with top-quality pressure
+            washing services. Our experienced team uses advanced equipment and
+            eco-friendly solutions to deliver remarkable results, leaving your
+            surfaces looking pristine and renewed. Choose Jetstream for
+            reliable, efficient, and affordable cleaning solutions that enhance
+            your property's curb appeal and longevity.
           </p>
-        </section>
-        <section className="our-mission">
-          <h1>Our Mission</h1>
-          <p>
-            Committed to delivering the best cleaning solutions with
-            professionalism and attention to detail.
-          </p>
-        </section>
-        <section className="team">
-          <h1>Meet Our Team</h1>
-          <div className="team-members"></div>
-        </section>
-        <section className="contact">
-          <h1>Contact Us</h1>
-          <p>Have questions? Reach out to us anytime.</p>
-        </section>
-      </div>
+        </div>
+      </section>
+      <section className="vision-section">
+        <div className="main-container">
+          <div className="workImagesContainer">
+            <div className="wrapper-1">
+              <div className="group-0">
+                {workImages.slice(0, 1).map((image, imgIndex) => (
+                  <img
+                    key={imgIndex}
+                    src={image}
+                    alt={`Image ${imgIndex + 2}`}
+                    className="vision-item"
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="wrapper-2">
+              <div className="group-1">
+                {workImages.slice(1, 3).map((image, imgIndex) => (
+                  <img
+                    key={imgIndex}
+                    src={image}
+                    alt={`Image ${imgIndex + 2}`}
+                    className="vision-item"
+                  />
+                ))}
+              </div>
+
+              <div className="group-2">
+                {workImages.slice(3).map((image, imgIndex) => (
+                  <img
+                    key={imgIndex}
+                    src={image}
+                    alt={`Image ${imgIndex + 3}`}
+                    className="vision-item"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="vision-text">
+            <h1>Our Vision</h1>
+            <p>
+              At Jetstream Pressure Washing, we aim to lead the pressure washing
+              industry with exceptional service and customer satisfaction. We
+              deliver unparalleled results while focusing on environmental
+              responsibility. Through innovation and continuous improvement, we
+              enhance properties and positively impact communities. Join us in
+              elevating standards in pressure washing.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
