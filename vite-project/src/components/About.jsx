@@ -5,6 +5,10 @@ import {
   FaTrophy,
   FaUmbrella,
 } from "react-icons/fa";
+import whiteLogo from "../assets/jetstream-logo-white.png";
+import whiteAndBlueLogo from "../assets/jetstream-logo-white&blue.png";
+import blackLogo from "../assets/jetstream-logo-black.png";
+
 import workImage2 from "../assets/work-image2.jpg";
 import workImage1 from "../assets/work-Image1.jpg";
 import workImage1Cropped from "../assets/work-Image1-heightCropped.png";
@@ -59,28 +63,17 @@ const About = () => {
     <main className="about-page">
       <section className="header-section">
         <div className="main-container">
-          <section className="intro">
-            <h1>About Us</h1>
-            <p>
-              Welcome to Jetstream Pressure Washing, where we specialize in
-              restoring the beauty of your property with top-quality pressure
-              washing services. Our experienced team uses advanced equipment and
-              eco-friendly solutions to deliver remarkable results, leaving your
-              surfaces looking pristine and renewed. Choose Jetstream for
-              reliable, efficient, and affordable cleaning solutions that
-              enhance your property's curb appeal and longevity.
-            </p>
-          </section>
-          <section className="benefits-section">
-            <div className="benefit-container">
-              {benefits.map((benefit) => (
-                <div className="benefit" key={benefit.title}>
-                  <div className="benefit-icon">{benefit.icon}</div>
-                  <h2>{benefit.title}</h2>
-                  <p>{benefit.description}</p>
-                </div>
-              ))}
-            </div>
+          {/* <img src={whiteLogo} alt="Jetstream Logo" /> */}
+          <img src={whiteAndBlueLogo} alt="Jetstream Logo" />
+          {/* <img src={blackLogo} alt="Jetstream Logo" /> */}
+          <section className="benefit-container">
+            {benefits.map((benefit) => (
+              <div className="benefit" key={benefit.title}>
+                <div className="benefit-icon">{benefit.icon}</div>
+                <h2>{benefit.title}</h2>
+                <p>{benefit.description}</p>
+              </div>
+            ))}
           </section>
         </div>
       </section>
@@ -125,6 +118,14 @@ const About = () => {
           </div>
 
           <div className="vision-text">
+            <h1>About Us</h1>
+            <p>
+              Welcome to Jetstream Pressure Washing, where we specialize in
+              restoring the beauty of your property with top-quality pressure
+              washing services. Our experienced team uses advanced equipment and
+              eco-friendly solutions to deliver remarkable results, leaving your
+              surfaces looking pristine and renewed.
+            </p>
             <h1>Our Vision</h1>
             <p>
               At Jetstream Pressure Washing, we aim to lead the pressure washing
