@@ -1175,7 +1175,7 @@ icon {
       margin-top: var(--navbarMargin);
     }
     .main-container img {
-      height: 200px;
+      height: 250px;
       margin-top: var(--LargePadding);
     }
     .main-container h1 {
@@ -1368,6 +1368,7 @@ icon {
   gap: var(--LargePadding);
   background-color: var(--backgroundTransparentBlue);
   .header-section {
+    width: 100%;
     height: auto;
     @include flexCenter();
     color: white;
@@ -1377,21 +1378,17 @@ icon {
       margin-top: var(--navbarMargin);
       @include flexCenter();
       flex-direction: column;
-      gap: var(--MediumPadding);
+      gap: var(--LargePadding);
     }
     .main-container img {
       height: 250px;
       margin-top: var(--LargePadding);
     }
-    .main-container p {
-      @include p-styling();
-      font-size: larger;
-      padding-top: 0;
-    }
+
     .main-container .benefit-container {
       @include flexCenter();
       flex-wrap: wrap;
-      gap: var(--halfSmallPadding);
+      gap: var(--SmallPadding);
     }
 
     .main-container .benefit-container .benefit {
@@ -1406,12 +1403,11 @@ icon {
 
     .main-container .benefit-container .benefit h2 {
       @include sub-header-styling();
-      padding-bottom: var(--halfSmallPadding);
-      padding-top: 0;
+      padding: 0 0 var(--halfSmallPadding) 0;
     }
     .main-container .benefit-container .benefit p {
       @include p-styling();
-      padding-top: 0;
+      padding: 0;
     }
 
     .main-container .benefit-container .benefit .benefit-icon {
@@ -1490,18 +1486,35 @@ icon {
     height: 100%;
     .main-container {
       text-align: center;
-      padding: 0 var(--LargePadding);
+      padding: 0 0 var(--LargePadding);
+      @include flexCenter();
+      flex-direction: column;
+      gap: var(--MediumPadding);
     }
     .main-container h1 {
       @include main-header-styling();
+      padding: 0;
       color: white;
     }
     .main-container .testimonial-list {
+      width: 100%;
       display: flex;
+      flex-wrap: wrap;
+      gap: var(--MediumPadding);
+      padding: 0 var(--SmallPadding);
     }
     .main-container .testimonial-list .testimonial-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--SmallPadding);
       @include sub-header-styling();
+      padding: 0;
+      flex: 1;
+      min-width: 300px;
       color: white;
+    }
+    .main-container .testimonial-list .testimonial-item .testimonial-author {
+      text-align: end;
     }
   }
 

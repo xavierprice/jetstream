@@ -32,7 +32,7 @@ const About = () => {
       icon: <FaTrophy />,
       title: "Quality",
       description:
-        "Experience top-notch performance and reliability with our high-quality products.",
+        "Quality performance and reliability with our high-quality products.",
     },
     {
       icon: <FaUmbrella />,
@@ -55,7 +55,7 @@ const About = () => {
     {
       id: 3,
       name: "Bob Johnson",
-      text: '"Professional and efficient! ABC Pressure Washing exceeded my expectations. Will hire them again."',
+      text: '"Professional and efficient! Jetstream Pressure Washing exceeded my expectations. Will hire them again."',
     },
   ];
 
@@ -63,9 +63,7 @@ const About = () => {
     <main className="about-page">
       <section className="header-section">
         <div className="main-container">
-          {/* <img src={whiteLogo} alt="Jetstream Logo" /> */}
           <img src={whiteAndBlueLogo} alt="Jetstream Logo" />
-          {/* <img src={blackLogo} alt="Jetstream Logo" /> */}
           <section className="benefit-container">
             {benefits.map((benefit) => (
               <div className="benefit" key={benefit.title}>
