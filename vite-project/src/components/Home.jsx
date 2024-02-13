@@ -20,7 +20,7 @@ import workVideo3 from "../assets/workVideo3.mp4";
 import workVideo4 from "../assets/workVideo4.mp4";
 import workVideo5 from "../assets/workVideo5.mp4";
 
-import Contact from "./Contact";
+import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
 
 const Home = () => {
@@ -196,7 +196,7 @@ const Home = () => {
             </section>
           </div>
           <div className="heading-section-right">
-            <Contact />
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -376,7 +376,7 @@ const Home = () => {
       <section className="cta-section">
         <div className="main-container">
           <div className="cta-form">
-            <Contact className="contact-form" />
+            <ContactForm className="contact-form" />
           </div>
           <div className="cta-text">
             <div className="cta-header">
