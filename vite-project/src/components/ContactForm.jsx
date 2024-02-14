@@ -25,7 +25,7 @@ const ContactForm = ({ className }) => {
   return (
     <div className="contact-component">
       <div className={`quote-form-container ${className}`}>
-        <h1>Claim your free estimate!</h1>
+        <h1>Claim your free estimate</h1>
         <form onSubmit={handleSubmit} className="quote-form">
           <div className="form-group">
             <label htmlFor="name">Name:</label>

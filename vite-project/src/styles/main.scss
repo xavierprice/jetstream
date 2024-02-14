@@ -316,6 +316,9 @@ icon {
   display: flex;
   flex-direction: column;
   .quote-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--SmallPadding);
     flex: 1;
     width: 100%;
     height: auto;
@@ -331,32 +334,32 @@ icon {
       label {
         color: var(--headingColorLight);
       }
-      button {
-        border: solid 3px var(--headingColorLight);
-      }
     }
   }
 
   .quote-form-container h1 {
-    color: var(--backgroundColor);
-    font-size: 2rem;
     text-align: center;
+    @include main-header-styling();
+    padding: 0;
+    color: var(--backgroundColor);
   }
 
   .quote-form-container .quote-form {
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: var(--halfSmallPadding);
   }
 
   .quote-form-container .quote-form .form-group {
-    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--halfSmallPadding);
   }
 
   .quote-form-container .quote-form .form-group label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
+    font-size: var(--smallFontSize);
   }
 
   .quote-form-container .quote-form .form-group input,
@@ -366,27 +369,29 @@ icon {
     border: 1px solid #ccc;
     border-radius: 3px;
     height: 3rem;
+    font-size: var(--smallFontSize);
   }
 
   .quote-form-container .quote-form .form-group input::placeholder,
   .quote-form-container .quote-form .form-group textarea::placeholder {
-    font-size: 1rem;
+    font-size: var(--smallFontSize);
   }
 
   .quote-form-container .quote-form .form-group textarea {
-    height: 8rem;
+    height: 6rem;
   }
 
-  .quote-form-container .quote-form .submit-button {
+  .quote-form-container .quote-form button {
     width: 100%;
     background-color: white;
     color: var(--headingColorLight);
     border-radius: 3px;
+    border: 2px solid var(--headingColorLight);
     padding: 20px;
     cursor: pointer;
     transition: var(--SmoothTransition);
-    font-size: 1rem;
-
+    font-size: var(--smallFontSize);
+    margin-top: var(--halfSmallPadding);
     &:hover {
       background-color: var(--hoverColor);
       color: white;
@@ -1566,7 +1571,7 @@ icon {
       display: flex;
       flex-wrap: wrap-reverse;
       gap: var(--MediumPadding);
-      padding: 7.5rem 0 var(--LargePadding) 0;
+      padding: 6.5rem 0 var(--LargePadding) 0;
     }
     .main-container .form-left {
       color: white;
