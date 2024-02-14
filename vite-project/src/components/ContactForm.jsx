@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ContactForm = () => {
+const ContactForm = ({ className }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -24,7 +24,7 @@ const ContactForm = () => {
 
   return (
     <div className="contact-component">
-      <div className="quote-form-container">
+      <div className={`quote-form-container ${className}`}>
         <h1>Claim your free estimate!</h1>
         <form onSubmit={handleSubmit} className="quote-form">
           <div className="form-group">

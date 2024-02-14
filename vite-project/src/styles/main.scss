@@ -322,6 +322,19 @@ icon {
     padding: var(--MediumPadding);
     background: linear-gradient(125deg, rgba(31, 143, 255, 1), rgb(0, 85, 104));
     border-radius: 5px;
+    &.whiteForm {
+      background: none;
+      background-color: white;
+      h1 {
+        color: var(--headingColorLight);
+      }
+      label {
+        color: var(--headingColorLight);
+      }
+      button {
+        border: solid 3px var(--headingColorLight);
+      }
+    }
   }
 
   .quote-form-container h1 {
@@ -368,7 +381,6 @@ icon {
     width: 100%;
     background-color: white;
     color: var(--headingColorLight);
-    border: 3px;
     border-radius: 3px;
     padding: 20px;
     cursor: pointer;
@@ -1535,6 +1547,98 @@ icon {
     .benefits-section .main-container {
       flex-direction: column;
       gap: var(--MediumPadding);
+    }
+  }
+}
+
+.contact-page {
+  width: 100%;
+  height: 100%;
+  @include flexCenter();
+  flex-direction: column;
+  background-color: var(--backgroundTransparentBlue);
+  padding: 0 var(--LargePadding);
+  .form-section {
+    width: 100%;
+    height: 100%;
+    .main-container {
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap-reverse;
+      gap: var(--MediumPadding);
+      padding: 7.5rem 0 var(--LargePadding) 0;
+    }
+    .main-container .form-left {
+      color: white;
+      min-width: 500px;
+      flex: 1;
+    }
+    .main-container .form-right {
+      flex: 1;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: var(--MediumPadding);
+      flex-direction: column;
+      color: white;
+    }
+    .main-container .form-right p {
+      font-size: var(--mediumFontSize);
+    }
+    .main-container .form-right h1 {
+      @include main-header-styling();
+      padding: 0;
+      min-width: 500px;
+    }
+    .main-container .form-right h2 {
+      font-size: var(--mediumFontSize);
+    }
+    .main-container .form-right .open-hours {
+      @include flexCenter();
+      flex-wrap: wrap;
+      gap: var(--SmallPadding);
+    }
+    .main-container .form-right .open-hours .time {
+      @include flexCenter();
+      gap: var(--SmallPadding);
+      min-width: max-content;
+      flex-wrap: wrap;
+    }
+    .main-container .form-right .contact-list {
+      text-align: center;
+      @include flexCenter();
+      gap: var(--SmallPadding);
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    .main-container .form-right .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: var(--SmallPadding);
+    }
+    .main-container .form-right .contact-list li .fa-icon {
+      font-size: var(--mediumFontSize);
+    }
+    .main-container .form-right .contact-list p {
+      font-size: var(--smallFontSize);
+      transition: color 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .form-section .main-container .form-right h1 {
+      min-width: min-content;
+    }
+    .form-section .main-container .form-left {
+      min-width: min-content;
+    }
+    .form-section .main-container .form-right .open-hours .time {
+      min-width: min-content;
     }
   }
 }
