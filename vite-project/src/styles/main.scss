@@ -137,22 +137,19 @@ icon {
   justify-content: space-between;
   align-items: center;
 
-  li {
-    a {
-      list-style: none;
-      cursor: pointer;
-      margin: 10px;
+  li a {
+    list-style: none;
+    cursor: pointer;
+    transition: var(--SmoothTransition);
+    &:hover {
+      color: var(--hoverColor);
+    }
+
+    &:visited {
+      color: white;
       transition: var(--SmoothTransition);
       &:hover {
         color: var(--hoverColor);
-      }
-
-      &:visited {
-        color: white;
-        transition: var(--SmoothTransition);
-        &:hover {
-          color: var(--hoverColor);
-        }
       }
     }
   }
@@ -162,13 +159,19 @@ icon {
     align-items: center;
     justify-content: flex-start;
     flex: 1;
-    a {
-      margin: 0;
+    z-index: 9999;
+  }
+
+  .navbar-left.alt {
+    color: black;
+    &:hover {
+      color: var(--headingColorLight);
     }
   }
 
   .navbar-headings {
     @include flexCenter;
+    gap: var(--SmallPadding);
     font-size: var(--smallFontSize);
 
     li {
@@ -220,8 +223,8 @@ icon {
       align-items: center;
       padding: 5px 10px;
       border-radius: 10px;
-      background-color: var(--buttonColor);
-      color: white;
+      background-color: white;
+      color: var(--headingColorLight);
       transition: var(--SmoothTransition);
 
       &.phone-bubble {
@@ -229,7 +232,8 @@ icon {
       }
 
       &:hover {
-        background: var(--hoverColor);
+        background: var(--headingColorLight);
+        color: white;
       }
     }
   }
@@ -238,12 +242,16 @@ icon {
     display: none;
     cursor: pointer;
     font-size: var(--mediumFontSize);
-    z-index: 1000;
     color: white;
-    transition: color 0.9 ease;
-
+    z-index: 9999;
     &:hover {
-      color: var(--hoverColor);
+      color: var(--headingColorLight);
+    }
+    .faTimes {
+      color: black;
+      &:hover {
+        color: var(--headingColorLight);
+      }
     }
   }
 
@@ -256,33 +264,49 @@ icon {
       display: none;
     }
     @media (max-width: 768px) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      @include flexCenter;
+      @include flexCenter();
+      gap: var(--SmallPadding);
       flex-direction: column;
-
-      font-size: xx-large;
+      position: absolute;
+      padding: var(--MediumPadding);
       list-style: none;
-      z-index: 999;
+      height: auto;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background-color: white;
+      z-index: 1000;
+      li {
+        padding: 0 5px;
+        list-style-type: none;
+        position: relative;
 
-      background-image: url("/src/assets/clean-house.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
+        a {
+          text-decoration: none;
+          position: relative;
+          color: black;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--LightTransparentBackground);
-        z-index: -1;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            transition: width 0.5s ease, background-color 0.5s ease;
+          }
+
+          &:hover::after,
+          &.active::after {
+            width: 100%;
+            background-color: var(--headingColorLight);
+          }
+        }
+
+        &.active a::after {
+          width: 100%;
+          background-color: var(--headingColorLight);
+        }
       }
     }
   }
@@ -294,12 +318,13 @@ icon {
 
     .navbar-left {
       justify-content: flex-start;
+      flex: none;
     }
 
     .navbar-contact {
-      flex: initial;
-      justify-content: center;
-      padding-right: var(--SmallPadding);
+      flex: 1;
+      gap: var(--SmallPadding);
+      padding: 0 var(--SmallPadding);
     }
 
     .hamburger-menu {
