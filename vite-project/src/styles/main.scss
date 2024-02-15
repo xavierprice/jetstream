@@ -500,18 +500,20 @@ icon {
 }
 
 .back-to-top {
-  width: 40px;
-  height: 40px;
+  width: var(--MediumPadding);
+  height: var(--MediumPadding);
   position: fixed;
-  top: 100px;
-  right: 20px;
-  background-color: #007bff;
+
+  bottom: 20px;
+  right: 0.75rem;
+  background-color: black;
   color: #fff;
   border-radius: 50%;
   @include flexCenter;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, var(--SmoothTransition) ;
+
   z-index: 9999;
 
   &.visible {
@@ -519,13 +521,12 @@ icon {
   }
 
   i {
-    font-size: 24px;
+    font-size: 25px;
     align-self: center;
   }
 
   &:hover {
-    background-color: #0056b3;
-    transition: var(--SmoothTransition);
+    background-color: var(--headingColorLight);
   }
 }
 

@@ -5,6 +5,7 @@ import workImage4 from "../assets/workImage4.jpeg";
 import workImage5 from "../assets/workImage5.jpeg";
 import workImage6 from "../assets/workImage6.jpeg";
 import logo from "../assets/jetstream-logo.png";
+import BackToTop from "../components/BackToTop"
 import { FaHome, FaTree, FaRoad, FaArrowRight } from "react-icons/fa";
 
 const Services = () => {
@@ -161,6 +162,7 @@ const Services = () => {
           </div>
         </div>
       </section> */}
+      <BackToTop />
     </main>
   );
 };

@@ -13,6 +13,7 @@ import workImage2 from "../assets/work-image2.jpg";
 import workImage1 from "../assets/work-Image1.jpg";
 import workImage1Cropped from "../assets/work-Image1-heightCropped.png";
 import workImage4 from "../assets/workImage4.jpeg";
+import BackToTop from "../components/BackToTop";
 
 const About = () => {
   const workImages = [workImage1, workImage2, workImage2, workImage1Cropped];
@@ -149,6 +150,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <BackToTop />
     </main>
   );
 };
