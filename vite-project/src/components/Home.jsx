@@ -25,9 +25,6 @@ import blackLogo from "../assets/jetstream-logo-black.png";
 import whiteLogo from "../assets/jetstream-logo-white.png";
 import whiteAndBluelogo from "../assets/jetstream-logo-white&blue.png";
 
-
-
-
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
 
@@ -84,35 +81,14 @@ const Home = () => {
     workImage5,
     workImage1,
   ];
-  const ctaImages = [workImage5, workImage2, workImage1];
 
   //states
   const [videoTimes, setVideoTimes] = useState({});
-  const [hasWrappedCBlock, setHasWrappedCBlock] = useState(false);
-  const [hasWrappedCta, setHasWrappedCta] = useState(false);
 
   //  video handling
   //single video handling
   const singleVideoRef = useRef(null);
-  const handleMouseEnterSingle = () => {
-    const video = singleVideoRef.current;
-    if (video) {
-      const currentTime = videoTimes[video.src] || 0;
-      video.currentTime = currentTime;
-      video.play();
-    }
-  };
-  const handleMouseLeaveSingle = () => {
-    const video = singleVideoRef.current;
-    if (video) {
-      const currentTime = video.currentTime;
-      setVideoTimes((prevTimes) => ({
-        ...prevTimes,
-        [video.src]: currentTime,
-      }));
-      video.pause();
-    }
-  };
+
   //map video handling
   const videoRefs = workPreviews.map(() => useRef(null));
   const handleMouseEnter = (index) => {
@@ -129,59 +105,6 @@ const Home = () => {
     }));
     video.pause();
   };
-
-  //  handling functions
-  //add wrapped class
-  useEffect(() => {
-    const handleResize = () => {
-      const contentBlock = document.querySelector(
-        ".introduction-section .content-block"
-      );
-      const ctaContent = document.querySelector(".cta-section .cta-content");
-
-      if (contentBlock || ctaContent) {
-        const contentBlockWidth = contentBlock.clientWidth;
-        const contentBlockHeight = contentBlock.clientHeight;
-
-        // const ctaContentWidth = ctaContent.clientWidth;
-        // const ctaContentHeight = ctaContent.clientHeight;
-
-        const minHeightThresholdCBlock = 700;
-        const minWidthThresholdCBlock = 1024;
-
-        const minHeightThresholdCta = 600;
-        const minWidthThresholdCta = 1200;
-
-        const isWindowGreaterThan762px = window.innerWidth > 762;
-
-        if (
-          contentBlockHeight > minHeightThresholdCBlock &&
-          contentBlockWidth < minWidthThresholdCBlock
-        ) {
-          setHasWrappedCBlock(true);
-        } else {
-          setHasWrappedCBlock(false);
-        }
-
-        // if (
-        //   ctaContentHeight > minHeightThresholdCta &&
-        //   ctaContentWidth < minWidthThresholdCta &&
-        //   isWindowGreaterThan762px
-        // ) {
-        //   setHasWrappedCta(true);
-        // } else {
-        //   setHasWrappedCta(false);
-        // }
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div className="home-page">
@@ -240,18 +163,14 @@ const Home = () => {
       <section className="introduction-section">
         <div className="content-container">
           <div className="content-block">
-            <div
-              className={`who-we-are-images ${
-                hasWrappedCBlock ? "wrapped" : ""
-              }`}
-            >
+            <div className="who-we-are-images">
               {workImages.map((image, index) => (
                 <div className="grid-item" key={index}>
                   <img src={image} alt={`Work Image ${index + 1}`} />
                 </div>
               ))}
             </div>
-            <div className={`text ${hasWrappedCBlock ? "wrapped-text" : ""}`}>
+            <div className="text">
               <div className="introduction">
                 <h2>Who We Are</h2>
                 <p>
