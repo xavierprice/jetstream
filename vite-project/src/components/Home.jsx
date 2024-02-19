@@ -20,6 +20,14 @@ import workVideo3 from "../assets/workVideo3.mp4";
 import workVideo4 from "../assets/workVideo4.mp4";
 import workVideo5 from "../assets/workVideo5.mp4";
 
+import logo from "../assets/jetstream-logo.png";
+import blackLogo from "../assets/jetstream-logo-black.png";
+import whiteLogo from "../assets/jetstream-logo-white.png";
+import whiteAndBluelogo from "../assets/jetstream-logo-white&blue.png";
+
+
+
+
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
 
@@ -181,12 +189,9 @@ const Home = () => {
         <div className="main-container">
           <div className="heading-section-left">
             <section className="heading-introduction">
-              <h1>
-                Revitalize Your Property's Sparkle with{" "}
-                <span className="highlight">
-                  Jetstream's Pressure Washing Services!
-                </span>
-              </h1>
+              <div className="image">
+                <img src={logo} alt="Jetstream Logo" />
+              </div>
               <p>
                 Enhance your property's curb appeal and cleanliness effortlessly
                 with our top-tier pressure washing services. From driveways to

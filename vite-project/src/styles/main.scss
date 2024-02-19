@@ -52,7 +52,7 @@
   --navbarMargin: 80px;
 
   --DarkTransparentBackground: rgba(0, 0, 0, 0.2);
-  --LightTransparentBackground: rgba(0, 0, 0, 0.3);
+  --LightTransparentBackground: rgba(138, 138, 138, 0.6);
 
   --SmoothTransition: background-color 0.3s ease, width 0.3s ease;
   --SmoothTextTransition: color 0.3s ease, width 0.3s ease;
@@ -348,25 +348,17 @@ icon {
     width: 100%;
     height: auto;
     padding: var(--MediumPadding);
-    background: linear-gradient(125deg, rgba(31, 143, 255, 1), rgb(0, 85, 104));
+    background-color: white;
     border-radius: 5px;
-    &.whiteForm {
-      background: none;
-      background-color: white;
-      h1 {
-        color: var(--headingColorLight);
-      }
-      label {
-        color: var(--headingColorLight);
-      }
-    }
+    // &.whiteForm {
+    // }
   }
 
   .quote-form-container h1 {
     text-align: center;
     @include main-header-styling();
     padding: 0;
-    color: var(--backgroundColor);
+    color: var(--headingColorLight);
   }
 
   .quote-form-container .quote-form {
@@ -385,6 +377,7 @@ icon {
   .quote-form-container .quote-form .form-group label {
     display: block;
     font-size: var(--smallFontSize);
+    color: var(--headingColorLight);
   }
 
   .quote-form-container .quote-form .form-group input,
@@ -512,7 +505,8 @@ icon {
   @include flexCenter;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, var(--SmoothTransition) ;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,
+    var(--SmoothTransition);
 
   z-index: 9999;
 
@@ -602,48 +596,59 @@ icon {
 
   .blank-banner {
     height: 50px;
-    background-color: var(--backgroundTransparentBlue);
+    // background-color: var(--backgroundTransparentBlue);
+    background-color: var(--LightTransparentBackground);
   }
 
   .heading-section {
+    width: 100%;
+    height: 100%;
+
     .main-container {
       height: 100%;
       width: 100%;
       @include flexCenter;
+      gap: var(--MediumPadding);
+      padding: 6.5rem 0 var(--LargePadding) 0;
       flex-wrap: wrap;
-      color: var(--textColorLight);
-      background: var(--backgroundTransparentWhite);
-      padding: var(--LargePadding);
+      // background-color: var(--backgroundTransparentBlue);
+      background-color: var(--LightTransparentBackground);
+      padding: 6.5rem var(--LargePadding) var(--LargePadding)
+        var(--LargePadding);
     }
 
     .main-container .heading-section-left {
-      padding-top: 3rem;
+      min-width: 500px;
+      flex: 1;
+      text-align: center;
+    }
+
+    .main-container .heading-section-right {
       min-width: 500px;
       flex: 1;
     }
 
-    .main-container .heading-section-right {
-      padding-top: 3rem;
-      min-width: 500px;
-      flex: 1;
+    .main-container .heading-section-left .heading-introduction {
+      display: flex;
+      flex-direction: column;
+      gap: var(--SmallPadding);
     }
 
     .main-container .heading-section-left .heading-introduction p {
       @include p-styling;
-      color: black;
+      padding: 0;
+      color: white;
       font-size: 1.2rem;
-      font-weight: bold;
     }
 
     .main-container .heading-section-left .heading-introduction h1 {
-      @include main-header-styling;
-      color: black;
-      font-size: 2.75rem;
-      margin: 0 auto;
+      @include sub-header-styling();
+      padding: 0;
+      color: white;
     }
 
-    .main-container .heading-section-left .heading-introduction .highlight {
-      color: var(--headingColorLight);
+    .main-container .heading-section-left .heading-introduction img {
+      height: 300px;
     }
   }
 
