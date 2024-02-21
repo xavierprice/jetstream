@@ -524,6 +524,35 @@ icon {
   }
 }
 
+//transition-effects
+
+.welcome-message {
+  text-align: center;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  height: 100vh; 
+  width: 100%; 
+  background-color: var(--backgroundTransparentBlue);
+  @include flexCenter();
+  flex-direction: column;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 1.5s cubic-bezier(0.1, 0.045, 1, 1);
+  &.active {
+    opacity: 1;
+  }
+}
+
+.initial-fade-in,
+.fade-in {
+  opacity: 0;
+  transition: opacity 1.5s cubic-bezier(0.1, 0.045, 1, 1);
+  &.active {
+    opacity: 1;
+  }
+}
+
 //pages
 
 .FAQ-page {
