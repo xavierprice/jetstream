@@ -36,12 +36,6 @@ const App = () => {
     <Router>
       <main className={`initial-fade-in ${initialFade ? "active" : ""}`}>
         <div style={background}>
-          <section
-            className={`welcome-message ${showWelcomeMessage ? "active" : ""}`}
-          >
-            <h1>Welcome to Jetstream Pressure Washing!</h1>
-            <p>We're glad you're here.</p>
-          </section>
           <section className={`fade-in ${fadeIn ? "active" : ""}`}>
             <Navbar />
             <Routes>
@@ -51,6 +45,12 @@ const App = () => {
               <Route path="/contact" element={<Contact />}></Route>
             </Routes>
             <Footer />
+          </section>
+          <section
+            className={`welcome-message ${showWelcomeMessage ? "active" : ""}`}
+          >
+            <h1>Welcome to Jetstream Pressure Washing!</h1>
+            <p>We're glad you're here.</p>
           </section>
         </div>
       </main>

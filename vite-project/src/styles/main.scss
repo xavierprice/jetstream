@@ -495,7 +495,7 @@ icon {
   width: var(--MediumPadding);
   height: var(--MediumPadding);
   position: fixed;
-
+  z-index: 9999;
   bottom: 20px;
   right: 0.75rem;
   background-color: black;
@@ -506,8 +506,6 @@ icon {
   opacity: 0;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,
     var(--SmoothTransition);
-
-  z-index: 9999;
 
   &.visible {
     opacity: 1;
@@ -537,9 +535,11 @@ icon {
   flex-direction: column;
   font-size: 2rem;
   opacity: 0;
-  transition: opacity 1.5s cubic-bezier(0.1, 0.045, 1, 1);
+  transition: z-index 4s, opacity 1.5s cubic-bezier(0.1, 0.045, 1, 1);
+  z-index: -1;
   &.active {
     opacity: 1;
+    z-index: 1;
   }
 }
 
