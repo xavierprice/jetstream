@@ -4,27 +4,36 @@ import { FaBars, FaTimes, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const [nav, setNav] = useState(false);
   const location = useLocation();
 
-  const [nav, setNav] = useState(false);
-  const handleClick = () => setNav(!nav);
+  //menu handlers
   const closeMenu = () => {
     setNav(false);
   };
+  const handleClick = () => setNav(!nav);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
+    const handleOutsideClick = (event) => {
+      if (event.target.closest(".mobile-menu")) {
         setNav(false);
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    const handleScroll = () => {
+      if (nav) {
+        setNav(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [nav]);
 
   return (
     <div className="navbar-component">
@@ -60,7 +69,7 @@ const Navbar = () => {
       <li onClick={handleClick} className="hamburger-menu">
         {!nav ? <FaBars /> : <FaTimes className="faTimes" />}
       </li>
-      <ul className={!nav ? "hidden" : "mobile-menu"}>
+      <ul className={!nav ? "mobile-menu" : "mobile-menu show"}>
         <li className={location.pathname === "/" ? "active" : ""}>
           <Link to="/" onClick={closeMenu}>
             Home
