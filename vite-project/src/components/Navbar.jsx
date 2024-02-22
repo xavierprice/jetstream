@@ -11,11 +11,16 @@ const Navbar = () => {
   const closeMenu = () => {
     setNav(false);
   };
-  const handleClick = () => setNav(!nav);
+  const handleClick = (event) => {
+    event.stopPropagation();
+    setNav(!nav);
+  };
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (event.target.closest(".mobile-menu")) {
+      if (nav && !event.target.closest(".mobile-menu.show")) {
+        setNav(false);
+      } else {
         setNav(false);
       }
     };
