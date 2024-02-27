@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Services from "./components/Services";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import ScrollToTopPageChange from "./components/ScrollToTopPageChange";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const background = {
@@ -34,6 +35,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTopPageChange />
       <main className={`initial-fade-in ${initialFade ? "active" : ""}`}>
         <div style={background}>
           <section className={`fade-in ${fadeIn ? "active" : ""}`}>
