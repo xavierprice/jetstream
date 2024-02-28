@@ -51,9 +51,12 @@ const Navbar = () => {
         <li className={location.pathname === "/" ? "active" : ""}>
           <Link to="/">Home</Link>
         </li>
-        <li className={location.pathname === "/services" ? "active" : ""}>
+        <li
+          className={location.pathname.startsWith("/services") ? "active" : ""}
+        >
           <Link to="/services">Services</Link>
         </li>
+
         <li className={location.pathname === "/about" ? "active" : ""}>
           <Link to="/about">About</Link>
         </li>
@@ -80,11 +83,12 @@ const Navbar = () => {
             Home
           </Link>
         </li>
-        <li className={location.pathname === "/services" ? "active" : ""}>
-          <Link to="/services" onClick={closeMenu}>
-            Services
-          </Link>
+        <li
+          className={location.pathname.startsWith("/services") ? "active" : ""}
+        >
+          <Link to="/services">Services</Link>
         </li>
+
         <li className={location.pathname === "/about" ? "active" : ""}>
           <Link to="/about" onClick={closeMenu}>
             About

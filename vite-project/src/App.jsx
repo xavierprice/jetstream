@@ -125,6 +125,10 @@ const App = () => {
                 path="/services"
                 element={<Services services={services} />}
               ></Route>
+              <Route
+                path="/services/:id"
+                element={<Services services={services} />}
+              ></Route>
               <Route path="/about" element={<About />}></Route>
               <Route path="/contact" element={<Contact />}></Route>
             </Routes>

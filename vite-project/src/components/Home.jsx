@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import {
   FaClipboardList,
   FaRegComments,
@@ -123,7 +124,12 @@ const Home = ({ services }) => {
                     <p>{service.description}</p>
                   </div>
                   <div className="service-buttons">
-                    <button className="button-block">Learn more</button>
+                    <NavLink
+                      to={`/services/${index}`}
+                      key={index}
+                    >
+                      <button className="button-block">Learn more</button>
+                    </NavLink>
                     <button className="button-block">Request a quote</button>
                   </div>
                 </div>

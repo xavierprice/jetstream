@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
 import logo from "../assets/jetstream-logo.png";
 import BackToTop from "../components/BackToTop";
 
 const Services = ({ services }) => {
+  const { id } = useParams();
+
+  useEffect(() => {
+    const serviceElement = document.getElementById(`service-${id}`);
+    if (serviceElement) {
+      const offset = 80;
+      const offsetPosition = serviceElement.offsetTop - offset;
+      window.scrollTo({ top: offsetPosition, behavior: "instant" });
+    }
+  }, [id]);
+
   return (
     <main className="services-page">
       <section className="heading-section">
@@ -21,7 +33,11 @@ const Services = ({ services }) => {
       <section className="service-section">
         <div className="main-container">
           {services.map((service, index) => (
-            <div key={index} className="service-card-container">
+            <div
+              key={index}
+              id={`service-${index}`}
+              className="service-card-container"
+            >
               <div className="service-card">
                 <div className="header-main">
                   <div className="service-icon">{service.icon}</div>
