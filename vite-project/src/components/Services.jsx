@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/jetstream-logo.png";
 import BackToTop from "../components/BackToTop";
 
@@ -47,7 +48,9 @@ const Services = ({ services }) => {
                       <p>{service.description}</p>
                     </div>
                     <div className="service-buttons">
+                      <NavLink to="/contact" >
                       <button className="button-block">Request a quote</button>
+                      </NavLink>
                     </div>
                   </div>
                 </div>

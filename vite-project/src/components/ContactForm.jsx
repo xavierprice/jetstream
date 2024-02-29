@@ -72,7 +72,7 @@ const ContactForm = ({ className }) => {
             />
           </div>
           <button type="submit" className="submit-button">
-            Request Quote
+            Submit request
           </button>
         </form>
       </div>

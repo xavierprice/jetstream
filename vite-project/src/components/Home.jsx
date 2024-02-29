@@ -124,13 +124,12 @@ const Home = ({ services }) => {
                     <p>{service.description}</p>
                   </div>
                   <div className="service-buttons">
-                    <NavLink
-                      to={`/services/${index}`}
-                      key={index}
-                    >
+                    <NavLink to={`/services/${index}`} key={index}>
                       <button className="button-block">Learn more</button>
                     </NavLink>
-                    <button className="button-block">Request a quote</button>
+                    <NavLink to="/contact">
+                      <button className="button-block">Request a quote</button>
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -174,7 +173,9 @@ const Home = ({ services }) => {
                   </li>
                   <li>100% customer satisfaction guaranteed.</li>
                 </ul>
-                <button className="button-block">Learn More</button>
+                <NavLink to="/about">
+                  <button className="button-block">Learn More</button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -228,7 +229,9 @@ const Home = ({ services }) => {
                 <h2>{step.title}</h2>
                 <div className="step-spacer">
                   <p>{step.description}</p>
-                  <button className="button-block">{step.button}</button>
+                  <NavLink to="/contact">
+                    <button className="button-block">{step.button}</button>
+                  </NavLink>
                 </div>
               </div>
             ))}
