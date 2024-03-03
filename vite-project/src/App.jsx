@@ -26,6 +26,7 @@ const App = () => {
   const [initialFade, setinitialFade] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
   const [showWelcomeMessage, setShowWelcomeMessage] = useState(true);
+  const [selectedService, setSelectedService] = useState("");
 
   const services = [
     {
@@ -102,6 +103,10 @@ const App = () => {
     },
   ];
 
+  const handleServiceButtonClick = (serviceTitle) => {
+    setSelectedService(serviceTitle);
+  };
+
   useEffect(() => {
     setTimeout(() => {
       setinitialFade(true);
@@ -120,7 +125,17 @@ const App = () => {
           <section className={`fade-in ${fadeIn ? "active" : ""}`}>
             <Navbar />
             <Routes>
-              <Route path="/" element={<Home services={services} />}></Route>
+              <Route
+                path="/"
+                element={
+                  <Home
+                    services={services}
+                    selectedService={selectedService}
+                    setSelectedService={setSelectedService}
+                    handleServiceButtonClick={handleServiceButtonClick}
+                  />
+                }
+              ></Route>
               <Route
                 path="/services"
                 element={<Services services={services} />}
@@ -130,7 +145,16 @@ const App = () => {
                 element={<Services services={services} />}
               ></Route>
               <Route path="/about" element={<About />}></Route>
-              <Route path="/contact" element={<Contact />}></Route>
+              <Route
+                path="/contact"
+                element={
+                  <Contact
+                    services={services}
+                    selectedService={selectedService}
+                    setSelectedService={setSelectedService}
+                  />
+                }
+              ></Route>
             </Routes>
             <Footer />
           </section>

@@ -4,13 +4,21 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
 
-const Contact = () => {
+const Contact = ({
+  services,
+  selectedService,
+  setSelectedService,
+}) => {
   return (
     <main className="contact-page">
       <section className="form-section">
         <div className="main-container">
           <div className="form-left">
-            <ContactForm className="whiteForm" />
+            <ContactForm
+              services={services}
+              selectedService={selectedService}
+              setSelectedService={setSelectedService}
+            />
           </div>
           <div className="form-right">
             <h1>Fill in your details and we'll get right back to you</h1>

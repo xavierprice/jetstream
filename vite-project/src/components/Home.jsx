@@ -26,7 +26,12 @@ import whiteAndBluelogo from "../assets/jetstream-logo-white&blue.png";
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
 
-const Home = ({ services }) => {
+const Home = ({
+  services,
+  handleServiceButtonClick,
+  selectedService,
+  setSelectedService,
+}) => {
   //obj arrays
   const stepsData = [
     {
@@ -98,7 +103,11 @@ const Home = ({ services }) => {
             </section>
           </div>
           <div className="heading-section-right">
-            <ContactForm />
+            <ContactForm
+              services={services}
+              selectedService={selectedService}
+              setSelectedService={setSelectedService}
+            />
           </div>
         </div>
       </section>
@@ -127,8 +136,17 @@ const Home = ({ services }) => {
                     <NavLink to={`/services/${index}`} key={index}>
                       <button className="button-block">Learn more</button>
                     </NavLink>
-                    <NavLink to="/contact">
-                      <button className="button-block">Request a quote</button>
+                    <NavLink
+                      to={{
+                        pathname: "/contact",
+                      }}
+                    >
+                      <button
+                        className="button-block"
+                        onClick={() => handleServiceButtonClick(service.title)}
+                      >
+                        Request a quote
+                      </button>
                     </NavLink>
                   </div>
                 </div>
@@ -281,7 +299,12 @@ const Home = ({ services }) => {
       <section className="cta-section">
         <div className="main-container">
           <div className="cta-form">
-            <ContactForm className="contact-form" />
+            <ContactForm
+              className="contact-form"
+              services={services}
+              selectedService={selectedService}
+              setSelectedService={setSelectedService}
+            />
           </div>
           <div className="cta-text">
             <div className="cta-header">
