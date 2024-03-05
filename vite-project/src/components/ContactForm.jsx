@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const ContactForm = ({
-  services,
-  selectedService,
-  setSelectedService,
-}) => {
+const ContactForm = ({ services, selectedService, setSelectedService }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -25,6 +22,16 @@ const ContactForm = ({
     setAddress("");
     setMessage("");
   };
+
+  const navigate = useNavigate();
+  const { id } = useParams();
+
+  useEffect(() => {
+    const selectedId = parseInt(id);
+    const selectedService = services[selectedId];
+
+    setSelectedService(selectedService ? selectedService.title : "");
+  }, [id]);
 
   return (
     <div className="contact-component">

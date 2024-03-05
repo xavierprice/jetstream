@@ -26,12 +26,7 @@ import whiteAndBluelogo from "../assets/jetstream-logo-white&blue.png";
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
 
-const Home = ({
-  services,
-  handleServiceButtonClick,
-  selectedService,
-  setSelectedService,
-}) => {
+const Home = ({ services, selectedService, setSelectedService }) => {
   //obj arrays
   const stepsData = [
     {
@@ -133,20 +128,11 @@ const Home = ({
                     <p>{service.description}</p>
                   </div>
                   <div className="service-buttons">
-                    <NavLink to={`/services/${index}`} key={index}>
+                    <NavLink to={`/services/${index}`} key={`services${index}`}>
                       <button className="button-block">Learn more</button>
                     </NavLink>
-                    <NavLink
-                      to={{
-                        pathname: "/contact",
-                      }}
-                    >
-                      <button
-                        className="button-block"
-                        onClick={() => handleServiceButtonClick(service.title)}
-                      >
-                        Request a quote
-                      </button>
+                    <NavLink to={`/contact/${index}`} key={`contact${index}`}>
+                      <button className="button-block">Request a quote</button>
                     </NavLink>
                   </div>
                 </div>

@@ -103,10 +103,6 @@ const App = () => {
     },
   ];
 
-  const handleServiceButtonClick = (serviceTitle) => {
-    setSelectedService(serviceTitle);
-  };
-
   useEffect(() => {
     setTimeout(() => {
       setinitialFade(true);
@@ -132,7 +128,6 @@ const App = () => {
                     services={services}
                     selectedService={selectedService}
                     setSelectedService={setSelectedService}
-                    handleServiceButtonClick={handleServiceButtonClick}
                   />
                 }
               ></Route>
@@ -147,6 +142,16 @@ const App = () => {
               <Route path="/about" element={<About />}></Route>
               <Route
                 path="/contact"
+                element={
+                  <Contact
+                    services={services}
+                    selectedService={selectedService}
+                    setSelectedService={setSelectedService}
+                  />
+                }
+              ></Route>
+              <Route
+                path="/contact/:id"
                 element={
                   <Contact
                     services={services}
