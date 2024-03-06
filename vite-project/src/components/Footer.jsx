@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import logo from "../assets/jetstream-logo.png";
 
-const Footer = () => {
+const Footer = ({ phoneNumber, openModal }) => {
   return (
     <footer className="footer-component">
       <div className="footer-content">
@@ -18,9 +18,9 @@ const Footer = () => {
           <img src={logo} alt="Your Logo" />
         </div>
         <div className="contact-list">
-          <li>
+          <li onClick={openModal}>
             <FaPhone className="fa-icon" />
-            0491 016 876
+            {phoneNumber}
           </li>
           <li>
             <FaEnvelope className="fa-icon" />

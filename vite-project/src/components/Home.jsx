@@ -26,7 +26,13 @@ import whiteAndBluelogo from "../assets/jetstream-logo-white&blue.png";
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
 
-const Home = ({ services, selectedService, setSelectedService }) => {
+const Home = ({
+  services,
+  selectedService,
+  setSelectedService,
+  phoneNumber,
+  openModal,
+}) => {
   //obj arrays
   const stepsData = [
     {
@@ -302,10 +308,10 @@ const Home = ({ services, selectedService, setSelectedService }) => {
             </div>
             <ul className="cta-contact">
               <li>
-                <FaPhone className="fa-icon" />
-                <div className="cta-contact-text">
+                <FaPhone className="fa-icon" onClick={openModal} />
+                <div className="cta-contact-text" onClick={openModal}>
                   <p>Call us</p>
-                  <h2>0491 016 876</h2>
+                  <h2>{phoneNumber}</h2>
                 </div>
               </li>
               <li>

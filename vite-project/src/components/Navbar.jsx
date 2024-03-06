@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Logo from "../assets/JPW.png";
 import { FaBars, FaTimes, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
+import CallModal from "./CallModal";
 
-const Navbar = () => {
+const Navbar = ({ openModal, phoneNumber }) => {
   const [nav, setNav] = useState(false);
   const location = useLocation();
 
@@ -65,13 +66,9 @@ const Navbar = () => {
         </li>
       </ul>
       <ul className="navbar-contact">
-        {/* <li className={!nav ? "hidden" : "contact-bubble"}>
-          <FaEnvelope style={{ fontSize: "20px", paddingRight: "0.4rem" }} />
-          Free quote
-        </li> */}
-        <li className="contact-bubble phone-bubble">
-          <FaPhoneAlt style={{ fontSize: "20px", paddingRight: "0.4rem" }} />
-          0491 016 876
+        <li className="contact-bubble phone-bubble" onClick={openModal}>
+          <FaPhoneAlt />
+          {phoneNumber}
         </li>
       </ul>
       <li onClick={handleClick} className="hamburger-menu">

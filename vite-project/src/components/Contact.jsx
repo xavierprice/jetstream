@@ -8,6 +8,8 @@ const Contact = ({
   services,
   selectedService,
   setSelectedService,
+  phoneNumber,
+  openModal,
 }) => {
   return (
     <main className="contact-page">
@@ -30,9 +32,9 @@ const Contact = ({
               </div>
             </div>
             <ul className="contact-list">
-              <li>
+              <li onClick={openModal}>
                 <FaPhone className="fa-icon" />
-                <p>0491 016 876</p>
+                <p>{phoneNumber}</p>
               </li>
               <li>
                 <FaMapMarkerAlt className="fa-icon" />

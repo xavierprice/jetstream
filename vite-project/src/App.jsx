@@ -11,7 +11,11 @@ import Services from "./components/Services";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ScrollToTopPageChange from "./components/ScrollToTopPageChange";
+import Modal from "react-modal";
+import CallModal from "./components/CallModal";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+Modal.setAppElement("#root");
 
 const background = {
   backgroundImage: `url(/src/assets/clean-house.jpg`,
@@ -27,6 +31,12 @@ const App = () => {
   const [fadeIn, setFadeIn] = useState(false);
   const [showWelcomeMessage, setShowWelcomeMessage] = useState(true);
   const [selectedService, setSelectedService] = useState("");
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const phoneNumber = "0491 016 876";
+  const openModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
 
   const services = [
     {
@@ -119,7 +129,12 @@ const App = () => {
       <main className={`initial-fade-in ${initialFade ? "active" : ""}`}>
         <div style={background}>
           <section className={`fade-in ${fadeIn ? "active" : ""}`}>
-            <Navbar />
+            <Navbar openModal={openModal} phoneNumber={phoneNumber} />
+            <CallModal
+              phoneNumber={phoneNumber}
+              modalIsOpen={modalIsOpen}
+              setModalIsOpen={setModalIsOpen}
+            />
             <Routes>
               <Route
                 path="/"
@@ -128,6 +143,8 @@ const App = () => {
                     services={services}
                     selectedService={selectedService}
                     setSelectedService={setSelectedService}
+                    openModal={openModal}
+                    phoneNumber={phoneNumber}
                   />
                 }
               ></Route>
@@ -147,6 +164,8 @@ const App = () => {
                     services={services}
                     selectedService={selectedService}
                     setSelectedService={setSelectedService}
+                    openModal={openModal}
+                    phoneNumber={phoneNumber}
                   />
                 }
               ></Route>
@@ -157,11 +176,13 @@ const App = () => {
                     services={services}
                     selectedService={selectedService}
                     setSelectedService={setSelectedService}
+                    openModal={openModal}
+                    phoneNumber={phoneNumber}
                   />
                 }
               ></Route>
             </Routes>
-            <Footer />
+            <Footer openModal={openModal} phoneNumber={phoneNumber} />
           </section>
           <section
             className={`welcome-message ${showWelcomeMessage ? "active" : ""}`}

@@ -122,6 +122,63 @@ icon {
   }
 }
 
+.modal-main {
+  background: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+
+  div {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--RoundBorder);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: var(--SmallPadding);
+  }
+
+  h2 {
+    margin-bottom: var(--halfSmallPadding);
+  }
+
+  .call-cancel {
+    @include flexCenter();
+    gap: var(--halfSmallPadding);
+    flex-wrap: wrap;
+  }
+  button {
+    font-size: var(--smallFontSize);
+    padding: var(--halfSmallPadding);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+
+    &:first-child {
+      background-color: #f0f0f0;
+      color: black;
+      border: 2px solid #4caf50;
+    }
+    &:first-child:hover {
+      color: white;
+      background-color: #4caf50;
+    }
+
+    &:last-child {
+      background-color: #f0f0f0;
+      color: black;
+      border: 2px solid #f44336;
+    }
+    &:last-child:hover {
+      color: white;
+      background-color: #f44336;
+    }
+  }
+}
+
 //components
 
 .navbar-component {
@@ -136,6 +193,14 @@ icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .modal-main {
+    color: white;
+    background-color: #003366;
+    h2 {
+      font-size: var(--largeFontSize);
+    }
+  }
 
   li a {
     list-style: none;
@@ -1700,6 +1765,7 @@ icon {
     }
     .main-container .form-right .contact-list li .fa-icon {
       font-size: var(--mediumFontSize);
+      cursor: pointer;
     }
     .main-container .form-right .contact-list p {
       font-size: var(--smallFontSize);
