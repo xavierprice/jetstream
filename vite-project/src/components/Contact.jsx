@@ -32,7 +32,7 @@ const Contact = ({
               </div>
             </div>
             <ul className="contact-list">
-              <li onClick={openModal}>
+              <li onClick={openModal} data-type="phone">
                 <FaPhone className="fa-icon" />
                 <p>{phoneNumber}</p>
               </li>
@@ -40,7 +40,7 @@ const Contact = ({
                 <FaMapMarkerAlt className="fa-icon" />
                 <p>Brisbane, QLD, Australia</p>
               </li>
-              <li>
+              <li onClick={openModal} data-type="email">
                 <FaEnvelope className="fa-icon" />
                 <p>jetstreampressurewashingau@gmail.com</p>
               </li>

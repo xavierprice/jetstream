@@ -307,9 +307,9 @@ const Home = ({
               </p>
             </div>
             <ul className="cta-contact">
-              <li>
-                <FaPhone className="fa-icon" onClick={openModal} />
-                <div className="cta-contact-text" onClick={openModal}>
+              <li onClick={openModal} data-type="phone">
+                <FaPhone className="fa-icon" />
+                <div className="cta-contact-text">
                   <p>Call us</p>
                   <h2>{phoneNumber}</h2>
                 </div>
@@ -321,7 +321,7 @@ const Home = ({
                   <h2>Monday - Sunday: 07:00 - 18:00</h2>
                 </div>
               </li>
-              <li>
+              <li onClick={openModal} data-type="email">
                 <FaEnvelope className="fa-icon" />
                 <div className="cta-contact-text">
                   <p>Email us</p>

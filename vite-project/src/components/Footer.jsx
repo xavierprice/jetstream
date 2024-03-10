@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import logo from "../assets/jetstream-logo.png";
 
-const Footer = ({ phoneNumber, openModal }) => {
+const Footer = ({ phoneNumber, email, openModal }) => {
   return (
     <footer className="footer-component">
       <div className="footer-content">
@@ -18,13 +18,13 @@ const Footer = ({ phoneNumber, openModal }) => {
           <img src={logo} alt="Your Logo" />
         </div>
         <div className="contact-list">
-          <li onClick={openModal}>
+          <li onClick={openModal} data-type="phone">
             <FaPhone className="fa-icon" />
             {phoneNumber}
           </li>
-          <li>
+          <li onClick={openModal} data-type="email">
             <FaEnvelope className="fa-icon" />
-            jetstreampressurewashingau@gmail.com
+            {email}
           </li>
           <li>
             <FaMapMarkerAlt className="fa-icon" />

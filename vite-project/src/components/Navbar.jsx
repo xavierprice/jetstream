@@ -66,7 +66,11 @@ const Navbar = ({ openModal, phoneNumber }) => {
         </li>
       </ul>
       <ul className="navbar-contact">
-        <li className="contact-bubble phone-bubble" onClick={openModal}>
+        <li
+          className="contact-bubble phone-bubble"
+          onClick={openModal}
+          data-type="phone"
+        >
           <FaPhoneAlt />
           {phoneNumber}
         </li>

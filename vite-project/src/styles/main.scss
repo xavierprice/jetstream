@@ -156,13 +156,11 @@ icon {
     cursor: pointer;
     transition: background-color 0.3s ease;
     transition: color 0.3s ease;
+    background-color: #f0f0f0;
+    color: black;
+    border: 2px solid #4caf50;
 
-    &:first-child {
-      background-color: #f0f0f0;
-      color: black;
-      border: 2px solid #4caf50;
-    }
-    &:first-child:hover {
+    &:hover {
       color: white;
       background-color: #4caf50;
     }

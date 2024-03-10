@@ -31,12 +31,28 @@ const App = () => {
   const [fadeIn, setFadeIn] = useState(false);
   const [showWelcomeMessage, setShowWelcomeMessage] = useState(true);
   const [selectedService, setSelectedService] = useState("");
-
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const phoneNumber = "0491 016 876";
-  const openModal = () => {
-    setModalIsOpen(!modalIsOpen);
+  const [contactInfo, setContactInfo] = useState("");
+
+  const phoneNumber = "0491016876";
+  const email = "jetstreampressurewashingau@gmail.com";
+  const contactPhoneNumber = "tel:0491016876";
+  const contactEmail = "mailto:jetstreampressurewashingau@gmail.com";
+
+  const openModal = (event) => {
+    const dataType = event.currentTarget.getAttribute("data-type");
+    console.log("dataType:", dataType);
+    if (dataType === "phone") {
+      setContactInfo(contactPhoneNumber);
+    } else if (dataType === "email") {
+      setContactInfo(contactEmail);
+    }
+    setModalIsOpen(true);
   };
+
+  useEffect(() => {
+    console.log("Updated contactInfo:", contactInfo);
+  }, [contactInfo]);
 
   const services = [
     {
@@ -131,9 +147,11 @@ const App = () => {
           <section className={`fade-in ${fadeIn ? "active" : ""}`}>
             <Navbar openModal={openModal} phoneNumber={phoneNumber} />
             <CallModal
-              phoneNumber={phoneNumber}
+              contactPhoneNumber={contactPhoneNumber}
+              contactEmail={contactEmail}
               modalIsOpen={modalIsOpen}
               setModalIsOpen={setModalIsOpen}
+              contactInfo={contactInfo}
             />
             <Routes>
               <Route
@@ -182,7 +200,11 @@ const App = () => {
                 }
               ></Route>
             </Routes>
-            <Footer openModal={openModal} phoneNumber={phoneNumber} />
+            <Footer
+              openModal={openModal}
+              phoneNumber={phoneNumber}
+              email={email}
+            />
           </section>
           <section
             className={`welcome-message ${showWelcomeMessage ? "active" : ""}`}
