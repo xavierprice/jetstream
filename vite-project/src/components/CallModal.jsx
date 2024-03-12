@@ -9,6 +9,7 @@ const CallModal = ({
   setModalIsOpen,
   contactInfo,
   contactEmail,
+  modifiedEmail
 }) => {
   const closeModal = () => {
     setModalIsOpen(false);
@@ -65,8 +66,8 @@ const CallModal = ({
         </div>
       )}
       {contactInfo === contactEmail && (
-        <div>
-          <h2>Email {contactEmail.replace("mailto:", "")}?</h2>
+        <div className="modal-email">
+          <h2>Email {modifiedEmail}?</h2>
           <section className="call-cancel">
             <button
               className="button-block"

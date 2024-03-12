@@ -36,6 +36,9 @@ const App = () => {
 
   const phoneNumber = "0491016876";
   const email = "jetstreampressurewashingau@gmail.com";
+  const atIndex = email.indexOf("@");
+  const modifiedEmail =
+    email.slice(0, atIndex) + "\u200B" + email.slice(atIndex);
   const contactPhoneNumber = "tel:0491016876";
   const contactEmail = "mailto:jetstreampressurewashingau@gmail.com";
 
@@ -49,10 +52,6 @@ const App = () => {
     }
     setModalIsOpen(true);
   };
-
-  useEffect(() => {
-    console.log("Updated contactInfo:", contactInfo);
-  }, [contactInfo]);
 
   const services = [
     {
@@ -152,6 +151,7 @@ const App = () => {
               modalIsOpen={modalIsOpen}
               setModalIsOpen={setModalIsOpen}
               contactInfo={contactInfo}
+              modifiedEmail={modifiedEmail}
             />
             <Routes>
               <Route
