@@ -172,20 +172,22 @@ const Home = ({
               </div>
               <div className="highlights">
                 <h2>Why Choose Us?</h2>
-                <ul>
-                  <li>
-                    Experienced professionals with over 10 years in the
-                    industry.
-                  </li>
-                  <li>
-                    Environmentally friendly cleaning solutions for a greener
-                    tomorrow.
-                  </li>
-                  <li>100% customer satisfaction guaranteed.</li>
-                </ul>
-                <NavLink to="/about">
-                  <button className="button-block">Learn More</button>
-                </NavLink>
+                <div className="text-button">
+                  <ul>
+                    <li>
+                      Experienced professionals with over 10 years in the
+                      industry.
+                    </li>
+                    <li>
+                      Environmentally friendly cleaning solutions for a greener
+                      tomorrow.
+                    </li>
+                    <li>100% customer satisfaction guaranteed.</li>
+                  </ul>
+                  <NavLink to="/about">
+                    <button className="button-block">Learn More</button>
+                  </NavLink>
+                </div>
               </div>
             </div>
           </div>

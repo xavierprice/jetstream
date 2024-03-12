@@ -19,10 +19,13 @@
 
   //card/block colors
   --hoverColor: #178bf6;
-  --cardColor: #003366;
-  --buttonColor: #003366;
-  --secondaryColor: #008080;
+
   --backgroundTransparentBlue: rgb(23, 139, 246, 0.8);
+  // --backgroundTransparentBlue: rgb(76, 57, 87, 0.8);
+  // --backgroundTransparentBlue: rgb(65, 64, 115, 0.8);
+  // --backgroundTransparentBlue: rgb(46, 41, 78, 0.8);
+  // --backgroundTransparentBlue: rgb(43, 58, 103, 0.8);
+
   --backgroundTransparentWhite: linear-gradient(
     to right,
     rgba(255, 255, 255, 1) 10%,
@@ -864,16 +867,31 @@ icon {
     .content-container .content-block {
       height: auto;
       display: flex;
-      gap: var(--SmallPadding);
+      gap: var(--MediumPadding);
       flex-wrap: wrap-reverse;
     }
     .content-container .content-block .text {
       display: flex;
+      gap: var(--SmallPadding);
       flex-direction: column;
-      flex: 1;
-      padding: var(--SmallPadding) var(--SmallPadding) var(--MediumPadding)
-        var(--SmallPadding);
+      justify-content: space-around;
+      flex: 2;
       border-radius: var(--RoundBorder);
+    }
+    .content-container .content-block .text .introduction {
+      display: flex;
+      flex-direction: column;
+      gap: var(--halfSmallPadding);
+    }
+    .content-container .content-block .text .highlights {
+      display: flex;
+      flex-direction: column;
+      gap: var(--halfSmallPadding);
+    }
+    .content-container .content-block .text .highlights .text-button {
+      display: flex;
+      flex-direction: column;
+      gap: var(--MediumPadding);
     }
     .content-container .content-block .text h2 {
       @include sub-header-styling;
@@ -882,18 +900,18 @@ icon {
     }
     .content-container .content-block .text .introduction p {
       @include p-styling;
-      padding-bottom: var(--MediumPadding);
+      padding: 0;
     }
     .content-container .content-block .text .highlights ul {
       @include p-styling;
-      padding-bottom: var(--MediumPadding);
+      padding: 0;
     }
     .content-container .content-block .text button {
       align-self: center;
     }
     .content-container .content-block .who-we-are-images {
       height: auto;
-      flex: 1;
+      flex: 3;
       justify-content: space-around;
       display: grid;
       min-width: 500px;
@@ -906,6 +924,10 @@ icon {
       height: 100%;
       border-radius: var(--RoundBorder);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      &:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
     }
     .content-container .content-block .who-we-are-images .wrapped {
       width: 100%;
