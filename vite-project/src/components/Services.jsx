@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/jetstream-logo.png";
+import whiteAndBluelogo from "../assets/jetstream-logo-white&blue.png";
 import BackToTop from "../components/BackToTop";
 
 const Services = ({ services }) => {
@@ -21,7 +22,7 @@ const Services = ({ services }) => {
       <section className="heading-section">
         <div className="main-container">
           <div className="main-heading">
-            <img src={logo} alt="Jetstream Logo" />
+            <img src={whiteAndBluelogo} alt="Jetstream Logo" />
             <h1>Professional Pressure Washing Services Tailored to You</h1>
             <p>
               Elevate Your Property's Appearance with Our Comprehensive Pressure

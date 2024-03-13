@@ -723,9 +723,7 @@ icon {
       width: 100%;
       @include flexCenter;
       gap: var(--MediumPadding);
-      padding: 6.5rem 0 var(--LargePadding) 0;
       flex-wrap: wrap;
-      // background-color: var(--backgroundTransparentBlue);
       background-color: var(--backgroundTransparentBlue);
       padding: 6.5rem var(--LargePadding) var(--LargePadding)
         var(--LargePadding);
@@ -745,6 +743,7 @@ icon {
     .main-container .heading-section-left .heading-introduction {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: var(--SmallPadding);
     }
 
@@ -761,8 +760,12 @@ icon {
       color: white;
     }
 
+    .main-container .heading-section-left .heading-introduction .image {
+      width: 443px;
+    }
     .main-container .heading-section-left .heading-introduction img {
-      height: 300px;
+      height: 16rem;
+      width: 100%;
     }
   }
 

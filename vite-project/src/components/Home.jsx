@@ -93,7 +93,7 @@ const Home = ({
           <div className="heading-section-left">
             <section className="heading-introduction">
               <div className="image">
-                <img src={logo} alt="Jetstream Logo" />
+                <img src={whiteAndBluelogo} alt="Jetstream Logo" />
               </div>
               <p>
                 Enhance your property's curb appeal and cleanliness effortlessly
