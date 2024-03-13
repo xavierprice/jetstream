@@ -42,10 +42,18 @@ const Footer = ({
             <a href="#" target="" rel="">
               <FaFacebookSquare className="fa-icon" />
             </a>
-            <a href="#" target="" rel="">
+            <a
+              href="https://www.instagram.com/jetstreamau?igsh=MWM4eXljOGNtYTE0cw=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram className="fa-icon" />
             </a>
-            <a href="#" target="" rel="">
+            <a
+              href="https://www.tiktok.com/@jetstreamau?_t=8kdQltHNAuO&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaTiktok className="fa-icon" />
             </a>
           </div>
