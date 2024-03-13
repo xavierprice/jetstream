@@ -10,7 +10,13 @@ import {
 } from "react-icons/fa";
 import logo from "../assets/jetstream-logo.png";
 
-const Footer = ({ phoneNumber, email, openModal }) => {
+const Footer = ({
+  phoneNumber,
+  email,
+  contactLocation,
+  openModal,
+  openMaps,
+}) => {
   return (
     <footer className="footer-component">
       <div className="footer-content">
@@ -26,9 +32,9 @@ const Footer = ({ phoneNumber, email, openModal }) => {
             <FaEnvelope className="fa-icon" />
             {email}
           </li>
-          <li>
+          <li onClick={openMaps} data-type="location">
             <FaMapMarkerAlt className="fa-icon" />
-            Brisbane, QLD, Australia
+            {contactLocation}
           </li>
         </div>
         <div className="footer-socials">

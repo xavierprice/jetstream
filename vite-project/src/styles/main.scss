@@ -617,6 +617,7 @@ icon {
   height: 100vh;
   width: 100%;
   background-color: var(--backgroundTransparentBlue);
+  color: white;
   @include flexCenter();
   flex-direction: column;
   font-size: 2rem;

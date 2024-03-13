@@ -10,6 +10,8 @@ const Contact = ({
   setSelectedService,
   phoneNumber,
   openModal,
+  contactLocation,
+  openMaps,
 }) => {
   return (
     <main className="contact-page">
@@ -36,9 +38,9 @@ const Contact = ({
                 <FaPhone className="fa-icon" />
                 <p>{phoneNumber}</p>
               </li>
-              <li>
+              <li onClick={openMaps}>
                 <FaMapMarkerAlt className="fa-icon" />
-                <p>Brisbane, QLD, Australia</p>
+                <p>{contactLocation}</p>
               </li>
               <li onClick={openModal} data-type="email">
                 <FaEnvelope className="fa-icon" />

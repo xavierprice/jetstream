@@ -9,7 +9,7 @@ const CallModal = ({
   setModalIsOpen,
   contactInfo,
   contactEmail,
-  modifiedEmail
+  modifiedEmail,
 }) => {
   const closeModal = () => {
     setModalIsOpen(false);

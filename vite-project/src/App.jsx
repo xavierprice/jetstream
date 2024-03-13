@@ -41,6 +41,7 @@ const App = () => {
     email.slice(0, atIndex) + "\u200B" + email.slice(atIndex);
   const contactPhoneNumber = "tel:0491016876";
   const contactEmail = "mailto:jetstreampressurewashingau@gmail.com";
+  const contactLocation = "Brisbane, QLD, Australia";
 
   const openModal = (event) => {
     const dataType = event.currentTarget.getAttribute("data-type");
@@ -51,6 +52,13 @@ const App = () => {
       setContactInfo(contactEmail);
     }
     setModalIsOpen(true);
+  };
+
+  const openMaps = () => {
+    const mapsUrl = `https://www.google.com/maps/place/${encodeURIComponent(
+      contactLocation
+    )}`;
+    window.open(mapsUrl, "_blank");
   };
 
   const services = [
@@ -184,6 +192,8 @@ const App = () => {
                     setSelectedService={setSelectedService}
                     openModal={openModal}
                     phoneNumber={phoneNumber}
+                    contactLocation={contactLocation}
+                    openMaps={openMaps}
                   />
                 }
               ></Route>
@@ -196,6 +206,8 @@ const App = () => {
                     setSelectedService={setSelectedService}
                     openModal={openModal}
                     phoneNumber={phoneNumber}
+                    contactLocation={contactLocation}
+                    openMaps={openMaps}
                   />
                 }
               ></Route>
@@ -204,6 +216,8 @@ const App = () => {
               openModal={openModal}
               phoneNumber={phoneNumber}
               email={email}
+              contactLocation={contactLocation}
+              openMaps={openMaps}
             />
           </section>
           <section
