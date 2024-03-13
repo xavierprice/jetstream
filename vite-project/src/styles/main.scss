@@ -20,11 +20,7 @@
   //card/block colors
   --hoverColor: #178bf6;
 
-  --backgroundTransparentBlue: rgb(23, 139, 246, 0.8);
-  // --backgroundTransparentBlue: rgb(76, 57, 87, 0.8);
-  // --backgroundTransparentBlue: rgb(65, 64, 115, 0.8);
-  // --backgroundTransparentBlue: rgb(46, 41, 78, 0.8);
-  // --backgroundTransparentBlue: rgb(43, 58, 103, 0.8);
+  --backgroundTransparentBlue: rgba(0, 0, 0, 0.6);
 
   --backgroundTransparentWhite: linear-gradient(
     to right,
@@ -715,7 +711,7 @@ icon {
   .blank-banner {
     height: 50px;
     // background-color: var(--backgroundTransparentBlue);
-    background-color: var(--LightTransparentBackground);
+    background-color: var(--backgroundTransparentBlue);
   }
 
   .heading-section {
@@ -730,7 +726,7 @@ icon {
       padding: 6.5rem 0 var(--LargePadding) 0;
       flex-wrap: wrap;
       // background-color: var(--backgroundTransparentBlue);
-      background-color: var(--LightTransparentBackground);
+      background-color: var(--backgroundTransparentBlue);
       padding: 6.5rem var(--LargePadding) var(--LargePadding)
         var(--LargePadding);
     }
@@ -867,7 +863,7 @@ icon {
     .content-container .content-block {
       height: auto;
       display: flex;
-      gap: var(--MediumPadding);
+      gap: var(--LargePadding);
       flex-wrap: wrap-reverse;
     }
     .content-container .content-block .text {
@@ -877,6 +873,7 @@ icon {
       justify-content: space-around;
       flex: 2;
       border-radius: var(--RoundBorder);
+      min-width: 400px;
     }
     .content-container .content-block .text .introduction {
       display: flex;
@@ -914,10 +911,14 @@ icon {
       flex: 3;
       justify-content: space-around;
       display: grid;
-      min-width: 500px;
       border-radius: var(--RoundBorder);
-      grid-template-columns: repeat(3, minmax(100px, 250px));
+      grid-template-columns: repeat(3, minmax(200px, 300px));
       gap: var(--SmallPadding);
+      min-width: 600px;
+    }
+    .content-container .content-block .who-we-are-images .grid-item {
+      width: auto;
+      height: auto;
     }
     .content-container .content-block .who-we-are-images .grid-item img {
       width: 100%;
@@ -928,21 +929,6 @@ icon {
         transform: scale(1.05);
         transition: transform 0.3s ease;
       }
-    }
-    .content-container .content-block .who-we-are-images .wrapped {
-      width: 100%;
-      grid-template-columns: repeat(6, minmax(100px, 250px));
-    }
-    .content-container .content-block .text .wrapped-text {
-      flex-direction: row;
-    }
-    .content-container .content-block .text .wrapped-text .introduction {
-      flex: 1;
-    }
-    .content-container .content-block .text .wrapped-text .highlights {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
     }
   }
 
@@ -1260,6 +1246,11 @@ icon {
 
     .introduction-section .content-container .content-block .text {
       min-width: initial;
+      padding: var(--LargePadding) var(--LargePadding) 0 var(--LargePadding);
+    }
+
+    .introduction-section {
+      padding: 0 0 var(--LargePadding) 0;
     }
 
     .introduction-section .content-container .content-block .text {
@@ -1268,12 +1259,12 @@ icon {
     }
 
     .introduction-section .content-container .content-block {
-      gap: 0;
+      gap: var(--MediumPadding);
     }
 
     .introduction-section .content-container .content-block .who-we-are-images {
-      min-width: 400px;
-      grid-template-columns: repeat(auto-fit, minmax(50px, 250px));
+      min-width: 500px;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
     }
 
     .stats-section .main-container .stats-text {
