@@ -5,14 +5,11 @@ import {
   FaTrophy,
   FaUmbrella,
 } from "react-icons/fa";
-import whiteLogo from "../assets/jetstream-logo-white.png";
-import whiteAndBlueLogo from "../assets/jetstream-logo-white&blue.png";
-import blackLogo from "../assets/jetstream-logo-black.png";
+import whiteAndBlueLogo from "../assets/logos/white-and-blue-logo.png";
 
-import workImage2 from "../assets/work-image2.jpg";
-import workImage1 from "../assets/work-Image1.jpg";
-import workImage1Cropped from "../assets/work-Image1-heightCropped.png";
-import workImage4 from "../assets/workImage4.jpeg";
+import workImage1 from "../assets/work-images/work-image-1.jpeg";
+import workImage2 from "../assets/work-images/work-image-2.jpeg";
+import workImage1Cropped from "../assets/work-images/work-image-cropped.jpeg";
 import BackToTop from "../components/BackToTop";
 
 const About = () => {

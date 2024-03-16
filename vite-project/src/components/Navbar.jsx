@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/JPW.png";
 import { FaBars, FaTimes, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import CallModal from "./CallModal";
 
 const Navbar = ({ openModal, phoneNumber }) => {
   const [nav, setNav] = useState(false);

@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/jetstream-logo.png";
-import whiteAndBluelogo from "../assets/jetstream-logo-white&blue.png";
+import whiteAndBluelogo from "../assets/logos/white-and-blue-logo.png";
 import BackToTop from "../components/BackToTop";
 
 const Services = ({ services }) => {

@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaHome, FaTree, FaRoad } from "react-icons/fa";
 import "./styles/app.scss";
-import workImage2 from "./assets/work-image2.jpg";
-import workImage1 from "./assets/work-Image1.jpg";
-import workImage4 from "./assets/workImage4.jpeg";
 import Navbar from "./components/Navbar.jsx";
 import Home from "./components/Home.jsx";
 import Footer from "./components/Footer";
@@ -14,17 +11,18 @@ import ScrollToTopPageChange from "./components/ScrollToTopPageChange";
 import Modal from "react-modal";
 import CallModal from "./components/CallModal";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import workImage1 from "./assets/work-images/work-image-1.jpeg";
+import workImage2 from "./assets/work-images/work-image-2.jpeg";
+import workImage4 from "./assets/work-images/work-image-4.jpeg";
 
 Modal.setAppElement("#root");
 
-const background = {
-  backgroundImage: `url(/src/assets/clean-house.jpg`,
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-  backgroundAttachment: "fixed",
-  height: "100%",
-  backgroundPosition: "center",
-};
+const backgroundImages = [
+  "/src/assets/background-images/house-1.jpeg",
+  "/src/assets/background-images/house-2.jpeg",
+  "/src/assets/background-images/house-3.jpeg",
+  "/src/assets/background-images/house-4.jpeg",
+];
 
 const App = () => {
   const [initialFade, setinitialFade] = useState(false);
@@ -33,6 +31,15 @@ const App = () => {
   const [selectedService, setSelectedService] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [contactInfo, setContactInfo] = useState("");
+
+  const backgroundStyle = {
+    backgroundImage: "url(/src/assets/background-images/house-1.jpeg)",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+    height: "100%",
+    backgroundPosition: "center",
+  };
 
   const phoneNumber = "0491016876";
   const email = "jetstreampressurewashingau@gmail.com";
@@ -150,7 +157,7 @@ const App = () => {
     <Router>
       <ScrollToTopPageChange />
       <main className={`initial-fade-in ${initialFade ? "active" : ""}`}>
-        <div style={background}>
+        <div style={backgroundStyle}>
           <section className={`fade-in ${fadeIn ? "active" : ""}`}>
             <Navbar openModal={openModal} phoneNumber={phoneNumber} />
             <CallModal

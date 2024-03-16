@@ -8,7 +8,7 @@ import {
   FaCopyright,
   FaTiktok,
 } from "react-icons/fa";
-import logo from "../assets/jetstream-logo.png";
+import logo from "../assets/logos/original-logo.png";
 
 const Footer = ({
   phoneNumber,

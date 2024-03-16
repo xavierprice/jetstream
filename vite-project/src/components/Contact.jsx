@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/jetstream-logo.png";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";

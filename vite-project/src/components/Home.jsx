@@ -8,20 +8,17 @@ import {
   FaEnvelope,
   FaRegClock,
 } from "react-icons/fa";
-import workImage1 from "../assets/work-image1.jpg";
-import workImage2 from "../assets/work-image2.jpg";
-import workImage5 from "../assets/workImage5.jpeg";
 
-import workVideo1 from "../assets/workVideo1.mp4";
-import workVideo2 from "../assets/workVideo2.mp4";
-import workVideo3 from "../assets/workVideo3.mp4";
-import workVideo4 from "../assets/workVideo4.mp4";
-import workVideo5 from "../assets/workVideo5.mp4";
+import workImage1 from "../assets/work-images/work-image-1.jpeg";
+import workImage2 from "../assets/work-images/work-image-2.jpeg";
+import workImage5 from "../assets/work-images/work-image-5.jpeg";
 
-import logo from "../assets/jetstream-logo.png";
-import blackLogo from "../assets/jetstream-logo-black.png";
-import whiteLogo from "../assets/jetstream-logo-white.png";
-import whiteAndBluelogo from "../assets/jetstream-logo-white&blue.png";
+import workVideo1 from "../assets/work-images/work-video-1.mp4";
+import workVideo2 from "../assets/work-images/work-video-2.mp4";
+import workVideo4 from "../assets/work-images/work-video-4.mp4";
+import workVideo5 from "../assets/work-images/work-video-5.mp4";
+
+import whiteAndBluelogo from "../assets/logos/white-and-blue-logo.png";
 
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
