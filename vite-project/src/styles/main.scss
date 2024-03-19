@@ -1333,7 +1333,6 @@ icon {
     .main-container {
       @include flexCenter;
       flex-direction: column;
-      gap: var(--MediumPadding);
     }
     .main-container .main-heading {
       margin-top: var(--navbarMargin);
@@ -1344,11 +1343,7 @@ icon {
     }
     .main-container h1 {
       @include main-header-styling;
-      padding-bottom: var(--halfSmallPadding);
-    }
-    .main-container h2 {
-      @include sub-header-styling();
-      padding: 0;
+      padding: var(--SmallPadding) 0 var(--halfSmallPadding) 0;
     }
     .main-container p {
       @include p-styling();
@@ -1482,35 +1477,6 @@ icon {
       }
     }
   }
-  // .testimonial-section {
-  //   width: 100%;
-  //   flex-direction: column;
-  //   background: var(--backgroundTransparentBlue);
-  //   padding: 0 var(--LargePadding) var(--LargePadding);
-  //   color: white;
-  //   text-align: center;
-  //   .main-container h2 {
-  //     @include sub-header-styling();
-  //     padding: 0;
-  //   }
-  //   .main-container .sub-heading-wrapper {
-  //     display: flex;
-  //     flex-direction: column;
-  //     gap: var(--SmallPadding);
-  //     padding-bottom: var(--SmallPadding);
-  //   }
-  //   .main-container .sub-heading {
-  //     @include flexCenter;
-  //     gap: var(--SmallPadding);
-  //     color: var(--backgroundColor);
-  //   }
-  //   .main-container .sub-heading h2 {
-  //     width: 50%;
-  //   }
-  //   .main-container .sub-heading .arrow-right {
-  //     font-size: 3rem;
-  //   }
-  // }
   @media (max-width: 768px) {
     .service-section {
       .main-container .service-container .service-card .header-main {
