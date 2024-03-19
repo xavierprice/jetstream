@@ -19,9 +19,7 @@
 
   //card/block colors
   --hoverColor: #178bf6;
-
   --backgroundTransparentBlue: rgba(0, 0, 0, 0.6);
-
   --backgroundTransparentWhite: linear-gradient(
     to right,
     rgba(255, 255, 255, 1) 10%,
@@ -67,19 +65,17 @@
 }
 
 @mixin p-styling {
-  font-size: var(--smallFontSize);
+  font-size: 1.2rem;
   line-height: 1.6;
-  padding: var(--SmallPadding);
+  font-weight: 500;
 }
 
 @mixin sub-header-styling {
   font-size: var(--mediumFontSize);
-  padding: var(--SmallPadding);
 }
 
 @mixin main-header-styling {
   font-size: var(--largeFontSize);
-  padding: var(--SmallPadding);
 }
 
 @mixin button-styling {
@@ -87,6 +83,35 @@
   background-color: var(--buttonColor);
   &:hover {
     background-color: var(--hoverColor);
+  }
+}
+
+@mixin underline-style {
+  padding: 0 5px;
+  list-style-type: none;
+  text-decoration: none;
+  position: relative;
+  color: white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.5s ease, background-color 0.5s ease;
+  }
+
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+    background-color: var(--headingColorLight);
+  }
+
+  &.active a::after {
+    width: 100%;
+    background-color: var(--headingColorLight);
   }
 }
 
@@ -418,14 +443,11 @@ icon {
     padding: var(--MediumPadding);
     background-color: white;
     border-radius: 5px;
-    // &.whiteForm {
-    // }
   }
 
   .quote-form-container h1 {
     text-align: center;
     @include main-header-styling();
-    padding: 0;
     color: var(--headingColorLight);
   }
 
@@ -711,7 +733,6 @@ icon {
 
   .blank-banner {
     height: 50px;
-    // background-color: var(--backgroundTransparentBlue);
     background-color: var(--backgroundTransparentBlue);
   }
 
@@ -731,11 +752,10 @@ icon {
     }
 
     .main-container .heading-section-left {
-      min-width: 500px;
-      flex: 1;
       text-align: center;
     }
 
+    .main-container .heading-section-left,
     .main-container .heading-section-right {
       min-width: 500px;
       flex: 1;
@@ -750,14 +770,6 @@ icon {
 
     .main-container .heading-section-left .heading-introduction p {
       @include p-styling;
-      padding: 0;
-      color: white;
-      font-size: 1.2rem;
-    }
-
-    .main-container .heading-section-left .heading-introduction h1 {
-      @include sub-header-styling();
-      padding: 0;
       color: white;
     }
 
@@ -775,10 +787,7 @@ icon {
     padding: var(--LargePadding);
     background-color: var(--backgroundColor);
     @include flexCenter;
-    padding-top: 0;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
 
     .service-container {
       height: 100%;
@@ -787,10 +796,7 @@ icon {
     }
 
     .service-container h1 {
-      @include flexCenter;
       @include main-header-styling;
-      padding: var(--LargePadding);
-      padding-bottom: 0;
       color: var(--headingColorLight);
     }
 
@@ -819,7 +825,6 @@ icon {
       background-color: white;
       border-radius: var(--RoundBorder);
       padding: var(--SmallPadding);
-      transition: var(--SmoothTransition);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .service-container
@@ -843,7 +848,7 @@ icon {
       .service-grid-card
       .service-details
       h2 {
-      font-size: var(--mediumFontSize);
+      @include sub-header-styling();
     }
     .service-container
       .service-grid-container
@@ -879,11 +884,7 @@ icon {
       border-radius: var(--RoundBorder);
       min-width: 400px;
     }
-    .content-container .content-block .text .introduction {
-      display: flex;
-      flex-direction: column;
-      gap: var(--halfSmallPadding);
-    }
+    .content-container .content-block .text .introduction,
     .content-container .content-block .text .highlights {
       display: flex;
       flex-direction: column;
@@ -899,16 +900,13 @@ icon {
       color: var(--headingColorLight);
       padding: 0;
     }
+    .content-container .content-block .text .highlights ul,
     .content-container .content-block .text .introduction p {
       @include p-styling;
-      padding: 0;
     }
-    .content-container .content-block .text .highlights ul {
-      @include p-styling;
-      padding: 0;
-    }
-    .content-container .content-block .text button {
-      align-self: center;
+    .content-container .content-block .text .button-container {
+      display: flex;
+      justify-content: center;
     }
     .content-container .content-block .who-we-are-images {
       height: auto;
@@ -953,7 +951,7 @@ icon {
 
     .main-container .stats-text h1 {
       @include main-header-styling;
-      padding-bottom: 0;
+      padding-bottom: var(--halfSmallPadding);
     }
 
     .main-container .stats-text p {
@@ -1013,14 +1011,12 @@ icon {
 
     .main-container h1 {
       @include main-header-styling;
-      padding-top: 0;
       text-align: center;
       color: var(--headingColorLight);
     }
 
     .main-container p {
       @include p-styling;
-      padding-top: 0;
       padding-bottom: var(--MediumPadding);
       text-align: center;
     }
@@ -1054,7 +1050,7 @@ icon {
 
     .main-container .steps-container .step .step-number {
       position: absolute;
-      top: -14px;
+      top: -18px;
       left: 50%;
       transform: translateX(-50%);
       font-size: var(--smallFontSize);
@@ -1100,22 +1096,21 @@ icon {
       background-color: white;
       width: 100%;
       padding: var(--LargePadding);
+      display: flex;
+      flex-direction: column;
     }
 
     .main-container h1 {
       @include main-header-styling;
-      padding: var(--LargePadding);
-      padding-top: 0;
-      padding-bottom: var(--SmallPadding);
       text-align: center;
       color: var(--headingColorLight);
+      padding-bottom: var(--halfSmallPadding);
     }
 
     .main-container p {
       @include p-styling;
+      padding-bottom: var(--MediumPadding);
       text-align: center;
-      padding: var(--MediumPadding);
-      padding-top: 0;
     }
 
     .main-container .work-preview-container {
@@ -1144,7 +1139,6 @@ icon {
     .main-container {
       width: 100%;
       display: flex;
-
       background-color: var(--backgroundTransparentBlue);
       padding: var(--LargePadding);
       gap: var(--SmallPadding);
@@ -1161,7 +1155,6 @@ icon {
 
     .main-container .cta-text .cta-header h1 {
       @include main-header-styling;
-      padding: 0;
       color: white;
     }
 
@@ -1179,11 +1172,22 @@ icon {
     }
 
     .main-container .cta-text .cta-contact li {
+      position: relative;
       color: white;
       list-style: none;
       display: flex;
       align-items: center;
       gap: var(--SmallPadding);
+    }
+
+    .main-container .cta-text .cta-contact li:nth-child(1),
+    .main-container .cta-text .cta-contact li:nth-child(3) {
+      cursor: pointer;
+    }
+
+    .main-container .cta-text .cta-contact li p {
+      display: flex;
+      gap: var(--halfSmallPadding);
     }
 
     .main-container .cta-text .cta-contact li h2.email-address {
@@ -1193,52 +1197,49 @@ icon {
     }
 
     .main-container .cta-text .cta-contact .fa-icon {
-      font-size: var(--MediumPadding);
+      font-size: var(--smallFontSize);
     }
-
-    .main-container .cta-text .cta-contact li:nth-of-type(1) .fa-icon,
-    .main-container .cta-text .cta-contact li:nth-of-type(3) .fa-icon {
+    //heading and text transitions
+    .main-container .cta-text .cta-contact li h2,
+    .main-container .cta-text .cta-contact li .fa-icon {
       transition: color 0.3s ease;
-      cursor: pointer;
-      &:hover {
-        color: var(--headingColorLight);
-      }
     }
-
-    .main-container .cta-text .cta-contact li:nth-of-type(1) h2,
-    .main-container .cta-text .cta-contact li:nth-of-type(3) h2 {
-      transition: text-shadow 0.3s ease;
-      cursor: pointer;
-      &:hover {
-        text-shadow: 2px 2px 0 var(--headingColorLight),
-          -2px -2px 0 var(--headingColorLight),
-          -2px 2px 0 var(--headingColorLight),
-          2px -2px 0 var(--headingColorLight);
-      }
+    .main-container .cta-text .cta-contact li:nth-child(1):hover h2,
+    .main-container .cta-text .cta-contact li:nth-child(1):hover .fa-icon,
+    .main-container .cta-text .cta-contact li:nth-child(3):hover h2,
+    .main-container .cta-text .cta-contact li:nth-child(3):hover .fa-icon {
+      color: var(--headingColorLight);
+    }
+    //contact-underline styles
+    .main-container .cta-text .cta-contact li:nth-child(1) span,
+    .main-container .cta-text .cta-contact li:nth-child(3) span {
+      padding: 0 5px;
+      list-style-type: none;
+      text-decoration: none;
+      position: relative;
+    }
+    .main-container .cta-text .cta-contact li:nth-child(1) span::after,
+    .main-container .cta-text .cta-contact li:nth-child(3) span::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    }
+    .main-container .cta-text .cta-contact li:nth-child(1):hover span::after {
+      width: 100%;
+      background-color: var(--headingColorLight);
+    }
+    .main-container .cta-text .cta-contact li:nth-child(3):hover span::after {
+      width: 100%;
+      background-color: var(--headingColorLight);
     }
 
     .main-container .cta-form {
       flex: 1;
       min-width: 50%;
-      color: white;
-    }
-
-    .main-container .cta-form .contact-component .quote-form-container {
-      background: none;
-      background-color: white;
-    }
-
-    .main-container .cta-form h1 {
-      padding-bottom: var(--halfSmallPadding);
-    }
-
-    .main-container .cta-form h1,
-    .main-container .cta-form label {
-      color: var(--headingColorLight);
-    }
-
-    .main-container .cta-form .submit-button {
-      border: 3px solid var(--headingColorLight);
     }
   }
 
@@ -1247,41 +1248,36 @@ icon {
     .heading-section .main-container .heading-section-left {
       min-width: 400px;
     }
-
+    //introduction
     .introduction-section .content-container .content-block .text {
       min-width: initial;
       padding: var(--LargePadding) var(--LargePadding) 0 var(--LargePadding);
     }
-
     .introduction-section {
       padding: 0 0 var(--LargePadding) 0;
     }
-
     .introduction-section .content-container .content-block .text {
       display: flex;
       flex-direction: column;
     }
-
     .introduction-section .content-container .content-block {
       gap: var(--MediumPadding);
     }
-
     .introduction-section .content-container .content-block .who-we-are-images {
       min-width: 500px;
       grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
     }
 
+    //stats
     .stats-section .main-container .stats-text {
       height: auto;
       padding: var(--MediumPadding);
     }
-
     .stats-section .main-container .stats-container {
       @include flexCenter;
       background-color: var(--backgroundTransparentBlue);
       padding-bottom: var(--MediumPadding);
     }
-
     .stats-section .main-container .stats-container div {
       position: initial;
       height: auto;
@@ -1290,7 +1286,6 @@ icon {
       border-radius: 0.3rem;
       padding: var(--SmallPadding);
     }
-
     .stats-section .main-container .stats-container div ul {
       width: auto;
       flex-wrap: wrap;
@@ -1301,38 +1296,27 @@ icon {
       align-items: center;
       gap: var(--SmallPadding);
     }
-
     .stats-section .main-container .stats-container div ul .stats-card {
       border-left: none;
       padding: var(--SmallPadding);
     }
 
+    //cta
     .cta-section .main-container {
       flex-direction: column-reverse;
     }
-
+    .cta-section .main-container {
+      gap: var(--SmallPadding);
+      text-align: center;
+    }
     .cta-section .main-container .cta-text {
       gap: var(--SmallPadding);
     }
+    .cta-section .main-container .cta-text .cta-contact li {
+      justify-content: center;
+    }
   }
-
   @media (max-width: 492px) {
-    .introduction-section .content-container .content-block .text {
-      min-width: initial;
-    }
-
-    .introduction-section .content-container .content-block .who-we-are-images {
-      grid-template-columns: repeat(1, minmax(50px, 200px));
-    }
-
-    .cta-section .main-container .cta-content .cta-images.wrapped {
-      grid-template-rows: repeat(3, minmax(200px, 1fr));
-      grid-template-columns: repeat(1, minmax(200px, 1fr));
-    }
-    .cta-section .main-container .cta-content .cta-images.wrapped img {
-      grid-column: auto;
-      grid-row: auto;
-    }
   }
 }
 
@@ -1368,7 +1352,6 @@ icon {
     }
     .main-container p {
       @include p-styling();
-      padding: 0;
     }
   }
   .service-section {
@@ -1429,7 +1412,6 @@ icon {
     }
     .main-container .service-card-container .service-card p {
       @include p-styling;
-      padding: 0;
     }
     .main-container .service-card-container .service-card .service-benefits {
       width: 100%;
@@ -1587,7 +1569,6 @@ icon {
     }
     .main-container .benefit-container .benefit p {
       @include p-styling();
-      padding: 0;
     }
 
     .main-container .benefit-container .benefit .benefit-icon {
@@ -1658,7 +1639,6 @@ icon {
     }
     .main-container .vision-text p {
       @include p-styling();
-      padding-top: 0;
     }
   }
   .testimonial-section {

@@ -181,9 +181,11 @@ const Home = ({
                     </li>
                     <li>100% customer satisfaction guaranteed.</li>
                   </ul>
-                  <NavLink to="/about">
-                    <button className="button-block">Learn More</button>
-                  </NavLink>
+                  <div className="button-container">
+                    <NavLink to="/about">
+                      <button className="button-block">Learn More</button>
+                    </NavLink>
+                  </div>
                 </div>
               </div>
             </div>
@@ -307,23 +309,29 @@ const Home = ({
             </div>
             <ul className="cta-contact">
               <li onClick={openModal} data-type="phone">
-                <FaPhone className="fa-icon" />
                 <div className="cta-contact-text">
-                  <p>Call us</p>
+                  <p>
+                    <span>Call us</span>
+                    <FaPhone className="fa-icon" />
+                  </p>
                   <h2>{phoneNumber}</h2>
                 </div>
               </li>
               <li>
-                <FaRegClock className="fa-icon" />
                 <div className="cta-contact-text">
-                  <p>Open hours</p>
+                  <p>
+                    Open hours
+                    <FaRegClock className="fa-icon" />
+                  </p>
                   <h2>Monday - Sunday: 07:00 - 18:00</h2>
                 </div>
               </li>
               <li onClick={openModal} data-type="email">
-                <FaEnvelope className="fa-icon" />
                 <div className="cta-contact-text">
-                  <p>Email us</p>
+                  <p>
+                    <span>Email us</span>
+                    <FaEnvelope className="fa-icon" />
+                  </p>
                   <h2 className="email-address">
                     jetstreampressurewashingau@gmail.com
                   </h2>
