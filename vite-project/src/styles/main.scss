@@ -42,6 +42,8 @@
   --mediumFontSize: 1.8rem;
   --largeFontSize: 2.5rem;
   --extraLargeFontSize: 3.5rem;
+
+  //icon sizes
   --iconFontSize: 8rem;
   --mediumIconSize: 6rem;
   --smallerIconSize: 4rem;
@@ -1506,13 +1508,12 @@ icon {
       margin-top: var(--navbarMargin);
       @include flexCenter();
       flex-direction: column;
-      gap: var(--LargePadding);
+      gap: var(--MediumPadding);
     }
     .main-container img {
       height: 250px;
       margin-top: var(--LargePadding);
     }
-
     .main-container .benefit-container {
       @include flexCenter();
       flex-wrap: wrap;
@@ -1525,14 +1526,12 @@ icon {
       text-align: center;
       color: white;
     }
-    .main-container .benefit-container .benefit:last-child {
-      border-right: none;
-    }
 
     .main-container .benefit-container .benefit h2 {
       @include sub-header-styling();
-      padding: 0 0 var(--halfSmallPadding) 0;
+      padding-bottom: var(--halfSmallPadding)
     }
+
     .main-container .benefit-container .benefit p {
       @include p-styling();
     }
@@ -1547,12 +1546,10 @@ icon {
 
     .main-container {
       @include flexCenter();
-      height: auto;
       background-color: white;
-      padding: var(--MediumPadding);
-      border-radius: var(--RoundBorder);
-      flex-wrap: wrap;
-      gap: var(--MediumPadding);
+      padding: var(--LargePadding);
+      flex-wrap: wrap-reverse;
+      gap: var(--LargePadding);
     }
     .main-container .workImagesContainer img {
       height: 100%;
@@ -1565,20 +1562,20 @@ icon {
     }
     .main-container .workImagesContainer {
       display: flex;
+      height: 100%;
       gap: var(--halfSmallPadding);
-      min-width: 550px;
+      min-width: 700px;
       flex: 3;
     }
     .main-container .workImagesContainer .wrapper-1 {
       display: flex;
       flex: 1;
-      width: 50%;
     }
     .main-container .workImagesContainer .wrapper-2 {
       display: flex;
       flex-direction: column;
       gap: var(--halfSmallPadding);
-      width: 50%;
+      flex: 1;
     }
     .main-container .workImagesContainer .wrapper-1 .group-0 {
       flex: 1;
@@ -1594,12 +1591,14 @@ icon {
     }
 
     .main-container .vision-text {
-      min-width: 40%;
+      min-width: 500px;
       flex: 2;
-      // padding: var(--MediumPadding);
+      display: flex;
+      flex-direction: column;
+      gap: var(--SmallPadding);
     }
     .main-container .vision-text h1 {
-      @include main-header-styling();
+      @include sub-header-styling();
       padding-bottom: var(--halfSmallPadding);
       color: var(--headingColorLight);
     }
@@ -1612,14 +1611,12 @@ icon {
     height: 100%;
     .main-container {
       text-align: center;
-      padding: 0 0 var(--LargePadding);
       @include flexCenter();
       flex-direction: column;
       gap: var(--MediumPadding);
     }
     .main-container h1 {
       @include main-header-styling();
-      padding: 0;
       color: white;
     }
     .main-container .testimonial-list {
@@ -1634,7 +1631,6 @@ icon {
       flex-direction: column;
       gap: var(--SmallPadding);
       @include sub-header-styling();
-      padding: 0;
       flex: 1;
       min-width: 300px;
       color: white;

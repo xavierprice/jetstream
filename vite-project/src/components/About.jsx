@@ -43,12 +43,12 @@ const About = () => {
     {
       id: 1,
       name: "John Doe",
-      text: '"I was amazed by the quality of service provided by ABC Pressure Washing. My house looks brand new!"',
+      text: '"I was amazed by the quality of service provided by Jetstream Pressure Washing. My house looks brand new!"',
     },
     {
       id: 2,
       name: "Jane Smith",
-      text: '"The team at ABC Pressure Washing did a fantastic job on my driveway. I highly recommend their services!"',
+      text: '"The team at Jetstream Pressure Washing did a fantastic job on my driveway. I highly recommend their services!"',
     },
     {
       id: 3,
@@ -66,7 +66,9 @@ const About = () => {
             {benefits.map((benefit) => (
               <div className="benefit" key={benefit.title}>
                 <div className="benefit-icon">{benefit.icon}</div>
-                <h2>{benefit.title}</h2>
+                <span>
+                  <h2>{benefit.title}</h2>
+                </span>
                 <p>{benefit.description}</p>
               </div>
             ))}
@@ -114,23 +116,25 @@ const About = () => {
           </div>
 
           <div className="vision-text">
-            <h1>About Us</h1>
-            <p>
-              Welcome to Jetstream Pressure Washing, where we specialize in
-              restoring the beauty of your property with top-quality pressure
-              washing services. Our experienced team uses advanced equipment and
-              eco-friendly solutions to deliver remarkable results, leaving your
-              surfaces looking pristine and renewed.
-            </p>
-            <h1>Our Vision</h1>
-            <p>
-              At Jetstream Pressure Washing, we aim to lead the pressure washing
-              industry with exceptional service and customer satisfaction. We
-              deliver unparalleled results while focusing on environmental
-              responsibility. Through innovation and continuous improvement, we
-              enhance properties and positively impact communities. Join us in
-              elevating standards in pressure washing.
-            </p>
+            <span>
+              <h1>About Us</h1>
+              <p>
+                Welcome to Jetstream Pressure Washing, where we specialize in
+                restoring the beauty of your property with top-quality pressure
+                washing services. Our experienced team uses advanced equipment
+                and eco-friendly solutions to deliver remarkable results,
+                leaving your surfaces looking pristine and renewed.
+              </p>
+            </span>
+            <span>
+              <h1>Our Vision</h1>
+              <p>
+                At Jetstream Pressure Washing, we aim to lead the pressure
+                washing industry with exceptional service and customer
+                satisfaction. We deliver unparalleled results while focusing on
+                environmental responsibility.
+              </p>
+            </span>
           </div>
         </div>
       </section>
