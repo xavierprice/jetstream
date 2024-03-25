@@ -80,14 +80,6 @@
   font-size: var(--largeFontSize);
 }
 
-@mixin button-styling {
-  border: solid 1px white;
-  background-color: var(--buttonColor);
-  &:hover {
-    background-color: var(--hoverColor);
-  }
-}
-
 @mixin underline-style {
   padding: 0 5px;
   list-style-type: none;
@@ -224,14 +216,6 @@ icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  .modal-main {
-    color: white;
-    background-color: #003366;
-    h2 {
-      font-size: var(--largeFontSize);
-    }
-  }
 
   li a {
     list-style: none;
@@ -441,10 +425,9 @@ icon {
     gap: var(--SmallPadding);
     flex: 1;
     width: 100%;
-    height: auto;
     padding: var(--MediumPadding);
     background-color: white;
-    border-radius: 5px;
+    border-radius: var(--RoundBorder);
   }
 
   .quote-form-container h1 {
@@ -542,13 +525,13 @@ icon {
     height: 200px;
   }
   .footer-content .contact-list {
-    display: flex;
+    @include flexCenter();
     flex-wrap: wrap;
     padding: var(--SmallPadding);
+    gap: var(--SmallPadding);
   }
   .footer-content .contact-list .fa-icon {
     color: var(--headingColorLight);
-    margin: 0 var(--halfSmallPadding);
   }
   .footer-content .contact-list .location-phone {
     display: flex;
@@ -560,6 +543,7 @@ icon {
     display: flex;
     transition: color 0.3s ease;
     cursor: pointer;
+    gap: var(--halfSmallPadding);
     &:hover {
       color: var(--headingColorLight);
     }
@@ -594,9 +578,6 @@ icon {
   @media (max-width: 768px) {
     .footer-content .contact-list {
       flex-direction: column;
-    }
-    .footer-content .contact-list li {
-      padding: var(--halfSmallPadding);
     }
   }
 }
@@ -646,7 +627,7 @@ icon {
   flex-direction: column;
   font-size: 2rem;
   opacity: 0;
-  transition: z-index 4s, opacity 1.5s cubic-bezier(0.1, 0.045, 1, 1);
+  transition: z-index 1s ease-out, opacity 0.5s ease-in-out;
   z-index: -1;
   &.active {
     opacity: 1;
@@ -654,78 +635,23 @@ icon {
   }
 }
 
-.initial-fade-in,
+.initial-fade-in {
+  opacity: 0;
+  transition: opacity 0.75s ease-in;
+  &.active {
+    opacity: 1;
+  }
+}
+
 .fade-in {
   opacity: 0;
-  transition: opacity 1.5s cubic-bezier(0.1, 0.045, 1, 1);
+  transition: opacity 0.5s ease-in;
   &.active {
     opacity: 1;
   }
 }
 
 //pages
-
-.FAQ-page {
-  background-color: var(--headingColorLight);
-  padding: var(--SmallPadding);
-  flex: 1;
-  height: 100%;
-  border-radius: var(--RoundBorder);
-
-  .faq-header {
-    text-align: center;
-  }
-
-  .faq-header h1 {
-    @include main-header-styling;
-    color: var(--backgroundColor);
-  }
-
-  .faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--SmallPadding);
-
-    .faq-item {
-      padding: 1rem;
-      border-bottom: 1px solid black;
-      cursor: pointer;
-
-      &:last-child {
-        border-bottom: none;
-      }
-
-      h1 {
-        font-size: 1.3rem;
-      }
-
-      p {
-        font-size: 16px;
-        color: #555;
-      }
-
-      .faq-question {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .faq-icon {
-        font-size: 50px;
-        color: #555;
-        cursor: pointer;
-        transition: transform 0.5s ease;
-
-        &.plus {
-          transform: rotate(0deg);
-        }
-        &.minus {
-          transform: rotate(360deg);
-        }
-      }
-    }
-  }
-}
 
 .home-page {
   width: 100%;
@@ -1141,6 +1067,7 @@ icon {
     .main-container {
       width: 100%;
       display: flex;
+      flex-wrap: wrap-reverse;
       background-color: var(--backgroundTransparentBlue);
       padding: var(--LargePadding);
       gap: var(--SmallPadding);
@@ -1241,7 +1168,7 @@ icon {
 
     .main-container .cta-form {
       flex: 1;
-      min-width: 50%;
+      min-width: 450px;
     }
   }
 
@@ -1529,7 +1456,7 @@ icon {
 
     .main-container .benefit-container .benefit h2 {
       @include sub-header-styling();
-      padding-bottom: var(--halfSmallPadding)
+      padding-bottom: var(--halfSmallPadding);
     }
 
     .main-container .benefit-container .benefit p {
@@ -1679,9 +1606,9 @@ icon {
       padding: 6.5rem 0 var(--LargePadding) 0;
     }
     .main-container .form-left {
-      color: white;
-      min-width: 500px;
+      display: flex;
       flex: 1;
+      min-width: 450px;
     }
     .main-container .form-right {
       flex: 1;
@@ -1698,16 +1625,14 @@ icon {
     }
     .main-container .form-right h1 {
       @include main-header-styling();
-      padding: 0;
-      min-width: 500px;
     }
     .main-container .form-right h2 {
-      font-size: var(--mediumFontSize);
+      @include sub-header-styling();
     }
     .main-container .form-right .open-hours {
       @include flexCenter();
       flex-wrap: wrap;
-      gap: var(--SmallPadding);
+      gap: var(--halfSmallPadding);
     }
     .main-container .form-right .open-hours .time {
       @include flexCenter();
@@ -1725,7 +1650,13 @@ icon {
     .main-container .form-right .contact-list li {
       display: flex;
       align-items: center;
-      gap: var(--SmallPadding);
+      gap: var(--halfSmallPadding);
+      transition: color 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--headingColorLight);
+      }
     }
     .main-container .form-right .contact-list li .fa-icon {
       font-size: var(--mediumFontSize);
@@ -1733,12 +1664,6 @@ icon {
     }
     .main-container .form-right .contact-list p {
       font-size: var(--smallFontSize);
-      transition: color 0.3s ease;
-      cursor: pointer;
-
-      &:hover {
-        color: white;
-      }
     }
   }
   @media (max-width: 768px) {

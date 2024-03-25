@@ -17,13 +17,6 @@ import workImage4 from "./assets/work-images/work-image-4.jpeg";
 
 Modal.setAppElement("#root");
 
-const backgroundImages = [
-  "/src/assets/background-images/house-1.jpeg",
-  "/src/assets/background-images/house-2.jpeg",
-  "/src/assets/background-images/house-3.jpeg",
-  "/src/assets/background-images/house-4.jpeg",
-];
-
 const App = () => {
   const [initialFade, setinitialFade] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
@@ -52,7 +45,6 @@ const App = () => {
 
   const openModal = (event) => {
     const dataType = event.currentTarget.getAttribute("data-type");
-    console.log("dataType:", dataType);
     if (dataType === "phone") {
       setContactInfo(contactPhoneNumber);
     } else if (dataType === "email") {
@@ -149,8 +141,10 @@ const App = () => {
     });
     setTimeout(() => {
       setShowWelcomeMessage(false);
-      setFadeIn(true);
     }, 3000);
+    setTimeout(() => {
+      setFadeIn(true);
+    }, 3250);
   }, []);
 
   return (
