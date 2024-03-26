@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { FaHome, FaTree, FaRoad } from "react-icons/fa";
-import "./styles/app.scss";
 import Navbar from "./components/Navbar.jsx";
 import Home from "./components/Home.jsx";
 import Footer from "./components/Footer";

@@ -10,7 +10,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compile:sass": "sass src/styles/main.scss src/styles/main.css -w"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.2",
