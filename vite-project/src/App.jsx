@@ -163,7 +163,7 @@ const App = () => {
             />
             <Routes>
               <Route
-                path="/"
+                path="/jetstream"
                 element={
                   <Home
                     services={services}
@@ -175,16 +175,16 @@ const App = () => {
                 }
               ></Route>
               <Route
-                path="/services"
+                path="/jetstream/services"
                 element={<Services services={services} />}
               ></Route>
               <Route
-                path="/services/:id"
+                path="/jetstream/services/:id"
                 element={<Services services={services} />}
               ></Route>
-              <Route path="/about" element={<About />}></Route>
+              <Route path="/jetstream/about" element={<About />}></Route>
               <Route
-                path="/contact"
+                path="/jetstream/contact"
                 element={
                   <Contact
                     services={services}
@@ -198,7 +198,7 @@ const App = () => {
                 }
               ></Route>
               <Route
-                path="/contact/:id"
+                path="/jetstream/contact/:id"
                 element={
                   <Contact
                     services={services}

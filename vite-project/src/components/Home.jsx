@@ -131,10 +131,16 @@ const Home = ({
                     <p>{service.description}</p>
                   </div>
                   <div className="service-buttons">
-                    <NavLink to={`/services/${index}`} key={`services${index}`}>
+                    <NavLink
+                      to={`/jetstream/services/${index}`}
+                      key={`services${index}`}
+                    >
                       <button className="button-block">Learn more</button>
                     </NavLink>
-                    <NavLink to={`/contact/${index}`} key={`contact${index}`}>
+                    <NavLink
+                      to={`/jetstream/contact/${index}`}
+                      key={`contact${index}`}
+                    >
                       <button className="button-block">Request a quote</button>
                     </NavLink>
                   </div>
@@ -182,7 +188,7 @@ const Home = ({
                     <li>100% customer satisfaction guaranteed.</li>
                   </ul>
                   <div className="button-container">
-                    <NavLink to="/about">
+                    <NavLink to="/jetstream/about">
                       <button className="button-block">Learn More</button>
                     </NavLink>
                   </div>
@@ -240,7 +246,7 @@ const Home = ({
                 <h2>{step.title}</h2>
                 <div className="step-spacer">
                   <p>{step.description}</p>
-                  <NavLink to="/contact">
+                  <NavLink to="/jetstream/contact">
                     <button className="button-block">{step.button}</button>
                   </NavLink>
                 </div>
