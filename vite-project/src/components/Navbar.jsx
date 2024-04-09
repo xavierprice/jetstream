@@ -42,13 +42,13 @@ const Navbar = ({ openModal, phoneNumber }) => {
   return (
     <div className="navbar-component">
       <li className="navbar-left">
-        <Link to="/jetstream" onClick={closeMenu}>
+        <Link to="/jetstream/" onClick={closeMenu}>
           <h1 className={!nav ? "" : "navbar-left alt"}>JPW</h1>
         </Link>
       </li>
       <ul className="navbar-headings">
-        <li className={location.pathname === "/jetstream" ? "active" : ""}>
-          <Link to="/jetstream">Home</Link>
+        <li className={location.pathname === "/jetstream/" ? "active" : ""}>
+          <Link to="/jetstream/">Home</Link>
         </li>
         <li className={location.pathname.includes("/services") ? "active" : ""}>
           <Link to="/jetstream/services">Services</Link>
@@ -77,8 +77,8 @@ const Navbar = ({ openModal, phoneNumber }) => {
         {!nav ? <FaBars /> : <FaTimes className="faTimes" />}
       </li>
       <ul className={!nav ? "mobile-menu" : "mobile-menu show"}>
-        <li className={location.pathname === "/jetstream" ? "active" : ""}>
-          <Link to="/jetstream" onClick={closeMenu}>
+        <li className={location.pathname === "/jetstream/" ? "active" : ""}>
+          <Link to="/jetstream/" onClick={closeMenu}>
             Home
           </Link>
         </li>

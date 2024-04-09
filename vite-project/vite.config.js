@@ -4,6 +4,6 @@ import sass from "vite-plugin-sass";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/jetstream",
+  base: "/jetstream/",
   plugins: [react(), sass()],
 });

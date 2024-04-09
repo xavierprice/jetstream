@@ -202,6 +202,15 @@ icon {
   }
 }
 
+.background-style {
+  background-image: url(../assets/background-images/house-1.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  background-position: center;
+}
+
 //components
 
 .navbar-component {

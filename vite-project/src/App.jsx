@@ -150,7 +150,7 @@ const App = () => {
     <Router>
       <ScrollToTopPageChange />
       <main className={`initial-fade-in ${initialFade ? "active" : ""}`}>
-        <div style={backgroundStyle}>
+        <div className="background-style">
           <section className={`fade-in ${fadeIn ? "active" : ""}`}>
             <Navbar openModal={openModal} phoneNumber={phoneNumber} />
             <CallModal
