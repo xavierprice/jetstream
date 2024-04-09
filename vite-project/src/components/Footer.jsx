@@ -20,7 +20,7 @@ const Footer = ({
   return (
     <footer className="footer-component">
       <div className="footer-content">
-        <div class="footer-logo">
+        <div className="footer-logo">
           <img src={logo} alt="Your Logo" />
         </div>
         <div className="contact-list">

@@ -9,14 +9,17 @@ import {
   FaRegClock,
 } from "react-icons/fa";
 
-import workImage1 from "../assets/work-images/work-image-1.jpeg";
-import workImage2 from "../assets/work-images/work-image-2.jpeg";
-import workImage5 from "../assets/work-images/work-image-5.jpeg";
+import workImage1 from "../assets/images/home-page(6)/1-driveway-before.jpg";
+import workImage2 from "../assets/images/home-page(6)/2-driveway-After.jpg";
+import workImage3 from "../assets/images/home-page(6)/3-driveway.jpg";
+import workImage4 from "../assets/images/home-page(6)/4-house.jpg";
+import workImage5 from "../assets/images/home-page(6)/5-driveway-before.jpg";
+import workImage6 from "../assets/images/home-page(6)/6-driveway-after.jpg";
 
-import workVideo1 from "../assets/work-images/work-video-1.mp4";
-import workVideo2 from "../assets/work-images/work-video-2.mp4";
-import workVideo4 from "../assets/work-images/work-video-4.mp4";
-import workVideo5 from "../assets/work-images/work-video-5.mp4";
+import workVideo1 from "../assets//videos/exterior.mp4";
+import workVideo2 from "../assets//videos/intro-1.mp4";
+import workVideo4 from "../assets//videos/intro-2.mp4";
+import workVideo5 from "../assets//videos/intro-3.mp4";
 
 import whiteAndBluelogo from "../assets/logos/white-and-blue-logo.png";
 
@@ -55,12 +58,12 @@ const Home = ({
   ];
   const workPreviews = [workVideo1, workVideo5, workVideo2, workVideo4];
   const workImages = [
-    workImage5,
+    workImage1,
     workImage2,
+    workImage3,
+    workImage4,
     workImage5,
-    workImage1,
-    workImage5,
-    workImage1,
+    workImage6,
   ];
 
   //states

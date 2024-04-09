@@ -600,7 +600,6 @@ icon {
   width: 443px;
 }
 .home-page .heading-section .main-container .heading-section-left .heading-introduction img {
-  height: 16rem;
   width: 100%;
 }
 .home-page .services-section {
@@ -706,7 +705,6 @@ icon {
 .home-page .introduction-section .content-container .content-block .text h2 {
   font-size: var(--mediumFontSize);
   color: var(--headingColorLight);
-  padding: 0;
 }
 .home-page .introduction-section .content-container .content-block .text .highlights ul,
 .home-page .introduction-section .content-container .content-block .text .introduction p {
@@ -721,7 +719,7 @@ icon {
 .home-page .introduction-section .content-container .content-block .who-we-are-images {
   height: auto;
   flex: 3;
-  justify-content: space-around;
+  justify-content: center;
   display: grid;
   border-radius: var(--RoundBorder);
   grid-template-columns: repeat(3, minmax(200px, 300px));
@@ -887,7 +885,7 @@ icon {
 .home-page .work-preview-section .main-container {
   background-color: white;
   width: 100%;
-  padding: var(--LargePadding);
+  padding: var(--MediumPadding);
   display: flex;
   flex-direction: column;
 }
@@ -928,15 +926,16 @@ icon {
   flex-wrap: wrap-reverse;
   background-color: var(--backgroundTransparentBlue);
   padding: var(--LargePadding);
-  gap: var(--SmallPadding);
+  gap: var(--LargePadding);
 }
 .home-page .cta-section .main-container .cta-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-content: space-evenly;
+  text-align: center;
+  gap: var(--LargePadding);
   flex: 1;
-  min-width: 50%;
+  min-width: 40%;
 }
 .home-page .cta-section .main-container .cta-text .cta-header h1 {
   font-size: var(--largeFontSize);
@@ -947,11 +946,12 @@ icon {
   line-height: 1.6;
   font-weight: 500;
   color: white;
-  padding: var(--halfSmallPadding) 0;
+  padding: var(--halfSmallPadding) 0 0 0;
 }
 .home-page .cta-section .main-container .cta-text .cta-contact {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--SmallPadding);
   min-width: 50%;
 }
@@ -1019,9 +1019,16 @@ icon {
   min-width: 450px;
 }
 @media (max-width: 768px) {
+  .home-page .heading-section .main-container {
+    flex-direction: column;
+  }
   .home-page .heading-section .main-container .heading-section-right,
   .home-page .heading-section .main-container .heading-section-left {
-    min-width: 400px;
+    min-width: auto;
+  }
+  .home-page .heading-section .main-container .heading-section-left .heading-introduction .image {
+    max-width: 443px;
+    width: auto;
   }
   .home-page .introduction-section .content-container .content-block .text {
     min-width: initial;
@@ -1038,8 +1045,9 @@ icon {
     gap: var(--MediumPadding);
   }
   .home-page .introduction-section .content-container .content-block .who-we-are-images {
-    min-width: 500px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
+    padding: 0 var(--SmallPadding);
+    min-width: 400px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
   }
   .home-page .stats-section .main-container .stats-text {
     height: auto;
@@ -1074,20 +1082,16 @@ icon {
     border-left: none;
     padding: var(--SmallPadding);
   }
-  .home-page .cta-section .main-container {
-    flex-direction: column-reverse;
-  }
-  .home-page .cta-section .main-container {
-    gap: var(--SmallPadding);
-    text-align: center;
-  }
-  .home-page .cta-section .main-container .cta-text {
-    gap: var(--SmallPadding);
-  }
-  .home-page .cta-section .main-container .cta-text .cta-contact li {
-    justify-content: center;
+  .home-page .cta-section .main-container .cta-form {
+    min-width: auto;
   }
 }
+@media (max-width: 492px) {
+  .home-page .introduction-section .content-container .content-block .who-we-are-images {
+    min-width: initial;
+  }
+}
+
 .services-page {
   height: 100%;
   width: 100%;

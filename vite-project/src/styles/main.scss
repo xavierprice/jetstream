@@ -713,8 +713,8 @@ icon {
     .main-container .heading-section-left .heading-introduction .image {
       width: 443px;
     }
+
     .main-container .heading-section-left .heading-introduction img {
-      height: 16rem;
       width: 100%;
     }
   }
@@ -835,7 +835,6 @@ icon {
     .content-container .content-block .text h2 {
       @include sub-header-styling;
       color: var(--headingColorLight);
-      padding: 0;
     }
     .content-container .content-block .text .highlights ul,
     .content-container .content-block .text .introduction p {
@@ -848,7 +847,7 @@ icon {
     .content-container .content-block .who-we-are-images {
       height: auto;
       flex: 3;
-      justify-content: space-around;
+      justify-content: center;
       display: grid;
       border-radius: var(--RoundBorder);
       grid-template-columns: repeat(3, minmax(200px, 300px));
@@ -1032,7 +1031,7 @@ icon {
     .main-container {
       background-color: white;
       width: 100%;
-      padding: var(--LargePadding);
+      padding: var(--MediumPadding);
       display: flex;
       flex-direction: column;
     }
@@ -1079,16 +1078,17 @@ icon {
       flex-wrap: wrap-reverse;
       background-color: var(--backgroundTransparentBlue);
       padding: var(--LargePadding);
-      gap: var(--SmallPadding);
+      gap: var(--LargePadding);
     }
 
     .main-container .cta-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      justify-content: space-evenly;
+      text-align: center;
+      gap: var(--LargePadding);
       flex: 1;
-      min-width: 50%;
+      min-width: 40%;
     }
 
     .main-container .cta-text .cta-header h1 {
@@ -1099,12 +1099,13 @@ icon {
     .main-container .cta-text .cta-header p {
       @include p-styling;
       color: white;
-      padding: var(--halfSmallPadding) 0;
+      padding: var(--halfSmallPadding) 0 0 0;
     }
 
     .main-container .cta-text .cta-contact {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: var(--SmallPadding);
       min-width: 50%;
     }
@@ -1182,10 +1183,22 @@ icon {
   }
 
   @media (max-width: 768px) {
+    .heading-section .main-container {
+      flex-direction: column;
+    }
     .heading-section .main-container .heading-section-right,
     .heading-section .main-container .heading-section-left {
-      min-width: 400px;
+      min-width: auto;
     }
+    .heading-section
+      .main-container
+      .heading-section-left
+      .heading-introduction
+      .image {
+      max-width: 443px;
+      width: auto;
+    }
+
     //introduction
     .introduction-section .content-container .content-block .text {
       min-width: initial;
@@ -1202,8 +1215,9 @@ icon {
       gap: var(--MediumPadding);
     }
     .introduction-section .content-container .content-block .who-we-are-images {
-      min-width: 500px;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
+      padding: 0 var(--SmallPadding);
+      min-width: 400px;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
     }
 
     //stats
@@ -1240,21 +1254,14 @@ icon {
     }
 
     //cta
-    .cta-section .main-container {
-      flex-direction: column-reverse;
-    }
-    .cta-section .main-container {
-      gap: var(--SmallPadding);
-      text-align: center;
-    }
-    .cta-section .main-container .cta-text {
-      gap: var(--SmallPadding);
-    }
-    .cta-section .main-container .cta-text .cta-contact li {
-      justify-content: center;
+    .cta-section .main-container .cta-form {
+      min-width: auto;
     }
   }
   @media (max-width: 492px) {
+        .introduction-section .content-container .content-block .who-we-are-images {
+          min-width: initial;
+        }
   }
 }
 
