@@ -215,7 +215,7 @@ const App = () => {
             <Footer
               openModal={openModal}
               phoneNumber={phoneNumber}
-              email={email}
+              modifiedEmail={modifiedEmail}
               contactLocation={contactLocation}
               openMaps={openMaps}
             />

@@ -12,7 +12,7 @@ import logo from "../assets/logos/original-logo.png";
 
 const Footer = ({
   phoneNumber,
-  email,
+  modifiedEmail,
   contactLocation,
   openModal,
   openMaps,
@@ -28,9 +28,9 @@ const Footer = ({
             <FaPhone className="fa-icon" />
             {phoneNumber}
           </li>
-          <li onClick={openModal} data-type="email">
+          <li onClick={openModal} data-type="email" className="email-break">
             <FaEnvelope className="fa-icon" />
-            {email}
+            {modifiedEmail}
           </li>
           <li onClick={openMaps} data-type="location">
             <FaMapMarkerAlt className="fa-icon" />

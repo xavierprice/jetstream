@@ -27,6 +27,9 @@
   --SmallPadding: 1.5rem;
   --MediumPadding: 3rem;
   --LargePadding: 4.5rem;
+  --mobile-font-size: 1rem;
+  --mobile-h2-size: 1.6rem;
+  --mobile-h1-size: 2rem;
   --smallFontSize: 1.1rem;
   --mediumFontSize: 1.8rem;
   --largeFontSize: 2.5rem;
@@ -57,6 +60,18 @@ a {
 
 icon {
   cursor: pointer;
+}
+
+p {
+  font-size: var(--smallFontSize);
+}
+
+h2 {
+  font-size: var(--mediumFontSize);
+}
+
+h1 {
+  font-size: var(--largeFontSize);
 }
 
 .button-block {
@@ -346,7 +361,6 @@ icon {
 }
 .contact-component .quote-form-container h1 {
   text-align: center;
-  font-size: var(--largeFontSize);
   color: var(--headingColorLight);
 }
 .contact-component .quote-form-container .quote-form {
@@ -411,6 +425,11 @@ icon {
   background-color: var(--hoverColor);
   color: white;
 }
+@media (max-width: 492px) {
+  .contact-component .quote-form-container {
+    padding: var(--SmallPadding);
+  }
+}
 
 .footer-component {
   background-color: white;
@@ -424,8 +443,11 @@ icon {
 .footer-component .footer-content h3 {
   padding: var(--halfSmallPadding);
 }
+.footer-component .footer-content .footer-logo {
+  width: 443px;
+}
 .footer-component .footer-content .footer-logo img {
-  height: 200px;
+  width: 100%;
 }
 .footer-component .footer-content .contact-list {
   display: flex;
@@ -446,6 +468,7 @@ icon {
 }
 .footer-component .footer-content .contact-list li {
   display: flex;
+  text-align: center;
   transition: color 0.3s ease;
   cursor: pointer;
   gap: var(--halfSmallPadding);
@@ -471,19 +494,24 @@ icon {
   color: var(--headingColorLight);
 }
 .footer-component .footer-copyright {
-  height: 50px;
+  text-align: center;
+  height: auto;
   background-color: var(--backgroundColor);
-  padding: var(--SmallPadding);
+  padding: var(--SmallPadding) var(--LargePadding);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: var(--halfSmallPadding);
 }
 @media (max-width: 768px) {
   .footer-component .footer-content .contact-list {
     flex-direction: column;
   }
+  .footer-component .footer-content .footer-logo {
+    max-width: 443px;
+    width: auto;
+  }
 }
-
 .back-to-top {
   width: var(--MediumPadding);
   height: var(--MediumPadding);
@@ -510,6 +538,12 @@ icon {
 }
 .back-to-top:hover {
   background-color: var(--headingColorLight);
+}
+@media (max-width: 492px) {
+  .back-to-top {
+    height: var(--largeFontSize);
+    width: var(--largeFontSize);
+  }
 }
 
 .welcome-message {
@@ -591,7 +625,6 @@ icon {
   gap: var(--SmallPadding);
 }
 .home-page .heading-section .main-container .heading-section-left .heading-introduction p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
   color: white;
@@ -619,13 +652,12 @@ icon {
   flex-direction: column;
 }
 .home-page .services-section .service-container h1 {
-  font-size: var(--largeFontSize);
   color: var(--headingColorLight);
+  text-align: center;
 }
 .home-page .services-section .service-container p {
   max-width: 1100px;
   text-align: center;
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
   padding: var(--MediumPadding);
@@ -659,9 +691,6 @@ icon {
   flex-direction: column;
   justify-content: space-between;
 }
-.home-page .services-section .service-container .service-grid-container .service-grid-card .service-details h2 {
-  font-size: var(--mediumFontSize);
-}
 .home-page .services-section .service-container .service-grid-container .service-grid-card .service-details .service-buttons {
   display: flex;
   flex-direction: column;
@@ -677,7 +706,6 @@ icon {
   background-color: white;
 }
 .home-page .introduction-section .content-container .content-block {
-  height: auto;
   display: flex;
   gap: var(--LargePadding);
   flex-wrap: wrap-reverse;
@@ -703,12 +731,10 @@ icon {
   gap: var(--MediumPadding);
 }
 .home-page .introduction-section .content-container .content-block .text h2 {
-  font-size: var(--mediumFontSize);
   color: var(--headingColorLight);
 }
 .home-page .introduction-section .content-container .content-block .text .highlights ul,
 .home-page .introduction-section .content-container .content-block .text .introduction p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -755,11 +781,9 @@ icon {
   position: relative;
 }
 .home-page .stats-section .main-container .stats-text h1 {
-  font-size: var(--largeFontSize);
   padding-bottom: var(--halfSmallPadding);
 }
 .home-page .stats-section .main-container .stats-text p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -809,12 +833,10 @@ icon {
   justify-content: space-evenly;
 }
 .home-page .steps-section .main-container h1 {
-  font-size: var(--largeFontSize);
   text-align: center;
   color: var(--headingColorLight);
 }
 .home-page .steps-section .main-container p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
   padding-bottom: var(--MediumPadding);
@@ -866,7 +888,6 @@ icon {
   padding-bottom: var(--halfSmallPadding);
 }
 .home-page .steps-section .main-container .steps-container p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
   padding: 0 0 var(--SmallPadding) 0;
@@ -890,13 +911,11 @@ icon {
   flex-direction: column;
 }
 .home-page .work-preview-section .main-container h1 {
-  font-size: var(--largeFontSize);
   text-align: center;
   color: var(--headingColorLight);
   padding-bottom: var(--halfSmallPadding);
 }
 .home-page .work-preview-section .main-container p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
   padding-bottom: var(--MediumPadding);
@@ -938,11 +957,9 @@ icon {
   min-width: 40%;
 }
 .home-page .cta-section .main-container .cta-text .cta-header h1 {
-  font-size: var(--largeFontSize);
   color: white;
 }
 .home-page .cta-section .main-container .cta-text .cta-header p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
   color: white;
@@ -1027,12 +1044,14 @@ icon {
     min-width: auto;
   }
   .home-page .heading-section .main-container .heading-section-left .heading-introduction .image {
+    min-width: 200px;
     max-width: 443px;
     width: auto;
   }
   .home-page .introduction-section .content-container .content-block .text {
     min-width: initial;
-    padding: var(--LargePadding) var(--LargePadding) 0 var(--LargePadding);
+    padding: var(--MediumPadding);
+    text-align: center;
   }
   .home-page .introduction-section {
     padding: 0 0 var(--LargePadding) 0;
@@ -1040,6 +1059,9 @@ icon {
   .home-page .introduction-section .content-container .content-block .text {
     display: flex;
     flex-direction: column;
+  }
+  .home-page .introduction-section .content-container .content-block .text ul {
+    list-style-type: none;
   }
   .home-page .introduction-section .content-container .content-block {
     gap: var(--MediumPadding);
@@ -1087,8 +1109,44 @@ icon {
   }
 }
 @media (max-width: 492px) {
+  .home-page p {
+    font-size: var(--mobile-font-size);
+  }
+  .home-page h2 {
+    font-size: var(--mobile-h2-size);
+  }
+  .home-page h1 {
+    font-size: var(--mobile-h1-size);
+  }
+  .home-page .heading-section .main-container {
+    padding: 6.5rem var(--SmallPadding) var(--SmallPadding) var(--SmallPadding);
+  }
+  .home-page .services-section {
+    padding: var(--LargePadding) var(--SmallPadding) var(--LargePadding) var(--SmallPadding);
+  }
+  .home-page .services-section .service-container p {
+    padding: var(--halfSmallPadding) 0 var(--MediumPadding) 0;
+  }
   .home-page .introduction-section .content-container .content-block .who-we-are-images {
     min-width: initial;
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
+  }
+  .home-page .introduction-section .content-container .content-block .text {
+    padding: var(--LargePadding) var(--SmallPadding) var(--LargePadding) var(--SmallPadding);
+    padding-bottom: 0;
+  }
+  .home-page .steps-section {
+    padding: var(--LargePadding) var(--SmallPadding) var(--LargePadding) var(--SmallPadding);
+  }
+  .home-page .steps-section .main-container .steps-container .step {
+    padding: var(--halfSmallPadding);
+  }
+  .home-page .work-preview-section .main-container {
+    padding: var(--LargePadding) var(--SmallPadding) var(--LargePadding) var(--SmallPadding);
+  }
+  .home-page .cta-section .main-container {
+    padding: var(--LargePadding) var(--SmallPadding) var(--LargePadding) var(--SmallPadding);
   }
 }
 
@@ -1118,11 +1176,9 @@ icon {
   margin-top: var(--LargePadding);
 }
 .services-page .heading-section .main-container h1 {
-  font-size: var(--largeFontSize);
   padding: var(--SmallPadding) 0 var(--halfSmallPadding) 0;
 }
 .services-page .heading-section .main-container p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -1172,12 +1228,10 @@ icon {
   flex: 1;
 }
 .services-page .service-section .main-container .service-card-container .service-card h1 {
-  font-size: var(--largeFontSize);
   color: var(--headingColorLight);
   padding: 0 0 var(--halfSmallPadding) 0;
 }
 .services-page .service-section .main-container .service-card-container .service-card p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -1284,11 +1338,9 @@ icon {
   color: white;
 }
 .about-page .header-section .main-container .benefit-container .benefit h2 {
-  font-size: var(--mediumFontSize);
   padding-bottom: var(--halfSmallPadding);
 }
 .about-page .header-section .main-container .benefit-container .benefit p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -1354,12 +1406,10 @@ icon {
   gap: var(--SmallPadding);
 }
 .about-page .vision-section .main-container .vision-text h1 {
-  font-size: var(--mediumFontSize);
   padding-bottom: var(--halfSmallPadding);
   color: var(--headingColorLight);
 }
 .about-page .vision-section .main-container .vision-text p {
-  font-size: 1.2rem;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -1376,7 +1426,6 @@ icon {
   gap: var(--MediumPadding);
 }
 .about-page .testimonial-section .main-container h1 {
-  font-size: var(--largeFontSize);
   color: white;
 }
 .about-page .testimonial-section .main-container .testimonial-list {
@@ -1390,7 +1439,6 @@ icon {
   display: flex;
   flex-direction: column;
   gap: var(--SmallPadding);
-  font-size: var(--mediumFontSize);
   flex: 1;
   min-width: 300px;
   color: white;
@@ -1457,12 +1505,6 @@ icon {
 .contact-page .form-section .main-container .form-right p {
   font-size: var(--mediumFontSize);
 }
-.contact-page .form-section .main-container .form-right h1 {
-  font-size: var(--largeFontSize);
-}
-.contact-page .form-section .main-container .form-right h2 {
-  font-size: var(--mediumFontSize);
-}
 .contact-page .form-section .main-container .form-right .open-hours {
   display: flex;
   justify-content: center;
@@ -1500,9 +1542,6 @@ icon {
 .contact-page .form-section .main-container .form-right .contact-list li .fa-icon {
   font-size: var(--mediumFontSize);
   cursor: pointer;
-}
-.contact-page .form-section .main-container .form-right .contact-list p {
-  font-size: var(--smallFontSize);
 }
 @media (max-width: 768px) {
   .contact-page .form-section .main-container .form-right h1 {
