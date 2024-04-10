@@ -10,9 +10,24 @@ import ScrollToTopPageChange from "./components/ScrollToTopPageChange";
 import Modal from "react-modal";
 import CallModal from "./components/CallModal";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import workImage1 from "./assets/work-images/work-image-1.jpeg";
-import workImage2 from "./assets/work-images/work-image-2.jpeg";
-import workImage4 from "./assets/work-images/work-image-4.jpeg";
+//driveway imports
+import driveway1 from "./assets/images/driveway-cleaning(5)/1-driveway-before.jpg";
+import driveway2 from "./assets/images/driveway-cleaning(5)/2-driveway-after.jpg";
+import driveway3 from "./assets/images/driveway-cleaning(5)/3-driveway.jpg";
+import driveway4 from "./assets/images/driveway-cleaning(5)/4-driveway-before.jpg";
+import driveway5 from "./assets/images/driveway-cleaning(5)/5-driveway-after.jpg";
+//exterior imports
+import exterior1 from "./assets/images/house-washing(5)/1-exterior-before.jpg";
+import exterior2 from "./assets/images/house-washing(5)/2-exterior-after.jpg";
+import exterior3 from "./assets/images/house-washing(5)/3-house.jpg";
+import exterior4 from "./assets/images/house-washing(5)/4-exterior-before.jpg";
+import exterior5 from "./assets/images/house-washing(5)/5-exterior-after.jpg";
+//roof and fencing imports
+import roofAndFence1 from "./assets/images/roof-and-fencing(5)/1-fence-before.jpg";
+import roofAndFence2 from "./assets/images/roof-and-fencing(5)/2-fence-after.jpg";
+import roofAndFence3 from "./assets/images/roof-and-fencing(5)/3-fence.jpg";
+import roofAndFence4 from "./assets/images/roof-and-fencing(5)/4-fence-before.jpg";
+import roofAndFence5 from "./assets/images/roof-and-fencing(5)/5-fence-after.jpg";
 
 Modal.setAppElement("#root");
 
@@ -65,7 +80,7 @@ const App = () => {
       description:
         "Restore the look of your driveway with our high-pressure cleaning services,",
       icon: <FaRoad />,
-      images: [workImage2, workImage1, workImage4, workImage2, workImage1],
+      images: [driveway1, driveway2, driveway3, driveway4, driveway5],
       benefits: [
         {
           title: "Removes Tough Stains",
@@ -89,7 +104,7 @@ const App = () => {
       description:
         "Give your home a fresh appearance by removing dirt and grime from its exterior.",
       icon: <FaHome />,
-      images: [workImage2, workImage1, workImage4, workImage2, workImage1],
+      images: [exterior1, exterior2, exterior3, exterior4, exterior5],
       benefits: [
         {
           title: "Protects Exterior Paint",
@@ -109,11 +124,17 @@ const App = () => {
       ],
     },
     {
-      title: "Deck and Patio Cleaning",
+      title: "Roof and Fence Cleaning",
       description:
         "Renew the appearance of your deck or patio, preparing them for outdoor gatherings.",
       icon: <FaTree />,
-      images: [workImage2, workImage1, workImage4, workImage2, workImage1],
+      images: [
+        roofAndFence1,
+        roofAndFence2,
+        roofAndFence3,
+        roofAndFence4,
+        roofAndFence5,
+      ],
       benefits: [
         {
           title: "Restores Original Color",

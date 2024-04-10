@@ -20,15 +20,15 @@ const Services = ({ services }) => {
     <main className="services-page">
       <section className="heading-section">
         <div className="main-container">
-          <div className="main-heading">
-            <img src={whiteAndBluelogo} alt="Jetstream Logo" />
+            <div className="image">
+              <img src={whiteAndBluelogo} alt="Jetstream Logo" />
+            </div>
             <h1>Professional Pressure Washing Services Tailored to You</h1>
             <p>
               Elevate Your Property's Appearance with Our Comprehensive Pressure
               Washing Services. Discover the Difference in Cleanliness and
               Brilliance!
             </p>
-          </div>
         </div>
       </section>
       <section className="service-section">

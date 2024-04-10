@@ -65,13 +65,28 @@ icon {
 p {
   font-size: var(--smallFontSize);
 }
+@media (max-width: 492px) {
+  p {
+    font-size: var(--mobile-font-size);
+  }
+}
 
 h2 {
   font-size: var(--mediumFontSize);
 }
+@media (max-width: 492px) {
+  h2 {
+    font-size: var(--mobile-h2-size);
+  }
+}
 
 h1 {
   font-size: var(--largeFontSize);
+}
+@media (max-width: 492px) {
+  h1 {
+    font-size: var(--mobile-h1-size);
+  }
 }
 
 .button-block {
@@ -608,7 +623,7 @@ h1 {
   gap: var(--MediumPadding);
   flex-wrap: wrap;
   background-color: var(--backgroundTransparentBlue);
-  padding: 6.5rem var(--LargePadding) var(--LargePadding) var(--LargePadding);
+  padding: 6.5rem var(--LargePadding) 0 var(--LargePadding);
 }
 .home-page .heading-section .main-container .heading-section-left {
   text-align: center;
@@ -1109,17 +1124,8 @@ h1 {
   }
 }
 @media (max-width: 492px) {
-  .home-page p {
-    font-size: var(--mobile-font-size);
-  }
-  .home-page h2 {
-    font-size: var(--mobile-h2-size);
-  }
-  .home-page h1 {
-    font-size: var(--mobile-h1-size);
-  }
   .home-page .heading-section .main-container {
-    padding: 6.5rem var(--SmallPadding) var(--SmallPadding) var(--SmallPadding);
+    padding: 6.5rem var(--SmallPadding) 0 var(--SmallPadding);
   }
   .home-page .services-section {
     padding: var(--LargePadding) var(--SmallPadding) var(--LargePadding) var(--SmallPadding);
@@ -1155,10 +1161,7 @@ h1 {
   width: 100%;
 }
 .services-page .heading-section {
-  width: 100%;
-  flex-direction: column;
   background: var(--backgroundTransparentBlue);
-  padding: 0 var(--LargePadding);
   color: white;
   text-align: center;
 }
@@ -1167,13 +1170,13 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 6.5rem var(--LargePadding) 0 var(--LargePadding);
 }
-.services-page .heading-section .main-container .main-heading {
-  margin-top: var(--navbarMargin);
+.services-page .heading-section .main-container .image {
+  width: 443px;
 }
 .services-page .heading-section .main-container img {
-  height: 250px;
-  margin-top: var(--LargePadding);
+  width: 100%;
 }
 .services-page .heading-section .main-container h1 {
   padding: var(--SmallPadding) 0 var(--halfSmallPadding) 0;
@@ -1278,6 +1281,7 @@ h1 {
   transition: transform 0.3s ease;
 }
 .services-page .service-section .main-container .service-card-container .service-card .service-buttons {
+  width: 100%;
   padding-top: var(--halfSmallPadding);
   display: flex;
 }
@@ -1288,10 +1292,34 @@ h1 {
   background-color: var(--headingColorLight);
 }
 @media (max-width: 768px) {
-  .services-page .service-section .main-container .service-container .service-card .header-main {
-    flex-wrap: wrap;
+  .services-page .heading-section .main-container .image {
+    min-width: 200px;
+    max-width: 443px;
+    width: auto;
+  }
+  .services-page .service-section {
+    text-align: center;
+  }
+  .services-page .service-section .main-container .service-card-container .service-card .header-main .text-and-button,
+  .services-page .service-section .main-container .service-card-container .service-card .service-buttons {
+    justify-content: center;
   }
 }
+@media (max-width: 492px) {
+  .services-page .heading-section .main-container {
+    padding: 6.5rem var(--SmallPadding) 0 var(--SmallPadding);
+  }
+  .services-page .service-section {
+    padding: var(--LargePadding) var(--SmallPadding) var(--LargePadding) var(--SmallPadding);
+  }
+  .services-page .service-section .main-container .service-card-container .service-card {
+    padding: var(--MediumPadding) var(--SmallPadding) var(--MediumPadding) var(--SmallPadding);
+  }
+  .services-page .service-section .main-container .service-card-container .service-card .service-buttons button {
+    width: 200px;
+  }
+}
+
 .about-page {
   width: 100%;
   height: 100%;

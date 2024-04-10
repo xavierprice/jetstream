@@ -76,8 +76,21 @@
   font-weight: 500;
 }
 
+@mixin padding-navbar-top {
+  padding: 6.5rem var(--LargePadding) 0 var(--LargePadding);
+}
+
+@mixin mobile-padding-navbar-top {
+  padding: 6.5rem var(--SmallPadding) 0 var(--SmallPadding);
+}
+
 @mixin padding-small-sides-large-top {
   padding: var(--LargePadding) var(--SmallPadding) var(--LargePadding)
+    var(--SmallPadding);
+}
+
+@mixin padding-small-sides-medium-top {
+  padding: var(--MediumPadding) var(--SmallPadding) var(--MediumPadding)
     var(--SmallPadding);
 }
 
@@ -131,14 +144,23 @@ icon {
 
 p {
   font-size: var(--smallFontSize);
+  @media (max-width: 492px) {
+    font-size: var(--mobile-font-size);
+  }
 }
 
 h2 {
   font-size: var(--mediumFontSize);
+  @media (max-width: 492px) {
+    font-size: var(--mobile-h2-size);
+  }
 }
 
 h1 {
   font-size: var(--largeFontSize);
+  @media (max-width: 492px) {
+    font-size: var(--mobile-h1-size);
+  }
 }
 
 .button-block {
@@ -574,7 +596,7 @@ h1 {
   }
   .footer-content .contact-list li {
     display: flex;
-text-align: center;
+    text-align: center;
     transition: color 0.3s ease;
     cursor: pointer;
     gap: var(--halfSmallPadding);
@@ -719,8 +741,7 @@ text-align: center;
       gap: var(--MediumPadding);
       flex-wrap: wrap;
       background-color: var(--backgroundTransparentBlue);
-      padding: 6.5rem var(--LargePadding) var(--LargePadding)
-        var(--LargePadding);
+      @include padding-navbar-top();
     }
 
     .main-container .heading-section-left {
@@ -1286,19 +1307,9 @@ text-align: center;
     }
   }
   @media (max-width: 492px) {
-    p {
-      font-size: var(--mobile-font-size);
-    }
-    h2 {
-      font-size: var(--mobile-h2-size);
-    }
-    h1 {
-      font-size: var(--mobile-h1-size);
-    }
     //heading
     .heading-section .main-container {
-      padding: 6.5rem var(--SmallPadding) var(--SmallPadding)
-        var(--SmallPadding);
+      @include mobile-padding-navbar-top();
     }
     //services
     .services-section {
@@ -1338,22 +1349,19 @@ text-align: center;
   height: 100%;
   width: 100%;
   .heading-section {
-    width: 100%;
-    flex-direction: column;
     background: var(--backgroundTransparentBlue);
-    padding: 0 var(--LargePadding);
     color: white;
     text-align: center;
     .main-container {
       @include flexCenter;
       flex-direction: column;
+      @include padding-navbar-top();
     }
-    .main-container .main-heading {
-      margin-top: var(--navbarMargin);
+    .main-container .image {
+      width: 443px;
     }
     .main-container img {
-      height: 250px;
-      margin-top: var(--LargePadding);
+      width: 100%;
     }
     .main-container h1 {
       padding: var(--SmallPadding) 0 var(--halfSmallPadding) 0;
@@ -1475,6 +1483,7 @@ text-align: center;
     }
 
     .main-container .service-card-container .service-card .service-buttons {
+      width: 100%;
       padding-top: var(--halfSmallPadding);
       display: flex;
     }
@@ -1490,13 +1499,48 @@ text-align: center;
     }
   }
   @media (max-width: 768px) {
+    .heading-section .main-container .image {
+      min-width: 200px;
+      max-width: 443px;
+      width: auto;
+    }
     .service-section {
-      .main-container .service-container .service-card .header-main {
-        flex-wrap: wrap;
-      }
+      text-align: center;
+    }
+    .service-section
+      .main-container
+      .service-card-container
+      .service-card
+      .header-main
+      .text-and-button,
+    .service-section
+      .main-container
+      .service-card-container
+      .service-card
+      .service-buttons {
+      justify-content: center;
     }
   }
   @media (max-width: 492px) {
+    //heading
+    .heading-section .main-container {
+      @include mobile-padding-navbar-top();
+    }
+    //service
+    .service-section {
+      @include padding-small-sides-large-top();
+    }
+    .service-section .main-container .service-card-container .service-card {
+      @include padding-small-sides-medium-top();
+    }
+    .service-section
+      .main-container
+      .service-card-container
+      .service-card
+      .service-buttons
+      button {
+      width: 200px;
+    }
   }
 }
 
