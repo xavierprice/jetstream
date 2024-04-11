@@ -1552,21 +1552,20 @@ h1 {
   gap: var(--LargePadding);
   background-color: var(--backgroundTransparentBlue);
   .header-section {
-    width: 100%;
-    height: auto;
     @include flexCenter();
     color: white;
-    padding: 0 var(--LargePadding);
     text-align: center;
     .main-container {
-      margin-top: var(--navbarMargin);
       @include flexCenter();
+      @include padding-navbar-top();
       flex-direction: column;
-      gap: var(--MediumPadding);
+      gap: var(--SmallPadding);
+    }
+    .main-container .image {
+      width: 443px;
     }
     .main-container img {
-      height: 250px;
-      margin-top: var(--LargePadding);
+      width: 100%;
     }
     .main-container .benefit-container {
       @include flexCenter();
@@ -1577,20 +1576,29 @@ h1 {
     .main-container .benefit-container .benefit {
       flex: 1;
       min-width: 300px;
+      padding: var(--SmallPadding);
       text-align: center;
       color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
     }
 
-    .main-container .benefit-container .benefit h2 {
-      padding-bottom: var(--halfSmallPadding);
+    .main-container .benefit-container .benefit h1 {
+      padding: var(--halfSmallPadding) 0;
     }
 
     .main-container .benefit-container .benefit p {
       @include p-styling();
+      font-size: 1.3rem;
+      padding-top: var(--halfSmallPadding);
     }
 
     .main-container .benefit-container .benefit .benefit-icon {
-      font-size: var(--smallerIconSize);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 6rem;
     }
   }
   .vision-section {
@@ -1665,17 +1673,23 @@ h1 {
       text-align: center;
       @include flexCenter();
       flex-direction: column;
-      gap: var(--MediumPadding);
+      gap: var(--halfSmallPadding);
+      color: white;
+      background-color: rgb(23, 139, 246, 0.6);
+      padding: var(--MediumPadding);
     }
     .main-container h1 {
-      color: white;
+      padding-bottom: var(--SmallPadding);
+    }
+    .main-container .benefits-divider {
+      width: 100%;
+      border-bottom: 1px solid white;
     }
     .main-container .testimonial-list {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       gap: var(--MediumPadding);
-      padding: 0 var(--SmallPadding);
     }
     .main-container .testimonial-list .testimonial-item {
       display: flex;
@@ -1683,7 +1697,10 @@ h1 {
       gap: var(--SmallPadding);
       flex: 1;
       min-width: 300px;
-      color: white;
+      padding: var(--SmallPadding);
+    }
+    .main-container .testimonial-list .testimonial-item p {
+      font-size: var(--SmallPadding);
     }
     .main-container .testimonial-list .testimonial-item .testimonial-author {
       text-align: end;
@@ -1691,7 +1708,15 @@ h1 {
   }
 
   @media (max-width: 768px) {
+    //header
+    .header-section .main-container .image {
+      min-width: 200px;
+      max-width: 443px;
+      width: auto;
+    }
+    //vision
     .vision-section .main-container .vision-text {
+      min-width: initial;
       text-align: center;
     }
     .vision-section .main-container .workImagesContainer {
@@ -1707,6 +1732,29 @@ h1 {
     .benefits-section .main-container {
       flex-direction: column;
       gap: var(--MediumPadding);
+    }
+  }
+  @media (max-width: 492px) {
+    .header-section .main-container {
+      @include mobile-padding-navbar-top();
+    }
+    .header-section .main-container .benefit-container .benefit .benefit-icon {
+      font-size: 5rem;
+    }
+    .header-section .main-container .benefit-container .benefit {
+      flex: initial;
+      min-width: initial;
+    }
+    .vision-section .main-container {
+      @include padding-small-sides-medium-top();
+    }
+    .testimonial-section .main-container .testimonial-list {
+      flex-direction: column;
+      gap: var(--SmallPadding);
+    }
+    .testimonial-section .main-container .testimonial-list .testimonial-item {
+      gap: var(--halfSmallPadding);
+      min-width: initial;
     }
   }
 }

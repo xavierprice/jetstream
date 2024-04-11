@@ -7,13 +7,14 @@ import {
 } from "react-icons/fa";
 import whiteAndBlueLogo from "../assets/logos/white-and-blue-logo.png";
 
-import workImage1 from "../assets/work-images/work-image-1.jpeg";
-import workImage2 from "../assets/work-images/work-image-2.jpeg";
-import workImage1Cropped from "../assets/work-images/work-image-cropped.jpeg";
+import aboutImage1 from "../assets/images/about-page(4)/1-driveway.jpg";
+import aboutImage2 from "../assets/images/about-page(4)/2-driveway.jpg";
+import aboutImage3 from "../assets/images/about-page(4)/3-driveway.jpg";
+import aboutImage4Cropped from "../assets/images/about-page(4)/4-house.jpg";
 import BackToTop from "../components/BackToTop";
 
 const About = () => {
-  const workImages = [workImage1, workImage2, workImage2, workImage1Cropped];
+  const workImages = [aboutImage1, aboutImage2, aboutImage3, aboutImage4Cropped];
   const benefits = [
     {
       icon: <FaRegClock />,
@@ -36,7 +37,7 @@ const About = () => {
       icon: <FaUmbrella />,
       title: "Insurance",
       description:
-        "Stay protected and secure with our comprehensive insurance coverage.",
+        "Stay protected and secure with our insurance coverage.",
     },
   ];
   const testimonials = [
@@ -61,13 +62,16 @@ const About = () => {
     <main className="about-page">
       <section className="header-section">
         <div className="main-container">
-          <img src={whiteAndBlueLogo} alt="Jetstream Logo" />
+          <div className="image">
+            <img src={whiteAndBlueLogo} alt="Jetstream Logo" />
+          </div>
           <section className="benefit-container">
             {benefits.map((benefit) => (
               <div className="benefit" key={benefit.title}>
                 <div className="benefit-icon">{benefit.icon}</div>
                 <span>
-                  <h2>{benefit.title}</h2>
+                  <h1>{benefit.title}</h1>
+                  <hr className="benefit-divider" />
                 </span>
                 <p>{benefit.description}</p>
               </div>
@@ -140,7 +144,8 @@ const About = () => {
       </section>
       <section className="testimonial-section">
         <div className="main-container">
-          <h1>Great things our client say</h1>
+          <h1>Great things our clients have to say</h1>
+          <hr className="benefits-divider" />
           <div className="testimonial-list">
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="testimonial-item">
