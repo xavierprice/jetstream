@@ -28,9 +28,11 @@
   --MediumPadding: 3rem;
   --LargePadding: 4.5rem;
   --mobile-font-size: 1rem;
+  --mobile-h3-size: 1.2rem;
   --mobile-h2-size: 1.6rem;
   --mobile-h1-size: 2rem;
-  --smallFontSize: 1.1rem;
+  --smallestFontSize: 1.1rem;
+  --smallFontSize: 1.4rem;
   --mediumFontSize: 1.8rem;
   --largeFontSize: 2.5rem;
   --extraLargeFontSize: 3.5rem;
@@ -63,11 +65,21 @@ icon {
 }
 
 p {
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
 }
 @media (max-width: 492px) {
   p {
     font-size: var(--mobile-font-size);
+  }
+}
+
+h3 {
+  font-size: var(--smallFontSize);
+  font-weight: 500;
+}
+@media (max-width: 492px) {
+  h3 {
+    font-size: var(--mobile-h3-size);
   }
 }
 
@@ -92,7 +104,7 @@ h1 {
 .button-block {
   width: 250px;
   padding: var(--halfSmallPadding);
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
   background-color: white;
   color: var(--headingColorLight);
   border: 3px solid var(--headingColorLight);
@@ -135,7 +147,7 @@ h1 {
   flex-wrap: wrap;
 }
 .modal-main button {
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
   padding: var(--halfSmallPadding);
   border-radius: 5px;
   border: none;
@@ -217,7 +229,7 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: var(--SmallPadding);
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
 }
 .navbar-component .navbar-headings li {
   padding: 0 5px;
@@ -401,7 +413,7 @@ h1 {
 }
 .contact-component .quote-form-container .quote-form label {
   display: block;
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
   color: var(--headingColorLight);
 }
 .contact-component .quote-form-container .quote-form .form-group input,
@@ -412,14 +424,14 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 3px;
   height: 3rem;
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
 }
 .contact-component .quote-form-container .quote-form .form-group select {
   cursor: pointer;
 }
 .contact-component .quote-form-container .quote-form .form-group input::placeholder,
 .contact-component .quote-form-container .quote-form .form-group textarea::placeholder {
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
 }
 .contact-component .quote-form-container .quote-form .form-group textarea {
   height: 6rem;
@@ -433,7 +445,7 @@ h1 {
   padding: 20px;
   cursor: pointer;
   transition: var(--SmoothTransition);
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
   margin-top: var(--halfSmallPadding);
 }
 .contact-component .quote-form-container .quote-form button:hover {
@@ -886,7 +898,7 @@ h1 {
   top: -18px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
   font-weight: 700;
   background-color: var(--headingColorLight);
   color: white;
@@ -1009,7 +1021,7 @@ h1 {
   word-break: break-all;
 }
 .home-page .cta-section .main-container .cta-text .cta-contact .fa-icon {
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
 }
 .home-page .cta-section .main-container .cta-text .cta-contact li h2,
 .home-page .cta-section .main-container .cta-text .cta-contact li .fa-icon {
@@ -1543,23 +1555,13 @@ h1 {
 .contact-page {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-color: var(--backgroundTransparentBlue);
-  padding: 0 var(--LargePadding);
-}
-.contact-page .form-section {
-  width: 100%;
-  height: 100%;
 }
 .contact-page .form-section .main-container {
-  height: 100%;
   display: flex;
   flex-wrap: wrap-reverse;
   gap: var(--MediumPadding);
-  padding: 6.5rem 0 var(--LargePadding) 0;
+  padding: 6.5rem var(--LargePadding);
 }
 .contact-page .form-section .main-container .form-left {
   display: flex;
@@ -1567,65 +1569,86 @@ h1 {
   min-width: 450px;
 }
 .contact-page .form-section .main-container .form-right {
+  width: 100%;
   flex: 1;
-  text-align: center;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: var(--MediumPadding);
   flex-direction: column;
   color: white;
+  min-width: 400px;
 }
 .contact-page .form-section .main-container .form-right p {
-  font-size: var(--mediumFontSize);
+  line-height: 1.6;
+  font-weight: 500;
 }
-.contact-page .form-section .main-container .form-right .open-hours {
+.contact-page .form-section .main-container .form-right li.open-hours {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
+  gap: var(--SmallPadding);
+}
+.contact-page .form-section .main-container .form-right li.open-hours .time {
+  display: flex;
   gap: var(--halfSmallPadding);
 }
-.contact-page .form-section .main-container .form-right .open-hours .time {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.contact-page .form-section .main-container .form-right .contact-list li.phone-location {
+  flex-direction: column;
   gap: var(--SmallPadding);
-  min-width: max-content;
-  flex-wrap: wrap;
 }
 .contact-page .form-section .main-container .form-right .contact-list {
-  text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   gap: var(--SmallPadding);
-  flex-wrap: wrap;
   list-style: none;
 }
 .contact-page .form-section .main-container .form-right .contact-list li {
   display: flex;
-  align-items: center;
   gap: var(--halfSmallPadding);
   transition: color 0.3s ease;
-  cursor: pointer;
 }
-.contact-page .form-section .main-container .form-right .contact-list li:hover {
+.contact-page .form-section .main-container .form-right .contact-list li.phone-location li:hover,
+.contact-page .form-section .main-container .form-right .contact-list li.email:hover {
   color: var(--headingColorLight);
+  cursor: pointer;
 }
 .contact-page .form-section .main-container .form-right .contact-list li .fa-icon {
   font-size: var(--mediumFontSize);
   cursor: pointer;
 }
 @media (max-width: 768px) {
-  .contact-page .form-section .main-container .form-right h1 {
-    min-width: min-content;
+  .contact-page .form-section .main-container {
+    text-align: center;
   }
   .contact-page .form-section .main-container .form-left {
-    min-width: min-content;
+    min-width: initial;
   }
-  .contact-page .form-section .main-container .form-right .open-hours .time {
-    min-width: min-content;
+  .contact-page .form-section .main-container .form-right {
+    min-width: 350px;
+  }
+  .contact-page .form-section .main-container .form-right .contact-list {
+    align-items: center;
+  }
+  .contact-page .form-section .main-container .form-right li.open-hours {
+    flex-direction: column;
+  }
+  .contact-page .form-section .main-container .form-right .contact-list li.email {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contact-page .form-section .main-container .form-right .contact-list li.phone-location {
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 492px) {
+  .contact-page .form-section .main-container {
+    padding: 6.5rem var(--SmallPadding) 0 var(--SmallPadding);
+    padding-bottom: var(--LargePadding);
+  }
+  .contact-page .form-section .main-container .form-right {
+    min-width: initial;
   }
 }
 

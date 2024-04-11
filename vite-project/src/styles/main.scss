@@ -40,10 +40,12 @@
 
   //font sizes
   --mobile-font-size: 1rem;
+  --mobile-h3-size: 1.2rem;
   --mobile-h2-size: 1.6rem;
   --mobile-h1-size: 2rem;
 
-  --smallFontSize: 1.1rem;
+  --smallestFontSize: 1.1rem;
+  --smallFontSize: 1.4rem;
   --mediumFontSize: 1.8rem;
   --largeFontSize: 2.5rem;
   --extraLargeFontSize: 3.5rem;
@@ -143,9 +145,17 @@ icon {
 }
 
 p {
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
   @media (max-width: 492px) {
     font-size: var(--mobile-font-size);
+  }
+}
+
+h3 {
+  font-size: var(--smallFontSize);
+  font-weight: 500;
+  @media (max-width: 492px) {
+    font-size: var(--mobile-h3-size);
   }
 }
 
@@ -166,7 +176,7 @@ h1 {
 .button-block {
   width: 250px;
   padding: var(--halfSmallPadding);
-  font-size: var(--smallFontSize);
+  font-size: var(--smallestFontSize);
   background-color: white;
   color: var(--headingColorLight);
   border: 3px solid var(--headingColorLight);
@@ -210,7 +220,7 @@ h1 {
   }
 
   button {
-    font-size: var(--smallFontSize);
+    font-size: var(--smallestFontSize);
     padding: var(--halfSmallPadding);
     border-radius: 5px;
     border: none;
@@ -300,7 +310,7 @@ h1 {
   .navbar-headings {
     @include flexCenter;
     gap: var(--SmallPadding);
-    font-size: var(--smallFontSize);
+    font-size: var(--smallestFontSize);
 
     li {
       padding: 0 5px;
@@ -510,7 +520,7 @@ h1 {
 
   .quote-form-container .quote-form label {
     display: block;
-    font-size: var(--smallFontSize);
+    font-size: var(--smallestFontSize);
     color: var(--headingColorLight);
   }
 
@@ -522,7 +532,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 3px;
     height: 3rem;
-    font-size: var(--smallFontSize);
+    font-size: var(--smallestFontSize);
   }
 
   .quote-form-container .quote-form .form-group select {
@@ -531,7 +541,7 @@ h1 {
 
   .quote-form-container .quote-form .form-group input::placeholder,
   .quote-form-container .quote-form .form-group textarea::placeholder {
-    font-size: var(--smallFontSize);
+    font-size: var(--smallestFontSize);
   }
 
   .quote-form-container .quote-form .form-group textarea {
@@ -547,7 +557,7 @@ h1 {
     padding: 20px;
     cursor: pointer;
     transition: var(--SmoothTransition);
-    font-size: var(--smallFontSize);
+    font-size: var(--smallestFontSize);
     margin-top: var(--halfSmallPadding);
     &:hover {
       background-color: var(--hoverColor);
@@ -1034,7 +1044,7 @@ h1 {
       top: -18px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: var(--smallFontSize);
+      font-size: var(--smallestFontSize);
       font-weight: 700;
       background-color: var(--headingColorLight);
       color: white;
@@ -1179,7 +1189,7 @@ h1 {
     }
 
     .main-container .cta-text .cta-contact .fa-icon {
-      font-size: var(--smallFontSize);
+      font-size: var(--smallestFontSize);
     }
     //heading and text transitions
     .main-container .cta-text .cta-contact li h2,
@@ -1762,19 +1772,13 @@ h1 {
 .contact-page {
   width: 100%;
   height: 100%;
-  @include flexCenter();
-  flex-direction: column;
   background-color: var(--backgroundTransparentBlue);
-  padding: 0 var(--LargePadding);
   .form-section {
-    width: 100%;
-    height: 100%;
     .main-container {
-      height: 100%;
       display: flex;
       flex-wrap: wrap-reverse;
       gap: var(--MediumPadding);
-      padding: 6.5rem 0 var(--LargePadding) 0;
+      padding: 6.5rem var(--LargePadding);
     }
     .main-container .form-left {
       display: flex;
@@ -1782,64 +1786,87 @@ h1 {
       min-width: 450px;
     }
     .main-container .form-right {
+      width: 100%;
       flex: 1;
-      text-align: center;
       display: flex;
-      align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
       gap: var(--MediumPadding);
       flex-direction: column;
       color: white;
+      min-width: 400px;
     }
     .main-container .form-right p {
-      font-size: var(--mediumFontSize);
+      @include p-styling();
     }
-    .main-container .form-right .open-hours {
-      @include flexCenter();
+    .main-container .form-right li.open-hours {
+      display: flex;
       flex-wrap: wrap;
+      gap: var(--SmallPadding);
+    }
+    .main-container .form-right li.open-hours .time {
+      display: flex;
       gap: var(--halfSmallPadding);
     }
-    .main-container .form-right .open-hours .time {
-      @include flexCenter();
+    .main-container .form-right .contact-list li.phone-location {
+      flex-direction: column;
       gap: var(--SmallPadding);
-      min-width: max-content;
-      flex-wrap: wrap;
     }
     .main-container .form-right .contact-list {
-      text-align: center;
-      @include flexCenter();
+      display: flex;
+      flex-direction: column;
       gap: var(--SmallPadding);
-      flex-wrap: wrap;
       list-style: none;
     }
     .main-container .form-right .contact-list li {
       display: flex;
-      align-items: center;
       gap: var(--halfSmallPadding);
       transition: color 0.3s ease;
+    }
+    .main-container .form-right .contact-list li.phone-location li:hover,
+    .main-container .form-right .contact-list li.email:hover {
+      color: var(--headingColorLight);
       cursor: pointer;
-
-      &:hover {
-        color: var(--headingColorLight);
-      }
     }
     .main-container .form-right .contact-list li .fa-icon {
       font-size: var(--mediumFontSize);
       cursor: pointer;
     }
-    // .main-container .form-right .contact-list p {
-    //   font-size: var(--smallFontSize);
-    // }
   }
   @media (max-width: 768px) {
-    .form-section .main-container .form-right h1 {
-      min-width: min-content;
+    .form-section .main-container {
+      text-align: center;
     }
     .form-section .main-container .form-left {
-      min-width: min-content;
+      min-width: initial;
     }
-    .form-section .main-container .form-right .open-hours .time {
-      min-width: min-content;
+    .form-section .main-container .form-right {
+      min-width: 350px;
+    }
+    .form-section .main-container .form-right .contact-list {
+      align-items: center;
+    }
+    .form-section .main-container .form-right li.open-hours {
+      flex-direction: column;
+    }
+    .form-section .main-container .form-right .contact-list li.email {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .form-section .main-container .form-right .contact-list li.phone-location {
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 492px) {
+    .form-section .main-container {
+      @include mobile-padding-navbar-top();
+      padding-bottom: var(--LargePadding);
+    }
+    .form-section .main-container .form-right {
+      min-width: initial;
     }
   }
 }

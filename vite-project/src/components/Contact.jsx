@@ -11,6 +11,7 @@ const Contact = ({
   openModal,
   contactLocation,
   openMaps,
+  modifiedEmail,
 }) => {
   return (
     <main className="contact-page">
@@ -25,25 +26,27 @@ const Contact = ({
           </div>
           <div className="form-right">
             <h1>Fill in your details and we'll get right back to you</h1>
-            <div className="open-hours">
-              <h2>Open hours:</h2>
-              <div className="time">
-                <p>Monday - Sunday</p>
-                <p>9am - 7pm</p>
-              </div>
-            </div>
             <ul className="contact-list">
-              <li onClick={openModal} data-type="phone">
-                <FaPhone className="fa-icon" />
-                <p>{phoneNumber}</p>
+              <li className="open-hours">
+                <h3>Open hours:</h3>
+                <div className="time">
+                  <h3>Monday - Sunday</h3>
+                  <h3>9am - 7pm</h3>
+                </div>
               </li>
-              <li onClick={openMaps}>
-                <FaMapMarkerAlt className="fa-icon" />
-                <p>{contactLocation}</p>
+              <li className="phone-location">
+                <li onClick={openModal} data-type="phone">
+                  <FaPhone className="fa-icon" />
+                  <h3>{phoneNumber}</h3>
+                </li>
+                <li onClick={openMaps}>
+                  <FaMapMarkerAlt className="fa-icon" />
+                  <h3>{contactLocation}</h3>
+                </li>
               </li>
-              <li onClick={openModal} data-type="email">
+              <li onClick={openModal} data-type="email" className="email">
                 <FaEnvelope className="fa-icon" />
-                <p>jetstreampressurewashingau@gmail.com</p>
+                <h3>{modifiedEmail}</h3>
               </li>
             </ul>
           </div>

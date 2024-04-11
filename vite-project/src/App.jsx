@@ -215,6 +215,7 @@ const App = () => {
                     phoneNumber={phoneNumber}
                     contactLocation={contactLocation}
                     openMaps={openMaps}
+                    modifiedEmail={modifiedEmail}
                   />
                 }
               ></Route>
@@ -229,6 +230,7 @@ const App = () => {
                     phoneNumber={phoneNumber}
                     contactLocation={contactLocation}
                     openMaps={openMaps}
+                    modifiedEmail={modifiedEmail}
                   />
                 }
               ></Route>
