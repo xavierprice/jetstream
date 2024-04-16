@@ -192,6 +192,7 @@ const App = () => {
                     setSelectedService={setSelectedService}
                     openModal={openModal}
                     phoneNumber={phoneNumber}
+                    modifiedEmail={modifiedEmail}
                   />
                 }
               ></Route>

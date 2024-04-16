@@ -32,6 +32,7 @@ const Home = ({
   setSelectedService,
   phoneNumber,
   openModal,
+  modifiedEmail,
 }) => {
   //obj arrays
   const stepsData = [
@@ -317,33 +318,36 @@ const Home = ({
               </p>
             </div>
             <ul className="cta-contact">
-              <li onClick={openModal} data-type="phone">
-                <div className="cta-contact-text">
-                  <p>
-                    <span>Call us</span>
-                    <FaPhone className="fa-icon" />
-                  </p>
-                  <h2>{phoneNumber}</h2>
-                </div>
-              </li>
-              <li>
-                <div className="cta-contact-text">
-                  <p>
-                    Open hours
-                    <FaRegClock className="fa-icon" />
-                  </p>
-                  <h2>Monday - Sunday: 07:00 - 18:00</h2>
-                </div>
-              </li>
+              <span className="phone-hours">
+                <li onClick={openModal} data-type="phone">
+                  <div>
+                    <span className="list-header">
+                      <p>Call us</p>
+                      <FaPhone className="fa-icon" />
+                    </span>
+                    <h3>{phoneNumber}</h3>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <span className="list-header">
+                      <p>Open hours</p>
+                      <FaRegClock className="fa-icon" />
+                    </span>
+                    <span className="open-hours">
+                      <h3>Monday - Sunday:</h3>
+                      <h3>07:00 - 18:00</h3>
+                    </span>
+                  </div>
+                </li>
+              </span>
               <li onClick={openModal} data-type="email">
-                <div className="cta-contact-text">
-                  <p>
-                    <span>Email us</span>
+                <div>
+                  <span className="list-header">
+                    <p>Email us</p>
                     <FaEnvelope className="fa-icon" />
-                  </p>
-                  <h2 className="email-address">
-                    jetstreampressurewashingau@gmail.com
-                  </h2>
+                  </span>
+                  <h3 className="email-address">{modifiedEmail}</h3>
                 </div>
               </li>
             </ul>
