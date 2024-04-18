@@ -29,6 +29,9 @@ import roofAndFence3 from "./assets/images/roof-and-fencing(5)/3-fence.jpg";
 import roofAndFence4 from "./assets/images/roof-and-fencing(5)/4-fence-before.jpg";
 import roofAndFence5 from "./assets/images/roof-and-fencing(5)/5-fence-after.jpg";
 
+import backgroundImage from "./assets/background-images/house-1.jpeg";
+import BackgroundImageComponent from "./components/BackgroundImageComponent.jsx";
+
 Modal.setAppElement("#root");
 
 const App = () => {
@@ -38,15 +41,6 @@ const App = () => {
   const [selectedService, setSelectedService] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [contactInfo, setContactInfo] = useState("");
-
-  const backgroundStyle = {
-    backgroundImage: "url(/src/assets/background-images/house-1.jpeg)",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundAttachment: "fixed",
-    height: "100%",
-    backgroundPosition: "center",
-  };
 
   const phoneNumber = "0491016876";
   const email = "jetstreampressurewashingau@gmail.com";
@@ -171,86 +165,90 @@ const App = () => {
     <Router>
       <ScrollToTopPageChange />
       <main className={`initial-fade-in ${initialFade ? "active" : ""}`}>
-        <div className="background-style">
-          <section className={`fade-in ${fadeIn ? "active" : ""}`}>
-            <Navbar openModal={openModal} phoneNumber={phoneNumber} />
-            <CallModal
-              contactPhoneNumber={contactPhoneNumber}
-              contactEmail={contactEmail}
-              modalIsOpen={modalIsOpen}
-              setModalIsOpen={setModalIsOpen}
-              contactInfo={contactInfo}
-              modifiedEmail={modifiedEmail}
-            />
-            <Routes>
-              <Route
-                path="/jetstream"
-                element={
-                  <Home
-                    services={services}
-                    selectedService={selectedService}
-                    setSelectedService={setSelectedService}
-                    openModal={openModal}
-                    phoneNumber={phoneNumber}
-                    modifiedEmail={modifiedEmail}
-                  />
-                }
-              ></Route>
-              <Route
-                path="/jetstream/services"
-                element={<Services services={services} />}
-              ></Route>
-              <Route
-                path="/jetstream/services/:id"
-                element={<Services services={services} />}
-              ></Route>
-              <Route path="/jetstream/about" element={<About />}></Route>
-              <Route
-                path="/jetstream/contact"
-                element={
-                  <Contact
-                    services={services}
-                    selectedService={selectedService}
-                    setSelectedService={setSelectedService}
-                    openModal={openModal}
-                    phoneNumber={phoneNumber}
-                    contactLocation={contactLocation}
-                    openMaps={openMaps}
-                    modifiedEmail={modifiedEmail}
-                  />
-                }
-              ></Route>
-              <Route
-                path="/jetstream/contact/:id"
-                element={
-                  <Contact
-                    services={services}
-                    selectedService={selectedService}
-                    setSelectedService={setSelectedService}
-                    openModal={openModal}
-                    phoneNumber={phoneNumber}
-                    contactLocation={contactLocation}
-                    openMaps={openMaps}
-                    modifiedEmail={modifiedEmail}
-                  />
-                }
-              ></Route>
-            </Routes>
-            <Footer
-              openModal={openModal}
-              phoneNumber={phoneNumber}
-              modifiedEmail={modifiedEmail}
-              contactLocation={contactLocation}
-              openMaps={openMaps}
-            />
-          </section>
-          <section
-            className={`welcome-message ${showWelcomeMessage ? "active" : ""}`}
-          >
-            <h1>Welcome to Jetstream Pressure Washing!</h1>
-            <p>We're glad you're here.</p>
-          </section>
-        </div>
+        <BackgroundImageComponent
+          src={backgroundImage}
+          hashSrc="LDHfVZ?c_4?Z04AJEOxTBY=XxBW="
+          alt="Background Image"
+          className="background-style"
+        />
+        <section className={`fade-in ${fadeIn ? "active" : ""}`}>
+          <Navbar openModal={openModal} phoneNumber={phoneNumber} />
+          <CallModal
+            contactPhoneNumber={contactPhoneNumber}
+            contactEmail={contactEmail}
+            modalIsOpen={modalIsOpen}
+            setModalIsOpen={setModalIsOpen}
+            contactInfo={contactInfo}
+            modifiedEmail={modifiedEmail}
+          />
+          <Routes>
+            <Route
+              path="/jetstream"
+              element={
+                <Home
+                  services={services}
+                  selectedService={selectedService}
+                  setSelectedService={setSelectedService}
+                  openModal={openModal}
+                  phoneNumber={phoneNumber}
+                  modifiedEmail={modifiedEmail}
+                />
+              }
+            ></Route>
+            <Route
+              path="/jetstream/services"
+              element={<Services services={services} />}
+            ></Route>
+            <Route
+              path="/jetstream/services/:id"
+              element={<Services services={services} />}
+            ></Route>
+            <Route path="/jetstream/about" element={<About />}></Route>
+            <Route
+              path="/jetstream/contact"
+              element={
+                <Contact
+                  services={services}
+                  selectedService={selectedService}
+                  setSelectedService={setSelectedService}
+                  openModal={openModal}
+                  phoneNumber={phoneNumber}
+                  contactLocation={contactLocation}
+                  openMaps={openMaps}
+                  modifiedEmail={modifiedEmail}
+                />
+              }
+            ></Route>
+            <Route
+              path="/jetstream/contact/:id"
+              element={
+                <Contact
+                  services={services}
+                  selectedService={selectedService}
+                  setSelectedService={setSelectedService}
+                  openModal={openModal}
+                  phoneNumber={phoneNumber}
+                  contactLocation={contactLocation}
+                  openMaps={openMaps}
+                  modifiedEmail={modifiedEmail}
+                />
+              }
+            ></Route>
+          </Routes>
+          <Footer
+            openModal={openModal}
+            phoneNumber={phoneNumber}
+            modifiedEmail={modifiedEmail}
+            contactLocation={contactLocation}
+            openMaps={openMaps}
+          />
+        </section>
+        <section
+          className={`welcome-message ${showWelcomeMessage ? "active" : ""}`}
+        >
+          <h1>Welcome to Jetstream Pressure Washing!</h1>
+          <p>We're glad you're here.</p>
+        </section>
       </main>
     </Router>
   );

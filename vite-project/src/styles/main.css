@@ -195,12 +195,10 @@ h1 {
 }
 
 .background-style {
-  background-image: url(../assets/background-images/house-1.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   height: 100%;
-  background-position: center;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
 }
 
 .navbar-component {

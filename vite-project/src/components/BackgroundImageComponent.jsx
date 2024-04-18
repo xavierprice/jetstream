@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Blurhash } from "react-blurhash";
 
-const ImageComponent = ({ src, hashSrc, className, alt }) => {
+const BackgroundImageComponent = ({ src, alt, hashSrc, className }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -33,14 +33,8 @@ const ImageComponent = ({ src, hashSrc, className, alt }) => {
         alt={alt}
         style={{
           display: !imageLoaded ? "none" : "inline",
-          position: "absolute",
-          backgroundImage: { src },
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          backgroundPosition: "center",
-          // height: "100%",
-          // width: "100%",
+          height: "100%",
+          width: "100%",
           position: "fixed",
           zIndex: -1,
         }}
@@ -49,4 +43,4 @@ const ImageComponent = ({ src, hashSrc, className, alt }) => {
   );
 };
 
-export default ImageComponent;
+export default BackgroundImageComponent;
