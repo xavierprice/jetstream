@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import whiteAndBluelogo from "../assets/logos/white-and-blue-logo.png";
+import whiteAndBlueLogo from "../assets/logos/white-and-blue-logo.png";
 import BackToTop from "../components/BackToTop";
+import ImageComponent from "./ImageComponent";
 
 const Services = ({ services }) => {
   const { id } = useParams();
@@ -20,15 +21,15 @@ const Services = ({ services }) => {
     <main className="services-page">
       <section className="heading-section">
         <div className="main-container">
-            <div className="image">
-              <img src={whiteAndBluelogo} alt="Jetstream Logo" />
-            </div>
-            <h1>Professional Pressure Washing Services Tailored to You</h1>
-            <p>
-              Elevate Your Property's Appearance with Our Comprehensive Pressure
-              Washing Services. Discover the Difference in Cleanliness and
-              Brilliance!
-            </p>
+          <div className="image">
+            <img src={whiteAndBlueLogo} alt="Jetstream logo" />
+          </div>
+          <h1>Professional Pressure Washing Services Tailored to You</h1>
+          <p>
+            Elevate Your Property's Appearance with Our Comprehensive Pressure
+            Washing Services. Discover the Difference in Cleanliness and
+            Brilliance!
+          </p>
         </div>
       </section>
       <section className="service-section">

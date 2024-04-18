@@ -12,9 +12,15 @@ import aboutImage2 from "../assets/images/about-page(4)/2-driveway.jpg";
 import aboutImage3 from "../assets/images/about-page(4)/3-driveway.jpg";
 import aboutImage4Cropped from "../assets/images/about-page(4)/4-house.jpg";
 import BackToTop from "../components/BackToTop";
+import ImageComponent from "./ImageComponent";
 
 const About = () => {
-  const workImages = [aboutImage1, aboutImage2, aboutImage3, aboutImage4Cropped];
+  const workImages = [
+    aboutImage1,
+    aboutImage2,
+    aboutImage3,
+    aboutImage4Cropped,
+  ];
   const benefits = [
     {
       icon: <FaRegClock />,
@@ -36,8 +42,7 @@ const About = () => {
     {
       icon: <FaUmbrella />,
       title: "Insurance",
-      description:
-        "Stay protected and secure with our insurance coverage.",
+      description: "Stay protected and secure with our insurance coverage.",
     },
   ];
   const testimonials = [
@@ -63,7 +68,7 @@ const About = () => {
       <section className="header-section">
         <div className="main-container">
           <div className="image">
-            <img src={whiteAndBlueLogo} alt="Jetstream Logo" />
+            <img src={whiteAndBlueLogo} alt="Jetstream logo" />
           </div>
           <section className="benefit-container">
             {benefits.map((benefit) => (

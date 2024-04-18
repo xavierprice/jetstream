@@ -173,6 +173,21 @@ h1 {
   }
 }
 
+.blurhash-logo {
+  width: 443px;
+  height: 250px;
+  border-radius: 25%;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    width: 343px;
+    height: 200px;
+  }
+  @media (max-width: 498px) {
+    width: 250px;
+    height: 200px;
+  }
+}
+
 .button-block {
   width: 250px;
   padding: var(--halfSmallPadding);
@@ -585,6 +600,9 @@ h1 {
   }
   .footer-content .footer-logo {
     width: 443px;
+    min-width: 443px;
+    display: flex;
+    justify-content: center;
   }
   .footer-content .footer-logo img {
     width: 100%;
@@ -778,6 +796,9 @@ h1 {
 
     .main-container .heading-section-left .heading-introduction .image {
       width: 443px;
+      min-width: 443px;
+      display: flex;
+      justify-content: center;
     }
 
     .main-container .heading-section-left .heading-introduction img {
@@ -1391,6 +1412,9 @@ h1 {
     }
     .main-container .image {
       width: 443px;
+      min-width: 443px;
+      display: flex;
+      justify-content: center;
     }
     .main-container img {
       width: 100%;
@@ -1595,6 +1619,9 @@ h1 {
     }
     .main-container .image {
       width: 443px;
+      min-width: 443px;
+      display: flex;
+      justify-content: center;
     }
     .main-container img {
       width: 100%;

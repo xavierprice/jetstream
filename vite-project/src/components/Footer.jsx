@@ -21,7 +21,7 @@ const Footer = ({
     <footer className="footer-component">
       <div className="footer-content">
         <div className="footer-logo">
-          <img src={logo} alt="Your Logo" />
+          <img src={logo} alt="Jetstream logo" />
         </div>
         <div className="contact-list">
           <li onClick={openModal} data-type="phone">

@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaRegClock,
 } from "react-icons/fa";
+import ImageComponent from "./ImageComponent";
 
 import workImage1 from "../assets/images/home-page(6)/1-driveway-before.jpg";
 import workImage2 from "../assets/images/home-page(6)/2-driveway-After.jpg";
@@ -21,7 +22,7 @@ import workVideo2 from "../assets//videos/intro-1.mp4";
 import workVideo4 from "../assets//videos/intro-2.mp4";
 import workVideo5 from "../assets//videos/intro-3.mp4";
 
-import whiteAndBluelogo from "../assets/logos/white-and-blue-logo.png";
+import whiteAndBlueLogo from "../assets/logos/white-and-blue-logo.png";
 
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
@@ -94,7 +95,7 @@ const Home = ({
           <div className="heading-section-left">
             <section className="heading-introduction">
               <div className="image">
-                <img src={whiteAndBluelogo} alt="Jetstream Logo" />
+                <img src={whiteAndBlueLogo} alt="Jetstream logo" />
               </div>
               <p>
                 Enhance your property's curb appeal and cleanliness effortlessly
