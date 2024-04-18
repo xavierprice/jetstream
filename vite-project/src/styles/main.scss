@@ -662,11 +662,13 @@ h1 {
       flex-direction: column;
     }
     .footer-content .footer-logo {
+      min-width: 200px;
       max-width: 443px;
       width: auto;
     }
   }
   @media (max-width: 492px) {
+
   }
 }
 
@@ -931,8 +933,8 @@ h1 {
       min-width: 600px;
     }
     .content-container .content-block .who-we-are-images .grid-item {
-      width: auto;
-      height: auto;
+      width: 100%;
+      height: 100%;
     }
     .content-container .content-block .who-we-are-images .grid-item img {
       width: 100%;

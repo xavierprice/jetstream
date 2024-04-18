@@ -10,12 +10,12 @@ import {
 } from "react-icons/fa";
 import ImageComponent from "./ImageComponent";
 
-import workImage1 from "../assets/images/home-page(6)/1-driveway-before.jpg";
-import workImage2 from "../assets/images/home-page(6)/2-driveway-After.jpg";
-import workImage3 from "../assets/images/home-page(6)/3-driveway.jpg";
-import workImage4 from "../assets/images/home-page(6)/4-house.jpg";
-import workImage5 from "../assets/images/home-page(6)/5-driveway-before.jpg";
-import workImage6 from "../assets/images/home-page(6)/6-driveway-after.jpg";
+import drivewayBefore from "../assets/images/home-page(6)/driveway-before.jpg";
+import drivewayAfter from "../assets/images/home-page(6)/driveway-After.jpg";
+import exteriorBefore from "../assets/images/home-page(6)/exterior-4-before.jpg";
+import exteriorAfter from "../assets/images/home-page(6)/exterior-4-after.jpg";
+import fenceBefore from "../assets/images/home-page(6)/fence-5-before.jpg";
+import fenceAfter from "../assets/images/home-page(6)/fence-5-after.jpg";
 
 import workVideo1 from "../assets//videos/exterior.mp4";
 import workVideo2 from "../assets//videos/intro-1.mp4";
@@ -60,12 +60,12 @@ const Home = ({
   ];
   const workPreviews = [workVideo1, workVideo5, workVideo2, workVideo4];
   const workImages = [
-    workImage1,
-    workImage2,
-    workImage3,
-    workImage4,
-    workImage5,
-    workImage6,
+    { image: drivewayBefore, hashSrc: "LKHed:s,E2xvKnM{xut8yFs-t7of" },
+    { image: exteriorBefore, hashSrc: "LXFs0;I^M~ax%jtTbcayNLtSohj[" },
+    { image: fenceBefore, hashSrc: "L8FPvPDiM|oN0IISoMR%00D+kXRP" },
+    { image: drivewayAfter, hashSrc: "LLFiV]~U%JRk-?-nxWoetURjxGxZ" },
+    { image: exteriorAfter, hashSrc: "LbD,TNR@xTW9gltTRPs*EBf.s:j[" },
+    { image: fenceAfter, hashSrc: "L4G+,Lr*R4IW0I5MI9D*0001-pI;" },
   ];
 
   //states
@@ -160,9 +160,14 @@ const Home = ({
         <div className="content-container">
           <div className="content-block">
             <div className="who-we-are-images">
-              {workImages.map((image, index) => (
+              {workImages.map((item, index) => (
                 <div className="grid-item" key={index}>
-                  <img src={image} alt={`Work Image ${index + 1}`} />
+                  <ImageComponent
+                    src={item.image}
+                    hashSrc={item.hashSrc}
+                    alt="Jetstream Image"
+                    className="grid-item"
+                  />
                 </div>
               ))}
             </div>

@@ -555,6 +555,7 @@ h1 {
     flex-direction: column;
   }
   .footer-component .footer-content .footer-logo {
+    min-width: 200px;
     max-width: 443px;
     width: auto;
   }
@@ -803,8 +804,8 @@ h1 {
   min-width: 600px;
 }
 .home-page .introduction-section .content-container .content-block .who-we-are-images .grid-item {
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 .home-page .introduction-section .content-container .content-block .who-we-are-images .grid-item img {
   width: 100%;

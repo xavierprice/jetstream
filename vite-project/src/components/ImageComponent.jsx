@@ -33,16 +33,6 @@ const ImageComponent = ({ src, hashSrc, className, alt }) => {
         alt={alt}
         style={{
           display: !imageLoaded ? "none" : "inline",
-          position: "absolute",
-          backgroundImage: { src },
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          backgroundPosition: "center",
-          // height: "100%",
-          // width: "100%",
-          position: "fixed",
-          zIndex: -1,
         }}
       />
     </>
