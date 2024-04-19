@@ -74,7 +74,13 @@ const App = () => {
       description:
         "Restore the look of your driveway with our high-pressure cleaning services,",
       icon: <FaRoad />,
-      images: [driveway1, driveway2, driveway3, driveway4, driveway5],
+      images: [
+        { image: driveway1, hashSrc: "LYEMUy%Mo]kCF*t7s;oe$-t7oMR%" },
+        { image: driveway2, hashSrc: "LUFY+Jj[SwRlT#a#s;M|-rfiogM|" },
+        { image: driveway3, hashSrc: "LmCQx;IVt7ay%%RlaekBXBRkj=fk" },
+        { image: driveway4, hashSrc: "LTF?IRMwR$tR.TROenNd_Ns9aKS4" },
+        { image: driveway5, hashSrc: "LCC?y4%1ISx_04NIMwkZ.A-o%0tT" },
+      ],
       benefits: [
         {
           title: "Removes Tough Stains",
@@ -98,7 +104,13 @@ const App = () => {
       description:
         "Give your home a fresh appearance by removing dirt and grime from its exterior.",
       icon: <FaHome />,
-      images: [exterior1, exterior2, exterior3, exterior4, exterior5],
+      images: [
+        { image: exterior1, hashSrc: "LXCtU^x_o$WFJbNiWEoes;s:n#Ri" },
+        { image: exterior2, hashSrc: "LcCQ+Ax_azo$XYXCRkkDoLofjYWB" },
+        { image: exterior3, hashSrc: "LOEfmLIVM_j=tpNIt7j@%OkDogof" },
+        { image: exterior4, hashSrc: "LQFF]S?wD*WASm%ixwj]bdtSxut7" },
+        { image: exterior5, hashSrc: "LGG+%W.T00o#p1%itTxwWHt9xvxv" },
+      ],
       benefits: [
         {
           title: "Protects Exterior Paint",
@@ -123,11 +135,11 @@ const App = () => {
         "Renew the appearance of your deck or patio, preparing them for outdoor gatherings.",
       icon: <FaTree />,
       images: [
-        roofAndFence1,
-        roofAndFence2,
-        roofAndFence3,
-        roofAndFence4,
-        roofAndFence5,
+        { image: roofAndFence1, hashSrc: "LAH2o??wE3%N034,Mxoy00s=%fj[" },
+        { image: roofAndFence2, hashSrc: "LJF={n?d9bfi4=RixBRk00V=kEf*" },
+        { image: roofAndFence3, hashSrc: "L4G]Q:wUR4IW0I9pI9D*0001-pI;" },
+        { image: roofAndFence4, hashSrc: "LADc,CV;N7bU-@xuoeoM00%Oi@%N" },
+        { image: roofAndFence5, hashSrc: "LTEf$i-?RmaIT5S8t5V=E3bdj?V=" },
       ],
       benefits: [
         {

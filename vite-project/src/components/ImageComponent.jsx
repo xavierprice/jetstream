@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Blurhash } from "react-blurhash";
 
-const ImageComponent = ({ src, hashSrc, className, alt }) => {
+const ImageComponent = ({ src, hashSrc, className, alt, width, height }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -20,8 +20,8 @@ const ImageComponent = ({ src, hashSrc, className, alt }) => {
       >
         <Blurhash
           hash={hashSrc}
-          width="100%"
-          height="100%"
+          width={width}
+          height={height}
           resolutionX={32}
           resolutionY={32}
           punch={1}
@@ -31,6 +31,7 @@ const ImageComponent = ({ src, hashSrc, className, alt }) => {
       <img
         src={src}
         alt={alt}
+        className={className}
         style={{
           display: !imageLoaded ? "none" : "inline",
         }}

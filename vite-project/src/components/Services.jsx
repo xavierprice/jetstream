@@ -70,10 +70,13 @@ const Services = ({ services }) => {
                   ))}
                 </div>
                 <div className="service-images">
-                  {service.images.map((image, imgIndex) => (
-                    <img
+                  {service.images.map((item, imgIndex) => (
+                    <ImageComponent
                       key={imgIndex}
-                      src={image}
+                      src={item.image}
+                      hashSrc={item.hashSrc}
+                      width={200}
+                      height={300}
                       alt={`${service.title} ${imgIndex + 1}`}
                       className="service-image"
                     />

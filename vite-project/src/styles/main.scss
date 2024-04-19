@@ -668,7 +668,6 @@ h1 {
     }
   }
   @media (max-width: 492px) {
-
   }
 }
 
@@ -1518,6 +1517,8 @@ h1 {
       }
     }
     .main-container .service-card-container .service-images {
+      height: 100%;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1527,7 +1528,6 @@ h1 {
     .main-container .service-card-container .service-images .service-image {
       width: 12.5rem;
       flex: 1;
-      height: auto;
       object-fit: cover;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -1536,6 +1536,10 @@ h1 {
         transform: scale(1.05);
         transition: transform 0.3s ease;
       }
+    }
+    .main-container .service-card-container .service-images img {
+      height: 100%;
+      width: 100%;
     }
 
     .main-container .service-card-container .service-card .service-buttons {

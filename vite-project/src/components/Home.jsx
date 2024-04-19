@@ -165,6 +165,8 @@ const Home = ({
                   <ImageComponent
                     src={item.image}
                     hashSrc={item.hashSrc}
+                    width={300}
+                    height={400}
                     alt="Jetstream Image"
                     className="grid-item"
                   />
