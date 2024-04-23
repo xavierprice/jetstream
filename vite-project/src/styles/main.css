@@ -804,6 +804,7 @@ h1 {
   min-width: 600px;
 }
 .home-page .introduction-section .content-container .content-block .who-we-are-images .grid-item {
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
@@ -1330,6 +1331,7 @@ h1 {
 .services-page .service-section .main-container .service-card-container .service-images .service-image {
   width: 12.5rem;
   flex: 1;
+  justify-content: center;
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -1452,56 +1454,63 @@ h1 {
   width: 100%;
   height: 100%;
 }
-.about-page .vision-section .main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  padding: var(--LargePadding);
-  flex-wrap: wrap-reverse;
-  gap: var(--LargePadding);
-}
-.about-page .vision-section .main-container .workImagesContainer img {
+.about-page .vision-section img {
   height: 100%;
   width: 100%;
   border-radius: var(--RoundBorder);
 }
-.about-page .vision-section .main-container .workImagesContainer img:hover {
+.about-page .vision-section img:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
+.about-page .vision-section .blurhash-about {
+  width: 100%;
+  height: 100%;
+}
+.about-page .vision-section .main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  background-color: white;
+  padding: var(--LargePadding);
+  gap: var(--MediumPadding);
+}
 .about-page .vision-section .main-container .workImagesContainer {
   display: flex;
-  height: 100%;
+  flex: 2;
   gap: var(--halfSmallPadding);
   min-width: 700px;
-  flex: 3;
 }
 .about-page .vision-section .main-container .workImagesContainer .wrapper-1 {
   display: flex;
   flex: 1;
 }
-.about-page .vision-section .main-container .workImagesContainer .wrapper-2 {
-  display: flex;
-  flex-direction: column;
-  gap: var(--halfSmallPadding);
-  flex: 1;
-}
 .about-page .vision-section .main-container .workImagesContainer .wrapper-1 .group-0 {
   flex: 1;
 }
-.about-page .vision-section .main-container .workImagesContainer .wrapper-2 .group-1 {
-  width: calc(50% - 0.34rem);
+.about-page .vision-section .main-container .workImagesContainer .wrapper-2 {
   display: flex;
+  flex-direction: column;
   flex: 1;
   gap: var(--halfSmallPadding);
+}
+.about-page .vision-section .main-container .workImagesContainer .wrapper-2 .group-1 {
+  display: flex;
+  flex: 1;
+  width: calc(50% - 0.34rem);
+  gap: var(--halfSmallPadding);
+}
+.about-page .vision-section .main-container .workImagesContainer .wrapper-2 .group-1.blurhash-about {
+  width: 100%;
+  height: 100%;
 }
 .about-page .vision-section .main-container .workImagesContainer .wrapper-2 .group-2 {
   flex: 1;
 }
 .about-page .vision-section .main-container .vision-text {
-  min-width: 500px;
-  flex: 2;
+  min-width: 300px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: var(--SmallPadding);
@@ -1575,6 +1584,11 @@ h1 {
   .about-page .vision-section .main-container .workImagesContainer .wrapper-1,
   .about-page .vision-section .main-container .workImagesContainer .wrapper-2 {
     width: 100%;
+  }
+  .about-page .vision-section .main-container .workImagesContainer .wrapper-2 .group-1 {
+    min-width: 250px;
+    width: initial;
+    flex-wrap: wrap;
   }
   .about-page .benefits-section .main-container {
     flex-direction: column;

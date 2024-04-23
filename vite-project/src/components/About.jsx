@@ -16,10 +16,18 @@ import ImageComponent from "./ImageComponent";
 
 const About = () => {
   const workImages = [
-    aboutImage1,
-    aboutImage2,
-    aboutImage3,
-    aboutImage4Cropped,
+    { image: aboutImage1, hashSrc: "LkHCDynhxts:~qt6Rjax.8a{axaf" },
+    {
+      image: aboutImage2,
+      hashSrc: "LUDcwYaIR;aeA5ado%oftpogt8WB",
+      className: "blurhash-about",
+    },
+    {
+      image: aboutImage3,
+      hashSrc: "LVF$eME1WUj=%%xtogj[x{%1RkkD",
+      className: "blurhash-about",
+    },
+    { image: aboutImage4Cropped, hashSrc: "LcFP]dIpxuIV%jV@t6IVjXjqoIWA" },
   ];
   const benefits = [
     {
@@ -89,35 +97,48 @@ const About = () => {
           <div className="workImagesContainer">
             <div className="wrapper-1">
               <div className="group-0">
-                {workImages.slice(0, 1).map((image, imgIndex) => (
-                  <img
+                {workImages.slice(0, 1).map((item, imgIndex) => (
+                  <ImageComponent
                     key={imgIndex}
-                    src={image}
+                    src={item.image}
+                    hashSrc={item.hashSrc}
                     alt={`Image ${imgIndex + 2}`}
-                    className="vision-item"
+                    width={200}
+                    height={600}
+                    className="blurhash-about"
                   />
                 ))}
               </div>
             </div>
             <div className="wrapper-2">
-              <div className="group-1">
-                {workImages.slice(1, 3).map((image, imgIndex) => (
-                  <img
+              <div
+                className={`group-1 ${
+                  workImages.some((item) => item.className === "blurhash-about")
+                    ? "blurhash-about"
+                    : ""
+                }`}
+              >
+                {workImages.slice(1, 3).map((item, imgIndex) => (
+                  <ImageComponent
                     key={imgIndex}
-                    src={image}
+                    src={item.image}
+                    hashSrc={item.hashSrc}
                     alt={`Image ${imgIndex + 2}`}
-                    className="vision-item"
+                    width={200}
+                    height={300}
+                    className={item.className}
                   />
                 ))}
               </div>
-
               <div className="group-2">
-                {workImages.slice(3).map((image, imgIndex) => (
-                  <img
+                {workImages.slice(3).map((item, imgIndex) => (
+                  <ImageComponent
                     key={imgIndex}
-                    src={image}
-                    alt={`Image ${imgIndex + 3}`}
-                    className="vision-item"
+                    src={item.image}
+                    hashSrc={item.hashSrc}
+                    alt={`Image ${imgIndex + 2}`}
+                    width={200}
+                    height={300}
                   />
                 ))}
               </div>
