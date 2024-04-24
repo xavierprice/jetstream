@@ -213,19 +213,23 @@ h1 {
   justify-content: space-between;
   align-items: center;
 }
-.navbar-component li a {
+.navbar-component li a,
+.navbar-component h2 a {
   list-style: none;
   cursor: pointer;
   transition: var(--SmoothTransition);
 }
-.navbar-component li a:hover {
+.navbar-component li a:hover,
+.navbar-component h2 a:hover {
   color: var(--hoverColor);
 }
-.navbar-component li a:visited {
+.navbar-component li a:visited,
+.navbar-component h2 a:visited {
   color: white;
   transition: var(--SmoothTransition);
 }
-.navbar-component li a:visited:hover {
+.navbar-component li a:visited:hover,
+.navbar-component h2 a:visited:hover {
   color: var(--hoverColor);
 }
 .navbar-component .navbar-left {
@@ -421,12 +425,14 @@ h1 {
 }
 .contact-component .quote-form-container .quote-form .form-group.double-label {
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .contact-component .quote-form-container .quote-form .form-group.double-label span {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: var(--halfSmallPadding);
+  min-width: 135px;
 }
 .contact-component .quote-form-container .quote-form label {
   display: block;

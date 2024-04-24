@@ -41,11 +41,15 @@ const Navbar = ({ openModal, phoneNumber }) => {
 
   return (
     <div className="navbar-component">
-      <li className="navbar-left">
-        <Link to="/jetstream/" onClick={closeMenu}>
-          <h1 className={!nav ? "" : "navbar-left alt"}>JPW</h1>
+      <h2 className="navbar-left">
+        <Link
+          to="/jetstream/"
+          onClick={closeMenu}
+          className={!nav ? "" : "navbar-left alt"}
+        >
+          JPW
         </Link>
-      </li>
+      </h2>
       <ul className="navbar-headings">
         <li className={location.pathname === "/jetstream/" ? "active" : ""}>
           <Link to="/jetstream/">Home</Link>
