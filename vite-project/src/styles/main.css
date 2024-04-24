@@ -400,18 +400,29 @@ h1 {
 .contact-component .quote-form-container {
   display: flex;
   flex-direction: column;
-  gap: var(--SmallPadding);
   flex: 1;
   width: 100%;
   padding: var(--MediumPadding);
   background-color: white;
   border-radius: var(--RoundBorder);
 }
+.contact-component .quote-form-container div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--SmallPadding);
+}
+.contact-component .quote-form-container .submission-message {
+  color: var(--headingColorLight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .contact-component .quote-form-container h1 {
   text-align: center;
   color: var(--headingColorLight);
 }
-.contact-component .quote-form-container .quote-form {
+.contact-component .quote-form-container div .quote-form {
   width: 100%;
   height: 100%;
   display: flex;
