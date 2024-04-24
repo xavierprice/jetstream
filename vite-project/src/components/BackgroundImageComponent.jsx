@@ -32,11 +32,13 @@ const BackgroundImageComponent = ({ src, alt, hashSrc, className }) => {
         src={src}
         alt={alt}
         style={{
-          display: !imageLoaded ? "none" : "inline",
+          display: !imageLoaded ? "none" : "flex",
           height: "100%",
           width: "100%",
           position: "fixed",
           zIndex: -1,
+          objectFit: "cover",
+          objectPosition: "center",
         }}
       />
     </>
