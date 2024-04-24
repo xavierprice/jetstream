@@ -49,7 +49,10 @@ const Services = ({ services }) => {
                       <p>{service.description}</p>
                     </div>
                     <div className="service-buttons">
-                      <NavLink to={`/contact/${index}`} key={`contact${index}`}>
+                      <NavLink
+                        to={`/jetstream/contact/${index}`}
+                        key={`contact${index}`}
+                      >
                         <button className="button-block">
                           Request a quote
                         </button>

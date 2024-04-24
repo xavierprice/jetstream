@@ -190,7 +190,7 @@ const Home = ({
                 <div className="text-button">
                   <ul>
                     <li>
-                      Experienced professionals with over 10 years in the
+                      Experienced professionals with over 3 years in the
                       industry.
                     </li>
                     <li>
