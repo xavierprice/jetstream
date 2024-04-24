@@ -49,7 +49,7 @@ const Home = ({
       description:
         "After Speaking With One Of Our Experts We Will Arrange To Come Past At A Time Convenient For You.",
       icon: <FaClipboardList />,
-      button: "Call us 0491 016 876",
+      button: `Call us ${phoneNumber}`,
     },
     {
       title: "Enjoy Your New Home",
@@ -258,9 +258,20 @@ const Home = ({
                 <h2>{step.title}</h2>
                 <div className="step-spacer">
                   <p>{step.description}</p>
-                  <NavLink to="/jetstream/contact">
-                    <button className="button-block">{step.button}</button>
-                  </NavLink>
+
+                  {index === 1 ? (
+                    <button
+                      className="button-block"
+                      onClick={openModal}
+                      data-type="phone"
+                    >
+                      {step.button}
+                    </button>
+                  ) : (
+                    <NavLink to="/jetstream/contact">
+                      <button className="button-block">{step.button}</button>
+                    </NavLink>
+                  )}
                 </div>
               </div>
             ))}
