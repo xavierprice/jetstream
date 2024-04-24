@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaRegClock,
   FaHandSparkles,
@@ -15,6 +15,10 @@ import BackToTop from "../components/BackToTop";
 import ImageComponent from "./ImageComponent";
 
 const About = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
   const workImages = [
     { image: aboutImage1, hashSrc: "LkHCDynhxts:~qt6Rjax.8a{axaf" },
     {
@@ -103,20 +107,17 @@ const About = () => {
                     src={item.image}
                     hashSrc={item.hashSrc}
                     alt={`Image ${imgIndex + 2}`}
-                    width={200}
-                    height={600}
-                    className="blurhash-about"
+                    width="100%"
+                    height="100%"
+                    className={`${!imageLoaded ? "blurhash-vertical" : ""}`}
+                    handleImageLoad={handleImageLoad}
                   />
                 ))}
               </div>
             </div>
             <div className="wrapper-2">
               <div
-                className={`group-1 ${
-                  workImages.some((item) => item.className === "blurhash-about")
-                    ? "blurhash-about"
-                    : ""
-                }`}
+                className={`group-1 ${!imageLoaded ? "blurhash-about" : ""}`}
               >
                 {workImages.slice(1, 3).map((item, imgIndex) => (
                   <ImageComponent
@@ -127,6 +128,7 @@ const About = () => {
                     width={200}
                     height={300}
                     className={item.className}
+                    handleImageLoad={handleImageLoad}
                   />
                 ))}
               </div>

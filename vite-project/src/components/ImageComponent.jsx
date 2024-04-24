@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Blurhash } from "react-blurhash";
 
-const ImageComponent = ({ src, hashSrc, className, alt, width, height }) => {
+const ImageComponent = ({
+  src,
+  hashSrc,
+  className,
+  alt,
+  width,
+  height,
+  handleImageLoad,
+}) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [dimensions, setDimensions] = useState({ width, height });
 
@@ -10,15 +18,20 @@ const ImageComponent = ({ src, hashSrc, className, alt, width, height }) => {
     img.src = src;
     img.onload = () => {
       setImageLoaded(true);
+      if (handleImageLoad) {
+        handleImageLoad();
+      }
     };
 
     function updateDimensions() {
       let newWidth = width;
       let newHeight = height;
 
-      if (window.innerWidth < 498) {
-        newWidth = width / 2;
-        newHeight = height / 2;
+      if (width !== "100%" && height !== "100%") {
+        if (window.innerWidth < 498) {
+          newWidth = width / 2;
+          newHeight = height / 2;
+        }
       }
 
       setDimensions({ width: newWidth, height: newHeight });
@@ -45,7 +58,7 @@ const ImageComponent = ({ src, hashSrc, className, alt, width, height }) => {
           resolutionX={32}
           resolutionY={32}
           punch={1}
-          style={{flex: 1}}
+          style={{ flex: 1 }}
         />
       </div>
 
