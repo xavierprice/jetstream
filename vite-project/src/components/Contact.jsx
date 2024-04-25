@@ -35,14 +35,14 @@ const Contact = ({
                 </div>
               </li>
               <li className="phone-location">
-                <li onClick={openModal} data-type="phone">
+                <span onClick={openModal} data-type="phone">
                   <FaPhone className="fa-icon" />
                   <h3>{phoneNumber}</h3>
-                </li>
-                <li onClick={openMaps}>
+                </span>
+                <span onClick={openMaps}>
                   <FaMapMarkerAlt className="fa-icon" />
                   <h3>{contactLocation}</h3>
-                </li>
+                </span>
               </li>
               <li onClick={openModal} data-type="email" className="email">
                 <FaEnvelope className="fa-icon" />

@@ -11,7 +11,7 @@ const Services = ({ services }) => {
   useEffect(() => {
     const serviceElement = document.getElementById(`service-${id}`);
     if (serviceElement) {
-      const offset = 80;
+      const offset = 70;
       const offsetPosition = serviceElement.offsetTop - offset;
       window.scrollTo({ top: offsetPosition, behavior: "instant" });
     }

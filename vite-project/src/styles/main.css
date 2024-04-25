@@ -1693,6 +1693,10 @@ h1 {
   flex-direction: column;
   gap: var(--halfSmallPadding);
 }
+.contact-page .form-section .main-container .form-right .contact-list li.phone-location span {
+  display: flex;
+  gap: var(--halfSmallPadding);
+}
 .contact-page .form-section .main-container .form-right .contact-list {
   display: flex;
   flex-direction: column;
@@ -1704,7 +1708,7 @@ h1 {
   gap: var(--halfSmallPadding);
   transition: color 0.3s ease;
 }
-.contact-page .form-section .main-container .form-right .contact-list li.phone-location li:hover,
+.contact-page .form-section .main-container .form-right .contact-list li.phone-location span.phone:hover,
 .contact-page .form-section .main-container .form-right .contact-list li.email:hover {
   color: var(--headingColorLight);
   cursor: pointer;
