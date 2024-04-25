@@ -1649,7 +1649,7 @@ h1 {
     .main-container .benefit-container {
       @include flexCenter();
       flex-wrap: wrap;
-      gap: var(--SmallPadding);
+      gap: var(--halfSmallPadding);
     }
 
     .main-container .benefit-container .benefit {
@@ -1659,6 +1659,7 @@ h1 {
       text-align: center;
       color: white;
       display: flex;
+      align-items: center;
       flex-direction: column;
       justify-content: space-around;
     }
@@ -1669,6 +1670,8 @@ h1 {
 
     .main-container .benefit-container .benefit p {
       @include p-styling();
+      width: 250px;
+      text-align: center;
       font-size: 1.3rem;
       padding-top: var(--halfSmallPadding);
     }
@@ -1802,6 +1805,9 @@ h1 {
       min-width: 200px;
       max-width: 443px;
       width: auto;
+    }
+    .header-section .main-container .benefit-container .benefit p {
+      width: initial;
     }
     //vision
     .vision-section .blurhash-vertical {

@@ -43,13 +43,13 @@ const About = () => {
       icon: <FaHandSparkles />,
       title: "Clean",
       description:
-        "Enjoy a clutter-free experience with our sleek and organized interface.",
+        "Clutter-free experience with our sleek, organized interface.",
     },
     {
       icon: <FaTrophy />,
       title: "Quality",
       description:
-        "Quality performance and reliability with our high-quality products.",
+        "Top performance and reliability with our high-quality products.",
     },
     {
       icon: <FaUmbrella />,

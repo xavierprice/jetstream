@@ -1440,7 +1440,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--SmallPadding);
+  gap: var(--halfSmallPadding);
 }
 .about-page .header-section .main-container .benefit-container .benefit {
   flex: 1;
@@ -1449,6 +1449,7 @@ h1 {
   text-align: center;
   color: white;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-around;
 }
@@ -1458,6 +1459,8 @@ h1 {
 .about-page .header-section .main-container .benefit-container .benefit p {
   line-height: 1.6;
   font-weight: 500;
+  width: 250px;
+  text-align: center;
   font-size: 1.3rem;
   padding-top: var(--halfSmallPadding);
 }
@@ -1591,6 +1594,9 @@ h1 {
     min-width: 200px;
     max-width: 443px;
     width: auto;
+  }
+  .about-page .header-section .main-container .benefit-container .benefit p {
+    width: initial;
   }
   .about-page .vision-section .blurhash-vertical {
     height: 300px;
