@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 import BackToTop from "./BackToTop";
@@ -13,6 +14,17 @@ const Contact = ({
   openMaps,
   modifiedEmail,
 }) => {
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (selectedService) {
+      const formContainer = document.getElementById("quote-form-container");
+      const offset = 70;
+      const offsetPosition = formContainer.offsetTop - offset;
+      window.scrollTo({ top: offsetPosition, behavior: "instant" });
+    }
+  }, [id, selectedService]);
+
   return (
     <main className="contact-page">
       <section className="form-section">

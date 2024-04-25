@@ -591,6 +591,16 @@ h1 {
       color: white;
     }
   }
+
+  @media (max-width: 768px) {
+    .quote-form-container .quote-form .form-group input,
+    .quote-form-container .quote-form .form-group select,
+    .quote-form-container .quote-form .form-group textarea,
+    .quote-form-container .quote-form label {
+      text-align: center;
+    }
+  }
+
   @media (max-width: 492px) {
     .quote-form-container {
       padding: var(--SmallPadding);
@@ -1936,9 +1946,6 @@ h1 {
     }
   }
   @media (max-width: 768px) {
-    .form-section .main-container {
-      text-align: center;
-    }
     .form-section .main-container .form-left {
       min-width: initial;
     }

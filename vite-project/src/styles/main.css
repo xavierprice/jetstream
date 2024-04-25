@@ -486,6 +486,14 @@ h1 {
   background-color: var(--hoverColor);
   color: white;
 }
+@media (max-width: 768px) {
+  .contact-component .quote-form-container .quote-form .form-group input,
+  .contact-component .quote-form-container .quote-form .form-group select,
+  .contact-component .quote-form-container .quote-form .form-group textarea,
+  .contact-component .quote-form-container .quote-form label {
+    text-align: center;
+  }
+}
 @media (max-width: 492px) {
   .contact-component .quote-form-container {
     padding: var(--SmallPadding);
@@ -1718,9 +1726,6 @@ h1 {
   cursor: pointer;
 }
 @media (max-width: 768px) {
-  .contact-page .form-section .main-container {
-    text-align: center;
-  }
   .contact-page .form-section .main-container .form-left {
     min-width: initial;
   }

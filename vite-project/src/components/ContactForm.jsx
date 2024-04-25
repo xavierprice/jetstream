@@ -51,7 +51,7 @@ const ContactForm = ({ services, selectedService, setSelectedService }) => {
 
   return (
     <div className="contact-component">
-      <div className={`quote-form-container`}>
+      <div className={`quote-form-container`} id="quote-form-container">
         {!submitted ? (
           <div ref={formContainerRef}>
             <h1>Claim your free estimate</h1>
