@@ -102,7 +102,9 @@ const Navbar = ({ openModal, phoneNumber }) => {
           </Link>
         </li>
         <li
-          className={location.pathname === "/jetstream/contact" ? "active" : ""}
+          className={
+            location.pathname.startsWith("/jetstream/contact") ? "active" : ""
+          }
         >
           <Link to="/jetstream/contact" onClick={closeMenu}>
             Contact
