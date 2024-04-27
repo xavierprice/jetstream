@@ -218,6 +218,7 @@ h1 {
   list-style: none;
   cursor: pointer;
   transition: var(--SmoothTransition);
+  color: white;
 }
 .navbar-component li a:hover,
 .navbar-component h2 a:hover {
@@ -1011,6 +1012,7 @@ h1 {
 }
 .home-page .work-preview-section .main-container .work-preview-container .video-wrapper .video {
   width: 100%;
+  cursor: pointer;
   height: auto;
   object-fit: cover;
   border-radius: 5px;

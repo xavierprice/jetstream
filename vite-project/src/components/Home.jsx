@@ -58,7 +58,7 @@ const Home = ({
       button: "Contact us now!",
     },
   ];
-  const workPreviews = [workVideo1, workVideo5, workVideo2, workVideo4];
+  const workVideos = [workVideo1, workVideo5, workVideo2, workVideo4];
   const workImages = [
     { image: drivewayBefore, hashSrc: "LKHed:s,E2xvKnM{xut8yFs-t7of" },
     { image: exteriorBefore, hashSrc: "LXFs0;I^M~ax%jtTbcayNLtSohj[" },
@@ -68,24 +68,23 @@ const Home = ({
     { image: fenceAfter, hashSrc: "L4G+,Lr*R4IW0I5MI9D*0001-pI;" },
   ];
 
-  //states
-  const [videoTimes, setVideoTimes] = useState({});
-
-  //map video handling
-  const videoRefs = workPreviews.map(() => useRef(null));
-  const handleMouseEnter = (index) => {
-    videoRefs[index].current.play();
-    if (videoTimes[index] !== undefined) {
-      video.currentTime = videoTimes[index];
+  const togglePlayPause = (index, event, eventType) => {
+    if (eventType === "click" && event) {
+      event.preventDefault();
+    }
+    const video = document.getElementById(`video-${index}`);
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
     }
   };
-  const handleMouseLeave = (index) => {
-    const video = videoRefs[index].current;
-    setVideoTimes((prevTimes) => ({
-      ...prevTimes,
-      [index]: video.currentTime,
-    }));
-    video.pause();
+
+  const handleVideoInteraction = (index) => {
+    return {
+      onClick: (event) => togglePlayPause(index, event, "click"),
+      onTouchStart: (event) => togglePlayPause(index, event, "touch"),
+    };
   };
 
   return (
@@ -284,25 +283,19 @@ const Home = ({
         <div className="main-container">
           <h1>See Jetstream in action!</h1>
           <p>
-            Hover over any one of the videos to see us restoring properties all
-            over Brisbane!
+            Click on any one of the videos to see us restoring properties all
           </p>
           <div className="work-preview-container">
-            {workPreviews.map((preview, index) => {
+            {workVideos.map((preview, index) => {
               if (typeof preview === "string" && preview.endsWith(".mp4")) {
                 return (
-                  <div
-                    key={index}
-                    className="video-wrapper"
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={() => handleMouseLeave(index)}
-                  >
+                  <div key={index} className="video-wrapper">
                     <video
-                      ref={videoRefs[index]}
                       muted
-                      loop
-                      preload="metadata"
+                      controls
+                      id={`video-${index}`}
                       className="video"
+                      {...handleVideoInteraction(index)}
                     >
                       <source src={preview} type="video/mp4" />
                       Your browser does not support the video tag.
@@ -371,13 +364,6 @@ const Home = ({
               </li>
             </ul>
           </div>
-          {/* <section className={`cta-content ${hasWrappedCta ? "wrapped" : ""}`}> */}
-          {/* <div className={`cta-images ${hasWrappedCta ? "wrapped" : ""}`}>
-                  {ctaImages.map((image, index) => (
-                    <img key={index} src={image} alt={`Image ${index}`} />
-                  ))}
-                </div> */}
-          {/* </section> */}
         </div>
       </section>
       <BackToTop />
