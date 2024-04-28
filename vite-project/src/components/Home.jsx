@@ -288,6 +288,22 @@ const Home = ({
           <div className="work-preview-container">
             {workVideos.map((preview, index) => {
               if (typeof preview === "string" && preview.endsWith(".mp4")) {
+                const videoRef = useRef(null);
+                const captureFirstFrame = () => {
+                  const video = videoRef.current;
+                  if (video) {
+                    const canvas = document.createElement("canvas");
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    const ctx = canvas.getContext("2d");
+
+                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                    const posterUrl = canvas.toDataURL();
+                    video.poster = posterUrl;
+                  }
+                };
+
                 return (
                   <div key={index} className="video-wrapper">
                     <video
@@ -295,6 +311,7 @@ const Home = ({
                       controls
                       id={`video-${index}`}
                       className="video"
+                      onLoadedMetadata={captureFirstFrame}
                       {...handleVideoInteraction(index)}
                     >
                       <source src={preview} type="video/mp4" />
