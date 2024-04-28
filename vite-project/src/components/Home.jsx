@@ -288,35 +288,19 @@ const Home = ({
           <div className="work-preview-container">
             {workVideos.map((preview, index) => {
               if (typeof preview === "string" && preview.endsWith(".mp4")) {
-                const videoRef = useRef(null);
-                const captureFirstFrame = () => {
-                  const video = videoRef.current;
-                  if (video) {
-                    const canvas = document.createElement("canvas");
-                    canvas.width = video.videoWidth;
-                    canvas.height = video.videoHeight;
-                    const ctx = canvas.getContext("2d");
-
-                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-                    const posterUrl = canvas.toDataURL();
-                    video.poster = posterUrl;
-
-                    video.removeEventListener(
-                      "loadedmetadata",
-                      captureFirstFrame
-                    );
-                  }
-                };
+                const videoId = `video-${index}`;
+                const posterURL = preview.replace(".mp4", ".jpg");
 
                 return (
                   <div key={index} className="video-wrapper">
                     <video
                       muted
                       controls
-                      id={`video-${index}`}
+                      id={videoId}
                       className="video"
-                      onLoadedMetadata={captureFirstFrame}
+                      loading="lazy"
+                      preload="metadata"
+                      poster={posterURL}
                       {...handleVideoInteraction(index)}
                     >
                       <source src={preview} type="video/mp4" />
