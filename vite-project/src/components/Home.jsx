@@ -19,8 +19,13 @@ import fenceAfter from "../assets/images/home-page(6)/fence-5-after.jpg";
 
 import workVideo1 from "../assets//videos/exterior.mp4";
 import workVideo2 from "../assets//videos/intro-1.mp4";
-import workVideo4 from "../assets//videos/intro-2.mp4";
-import workVideo5 from "../assets//videos/intro-3.mp4";
+import workVideo3 from "../assets//videos/intro-2.mp4";
+import workVideo4 from "../assets//videos/intro-3.mp4";
+
+import poster1 from "../assets//videos/exterior.jpg";
+import poster2 from "../assets//videos/intro-1.jpg";
+import poster3 from "../assets//videos/intro-2.jpg";
+import poster4 from "../assets//videos/intro-3.jpg";
 
 import whiteAndBlueLogo from "../assets/logos/white-and-blue-logo.png";
 
@@ -58,7 +63,12 @@ const Home = ({
       button: "Contact us now!",
     },
   ];
-  const workVideos = [workVideo1, workVideo5, workVideo2, workVideo4];
+  const workVideos = [
+    { video: workVideo1, poster: poster1 },
+    { video: workVideo2, poster: poster2 },
+    { video: workVideo3, poster: poster3 },
+    { video: workVideo4, poster: poster4 },
+  ];
   const workImages = [
     { image: drivewayBefore, hashSrc: "LKHed:s,E2xvKnM{xut8yFs-t7of" },
     { image: exteriorBefore, hashSrc: "LXFs0;I^M~ax%jtTbcayNLtSohj[" },
@@ -286,11 +296,10 @@ const Home = ({
             Click on any one of the videos to see us restoring properties all
           </p>
           <div className="work-preview-container">
-            {workVideos.map((preview, index) => {
-              if (typeof preview === "string" && preview.endsWith(".mp4")) {
+            {workVideos.map((videoData, index) => {
+              const { video, poster } = videoData;
+              if (typeof video === "string" && video.endsWith(".mp4")) {
                 const videoId = `video-${index}`;
-                const posterURL = preview.replace(".mp4", ".jpg");
-
                 return (
                   <div key={index} className="video-wrapper">
                     <video
@@ -299,18 +308,17 @@ const Home = ({
                       id={videoId}
                       className="video"
                       loading="lazy"
-                      preload="metadata"
-                      poster={posterURL}
+                      poster={poster}
                       {...handleVideoInteraction(index)}
                     >
-                      <source src={preview} type="video/mp4" />
+                      <source src={video} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
                 );
               } else {
                 return (
-                  <img key={index} src={preview} alt={`Image ${index + 1}`} />
+                  <img key={index} src={video} alt={`Image ${index + 1}`} />
                 );
               }
             })}
