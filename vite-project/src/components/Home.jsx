@@ -301,6 +301,11 @@ const Home = ({
 
                     const posterUrl = canvas.toDataURL();
                     video.poster = posterUrl;
+
+                    video.removeEventListener(
+                      "loadedmetadata",
+                      captureFirstFrame
+                    );
                   }
                 };
 
