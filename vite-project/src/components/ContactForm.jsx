@@ -9,6 +9,7 @@ const ContactForm = ({ services, selectedService, setSelectedService }) => {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const formContainerRef = useRef(null);
+  const submissionContainerRef = useRef(null);
   const [submissionContainerDimensions, setSubmissionContainerDimensions] =
     useState({ height: 0 });
 
@@ -29,15 +30,26 @@ const ContactForm = ({ services, selectedService, setSelectedService }) => {
     setSubmitted(true);
   };
 
-  const navigate = useNavigate();
+useEffect(() => {
+  if (submitted && submissionContainerRef.current) {
+    const { top, height } =
+      submissionContainerRef.current.getBoundingClientRect();
+    const viewportHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    const scrollOffset = (viewportHeight - height) / 2;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const offset = 35;
+    const targetTop = top + scrollTop - scrollOffset - offset;
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
+  }
+}, [submitted]);
+
   const { id } = useParams();
 
   useEffect(() => {
     const selectedId = parseInt(id);
     const selectedService = services[selectedId];
-
     setSelectedService(selectedService ? selectedService.title : "");
-
     if (formContainerRef.current) {
       const { height } = formContainerRef.current.getBoundingClientRect();
       setSubmissionContainerDimensions({ height });
@@ -145,7 +157,11 @@ const ContactForm = ({ services, selectedService, setSelectedService }) => {
             </form>
           </div>
         ) : (
-          <div className="submission-message" style={submissionContainerStyle}>
+          <div
+            className="submission-message"
+            style={submissionContainerStyle}
+            ref={submissionContainerRef}
+          >
             <h2>{`Thank you! Your message has been sent. (for demo purposes only)`}</h2>
           </div>
         )}
