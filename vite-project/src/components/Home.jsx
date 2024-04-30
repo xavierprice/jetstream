@@ -305,6 +305,7 @@ const Home = ({
                     <video
                       muted
                       controls
+                      playsInline
                       id={videoId}
                       className="video"
                       loading="lazy"

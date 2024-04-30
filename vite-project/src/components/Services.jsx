@@ -11,9 +11,22 @@ const Services = ({ services }) => {
   useEffect(() => {
     const serviceElement = document.getElementById(`service-${id}`);
     if (serviceElement) {
-      const offset = 70;
-      const offsetPosition = serviceElement.offsetTop - offset;
-      window.scrollTo({ top: offsetPosition, behavior: "instant" });
+      if (
+        // "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+      ) {
+        serviceElement.scrollIntoView({
+          behavior: "instant",
+          block: "start",
+          inline: "nearest",
+        });
+        window.scrollBy(0, -70);
+      } else {
+        const offset = 70;
+        const offsetPosition = serviceElement.offsetTop - offset;
+        window.scrollTo({ top: offsetPosition, behavior: "instant" });
+      }
     }
   }, [id]);
 
