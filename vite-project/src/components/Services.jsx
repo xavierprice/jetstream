@@ -8,26 +8,40 @@ import ImageComponent from "./ImageComponent";
 const Services = ({ services }) => {
   const { id } = useParams();
 
+
+  // useEffect(() => {
+  //   const serviceElement = document.getElementById(`service-${id}`);
+  //   if (serviceElement) {
+  //     if (
+  //       // "ontouchstart" in window ||
+  //       navigator.maxTouchPoints > 0 ||
+  //       navigator.msMaxTouchPoints > 0
+  //     ) {
+  //       serviceElement.scrollIntoView({
+  //         behavior: "instant",
+  //         block: "start",
+  //         inline: "nearest",
+  //       });
+  //       window.scrollBy(0, -70);
+  //     } else {
+  //       const offset = 70;
+  //       const offsetPosition = serviceElement.offsetTop - offset;
+  //       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+  //     }
+  //   }
+  // }, [id]);
+  
   useEffect(() => {
-    const serviceElement = document.getElementById(`service-${id}`);
-    if (serviceElement) {
-      if (
-        // "ontouchstart" in window ||
-        navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints > 0
-      ) {
-        serviceElement.scrollIntoView({
-          behavior: "instant",
-          block: "start",
-          inline: "nearest",
-        });
-        window.scrollBy(0, -70);
-      } else {
+    const scrollToElement = () => {
+      const serviceElement = document.getElementById(`service-${id}`);
+      if (serviceElement) {
         const offset = 70;
         const offsetPosition = serviceElement.offsetTop - offset;
-        window.scrollTo({ top: offsetPosition, behavior: "instant" });
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
       }
-    }
+    };
+    const timeout = setTimeout(scrollToElement, 200);
+    return () => clearTimeout(timeout);
   }, [id]);
 
   return (
