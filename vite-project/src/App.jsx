@@ -173,6 +173,14 @@ const App = () => {
     }, 3250);
   }, []);
 
+  const [redirected, setRedirected] = useState(false);
+  useEffect(() => {
+    if (!redirected && window.location.pathname === "/jetstream/") {
+      setRedirected(true);
+      window.location.href = "#/home/";
+    }
+  }, [redirected]);
+
   return (
     <Router>
       <ScrollToTopPageChange />
