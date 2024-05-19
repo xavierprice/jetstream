@@ -39,9 +39,6 @@ const Footer = ({
         </div>
         <div className="footer-socials">
           <div className="social-icons">
-            <a href="#" target="" rel="">
-              <FaFacebookSquare className="fa-icon" />
-            </a>
             <a
               href="https://www.instagram.com/jetstreamau?igsh=MWM4eXljOGNtYTE0cw=="
               target="_blank"

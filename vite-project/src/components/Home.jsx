@@ -308,7 +308,7 @@ const Home = ({
                       playsInline
                       id={videoId}
                       className="video"
-                      loading="lazy"
+                      preload="auto"
                       poster={poster}
                       {...handleVideoInteraction(index)}
                     >
