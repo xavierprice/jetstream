@@ -43,7 +43,7 @@ const Navbar = ({ openModal, phoneNumber }) => {
     <div className="navbar-component">
       <h2 className="navbar-left">
         <Link
-          to="/jetstream/"
+          to="/home/"
           onClick={closeMenu}
           className={!nav ? "" : "navbar-left alt"}
         >
@@ -51,20 +51,20 @@ const Navbar = ({ openModal, phoneNumber }) => {
         </Link>
       </h2>
       <ul className="navbar-headings">
-        <li className={location.pathname === "/jetstream/" ? "active" : ""}>
-          <Link to="/jetstream/">Home</Link>
+        <li className={location.pathname === "/home/" ? "active" : ""}>
+          <Link to="/home/">Home</Link>
         </li>
         <li className={location.pathname.includes("/services") ? "active" : ""}>
-          <Link to="/jetstream/services">Services</Link>
+          <Link to="/services/">Services</Link>
         </li>
 
         <li
-          className={location.pathname === "/jetstream/about" ? "active" : ""}
+          className={location.pathname === "/about/" ? "active" : ""}
         >
-          <Link to="/jetstream/about">About</Link>
+          <Link to="/about/">About</Link>
         </li>
-        <li className={location.pathname.includes("/contact") ? "active" : ""}>
-          <Link to="/jetstream/contact">Contact</Link>
+        <li className={location.pathname.includes("/contact/") ? "active" : ""}>
+          <Link to="/contact/">Contact</Link>
         </li>
       </ul>
       <ul className="navbar-contact">
@@ -81,32 +81,32 @@ const Navbar = ({ openModal, phoneNumber }) => {
         {!nav ? <FaBars /> : <FaTimes className="faTimes" />}
       </li>
       <ul className={!nav ? "mobile-menu" : "mobile-menu show"}>
-        <li className={location.pathname === "/jetstream/" ? "active" : ""}>
-          <Link to="/jetstream/" onClick={closeMenu}>
+        <li className={location.pathname === "/home/" ? "active" : ""}>
+          <Link to="/home/" onClick={closeMenu}>
             Home
           </Link>
         </li>
         <li
           className={
-            location.pathname.startsWith("/jetstream/services") ? "active" : ""
+            location.pathname.startsWith("/services/") ? "active" : ""
           }
         >
-          <Link to="/jetstream/services">Services</Link>
+          <Link to="/services/">Services</Link>
         </li>
 
         <li
-          className={location.pathname === "/jetstream/about" ? "active" : ""}
+          className={location.pathname === "/about/" ? "active" : ""}
         >
-          <Link to="/jetstream/about" onClick={closeMenu}>
+          <Link to="/about/" onClick={closeMenu}>
             About
           </Link>
         </li>
         <li
           className={
-            location.pathname.startsWith("/jetstream/contact") ? "active" : ""
+            location.pathname.startsWith("/contact/") ? "active" : ""
           }
         >
-          <Link to="/jetstream/contact" onClick={closeMenu}>
+          <Link to="/contact/" onClick={closeMenu}>
             Contact
           </Link>
         </li>

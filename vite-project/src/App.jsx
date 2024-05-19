@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import ScrollToTopPageChange from "./components/ScrollToTopPageChange";
 import Modal from "react-modal";
 import CallModal from "./components/CallModal";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 //driveway imports
 import driveway1 from "./assets/images/driveway-cleaning(5)/1-driveway-before.jpg";
 import driveway2 from "./assets/images/driveway-cleaning(5)/2-driveway-after.jpg";
@@ -195,7 +195,7 @@ const App = () => {
           />
           <Routes>
             <Route
-              path="/jetstream"
+              path="/home/"
               element={
                 <Home
                   services={services}
@@ -208,16 +208,16 @@ const App = () => {
               }
             ></Route>
             <Route
-              path="/jetstream/services"
+              path="/services/"
               element={<Services services={services} />}
             ></Route>
             <Route
-              path="/jetstream/services/:id"
+              path="/services/:id/"
               element={<Services services={services} />}
             ></Route>
-            <Route path="/jetstream/about" element={<About />}></Route>
+            <Route path="/about/" element={<About />}></Route>
             <Route
-              path="/jetstream/contact"
+              path="/contact/"
               element={
                 <Contact
                   services={services}
@@ -232,7 +232,7 @@ const App = () => {
               }
             ></Route>
             <Route
-              path="/jetstream/contact/:id"
+              path="/contact/:id/"
               element={
                 <Contact
                   services={services}

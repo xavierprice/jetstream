@@ -146,13 +146,13 @@ const Home = ({
                   </div>
                   <div className="service-buttons">
                     <NavLink
-                      to={`/jetstream/services/${index}`}
+                      to={`/services/${index}/`}
                       key={`services${index}`}
                     >
                       <button className="button-block">Learn more</button>
                     </NavLink>
                     <NavLink
-                      to={`/jetstream/contact/${index}`}
+                      to={`/contact/${index}/`}
                       key={`contact${index}`}
                     >
                       <button className="button-block">Request a quote</button>
@@ -209,7 +209,7 @@ const Home = ({
                     <li>100% customer satisfaction guaranteed.</li>
                   </ul>
                   <div className="button-container">
-                    <NavLink to="/jetstream/about">
+                    <NavLink to="/about/">
                       <button className="button-block">Learn More</button>
                     </NavLink>
                   </div>
@@ -277,7 +277,7 @@ const Home = ({
                       {step.button}
                     </button>
                   ) : (
-                    <NavLink to="/jetstream/contact">
+                    <NavLink to="/contact/">
                       <button className="button-block">{step.button}</button>
                     </NavLink>
                   )}

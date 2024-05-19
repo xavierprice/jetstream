@@ -54,7 +54,7 @@ const Services = ({ services }) => {
                     </div>
                     <div className="service-buttons">
                       <NavLink
-                        to={`/jetstream/contact/${index}`}
+                        to={`/contact/${index}/`}
                         key={`contact${index}`}
                       >
                         <button className="button-block">
