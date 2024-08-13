@@ -207,7 +207,8 @@ h1 {
   height: 80px;
   padding: var(--SmallPadding);
   background-color: var(--DarkTransparentBackground);
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -463,6 +464,9 @@ h1 {
 }
 .contact-component .quote-form-container .quote-form .form-group select {
   cursor: pointer;
+}
+.contact-component .quote-form-container .quote-form .form-group input::-moz-placeholder, .contact-component .quote-form-container .quote-form .form-group textarea::-moz-placeholder {
+  font-size: var(--smallestFontSize);
 }
 .contact-component .quote-form-container .quote-form .form-group input::placeholder,
 .contact-component .quote-form-container .quote-form .form-group textarea::placeholder {
@@ -1014,7 +1018,8 @@ h1 {
   width: 100%;
   cursor: pointer;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -1359,7 +1364,8 @@ h1 {
   width: 12.5rem;
   flex: 1;
   justify-content: center;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -1757,6 +1763,4 @@ h1 {
   .contact-page .form-section .main-container .form-right {
     min-width: 250px;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
